@@ -1,0 +1,24 @@
+# Installed packages and build output
+node_modules/
+dist/
+
+# Secrets: never saved in Git
+.env
+.env.*
+!.env.example
+*.local
+
+# System and editor files
+.DS_Store
+Thumbs.db
+Icon?
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# Tools
+.playwright-mcp/
+
+# Logs
+*.log
+npm-debug.log*
