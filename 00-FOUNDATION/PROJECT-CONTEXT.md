@@ -4,72 +4,103 @@
 > **Filled by:** WEB-07 (step 4)
 > **Applies to:** every site
 
-**Status:** Empty
+**Status:** Done
 
 ## Project
 
-*Business name and the name of this website project.*
+- Business: Dhemmyn Food.
+- Owner: Demi Yusuf.
+- Project: the Dhemmyn Food website.
 
 ## Site type
 
-*For example: small business website built as a React app. Say whether it must install like an app (PWA): yes or no.*
+- Small business website built as a React app.
+- Install like an app (PWA): no. The owner did not ask for it.
 
 ## Purpose
 
-*What the site is for, in one or two sentences.*
+- Share easy and authentic recipes for baking and cooking, with the videos, in one place.
+- Let people ask for a custom cake or catering.
 
 ## Visitors
 
-*Who visits, where they are, and what they are trying to do. Details go in 01-PRODUCT/USER-ROLES.md.*
+- Followers on Instagram, TikTok and YouTube who want easy recipes to make at home. Mostly in the UK.
+- People who want a cake for a birthday or a party.
+- People who want food for an event.
+- Ages: [NEEDS: owner not sure].
+- Details: 01-PRODUCT/USER-ROLES.md.
 
 ## Main action
 
-*The one thing a visitor should do, such as send an order enquiry.*
+- Watch recipes and videos, and follow on social media.
+- Custom cakes and Catering are easy to find in the menu, each with its own enquiry.
 
 ## Area served
 
-*Town, region, UK-wide or online only.*
+- See "Area served" in 01-PRODUCT/BUSINESS-RULES.md.
 
 ## How the business earns
 
-*Orders, bookings, enquiries, sales elsewhere. Say whether the site itself takes payment (usually no).*
+- Cakes and catering are a side offer the owner wants to grow.
+- Income from recipes: [NEEDS: owner left this out for now].
+- The site takes no payment and no bookings.
+- How payment is taken: see "Payments and deposits" in 01-PRODUCT/BUSINESS-RULES.md.
 
 ## Devices and browsers
 
-*Phones first, then laptops and tablets. Current versions of Chrome, Safari, Edge and Firefox.*
+- Phones first, then laptops and tablets.
+- Current versions of Chrome, Safari, Edge and Firefox (the project default, confirmed by the owner).
 
 ## Log-ins and database
 
-*Usually: none. If the site needs either, say why and record it in 08-CHANGE-MANAGEMENT/DECISIONS.md.*
+- None planned. Nothing the owner described needs one.
 
 ## Hosting and outside services
 
-*For example: Netlify for hosting and form handling, a domain registrar, an email provider. Details go in 02-ARCHITECTURE/INTEGRATIONS.md.*
+- Hosting, enquiry form handling and email delivery: [NEEDS: decided in WEB-19, recorded in 02-ARCHITECTURE/INTEGRATIONS.md].
+- Domain: none owned yet.
+- Budget: as cheap as possible. [NEEDS: a yearly amount]
+- Links out to Instagram, TikTok, YouTube, Threads and WhatsApp: see 01-PRODUCT/SOCIAL.md. Videos are links only.
 
 ## Offline
 
-*None, partial or full. Most small sites: none.*
+- None.
 
 ## Personal information
 
-*What the site collects, in one line. Details go in 05-SECURITY/DATA-PRIVACY.md.*
+- Name, email, phone number and the cake or event details, when someone sends an enquiry.
+- Details: 05-SECURITY/DATA-PRIVACY.md.
 
 ## UK rules that apply
 
-*For example: UK GDPR and the Data Protection Act 2018, the cookie rules (PECR), and the rules on showing business details. Not legal advice: see step 11 of the guide.*
+- UK GDPR and the Data Protection Act 2018: the enquiry forms collect personal information.
+- Cookie rules (PECR): the site sets no cookies and loads no outside scripts.
+- Showing business details: see 01-PRODUCT/BUSINESS-RULES.md. Trading status and postal address are [NEEDS].
+- Food business registration and allergen rules for cakes and catering: [NEEDS: owner not sure whether registered].
+- Not legal advice. See step 11 of the guide.
 
 ## Current stage
 
-*Planning, building, testing, live or maintaining.*
+- Planning (step 4 of the guide).
 
 ## Must haves
 
-*The few things that must be true at launch, such as: works well on phones, shows starting prices, enquiry reaches my inbox.*
+- Works well on a phone.
+- A Recipes page with eight launch recipes, each with a video link.
+- Custom cakes and Catering each easy to find in the menu, each with its own enquiry form.
+- Email, phone and WhatsApp shown together (see 01-PRODUCT/BUSINESS-RULES.md).
+- Enquiries from the forms reach the owner's inbox (see 01-PRODUCT/BUSINESS-RULES.md).
+- No price, area, notice, allergen, hygiene or trading status claim until the owner decides (see 01-PRODUCT/BUSINESS-RULES.md).
 
 ## Design direction
 
-*Three words for the feel. Details go in 03-DESIGN/DESIGN-SYSTEM.md.*
+- Warm and homely, like the owner's kitchen.
+- Chocolate brown and cream, like the profile picture.
+- [NEEDS: a third word, and anything to avoid. Owner not sure.]
 
 ## Principles
 
-*For example: plain words, real photos, fast on a phone, nothing invented.*
+- Easy recipes that work, without a long story.
+- Authentic and homely.
+- Plain words. Nothing the owner has not confirmed.
+- Videos are links, never players.
