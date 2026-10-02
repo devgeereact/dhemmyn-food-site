@@ -2,6 +2,7 @@ import ButtonLink from '../components/ButtonLink'
 import ContactInline from '../components/ContactInline'
 import HowOrderingWorks from '../components/HowOrderingWorks'
 import RuledRow from '../components/RuledRow'
+import { doughnuts } from '../data/recipes'
 import { contact } from '../data/site'
 
 export default function Contact() {
@@ -27,20 +28,27 @@ export default function Contact() {
         </p>
       </div>
 
-      {/* Contact details: three large ruled rows, each opening in the visitor's own app.
-          The closing button jumps back up here. */}
-      <section
-        id="contact-details"
-        tabIndex={-1}
-        aria-label="Contact details"
-        className="page-width pb-12 md:pb-16"
-      >
-        <ul className="max-w-[48rem] border-t-2 border-ink">
-          <RuledRow href={contact.whatsappHref} label="Message me on WhatsApp" value={contact.phoneDisplay} />
-          <RuledRow href={`tel:${contact.phoneTel}`} label="Call me" value={contact.phoneDisplay} />
-          <RuledRow href={`mailto:${contact.email}`} label="Email me" value={contact.email} />
-        </ul>
-      </section>
+      {/* Contact details: three large ruled rows, each opening in the visitor's own app, with one of
+          the owner's photos: above the rows on a phone, to their right from 1128 px. The photo is
+          cropped to 4:3 in CSS so the rows stay in the first screen on a phone, and it stays outside
+          the section below, because the closing button jumps back up to that section. */}
+      <div className="page-width pb-12 md:pb-16 lg:grid lg:grid-cols-[minmax(0,1fr)_26rem] lg:items-start lg:gap-12">
+        <img
+          src={doughnuts.photo}
+          alt={doughnuts.alt}
+          width={900}
+          height={1600}
+          decoding="async"
+          className="photo mb-8 aspect-[4/3] w-full max-w-[26rem] object-cover lg:order-2 lg:mb-0"
+        />
+        <section id="contact-details" tabIndex={-1} aria-label="Contact details" className="lg:order-1">
+          <ul className="max-w-[48rem] border-t-2 border-ink">
+            <RuledRow href={contact.whatsappHref} label="Message me on WhatsApp" value={contact.phoneDisplay} />
+            <RuledRow href={`tel:${contact.phoneTel}`} label="Call me" value={contact.phoneDisplay} />
+            <RuledRow href={`mailto:${contact.email}`} label="Email me" value={contact.email} />
+          </ul>
+        </section>
+      </div>
 
       {/* Forms: two links to the enquiry pages, as outlined buttons. */}
       <div className="page-width pb-12 md:pb-16">

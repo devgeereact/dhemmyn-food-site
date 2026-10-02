@@ -128,7 +128,7 @@ Seven pages. The owner chose to keep Privacy notice and Contact (2 October 2026)
 *About 60 words. Under one minute.*
 
 1. **Opening:** the page heading and the approved introduction. (You supply: nothing.)
-2. **Contact details:** three large tappable rows for WhatsApp, phone and email. Each also shows as plain text. (You supply: nothing. The details come from BUSINESS-RULES.md.)
+2. **Contact details:** three large tappable rows for WhatsApp, phone and email. Each also shows as plain text. One of the owner's photos, `doughnuts.jpg` (alt text in CONTENT.md, Contact), sits beside the rows from 1128 px and above them on a phone (added on 2 October 2026). (You supply: nothing. The details come from BUSINESS-RULES.md.)
 3. **Forms:** two links, "Ask for a custom cake" and "Ask about catering". (You supply: nothing.)
 4. **How ordering works:** the approved two numbered steps and "This website does not take payments." (You supply: nothing.)
 

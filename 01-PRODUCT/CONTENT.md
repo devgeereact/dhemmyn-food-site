@@ -364,6 +364,10 @@ Page description: Message me at Dhemmyn Food by email, phone or WhatsApp. Or sen
 
 Heading: Contact
 
+Picture: photos/doughnuts.jpg. Alt text: Round golden dough frying in hot oil in a black pan. (the same words as on Recipes, the owner's own photo)
+
+*Added on 2 October 2026 on the owner's instruction, so the page is not a page that could belong to anyone. It sits beside the contact details from 1128 px and above them on a phone, cropped to 4:3 in CSS so the three rows stay in the first screen on a phone. It is not a link. No other word on the page changes.*
+
 ### Contact details
 
 Three large rows that can be tapped. Each also shows the number or address as plain text, so a visitor on a laptop can copy it. The details come from BUSINESS-RULES.md, "Business details": [WhatsApp link and number], [phone number], [email address]. They are shown together, in this order. Each row opens in the visitor's own app.

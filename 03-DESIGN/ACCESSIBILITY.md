@@ -146,7 +146,7 @@ I looked at every file in 03-DESIGN/photos. Alt text is 8 to 15 words, says what
 | photos/bread-roll-5-minute.jpg | Unbaked bread rolls in a metal tray, glazed, the middle one covered in sesame seeds. | Unbaked bread rolls in a metal tray, glazed and covered in sesame seeds. | Home (Start with a recipe), Recipes |
 | photos/cookies.jpg | A baked cookie with a square of chocolate and sea salt flakes on top, on baking paper. | A baked cookie topped with a square of chocolate and flaky sea salt. | Home (Start with a recipe), Recipes |
 | photos/banana-bread.jpg | Slices of dark chocolate banana bread with Oreo pieces inside, lying on white paper. The owner confirmed it is a chocolate banana bread. | Slices of dark chocolate banana bread with pieces of Oreo biscuit inside, on white paper. | Recipes |
-| photos/doughnuts.jpg | Round golden dough frying in hot oil in a black pan. | Round golden dough frying in hot oil in a black pan. | Recipes |
+| photos/doughnuts.jpg | Round golden dough frying in hot oil in a black pan. | Round golden dough frying in hot oil in a black pan. | Recipes, Contact |
 | photos/dodo.jpg | Dark deep-fried pieces with flecks of red chilli, on a white plate. | Pieces of dark, deep-fried food with flecks of red chilli, on a white plate. | Recipes |
 | photos/oats.jpg | A clear tub of berry compote swirled with creamy yoghurt. | A clear tub of berry compote swirled with creamy yoghurt. | Recipes |
 | photos/instagram/birthday-cake-candles.jpg | A rectangular dark pink cake with dark piped borders, cream piped writing and tall wavy candles, on a silver board. | A dark pink birthday cake with piped borders, cream writing and tall wavy candles. | Home (From my kitchen) |

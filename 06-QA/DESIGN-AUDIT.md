@@ -26,7 +26,7 @@ Results: PASS, FAIL, FIXED (failed, then fixed and retested), PARTIAL, NOT TESTE
 
 ## Wow check, every page (2 October 2026)
 
-*Scores are the assistant's own, from screenshots at 390 and 1280 px and from measurements, not the owner's. Each cell is round 1 / round 2 (after the fixes below). Home had three rounds available and needed none after the earlier rounds. Every other page had one round. Screenshots: 06-QA/screenshots/{home,recipes,custom-cakes,catering,about-me,contact,privacy,not-found}-{390,1280}-{top,scrolled}.png.*
+*Scores are the assistant's own, from screenshots at 390 and 1280 px and from measurements, not the owner's. Each cell is round 1 / round 2 (after the fixes below). Contact distinctiveness has a third value, scored after the owner's doughnuts photo was added. Home had three rounds available and needed none after the earlier rounds. Every other page had one round. Screenshots: 06-QA/screenshots/{home,recipes,custom-cakes,catering,about-me,contact,privacy,not-found}-{390,1280}-{top,scrolled}.png.*
 
 | Page | First impression | Distinctiveness | Craft and detail | Typography | Motion | Phone at 390 px |
 |---|---|---|---|---|---|---|
@@ -35,7 +35,7 @@ Results: PASS, FAIL, FIXED (failed, then fixed and retested), PARTIAL, NOT TESTE
 | Custom cakes | 7 / 8 | 8 / 8 | 7 / 8 | 7 / 8 | 8 / 8 | 8 / 8 |
 | Catering | 7 / 8 | 7 / **7** | 7 / 8 | 7 / 8 | 8 / 8 | 8 / 8 |
 | About me | 8 / 8 | 8 / 8 | 8 / 8 | 7 / 8 | 8 / 8 | 8 / 8 |
-| Contact | 7 / 8 | 7 / **7** | 8 / 8 | 7 / 8 | 8 / 8 | 8 / 8 |
+| Contact | 7 / 8 | 7 / 7 / **8** | 8 / 8 | 7 / 8 | 8 / 8 | 8 / 8 |
 | Privacy notice | **6 / 6** | **6 / 6** | 8 / 8 | 8 / 8 | 8 / 8 | 8 / 8 |
 | Not found | 7 / 8 | **6 / 7** | 8 / 8 | 8 / 8 | 8 / 8 | 8 / 8 |
 
@@ -47,14 +47,14 @@ Results: PASS, FAIL, FIXED (failed, then fixed and retested), PARTIAL, NOT TESTE
 - Custom cakes: the cake red band with the piped icing is the most distinctive thing outside Home. Round 1 craft was 7 because the long form left its left column empty at 1280 px. The form heading now stays in view beside the form (`position: sticky`, checked: it sits 32 px from the top at a scroll of 1500 px).
 - Catering: the crumb band with a large title is strong, but it has no picture and no drawing, so it looks like a plain form page. Distinctiveness stays 7. No photo of food made for events exists yet ([NEEDS] in CONTENT.md).
 - About me: the profile picture hung from the left edge, the sponge band and the ruled social rows are varied and quiet. Page title fix as above.
-- Contact: three ruled rows, two outlined buttons, the numbered list and a closing band are clear and tappable, but nothing on it is hers except the type and colour. Distinctiveness stays 7.
+- Contact: three ruled rows, two outlined buttons, the numbered list and a closing band are clear and tappable. Round 2 distinctiveness was 7 because nothing on it was hers except the type and colour. The owner's doughnuts photo (above the rows on a phone, to their right from 1128 px) now makes it hers, so distinctiveness is 8, rescored from new screenshots at 390 and 1280 px. It is one tightly cropped frame, a little soft at 416 px wide, and the photo column is taller than the three rows at 1280 px, so it does not score higher than 8. All six Contact scores are now 8 or more.
 - Privacy notice: one line of text on purpose (owner decision, CONTENT.md says so), so first impression and distinctiveness cannot reach 8 until the real notice is written (WEB-32). The title is left at section size on purpose, because a legal page should stay quiet.
 - Not found: the page title now has the Home headline weight, which lifts first impression. Distinctiveness 7: one line, one button, no picture.
 - Motion on every page: hover lift and press feedback on buttons, rows and links, designed focus rings (every Tab stop on Home had one; the new pages use the same classes), one entrance on Home and one on Recipes' lead photo. Nothing else moves.
 
 **Measured, not scored** (Playwright on the owner's preview http://localhost:5175): 0 console errors on all 16 page and width pairs; no sideways scroll; no link, button or summary under 48 px; no broken pictures; one `<title>` on every page; the largest text on Home is the headline at 390 and 1280 px.
 
-**Layout shift** (Chromium's layout shift API, not Lighthouse; on the `npm run preview` build at http://localhost:4175, 390 px wide, cache off, 4 times CPU slowdown, 1.6 Mbps and 150 ms latency): Home 0.0356 (one shift at about 2.6 s in the hero scene), Contact 0.0008, every other page 0. All are under 0.1. Lighthouse layout shift is still NOT TESTED by the assistant: the DevTools Lighthouse tool is not permitted, and the Lighthouse command line is not installed. The owner said they will run Lighthouse themselves on the preview build and send the result.
+**Layout shift** (Chromium's layout shift API, not Lighthouse; on the `npm run preview` build at http://localhost:4175, 390 px wide, cache off, 4 times CPU slowdown, 1.6 Mbps and 150 ms latency): Home 0.0356 (one shift at about 2.6 s in the hero scene), Contact 0.0008 (measured again with the photo in place: same value), every other page 0. All are under 0.1. Lighthouse layout shift is still NOT TESTED by the assistant: the DevTools Lighthouse tool is not permitted, and the Lighthouse command line is not installed. The owner said they will run Lighthouse themselves on the preview build and send the result.
 
 ## Quality floor
 

@@ -124,7 +124,7 @@ No two sections on a page share a layout. Every section has one considered detai
 | Custom cakes | Cake red band with the piped drawing (see Illustration style). Enquiry form, one column up to 560 px, 2 px ink rule above. "Message me instead", quiet. How ordering works: the only numbered list, the numbers set in Display 800 because it is a real sequence. Common questions as a ruled disclosure list. Closing sponge band. |
 | Catering | Same order as Custom cakes. The opening band is crumb with no drawing, so red stays with cakes. |
 | About me | Introduction with the 200 px profile picture hung from the left edge. Four large social links ending the page. |
-| Contact | Three large ruled rows (WhatsApp, call, email), form links, How ordering works, closing step. |
+| Contact | Three large ruled rows (WhatsApp, call, email) with one of her photos, `doughnuts.jpg`, cropped to 4:3 and no wider than 26 rem (416 px): above the rows on a phone, to their right from 1128 px (added on 2 October 2026 on the owner's instruction, so the page is not anyone's). Form links, How ordering works, closing step. |
 | Privacy notice, Not found | Plain reading pages, one column, 68 ch. |
 
 ## Illustration style
