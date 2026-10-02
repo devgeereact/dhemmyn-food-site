@@ -16,13 +16,21 @@ const base =
 
 const looks = {
   primary: 'bg-cake-red text-paper hover:bg-cake-red-deep',
+  // Cake red cannot sit on a cake red band, so on dark surfaces the primary is paper with an ink label.
+  primaryOnDark: 'bg-paper text-ink hover:bg-paper/90',
   secondary: 'border border-ink text-ink hover:bg-ink/8',
   secondaryOnDark: 'border border-paper text-paper hover:bg-paper/10',
 }
 
 export default function ButtonLink({ to, children, variant = 'primary', onDark = false }: Props) {
   const look =
-    variant === 'primary' ? looks.primary : onDark ? looks.secondaryOnDark : looks.secondary
+    variant === 'primary'
+      ? onDark
+        ? looks.primaryOnDark
+        : looks.primary
+      : onDark
+        ? looks.secondaryOnDark
+        : looks.secondary
   return (
     <Link to={to} className={`${base} ${look}`}>
       {children}

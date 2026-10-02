@@ -13,7 +13,7 @@ type Props = {
 export default function LeadRecipe({ recipe, photoClassName = '', textClassName = '' }: Props) {
   return (
     <div className="contents group/lead">
-      <div className={`relative block overflow-hidden bg-sponge ${photoClassName}`}>
+      <div className={`relative overflow-hidden bg-sponge ${photoClassName}`}>
         <img
           src={recipe.photo}
           alt={recipe.alt}

@@ -54,50 +54,53 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      <div className="relative h-[clamp(27rem,112vw,35rem)] md:ml-auto md:w-full md:max-w-[40rem] lg:ml-0 lg:h-auto lg:min-h-[40rem] lg:max-w-none">
+      <div className="relative h-[clamp(27rem,120vw,35rem)] md:ml-auto md:h-[40rem] md:w-full md:max-w-[40rem] lg:ml-0 lg:h-auto lg:min-h-[40rem] lg:max-w-none">
         <div
           aria-hidden="true"
-          className="absolute inset-x-0 top-[40%] bottom-0 bg-sponge md:-left-[100vw] lg:top-[22%] lg:left-[18%]"
+          className="absolute inset-x-0 top-[40%] bottom-0 bg-sponge md:-left-[100vw] lg:top-[22%] lg:left-[min(18%,7.9rem)]"
         />
-        <motion.div
-          {...rise(0.12)}
-          className="absolute top-[5%] left-[4%] w-[min(50%,290px)] lg:top-16 lg:left-[6%]"
-        >
-          <div className="aspect-[873/1600] overflow-hidden">
+        {/* The photos keep the proportions of the 1280 px layout: the scene stops growing at 44rem, while the tray runs on to the screen edge. */}
+        <div className="absolute inset-y-0 left-0 w-full lg:max-w-[44rem]">
+          <motion.div
+            {...rise(0.12)}
+            className="absolute top-[5%] left-[4%] w-[min(50%,290px)] lg:top-16 lg:left-[6%]"
+          >
+            <div className="aspect-[873/1600] overflow-hidden">
+              <img
+                src={berryPhoto}
+                alt="A hand holds a slice of pale sponge with pockets of dark berry filling."
+                width={900}
+                height={1600}
+                fetchPriority="high"
+                className="photo -ml-[1.55%] w-[103.1%] max-w-none"
+              />
+            </div>
+          </motion.div>
+          <motion.div
+            {...rise(0)}
+            className="absolute right-[5%] bottom-[-22%] w-[min(56%,340px)] lg:right-[6%] lg:bottom-[-60px]"
+          >
             <img
-              src={berryPhoto}
-              alt="A hand holds a slice of pale sponge with pockets of dark berry filling."
+              src={rollsPhoto}
+              alt="A hand holds a glazed chocolate chip roll above a tray of more rolls."
               width={900}
               height={1600}
-              fetchPriority="high"
-              className="photo -ml-[1.55%] w-[103.1%] max-w-none"
+              className="photo w-full"
             />
-          </div>
-        </motion.div>
-        <motion.div
-          {...rise(0)}
-          className="absolute right-[5%] bottom-[-22%] w-[min(56%,340px)] lg:right-[6%] lg:bottom-[-60px]"
-        >
-          <img
-            src={rollsPhoto}
-            alt="A hand holds a glazed chocolate chip roll above a tray of more rolls."
-            width={900}
-            height={1600}
-            className="photo w-full"
-          />
-        </motion.div>
-        <motion.div
-          {...rise(0.24)}
-          className="absolute bottom-4 left-[4%] size-28 lg:bottom-7 lg:left-[3%] lg:size-50"
-        >
-          <img
-            src={profilePhoto}
-            alt="A slice of chocolate sponge with white cream and Oreo crumbs on a white plate."
-            width={400}
-            height={400}
-            className="photo size-full object-cover"
-          />
-        </motion.div>
+          </motion.div>
+          <motion.div
+            {...rise(0.24)}
+            className="absolute bottom-4 left-[4%] size-28 lg:bottom-7 lg:left-[3%] lg:size-50"
+          >
+            <img
+              src={profilePhoto}
+              alt="A slice of chocolate sponge with white cream and Oreo crumbs on a white plate."
+              width={400}
+              height={400}
+              className="photo size-full object-cover"
+            />
+          </motion.div>
+        </div>
       </div>
     </section>
   )

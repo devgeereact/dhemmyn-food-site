@@ -31,7 +31,7 @@ Hairline rules are ink at 30% opacity (`border-ink/30`). They are decorative and
 
 | Text | On | Ratio | Where | Needs | Result |
 |---|---|---|---|---|---|
-| Ink | Paper | 14.63 | Body text, headings, input text | 4.5 | PASS |
+| Ink | Paper | 14.63 | Body text, headings, input text, the primary button on dark | 4.5 | PASS |
 | Sponge | Paper | 11.30 | Hints, secondary text, input border | 4.5 (border 3) | PASS |
 | Paper | Sponge | 11.30 | Text in the recipe band, tray | 4.5 | PASS |
 | Paper | Crumb | 16.43 | Footer, Catering half | 4.5 | PASS |
@@ -97,8 +97,9 @@ The stage hides what overflows, so the hand holding the roll is cut by the botto
 
 - **Contrast of scale:** 40 px headline against 17 px text on a phone, 88 px against 20 px on a laptop. A 340 px photo against a 200 px square.
 - **In view without scrolling at 390 x 844:** headline, support line and button. The button bottom measured 306 px in the 34 px version, so about 320 px at 40 px: re-measure when built.
-- **No dead space:** the stage is at least 430 px tall on a phone and fills with layers 2 to 5.
-- **From 744 to 1127 px (NOT TESTED):** the same stacked layout as a phone, with the stage up to 640 px wide, aligned right, and the tray full width behind it.
+- **No dead space:** the stage is at least 430 px tall on a phone and fills with layers 2 to 5. On a phone it is 120% of the screen width (468 px at 390, capped at 560 px), so the 112 px slice overlaps the berry photo by about a third (41 px at 390) and not more than half. Changed on 2 October 2026 from 112%, where it overlapped by 62%.
+- **From 744 to 1127 px (checked by measurement on 2 October 2026 at 744, 900 and 1127):** the same stacked layout as a phone, with the stage up to 640 px wide and 640 px tall, aligned right, and the tray full width behind it. The slice overlaps the berry photo by 46%.
+- **Wider than 1304 px:** the photos stop growing. The scene is at most 44rem (704 px) wide and sits at the left of the right column, next to the headline, while the tray runs on to the right screen edge, starting 18% of the scene in (at most 7.9rem). Before this, at 1440 and 1920 px the photos moved apart and no longer overlapped. Checked at 1440 and 1920 px: the berry and roll photos overlap by 10 px, the roll photo ends level with the navigation's right edge at 1920 px.
 
 ## Section rhythm
 
@@ -110,7 +111,7 @@ No two sections on a page share a layout. Every section has one considered detai
 |---|---|---|
 | Opening | Layered collage | The tray block, and the hand bleeding off the bottom edge. |
 | Start with a recipe | Full-bleed sponge band, asymmetric split | The lead photo runs flush to the left edge and the full height of the band (laptop). Below, a ruled list: 2 px paper rule on top, 1 px rules between rows, thumbnails edge to edge. |
-| Cakes and catering | Two halves, text only | Left half cake red, right half crumb. Each link is set at lead recipe title size with a 2 px underline. Stacked on a phone, no gap. |
+| Cakes and catering | Two halves, text only | Left half cake red, right half crumb. Each half ends on a button (primary on dark, below), because an enquiry is the page's second job. Stacked on a phone, no gap. Changed on 2 October 2026 from a large underlined link, on the owner's instruction after the critique. |
 | Meet Demi | Generous quiet section, 96 px padding | "Hi, I'm Demi Yusuf." set at section heading size, the rest at lead size, one column. |
 | From my kitchen | Photo strip | Six tall photos edge to edge with 4 px paper gutters: 3 columns by 2 rows on a phone, one row of six from 1128 px. |
 | Footer | Crumb band | Phone number in tabular figures at lead size. |
@@ -147,6 +148,7 @@ Labels sit above fields. Cards are not used: the recipe row and the lead recipe 
 - Disabled: 60% opacity, no hover or lift. Used only while a form is sending.
 - Loading: the label reads "Sending" (or "Try again" after a failure), `aria-disabled="true"`, cursor "progress".
 - Error, empty: NOT APPLICABLE. The form carries the error.
+- On dark (Home, Cakes and catering, on cake red and crumb): paper fill and ink label, same size and radius. Cake red cannot sit on the cake red half, so the colours swap. Ink on paper is 14.63. Hover: paper at 90% fill and lift 2 px (120 ms). Focus: paper ring, 3 px offset. Press and loading as above.
 
 **Secondary button** (paper, ink label, 1 px ink border, same size). Hover: ink at 8% fill and lift 2 px. Press and focus as above. On dark: paper border and label, paper at 10% fill on hover. No screen uses two buttons yet.
 
