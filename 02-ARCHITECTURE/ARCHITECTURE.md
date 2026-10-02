@@ -52,7 +52,7 @@ As section 4 of PROJECT-OS.md, with three differences.
 
 ```
 app/
-  index.html        lang en-GB, default title, share tags, two hidden form copies
+  index.html        lang en-GB, share tags, two hidden form copies (no title: see below)
   vite.config.ts
   public/           robots.txt, sitemap.xml, favicon, share picture, _redirects, _headers
   src/
@@ -114,7 +114,7 @@ Netlify Forms. Checked against Netlify's own documentation on 2 October 2026.
 
 ## Page titles, descriptions and share tags
 
-Each page component renders its own `<title>` and `<meta name="description">`. The Not found page also renders `<meta name="robots" content="noindex">`. React 19 moves these into the document head, so no extra package is needed.
+Each page component renders its own `<title>` and `<meta name="description">`. The Not found page also renders `<meta name="robots" content="noindex">`. React 19 moves these into the document head, so no extra package is needed. `app/index.html` holds no `<title>` of its own: React adds its own beside it and does not replace it, so the page would have two titles (seen on Home, 2 October 2026). A wrong address shows no title until the Not found page exists.
 
 Share tags (Open Graph and the card tags) live once in `app/index.html`, so every page shares the same preview. Most social apps do not run the site's code. They need a full address, so the address is the `.netlify.app` test address until a domain exists (D-04). The share picture is `profile-chocolate-sponge.jpg` for now (400 px square), because no wide photo exists. [NEEDS: a wide photo for a better share preview.]
 

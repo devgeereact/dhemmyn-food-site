@@ -32,14 +32,97 @@
   --text-h2--line-height: 1.05;
   --text-h2-lg: clamp(2.25rem, 0.6rem + 3.2vw, 3.25rem);
   --text-h2-lg--line-height: 1.05;
+  --text-h3-lead: 1.5rem;
+  --text-h3-lead--line-height: 1.1;
+  --text-h3-lead-lg: 2rem;
+  --text-h3-lead-lg--line-height: 1.1;
+  --text-h3: 1.25rem;
+  --text-h3--line-height: 1.15;
+  --text-h3-lg: 1.375rem;
+  --text-h3-lg--line-height: 1.15;
+  --text-lead: 1.0625rem;
+  --text-lead--line-height: 1.5;
+  --text-lead-lg: 1.25rem;
+  --text-lead-lg--line-height: 1.5;
+  --text-body: 1.0625rem;
+  --text-body--line-height: 1.5;
+  --text-body-lg: 1.125rem;
+  --text-body-lg--line-height: 1.5;
+  --text-small: 0.875rem;
+  --text-small--line-height: 1.43;
+  --text-caption: 0.8125rem;
+  --text-caption--line-height: 1.23;
 }
 
+/* The focus ring is cake red, and paper on dark surfaces (sponge, crumb, ink, cake red). */
 :root {
-  color-scheme: light;
+  --focus: var(--color-cake-red);
 }
 
-body {
-  background-color: var(--color-paper);
-  color: var(--color-ink);
-  font-family: var(--font-body);
+@layer base {
+  html {
+    color-scheme: light;
+    scrollbar-color: var(--color-sponge) var(--color-paper);
+  }
+
+  body {
+    @apply bg-paper font-body text-body text-ink md:text-body-lg;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background-color: var(--color-cake-red);
+    color: var(--color-paper);
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+  }
+
+  /* Elements that only take focus from code (main and the page heading) need no ring. */
+  [tabindex='-1']:focus {
+    outline: none;
+  }
+}
+
+@utility surface-dark {
+  --focus: var(--color-paper);
+}
+
+/* One class on every photo: settles the cool baking paper and grey stone. */
+@utility photo {
+  background-color: var(--color-sponge);
+  filter: sepia(0.06) saturate(1.04);
+}
+
+@utility link-line {
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.22em;
+
+  &:hover {
+    text-decoration-thickness: 3px;
+  }
+}
+
+/* Gutters: 16 px, 32 px from 744 px, 48 px from 1128 px. Content up to 1280 px, centred. */
+@utility page-width {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 80rem;
+  padding-inline: 1rem;
+
+  @media (width >= 46.5rem) {
+    padding-inline: 2rem;
+  }
+
+  @media (width >= 70.5rem) {
+    padding-inline: 3rem;
+  }
 }
