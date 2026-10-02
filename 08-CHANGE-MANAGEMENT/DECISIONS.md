@@ -32,7 +32,7 @@
 
 - Date: 2 October 2026
 - Decision: Direction A, Warm Craft with the layered collage hero, with the ruled recipe list from direction B. The signature moment is "the lift" (see 03-DESIGN/DESIGN-DNA.md).
-- Why: A's overlapping photos carry the owner's hands reaching up with the bake, and use colours from her own bakes. B's ruled list is quick to scan and replaces the three identical cards on Home.
+- Why: in the owner's words (2 October 2026): "the overlapping photos of my hands holding the bake feel like my kitchen and my videos, and the ruled list is the easiest to read on a phone." A's overlapping photos carry the hands reaching up with the bake, and use colours from her own bakes. B's ruled list also replaces the three identical cards on Home.
 - Options considered: B, Editorial Print with a split screen. C, Soft Organic with a full-bleed photograph, which needs wide photos to work on a laptop. Prototypes and screenshots are in 03-DESIGN/directions/.
 - What it means for the project: DESIGN-SYSTEM.md is built from A. Home and Recipes use the ruled list. The B and C files stay as reference only and are never published.
 - Revisit if: the owner sends wide photos, or the first screen does not score 8 or more on the wow check in PROJECT-OS.md section 6.

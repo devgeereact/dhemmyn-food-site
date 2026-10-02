@@ -17,6 +17,13 @@
 - Tested: the commands and checks run, and the result
 ```
 
+## [2026-10-02] Design system written
+
+- Change: 03-DESIGN/DESIGN-SYSTEM.md filled under every heading from direction A with the ruled list from B: six colours with the contrast of every text pair, two Fontsource typefaces, the type scale, spacing and corner steps, the hero composition, section rhythm, the piped-icing drawing, every component state, the motion system, the signature moment (the lift), browser surfaces, photography treatment and the Tailwind theme variables. The owner's reason for the direction was added to D-02 in DECISIONS.md. The owner approved six open points: the 40 px phone headline, the new cake red deep shade, cake red judged by eye, the untested items, the reduced motion approach and 52 px buttons.
+- Reason: step 7, WEB-17
+- Files: 03-DESIGN/DESIGN-SYSTEM.md, 08-CHANGE-MANAGEMENT/DECISIONS.md, 08-CHANGE-MANAGEMENT/CHANGELOG.md
+- Tested: PARTIAL. Contrast ratios computed with the WCAG formula (all text pairs PASS). Font family names and axes read from the Fontsource package CSS. Tailwind theme syntax and the Motion reduced motion behaviour read from tailwindcss.com and motion.dev (Context7 permission was not granted). Hero sizes at 390 and 1280 pixels come from the direction A prototype. NOT TESTED: layout from 744 to 1127 pixels, the photo warmth filter, the 40 px phone headline, the Tailwind names `--text-*` and `--radius-*`. No site code exists, so build and lint are NOT APPLICABLE.
+
 ## [2026-10-02] Design direction and design base chosen
 
 - Change: three direction prototypes added in 03-DESIGN/directions/ with screenshots at 390 and 1280 pixels. The owner chose direction A with the ruled list from B. The getdesign "airbnb" file was saved over the placeholder 03-DESIGN/BASE-DESIGN.md as a structure-only reference. D-02 and D-03 added to DECISIONS.md. The design base row added to CREDITS.md. "Chosen direction" filled in DESIGN-DNA.md.
