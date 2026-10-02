@@ -17,6 +17,20 @@
 - Tested: the commands and checks run, and the result
 ```
 
+## [2026-10-02] Enquiry retention decided
+
+- Change: DATA-PRIVACY.md now says enquiries are kept for 6 months after the owner's last message with that person, then deleted from Netlify and the mailbox. The owner checks at each monthly update. The mailbox question (who else can read info@mimmycare.com) stays open in PERMISSIONS.md and DATA-PRIVACY.md.
+- Reason: owner decision on the open items from step 8, WEB-20
+- Files: 05-SECURITY/DATA-PRIVACY.md, 08-CHANGE-MANAGEMENT/CHANGELOG.md
+- Tested: NOT APPLICABLE for code. The text was checked against the owner's wording. NOT TESTED: that deleting in the Netlify dashboard removes the enquiry fully, and how long Netlify and Akismet keep their own copies.
+
+## [2026-10-02] Security and privacy files written
+
+- Change: 05-SECURITY/SECURITY.md filled (secrets, what is public, security headers with a starting Content-Security-Policy, form and spam, packages, accounts, how the rules are checked). DATA-PRIVACY.md filled with both enquiry forms, who receives the information, cookies, rights, the ICO fee and the state of the privacy notice. AUTH-MODEL.md marked Not applicable. PERMISSIONS.md filled with who can access GitHub, Netlify, the domain registrar and the form inbox.
+- Reason: step 8, WEB-20
+- Files: 05-SECURITY/SECURITY.md, 05-SECURITY/DATA-PRIVACY.md, 05-SECURITY/AUTH-MODEL.md, 05-SECURITY/PERMISSIONS.md, 08-CHANGE-MANAGEMENT/CHANGELOG.md
+- Tested: NOT TESTED for every header value, the Content-Security-Policy and the "no cookies" claim: no app exists. The .gitignore lines for .env files were checked by reading the file. The form fields and who receives them were copied from CONTENT.md, UX-SPEC.md and INTEGRATIONS.md. Open: how long enquiries are kept, trading status, the mailbox host, the ICO self-assessment, the lawful basis, where Netlify and Akismet store data, and the account owners. No site code exists, so build and lint are NOT APPLICABLE.
+
 ## [2026-10-02] Architecture written
 
 - Change: 02-ARCHITECTURE/ARCHITECTURE.md filled (stack, routes, folder layout, shared components, how the form is sent, titles and share tags, fonts and photos, page changes, build and publish). INTEGRATIONS.md filled with every outside service and a failure plan. DATA-MODEL.md, API-SPEC.md, PWA-SPEC.md, OFFLINE-SPEC.md and SYNC-SPEC.md marked Not applicable. UPDATE-STRATEGY.md filled with the short normal-site text. D-04 to D-11 added to DECISIONS.md, and the date added to D-01. The two [NEEDS] lines about hosting and form handling in PROJECT-CONTEXT.md and PRODUCT-SPEC.md now point to INTEGRATIONS.md.

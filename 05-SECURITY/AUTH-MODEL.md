@@ -4,10 +4,6 @@
 > **Filled by:** WEB-20 (step 8)
 > **Applies to:** only sites with log-ins
 
-**Status:** Empty
+**Status:** Not applicable
 
-*A small business site has no log-ins. If so, replace everything below this line with:*
-
-*Not applicable: the site has no log-ins.*
-
-*If the site later needs log-ins or a database, record the choice and the provider in 08-CHANGE-MANAGEMENT/DECISIONS.md first, then fill this file: how people sign up and sign in, password reset, how long a session lasts, and how logging out works.*
+Not applicable: the site has no log-ins. Visitors do not sign up or sign in, and the owner has no admin area on the site. The owner's own log-ins to GitHub and Netlify belong to those services, and are listed in 05-SECURITY/PERMISSIONS.md.
