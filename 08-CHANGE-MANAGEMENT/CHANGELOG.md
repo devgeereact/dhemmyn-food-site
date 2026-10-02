@@ -17,6 +17,27 @@
 - Tested: the commands and checks run, and the result
 ```
 
+## [2026-10-02] P4 approved and moved under its pages
+
+- Change: P4 (How ordering works) approved by the owner in its changed form and moved under Custom cakes, Catering and Contact in CONTENT.md, label removed. No proposed draft is left.
+- Reason: the owner approved P4
+- Files: 01-PRODUCT/CONTENT.md, 08-CHANGE-MANAGEMENT/CHANGELOG.md
+- Tested: wording compared with the owner's messages of 2 October 2026. No site code changed, so build and lint are not applicable.
+
+## [2026-10-02] Approved words moved under their pages
+
+- Change: P1 (About me), P2 (Custom cakes), P3 (Catering), P5 (Common questions), P6 (Recipes) and P7 (Contact) approved by the owner and moved under their page headings in CONTENT.md, label removed. Owner edits applied: the "how I started" line dropped from About me, the three [NEEDS] lines dropped from P2 and P3, the written-recipes question and the payment [NEEDS] removed from P5. P4 changed (step 2 now "I get back to you with the details and a price.", step 3 removed) and stays proposed. The [Page 2] and [Page 3] placeholders became Recipes, About me, Custom cakes, Catering and Contact, in the order of questionnaire Q8. The held-back list gained the "how you started" and "written recipes" items.
+- Reason: the owner answered the WEB-08 approval list
+- Files: 01-PRODUCT/CONTENT.md, 08-CHANGE-MANAGEMENT/CHANGELOG.md
+- Tested: wording compared with the owner's message of 2 October 2026. No site code changed, so build and lint are not applicable.
+
+## [2026-10-02] Proposed material drafted
+
+- Change: seven proposed drafts added under "Proposed material" in CONTENT.md (About me, Custom cakes, Catering, How ordering works, Common questions, Recipes introduction, Contact introduction), plus a list of held-back items. Every draft is labelled "Proposed: owner to confirm". CONTENT.md Status set to Draft.
+- Reason: WEB-08, draft the words visitors will expect, using only facts the owner gave or that have a source
+- Files: 01-PRODUCT/CONTENT.md, 08-CHANGE-MANAGEMENT/CHANGELOG.md
+- Tested: facts checked against QUESTIONNAIRE.md and BUSINESS-RULES.md. Nothing is published, and nothing with the Proposed label goes on the site. No site code changed, so build and lint are not applicable.
+
 ## [2026-10-02] Product files written
 
 - Change: filled PROJECT-CONTEXT.md, PRODUCT-SPEC.md, USER-ROLES.md and the template sections of BUSINESS-RULES.md. Status set to Done on all four. Missing facts stay as [NEEDS].
