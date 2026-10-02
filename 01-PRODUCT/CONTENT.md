@@ -70,8 +70,13 @@ Intro: Here to show you good food. Cakes, bread rolls, scones, cookies, doughnut
 
 Button: See the recipes (goes to /recipes)
 
-Picture: photos/profile-chocolate-sponge.jpg
-Alt text: A slice of chocolate sponge with white cream and Oreo crumbs on a white plate.
+Pictures, three, layered (see DESIGN-DNA.md, "Signature moment"):
+
+- photos/chocolate-chip-rolls.jpg. Alt text: A hand holding a glazed bread roll with chocolate chips, with more rolls on a baking tray behind it.
+- photos/berry-sponge-slice.jpg. Alt text: A hand holding a slice of pale sponge with pockets of dark berry filling, with more slices behind it on a grey surface.
+- photos/profile-chocolate-sponge.jpg. Alt text: A slice of chocolate sponge with white cream and Oreo crumbs on a white plate.
+
+*Changed on 2 October 2026 on the owner's instruction: the opening had one picture, the profile picture, and now has three. The first alt text is the one already approved for the same picture. The berry sponge alt text was written from the picture on 2 October 2026, and the owner can reword it. These pictures are not links.*
 
 ### Start with a recipe
 
@@ -79,13 +84,15 @@ Heading: Start with a recipe
 
 Large card: Autumn cake series. Link: Watch on YouTube
 
-Three smaller cards, each with the link Watch on YouTube:
+Three more recipes as a ruled list (a thin line between rows, no boxes), each row with a thumbnail, the title and the link Watch on YouTube:
 
 - Scones
 - The 5 minute bread roll
 - Cookies
 
-Link under the cards: See all recipes (goes to /recipes)
+Link under the list: See all recipes (goes to /recipes)
+
+*Changed on 2 October 2026 on the owner's instruction: the three smaller cards in a row became a ruled list. The words are the same. See the Home plan in 03-DESIGN/UX-SPEC.md.*
 
 *The thumbnails and video links are the ones for the Recipes page (photos/ and SOCIAL.md). "Latest" is not used in the heading, because only the autumn cake series is known to be new.*
 
@@ -118,9 +125,11 @@ Link name for each picture: "Watch the video on YouTube: " followed by the alt t
 | birthday-cake-candles.jpg | A rectangular cake with dark pink icing, dark piped borders and tall wavy candles in gold, yellow, purple and green, on a silver board. |
 | blue-cake-cutting.jpg | A round cake with blue icing, seen from above and cut in half to show the dark sponge layers. Piped hearts and white and dark sweets sit on top. |
 | mini-cupcakes.jpg | A pile of golden sponge cupcakes in white paper cases. |
-| chocolate-chip-rolls.jpg | A hand holding a glazed bread roll with chocolate chips, with more rolls on a baking tray behind it. |
+| braided-chocolate-bread.jpg | Glazed braided bread with dark chocolate through it, in a tray lined with baking paper, with one piece pulled up to show the soft inside. |
 | summer-wine-cake.jpg | A pink iced cake with dark piped edges, cut into slices on a silver board. |
 | chocolate-chunk-loaf.jpg | A loaf with large pieces of dark chocolate on top, and one slice cut beside it on baking paper. |
+
+*Changed on 2 October 2026 on the owner's instruction: the owner moved chocolate-chip-rolls.jpg to the first screen (see Opening above), and braided-chocolate-bread.jpg took its place in the fourth spot. Its alt text was written from the picture on 2 October 2026, and the owner can reword it. Its link is in 01-PRODUCT/SOCIAL.md.*
 
 ## Recipes
 

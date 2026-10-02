@@ -36,13 +36,14 @@
 - The Instagram page could not be read without logging in, and the owner could not get the Instagram post links. So each of the six pictures links to the YouTube Short it is the cover of (owner decision, 2 October 2026). The section is called "From my kitchen" and keeps a "Follow on Instagram" link to https://www.instagram.com/dhemmynfood/.
 - Each picture's link name is "Watch the video on YouTube: " followed by its alt text, so a screen reader says the link opens the video on YouTube. The links open in a new tab.
 - Alt text lives in 01-PRODUCT/CONTENT.md, Home, "From my kitchen". The image credits are in 03-DESIGN/CREDITS.md.
+- On 2 October 2026 the owner moved chocolate-chip-rolls.jpg out of this folder to 03-DESIGN/photos for the Home first screen (it keeps its YouTube Short, https://www.youtube.com/shorts/mJt9TWOVqpw, but is no longer a link in this strip). braided-chocolate-bread.jpg took its place. The strip still has six pictures. The first screen pictures, chocolate-chip-rolls.jpg and berry-sponge-slice.jpg, do not link anywhere.
 
 | Image file | Link (YouTube Short) | Alt text |
 |---|---|---|
 | birthday-cake-candles.jpg | https://www.youtube.com/shorts/ajUFpqE7ows | See CONTENT.md, Home |
 | blue-cake-cutting.jpg | https://www.youtube.com/shorts/pNw2vVMCILU | See CONTENT.md, Home |
 | mini-cupcakes.jpg | https://www.youtube.com/shorts/JPA1_ct8rYA | See CONTENT.md, Home |
-| chocolate-chip-rolls.jpg | https://www.youtube.com/shorts/mJt9TWOVqpw | See CONTENT.md, Home |
+| braided-chocolate-bread.jpg | https://www.youtube.com/shorts/nZwzO2w93mY | See CONTENT.md, Home |
 | summer-wine-cake.jpg | https://www.youtube.com/shorts/OlJUTrU39CQ | See CONTENT.md, Home |
 | chocolate-chunk-loaf.jpg | https://www.youtube.com/shorts/MdYKirQKcqQ | See CONTENT.md, Home |
 

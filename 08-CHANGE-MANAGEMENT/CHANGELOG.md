@@ -17,6 +17,13 @@
 - Tested: the commands and checks run, and the result
 ```
 
+## [2026-10-02] Design DNA
+
+- Change: DESIGN-DNA.md filled under every heading except Chosen direction, which waits for WEB-15. The owner confirmed one accent red from the birthday cake. Home "Start with a recipe": the three smaller cards in a row became a ruled list, in UX-SPEC.md and CONTENT.md. Home first screen: three layered pictures (chocolate-chip-rolls.jpg, berry-sponge-slice.jpg, profile picture) instead of one. "From my kitchen": braided-chocolate-bread.jpg replaced chocolate-chip-rolls.jpg, in CONTENT.md and SOCIAL.md. The owner moved the picture files and updated CREDITS.md before this change.
+- Reason: step 7 design plan. PROJECT-OS.md section 6 bans three identical cards in a row. The owner chose the hand pictures for the first screen.
+- Files: 03-DESIGN/DESIGN-DNA.md, 03-DESIGN/UX-SPEC.md, 01-PRODUCT/CONTENT.md, 01-PRODUCT/SOCIAL.md, 08-CHANGE-MANAGEMENT/CHANGELOG.md. Owner edits in the same commit: 03-DESIGN/CREDITS.md and the three picture files.
+- Tested: PARTIAL. Searched the Markdown files: the only remaining mentions of chocolate-chip-rolls.jpg and "three smaller cards" are the new notes, the first screen entries and CREDITS.md. No site code exists and the app was not run, so build, lint and screenshots are NOT APPLICABLE. Photo pixel sizes NOT TESTED (taken from CREDITS.md). Alt text for berry-sponge-slice.jpg and braided-chocolate-bread.jpg was written by the assistant from the pictures, and the owner can reword it.
+
 ## [2026-10-02] Reworded lines approved
 
 - Change: the owner approved all the reworded lines on Home, Recipes, Custom cakes, Catering, About me and Contact, including "Here to show you good food". The "not approved yet" notes in CONTENT.md now say approved. The Footer was not reworded and is unchanged.

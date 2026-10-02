@@ -4,57 +4,100 @@
 > **Filled by:** WEB-14 (step 7), then the chosen direction from WEB-15 and WEB-17
 > **Applies to:** every site
 
-**Status:** Empty
+**Status:** Saved on 2 October 2026 after the owner confirmed the red accent, the ruled list on Home and the first screen pictures. Chosen direction still open until WEB-15.
 
 *Every design decision in DESIGN-SYSTEM.md must trace back to this file. Keep it to one page.*
 
 ## Design Read
 
-*One line: what the site is, for whom, and the mood. For example: a homepage for local families ordering a celebration cake from a home baker; generous, hand-made, joyful.*
+A phone-first homepage for UK followers of Demi Yusuf's short upright baking videos, and for people asking her for a cake or catering; warm, homely and generous, a kitchen you could stand in and a bake you could make today.
 
 ## Motifs from the trade
 
-*Materials, tools, colours, textures, shapes and the words customers use. These are the raw ideas no template has.*
+- **Colours from the bake, not from a palette tool.** Chocolate sponge brown (deep, a little red in it). White cream, cool and slightly blue like the cream and the baking paper in her photos, not yellow or beige. Oreo crumb, near-black brown. One accent: the red of her piped birthday cake, confirmed by the owner on 2 October 2026. Neutrals are the brown, cream and crumb family. The red is the only accent. The profile picture supplies the neutrals and her cake photos supply the red.
+- **Her surfaces.** Crinkled baking paper, metal trays, silver cake boards, white plates and paper, a black frying pan, a grey stone worktop. These are what her photos show. No wooden tables, flour clouds or props she does not use.
+- **Her hands.** Her hands hold the bake up to the camera. Hands are the scale and the pointer of the site.
+- **The upright frame.** Her videos are short and upright (9:16). Her stills are that shape. The site is built around tall pictures, not around landscape banners.
+- **Piped writing.** Cream script and chocolate rope borders on a red cake. Used once, drawn, on the Custom cakes page. Never as a font.
+- **The wedge.** A slice of sponge on a plate, the shape of the profile picture. Used as a small stamp, not as a pattern.
+- **Her words.** Easy. Authentic. Whip up. Pack cake with me. Here to show you good food. From my kitchen. Short, first person, no sales words (see Voice in CONTENT.md).
+- **Scones sit beside dodo.** The range is wide, so the look must not become an English tea room: no gingham, doilies, chalkboards, rolling pins or chef hats.
 
 ## Audience and mood
 
-*Who visits, on which device, and how the site should make them feel.*
+- **Who:** followers from Instagram, TikTok and YouTube, mostly UK, arriving on a phone from a video. Also people asking for a birthday cake or event food. Ages not known.
+- **How they feel:** like a friend showing them the bake in her own kitchen. The thought is "I could make that", never "that is fancy".
+- **Not:** fancy, childish, shop-like or tidy to the point of cold.
 
 ## Dials
 
-*Score each from 1 (calm) to 10 (bold), with one line of reason. They guide every later choice.*
-
-- Layout boldness: [1 to 10] *1 is a quiet, regular grid; 10 is broken grids, overlaps and big type.*
-- Motion: [1 to 10] *1 is almost none; 10 is rich, orchestrated movement. Most small businesses suit 3 to 6.*
-- Density: [1 to 10] *1 is lots of space and few words per screen; 10 is packed, like a catalogue.*
+- **Layout boldness: 5.** Bold in one place, the homepage first screen: a big headline and overlapping tall photos. Below it the layout is plain and easy to scan. Not 7 or more, because homely means a regular, readable page, not a poster.
+- **Motion: 3.** Her videos already move; the site stays calm. One entrance on the first screen, careful hover, press and focus feedback, nothing scroll-linked, nothing slow.
+- **Density: 4.** Pages are short (Home about 100 words, Recipes about 60). Generous space on Home and About me. The Recipes list is tighter and ruled so eight recipes scan quickly on a phone.
 
 ## Signature moment
 
-*The one bold thing visitors remember, such as a piped icing line that draws under the headline. Only one, and it lives on the homepage's first screen (it may echo elsewhere).*
+**The lift.** The page opens the way her videos do: her hand comes up from the bottom edge of the screen holding the bake towards you.
+
+- On a phone, the first picture is photos/chocolate-chip-rolls.jpg, a hand holding a roll. It sits against the bottom edge of the screen, so the hand reaches up from off-screen and the bake sits in the upper half of its frame, under the headline and button. photos/berry-sponge-slice.jpg, a second hand holding a bake, overlaps it. The small profile picture of the chocolate sponge (about 200 CSS pixels wide at most) overlaps both.
+- On load the headline fades in by opacity only. The tall photo then rises about 60 px into place with a slight settle in size, easing out. The second and third pictures follow 120 ms apart. Transform and opacity only. All of it under 900 ms. Under reduced motion everything is simply there.
+- Echo: the lead recipe on Recipes rises the same way, once.
+- The piped line under a headline is not used here. Any cake baker could have it. The upright frame and the reaching hand are hers.
 
 ## Never use on this site
 
-*The banned defaults from section 6 of PROJECT-OS.md, plus anything the owner dislikes.*
+From section 6 of PROJECT-OS.md: purple-to-blue glow gradients; cream with terracotta and a serif heading as a reflex; near-black with one acid-green accent; three identical rounded cards in a row; Inter on slate grey; gradient text; decorative glass effects; small labels above every heading; fake numbered markers; "big number, small label" statistic rows; stock illustrations of people.
+
+Also, for this business:
+
+- Terracotta, clay orange, yellowed or "parchment" beige, and paper-texture backgrounds. The cream is cool and white.
+- Thin, high-contrast serif headings and script fonts for headings.
+- Tea-room clichés: gingham, doilies, chalkboards, rolling pins, whisks, cupcake or chef-hat icons, sprinkles and confetti.
+- Cartoon or childish shapes. Playful Pop is out.
+- Stock food photos, AI pictures, or photos of other people's cakes.
+- Photos in rounded boxes, with borders, frames or soft grey shadows. Photos fill their space edge to edge.
+- Text or rules laid over a busy part of a photo, and dark gradient scrims.
+- Play-button icons on thumbnails. Videos are links, never players.
+- Follower counts, star ratings, "latest", "new" or "popular" tags, or any number the owner has not confirmed.
+- Pop-ups on arrival, autoplay video, and slow or looping motion.
 
 ## Reference board
 
-*Three sites from award galleries (awwwards.com, godly.website, siteinspire.com) or the best-made sites in the trade. For each, one specific technique to borrow: a type scale, a layout move, a motion idea. Never the look as a whole, and never their layouts, words or pictures. A borrowed technique never runs across text or photos.*
+Techniques from the owner's notes, not re-checked on the live sites. Technique only. Never their layouts, words or pictures. A borrowed technique never runs across text or photos.
 
 | Site | Technique to borrow |
 |---|---|
-| | |
+| ottolenghi.co.uk | Food close-ups cropped edge to edge. Every photo fills its frame with no border, padding or rounding, cropped tight on the food. Each photo gets its own crop point. Nothing is laid over it. |
+| bonappetit.com | A big, confident headline type scale. One large step between the headline and everything else. The headline is the largest text at every width, under eight words, two lines at most at 390 pixels. Scale only, not their typeface or layout. |
+| cooking.nytimes.com | A clear, ruled list of recipes. A thin rule between rows, title first, one link per row, even row height, so a visitor can scan down. The rule runs between rows in the text column and never crosses a photo. No ratings, tags or save counts. Used on Recipes, and on Home for the three recipes under the lead recipe, so they are a list and not three identical cards. |
 
 ## Archetypes and hero patterns
 
-*Name the nearest two or three archetypes from the menu below (also in section 6 of PROJECT-OS.md), with the reason, and pair each with a hero pattern. Mixing is fine if you name them. WEB-15 builds one direction from each, on three different hero patterns.*
+1. **Warm Craft + Layered collage (my lead choice).** Warm Craft because the colours come from her bake, the pictures overlap and the hands are at work. Collage because two tall hand pictures and the small profile slice overlap on the first screen and carry the lift.
+2. **Editorial Print + Split screen.** Editorial Print for the Bon Appétit headline scale and the ruled recipe list. Split screen puts the large headline on one side and one tall photo on the other, bleeding to the screen edge. The tall photo is her natural shape. The heading face stays heavy and friendly, not a thin serif.
+3. **Warm Craft + Full-bleed photograph (phone first).** On a phone one upright still fills the first screen like one of her videos, with the headline in a solid brown block below it. Caveat: her stills are about 900 px wide, so on a laptop this cannot fill the width without going soft. There it falls back to a tall panel beside a brown block, close to direction 2. Direction 3 only differs on a laptop if she sends wide photos.
+
+Playful Pop and Quiet Luxury are rejected: childish and fancy.
 
 ## Photography
 
-*Real photos or not yet. The shot list of 10 to 20 photos for this trade: close details (texture, tools, hands at work), process shots, one wide context shot, each both wide and tall. If there are no photos yet: drawings in code, or labelled and credited stock from Unsplash or Pexels as a stopgap, never pretending to show the business's own work, premises or team.*
+**What exists.** Seventeen of her own pictures (CREDITS.md): eight recipe covers, six cake and bake stills in the instagram folder, two hand pictures for the first screen (chocolate-chip-rolls.jpg, berry-sponge-slice.jpg) and the profile picture. They are covers of her own videos, upright, resized to 1600 px tall. The profile picture is 400 px and must stay under about 200 CSS pixels wide to stay sharp. The file name on Linktree suggests a larger camera original exists: ask for it.
+
+**Used as supplied.** No retouching, no crops saved. Cropping is done in CSS with a crop point per photo. One shared colour treatment in CSS, a light warm lift to settle the cool baking paper, white fabric and grey stone, tested so the red cake stays red. No photo waits for a grade. Set in DESIGN-SYSTEM.md.
+
+**Gaps against the shot list (10 to 20 photos, wide and tall).**
+
+- Wide versions of the best bakes. None exist now. Needed for any full-width band on a laptop.
+- More hands at work: kneading, piping, pouring, lifting a tray. Two hand-holding-a-bake pictures exist.
+- Process on baking paper and trays: batter, dough, glaze.
+- One wide context shot of her kitchen counter, with nothing staged.
+- Finished custom cakes with piped writing, for the Custom cakes page. None supplied (still a [NEEDS] in CONTENT.md).
+- Food for events, for the Catering page. None supplied.
+- Until they exist, use only what she has. No stock, no drawings. Record anything new in CREDITS.md.
 
 ## Chosen direction
 
-*Filled after WEB-15: which direction was chosen or mixed, and why. Also recorded in 08-CHANGE-MANAGEMENT/DECISIONS.md.*
+[NEEDS: owner's choice from the three directions in WEB-15.] My recommendation is direction 1 with the ruled list from direction 2. To be recorded in 08-CHANGE-MANAGEMENT/DECISIONS.md.
 
 ## Archetype menu
 
