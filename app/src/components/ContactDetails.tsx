@@ -12,9 +12,9 @@ export default function ContactDetails({ className = '' }: { className?: string 
     <ul className={`flex flex-col ${className}`}>
       {rows.map((row) => (
         <li key={row.label}>
-          <a href={row.href} className="link-line inline-block py-3">
-            <span className="text-small">{row.label}</span>{' '}
-            <span className="text-lead tabular-nums">{row.value}</span>
+          <a href={row.href} className="link-line inline-block py-2">
+            <span className="block text-small">{row.label}</span>
+            <span className="block text-lead tabular-nums">{row.value}</span>
           </a>
         </li>
       ))}

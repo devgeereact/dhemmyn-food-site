@@ -4,10 +4,10 @@
 > **Filled by:** WEB-29 (step 10), rechecked by WEB-30 and WEB-31
 > **Applies to:** every site
 
-**Status:** Empty
+**Status:** In progress. Only the wow check is run, on the homepage. Every other table below is NOT TESTED.
 
-**Last run:** [date]  
-**Tested on:** [npm run preview at http://localhost:4173, or the live address]
+**Last run:** 2 October 2026  
+**Tested on:** the owner's dev preview at http://localhost:5175, with Playwright at 390 and 1280 pixels wide. Not the `npm run preview` build, so nothing here is a measurement of speed or layout shift. Screenshots are in 06-QA/screenshots. Layout shift was measured separately on the preview build at http://localhost:4175: 0.036 at 390 px with throttling, from the browser's layout shift API and not from Lighthouse. Lighthouse layout shift stays NOT TESTED. Details are in 08-CHANGE-MANAGEMENT/CHANGELOG.md.
 
 Use screenshots at 390 and 1280 pixels wide (Playwright MCP), the live preview, and DESIGN-DNA.md and DESIGN-SYSTEM.md. If installed, also run /impeccable audit and the web-design-guidelines skill and record what they find here.
 
@@ -17,12 +17,12 @@ Results: PASS, FAIL, FIXED (failed, then fixed and retested), PARTIAL, NOT TESTE
 
 | Check | Result | Evidence |
 |---|---|---|
-| First impression: score and reason | NOT TESTED | |
-| Distinctiveness (swap test): score and reason | NOT TESTED | |
-| Craft and detail: score and reason | NOT TESTED | |
-| Typography: score and reason | NOT TESTED | |
-| Motion: score and reason | NOT TESTED | |
-| Phone experience at 390 pixels: score and reason | NOT TESTED | |
+| First impression: score and reason | PASS: 8 | Home, 390 and 1280. The hands, the sponge tray and the heavy condensed headline read at once, and the button is in view at 390 (bottom at 344 of 844 px). Screenshots home-390-top.png, home-1280-top.png. The assistant's own score, not the owner's. |
+| Distinctiveness (swap test): score and reason | PASS: 8 | The first screen, the type, the palette from her bakes and her own photos could not be swapped. The sections below the first screen use common layouts (a band, two halves, a photo strip), so the identity comes from the hero, type, colour and photos. Risk to watch, not a fault. |
+| Craft and detail: score and reason | FIXED: 8 | Round 1 scored 7: two large links were 42 px tall (target 48 px), one line ended on a single word, and the footer contact rows mixed sizes on one line. All three fixed and rechecked. Still plain by design: Meet Demi has a wide empty right side at 1280. |
+| Typography: score and reason | FIXED: 8 | Round 1 scored 7 for the single word on the last line of "Need food for an event? Ask me about catering." Balanced now, and body paragraphs use `text-wrap: pretty`. Headline 39.78 px on two lines at 390 and 88 px at 1280, the largest text at every width. |
+| Motion: score and reason | PASS: 8 | One entrance, sampled in a fresh frame: headline at full opacity by about 290 ms, last photo settled by about 910 ms. Button hover measured: lifts 2 px, deep red, 120 ms, only translate and scale transition. Reduced motion: everything in place on the first frame. NOT TESTED by hand: press scale and focus rings. |
+| Phone experience at 390 pixels: score and reason | PASS: 8 | No sideways scroll at 320 or 390 px, every link and button now 48 px or taller (checked by script), menu works by keyboard. The 4:5 lead photo is tall (about 490 px) and pushes the recipe list down. |
 
 ## Quality floor
 

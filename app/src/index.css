@@ -75,6 +75,11 @@
     text-wrap: balance;
   }
 
+  /* No single word left alone on the last line. */
+  p {
+    text-wrap: pretty;
+  }
+
   ::selection {
     background-color: var(--color-cake-red);
     color: var(--color-paper);
