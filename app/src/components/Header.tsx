@@ -18,7 +18,7 @@ export default function Header() {
               <li key={item.to}>
                 <NavLink
                   to={item.to}
-                  className="relative inline-flex h-12 items-center font-semibold after:absolute after:inset-x-0 after:bottom-1.5 after:h-0.5 after:bg-ink after:opacity-0 hover:after:opacity-100 aria-[current=page]:after:opacity-100 motion-safe:after:transition-opacity motion-safe:after:duration-[120ms]"
+                  className="relative inline-flex h-12 items-center font-semibold after:absolute after:inset-x-0 after:bottom-1.5 after:h-0.5 after:bg-ink after:opacity-0 hover:after:opacity-100 aria-[current=page]:after:opacity-100 motion-safe:after:transition-opacity motion-safe:after:duration-[120ms] motion-safe:after:ease-out"
                 >
                   {item.label}
                 </NavLink>

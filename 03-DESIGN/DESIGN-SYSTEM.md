@@ -174,7 +174,7 @@ Labels sit above fields. Cards are not used: the recipe row and the lead recipe 
 - Active: thumbnail scale 0.98.
 - Disabled, loading, error, empty: NOT APPLICABLE. If a thumbnail fails to load, a sponge fill and the title stay.
 
-**Lead recipe:** the same, with the title at lead recipe title size and a larger photo.
+**Lead recipe:** the same, with the title at lead recipe title size and a larger photo. The photo is not a link (ACCESSIBILITY.md), so it lifts and presses only when the text link "Watch on YouTube" is hovered or pressed, not when the pointer is over the photo itself. Changed on 2 October 2026: it used to move when the photo was hovered, which looked clickable and was not.
 
 **Photo link (From my kitchen):** hover lifts 4 px (120 ms), press scale 0.98, focus ring with 3 px offset. The link name says it opens the video on YouTube.
 
@@ -190,8 +190,9 @@ Labels sit above fields. Cards are not used: the recipe row and the lead recipe 
 
 - **Purpose:** feedback on every interactive element, one change of state (the menu), and one first-screen entrance. Nothing else moves.
 - **Motion floor for the dial in DESIGN-DNA.md (3, so the floor is 1 to 3):** an orchestrated entrance on the first screen under 900 ms (the lift); considered hover and press feedback on every interactive element (the Components section lists each one); designed focus rings. The dial stays at 3. The scroll-linked moment and page transitions belong to dials 4 to 6 and are not added.
-- **Durations:** `--duration-press` 100 ms, `--duration-hover` 120 ms, `--duration-menu` 200 ms, `--duration-fade` 250 ms, `--duration-lift` 600 ms, stagger 120 ms.
-- **Easing:** entrance `cubic-bezier(0.16, 0.84, 0.3, 1)` (`--ease-lift`). Interface `cubic-bezier(0, 0, 0.2, 1)` (Tailwind `ease-out`). Never ease in. No springs: nothing is dragged.
+- **Durations:** `--duration-press` 100 ms, `--duration-hover` 120 ms, `--duration-menu` 200 ms, `--duration-fade` 250 ms, `--duration-lift` 600 ms, stagger 60 ms (was 120 ms until 2 October 2026: the animation review found anything over about 80 ms between items feels slow).
+- **Easing:** entrance `cubic-bezier(0.16, 0.84, 0.3, 1)` (`--ease-lift`). Interface `cubic-bezier(0.23, 1, 0.32, 1)` (`--ease-out`, which replaces Tailwind's weaker default `cubic-bezier(0, 0, 0.2, 1)`). Every hover, press, menu and fade uses it: the hover and press transitions carry an explicit `ease-out` class, because without one Tailwind applies `cubic-bezier(0.4, 0, 0.2, 1)`, which starts slowly. Never ease in. No springs: nothing is dragged.
+- **How the lift is built:** the photos animate a full `transform` string (`translateY(60px) scale(0.97)` to `translateY(0px) scale(1)`) and opacity, never Motion's `y` and `scale` shorthands, which run on the main thread and can drop frames while the page loads.
 - **What moves:** the lift (Home, once per page load); lead recipe on Recipes (the same rise, once); button, row, photo and contact-row hover and press; the menu panel; the nav hover bar.
 - **What never moves:** body text, the headline (it fades by opacity only), anything people repeat many times a day, the piped drawing, form fields, page changes.
 - **Reduced motion:** the whole app sits inside `<MotionConfig reducedMotion="user">`. Motion then drops transform and layout animation and keeps opacity and colour (motion.dev, MotionConfig docs). On top of that: the lift renders in its final place with no fade (`initial={false}` when the visitor prefers reduced motion), hover lifts and press scales do not run, and the menu panel appears and disappears at once. Focus rings and colour changes stay.
@@ -204,11 +205,11 @@ Labels sit above fields. Cards are not used: the recipe row and the lead recipe 
 |---|---|---|
 | 0 ms | Headline fades in | opacity 0 to 1, 250 ms, ease out |
 | 0 ms | `chocolate-chip-rolls.jpg` rises | translate up from 60 px, scale 0.97 to 1, opacity 0 to 1, 600 ms, `--ease-lift`. Ends at 600 ms |
+| 60 ms | `berry-sponge-slice.jpg` rises | same, 600 ms. Ends at 660 ms |
 | 100 ms | Support line and button fade in | opacity 0 to 1, 250 ms |
-| 120 ms | `berry-sponge-slice.jpg` rises | same, 600 ms. Ends at 720 ms |
-| 240 ms | Profile picture rises | same, 600 ms. Ends at 840 ms |
+| 120 ms | Profile picture rises | same, 600 ms. Ends at 720 ms |
 
-The whole entrance ends at 840 ms (under 900). Only transform and opacity. It plays once per page load, tracked by a module-level flag, so going back to Home during a visit does not replay it. Under reduced motion everything is simply there from the first frame. Echo: the lead recipe photo on Recipes rises the same way, once.
+The whole entrance ends at 720 ms (under 900; it ended at 840 ms until the stagger went from 120 ms to 60 ms on 2 October 2026). Only transform and opacity. It plays once per page load, tracked by a module-level flag, so going back to Home during a visit does not replay it. Under reduced motion everything is simply there from the first frame. Echo: the lead recipe photo on Recipes rises the same way, once.
 
 ## Browser surfaces
 
@@ -258,6 +259,7 @@ Photos are used as supplied. Sources, photographer and licence are in 03-DESIGN/
   --radius-sm: 0.5rem;        /* 8 px */
 
   --ease-lift: cubic-bezier(0.16, 0.84, 0.3, 1);
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
 
   --text-hero: clamp(1.9rem, 10.2vw, 2.5rem);
   --text-hero--line-height: 1;

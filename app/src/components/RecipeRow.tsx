@@ -22,7 +22,7 @@ export default function RecipeRow({ recipe, onDark = false }: Props) {
         height={1600}
         loading="lazy"
         decoding="async"
-        className="photo size-18 shrink-0 object-cover object-center lg:size-24 motion-safe:transition-[translate,scale] motion-safe:duration-[120ms] motion-safe:group-hover/row:-translate-y-0.5 motion-safe:group-active/row:scale-98"
+        className="photo size-18 shrink-0 object-cover object-center lg:size-24 motion-safe:transition-[translate,scale] motion-safe:duration-[120ms] motion-safe:ease-out motion-safe:group-hover/row:-translate-y-0.5 motion-safe:group-active/row:scale-98"
       />
       <div className="min-w-0">
         <h3 className="font-display text-h3 font-bold font-stretch-[85%] md:text-h3-lg">

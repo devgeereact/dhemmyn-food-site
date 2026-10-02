@@ -10,6 +10,7 @@ import ButtonLink from '../../components/ButtonLink'
 let liftPlayed = false
 
 const easeLift: [number, number, number, number] = [0.16, 0.84, 0.3, 1]
+const easeOut: [number, number, number, number] = [0.23, 1, 0.32, 1]
 
 export default function Hero() {
   const reducedMotion = useReducedMotion()
@@ -21,14 +22,16 @@ export default function Hero() {
   }, [])
 
   // Text: opacity only. Photos: rise 60 px, settle in size, ease out.
+  // The rise uses a full `transform` string, not the `y` and `scale` shorthands,
+  // because only the string runs off the main thread while the page is still loading.
   const fade = (delay: number) => ({
     initial: still ? (false as const) : { opacity: 0 },
     animate: { opacity: 1 },
-    transition: { duration: 0.25, delay, ease: 'easeOut' as const },
+    transition: { duration: 0.25, delay, ease: easeOut },
   })
   const rise = (delay: number) => ({
-    initial: still ? (false as const) : { opacity: 0, y: 60, scale: 0.97 },
-    animate: { opacity: 1, y: 0, scale: 1 },
+    initial: still ? (false as const) : { opacity: 0, transform: 'translateY(60px) scale(0.97)' },
+    animate: { opacity: 1, transform: 'translateY(0px) scale(1)' },
     transition: { duration: 0.6, delay, ease: easeLift },
   })
 
@@ -62,7 +65,7 @@ export default function Hero() {
         {/* The photos keep the proportions of the 1280 px layout: the scene stops growing at 44rem, while the tray runs on to the screen edge. */}
         <div className="absolute inset-y-0 left-0 w-full lg:max-w-[44rem]">
           <motion.div
-            {...rise(0.12)}
+            {...rise(0.06)}
             className="absolute top-[5%] left-[4%] w-[min(50%,290px)] lg:top-16 lg:left-[6%]"
           >
             <div className="aspect-[873/1600] overflow-hidden">
@@ -89,7 +92,7 @@ export default function Hero() {
             />
           </motion.div>
           <motion.div
-            {...rise(0.24)}
+            {...rise(0.12)}
             className="absolute bottom-4 left-[4%] size-28 lg:bottom-7 lg:left-[3%] lg:size-50"
           >
             <img

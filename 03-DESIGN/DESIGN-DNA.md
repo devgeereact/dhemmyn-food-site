@@ -40,7 +40,7 @@ A phone-first homepage for UK followers of Demi Yusuf's short upright baking vid
 **The lift.** The page opens the way her videos do: her hand comes up from the bottom edge of the screen holding the bake towards you.
 
 - On a phone, the first picture is photos/chocolate-chip-rolls.jpg, a hand holding a roll. It sits against the bottom edge of the screen, so the hand reaches up from off-screen and the bake sits in the upper half of its frame, under the headline and button. photos/berry-sponge-slice.jpg, a second hand holding a bake, overlaps it. The small profile picture of the chocolate sponge (about 200 CSS pixels wide at most) overlaps both.
-- On load the headline fades in by opacity only. The tall photo then rises about 60 px into place with a slight settle in size, easing out. The second and third pictures follow 120 ms apart. Transform and opacity only. All of it under 900 ms. Under reduced motion everything is simply there.
+- On load the headline fades in by opacity only. The tall photo then rises about 60 px into place with a slight settle in size, easing out. The second and third pictures follow 60 ms apart. Transform and opacity only. All of it under 900 ms. Under reduced motion everything is simply there.
 - Echo: the lead recipe on Recipes rises the same way, once.
 - The piped line under a headline is not used here. Any cake baker could have it. The upright frame and the reaching hand are hers.
 

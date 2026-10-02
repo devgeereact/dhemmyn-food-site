@@ -115,7 +115,7 @@ React Router changes the page without a full reload, so the site does the work t
 ## Motion
 
 - The whole app is wrapped in `<MotionConfig reducedMotion="user">`. With the reduce motion setting on, transform and layout animation stop. The homepage entrance (the lift) renders already in place, hover lifts and press scales do not run, and the phone menu appears at once. Details are in DESIGN-SYSTEM.md, Motion system.
-- Nothing flashes. Nothing loops, auto-plays, scrolls on its own or moves for more than a second. The one entrance ends at 840 ms.
+- Nothing flashes. Nothing loops, auto-plays, scrolls on its own or moves for more than a second. The one entrance ends at 720 ms.
 - Videos are links to YouTube, never players on the site.
 
 ## Structure

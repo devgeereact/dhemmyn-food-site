@@ -4,6 +4,9 @@ import type { FocusEvent, KeyboardEvent } from 'react'
 import { NavLink } from 'react-router'
 import { mainNav } from '../data/site'
 
+// The same strong ease-out as `--ease-out` in index.css.
+const easeOut: [number, number, number, number] = [0.23, 1, 0.32, 1]
+
 // Home is listed on phones only. On wide screens the logo does that job.
 const items = [{ label: 'Home', to: '/' }, ...mainNav]
 
@@ -45,7 +48,7 @@ export default function MobileMenu() {
         aria-expanded={open}
         aria-controls={panelId}
         onClick={() => (open ? close(true) : setOpen(true))}
-        className="inline-flex h-12 items-center rounded-xs border border-ink px-5 font-semibold motion-safe:transition-[scale] motion-safe:duration-100 motion-safe:active:scale-98"
+        className="inline-flex h-12 items-center rounded-xs border border-ink px-5 font-semibold motion-safe:transition-[scale] motion-safe:duration-100 motion-safe:ease-out motion-safe:active:scale-98"
       >
         {open ? 'Close' : 'Menu'}
       </button>
@@ -58,7 +61,7 @@ export default function MobileMenu() {
             initial={reduced ? false : { opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, transition: { duration: reduced ? 0 : 0.12 } }}
-            transition={{ duration: reduced ? 0 : 0.2, ease: 'easeOut' }}
+            transition={{ duration: reduced ? 0 : 0.2, ease: easeOut }}
             className="surface-dark absolute inset-x-0 top-full z-30 rounded-b-xs bg-ink pb-2 text-paper"
           >
             <ul>

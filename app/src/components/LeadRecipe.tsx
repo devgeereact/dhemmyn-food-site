@@ -22,7 +22,7 @@ export default function LeadRecipe({ recipe, photoClassName = '', textClassName 
           loading="lazy"
           decoding="async"
           style={{ objectPosition: '50% 58%' }}
-          className="photo absolute inset-0 h-full w-full object-cover motion-safe:transition-[translate,scale] motion-safe:duration-[120ms] motion-safe:group-hover/lead:-translate-y-0.5 motion-safe:group-active/lead:scale-98"
+          className="photo absolute inset-0 h-full w-full object-cover motion-safe:transition-[translate,scale] motion-safe:duration-[120ms] motion-safe:ease-out motion-safe:group-has-[a:hover]/lead:-translate-y-0.5 motion-safe:group-has-[a:active]/lead:scale-98"
         />
       </div>
       <div className={textClassName}>
@@ -31,7 +31,7 @@ export default function LeadRecipe({ recipe, photoClassName = '', textClassName 
         </h3>
         <ExternalLink
           href={recipe.url}
-          className="link-line mt-3 inline-block py-3 group-hover/lead:decoration-3"
+          className="link-line mt-3 inline-block py-3"
         >
           Watch on YouTube<span className="sr-only">: {recipe.title}</span>
         </ExternalLink>

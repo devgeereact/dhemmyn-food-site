@@ -10,7 +10,7 @@ type Props = {
 
 const base =
   'inline-flex h-13 items-center justify-center rounded-xs px-7 font-semibold ' +
-  'motion-safe:transition-[translate,scale] motion-safe:duration-[120ms] ' +
+  'motion-safe:transition-[translate,scale] motion-safe:duration-[120ms] motion-safe:ease-out ' +
   'motion-safe:hover:-translate-y-0.5 motion-safe:active:translate-y-0 ' +
   'motion-safe:active:scale-98 motion-safe:active:duration-100'
 

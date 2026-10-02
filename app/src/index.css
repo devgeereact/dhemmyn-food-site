@@ -23,6 +23,7 @@
   --radius-sm: 0.5rem;        /* 8 px */
 
   --ease-lift: cubic-bezier(0.16, 0.84, 0.3, 1);
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
 
   --text-hero: clamp(1.9rem, 10.2vw, 2.5rem);
   --text-hero--line-height: 1;

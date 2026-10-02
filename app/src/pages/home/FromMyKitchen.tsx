@@ -61,7 +61,7 @@ export default function FromMyKitchen() {
           <li key={photo.url}>
             <ExternalLink
               href={photo.url}
-              className="block motion-safe:transition-[translate,scale] motion-safe:duration-[120ms] motion-safe:hover:-translate-y-1 motion-safe:active:translate-y-0 motion-safe:active:scale-98 focus-visible:relative focus-visible:z-10"
+              className="block motion-safe:transition-[translate,scale] motion-safe:duration-[120ms] motion-safe:ease-out motion-safe:hover:-translate-y-1 motion-safe:active:translate-y-0 motion-safe:active:scale-98 focus-visible:relative focus-visible:z-10"
             >
               <span className="sr-only">Watch the video on YouTube: </span>
               <img
