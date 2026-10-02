@@ -25,6 +25,8 @@
 - Recipes and videos: on the owner's social accounts. The site links to them. The site takes no payment.
 - Custom cakes: by enquiry. Price on request. No price or "from" amount on the site. [NEEDS: what a custom cake includes]
 - Catering: by enquiry. Price on request. No price or "from" amount on the site. [NEEDS: what catering includes]
+- Banana bread: the launch recipe video is a chocolate banana bread. Its cover picture is right (owner, 2 October 2026).
+- Autumn cake series: the cover of its video shows the apple crumble from the series. The cover is right (owner, 2 October 2026).
 - Cakes and catering are a side offer the owner wants to grow.
 - VAT: [NEEDS: not applicable unless VAT registered]
 

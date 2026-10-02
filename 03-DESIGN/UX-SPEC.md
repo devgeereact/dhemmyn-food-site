@@ -171,8 +171,8 @@ Both the Custom cakes and Catering forms use these four states. Words: CONTENT.m
 
 ### All pages
 
-- [ ] You send: the chocolate sponge profile picture as an image file, and say how to describe it for alt text. (Used on Home and About me.)
-- [ ] Draft: the footer words and copyright line (CONTENT.md, Footer).
+- [x] You send: the chocolate sponge profile picture as an image file, and say how to describe it for alt text. (Used on Home and About me.) Done: photos/profile-chocolate-sponge.jpg, alt text given 2 October 2026.
+- [x] Draft: the footer words and copyright line (CONTENT.md, Footer). Done: approved 2 October 2026. The copyright line names the business only.
 - [ ] Draft: a page title and a short description for each of the seven pages, and for the Not found page title.
 
 ### Home
@@ -184,9 +184,9 @@ Both the Custom cakes and Catering forms use these four states. Words: CONTENT.m
 ### Recipes
 
 - [x] You say: the card title for the autumn cake series. Done: "Autumn cake series", 2 October 2026.
-- [ ] You send: a thumbnail image for each of the eight recipes, saved as files. The site never loads them from YouTube.
+- [x] You send: a thumbnail image for each of the eight recipes, saved as files. The site never loads them from YouTube. Done: eight files in 03-DESIGN/photos, 2 October 2026.
 - [ ] You check: the eight video links in SOCIAL.md open the right videos. They have been copied but not opened.
-- [ ] Draft: the closing line for the Recipes page.
+- [x] Draft: the closing line for the Recipes page. Done: approved 2 October 2026.
 - [ ] Later: view-only Canva links for the four Linktree recipes, and written ingredients and steps for the recipes that have only a video.
 
 ### Custom cakes

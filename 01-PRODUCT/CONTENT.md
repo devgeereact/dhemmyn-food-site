@@ -4,7 +4,7 @@
 > **Filled by:** WEB-11, WEB-12 and WEB-13 (step 6), and WEB-32 (step 11) for the privacy notice
 > **Applies to:** every site
 
-**Status:** Draft. Words approved by the owner on 2 October 2026 sit under Home, Recipes, About me, Custom cakes, Catering and Contact. No proposed draft is left. Form labels and messages and the Not found page were written on 2 October 2026 and approved by the owner the same day.
+**Status:** Draft. Words approved by the owner on 2 October 2026 sit under Home, Recipes, About me, Custom cakes, Catering, Contact and Footer. No proposed draft is left. Form labels and messages and the Not found page were written on 2 October 2026 and approved by the owner the same day.
 
 *One heading per page, in the order of the sitemap in 03-DESIGN/UX-SPEC.md. Facts come from BUSINESS-RULES.md. When words change, change them here first, then on the site.*
 
@@ -119,6 +119,48 @@ Easy recipes that actually work, without a long story. Pick a recipe and watch t
 
 *Approved by the owner on 2 October 2026 (was P6).*
 
+*The words below were written on 2 October 2026 from the Recipes plan in 03-DESIGN/UX-SPEC.md. Approved by the owner on 2 October 2026, with the introduction above.*
+
+Page title: Recipes: Dhemmyn Food
+
+Page description: Easy baking and cooking recipes from Demi Yusuf at Dhemmyn Food. Pick a recipe and watch the video on YouTube.
+
+Heading: Recipes
+
+### Lead recipe
+
+Card title: Autumn cake series
+Link: Watch on YouTube
+Link name: Watch on YouTube: Autumn cake series
+Picture: photos/autumn-cake-series.jpg
+Alt text: Apple crumble from the autumn cake series, close up on a fork, with golden crumb on top and soft apple pieces beneath.
+
+### Recipe list
+
+*Each card has a thumbnail, the title and the link Watch on YouTube. The link name is "Watch on YouTube: " followed by the title, so a screen reader says which video opens. Every link opens in a new tab. The video links are in 01-PRODUCT/SOCIAL.md.*
+
+| Title | Picture (in 03-DESIGN/photos) | Alt text |
+|---|---|---|
+| Scones | scones.jpg | Triangles of unbaked scone dough on baking paper, with grated cheese piled on two of them. |
+| The 5 minute bread roll | bread-roll-5-minute.jpg | Unbaked bread rolls in a metal tray, glazed and covered in sesame seeds. |
+| Cookies | cookies.jpg | A baked cookie with a square of chocolate and flakes of sea salt on top, on baking paper. |
+| Banana bread | banana-bread.jpg | Slices of dark chocolate banana bread with pieces of Oreo biscuit inside, on white paper. |
+| Doughnuts | doughnuts.jpg | Round golden dough frying in hot oil in a black pan. |
+| Dodo | dodo.jpg | Pieces of dark, deep-fried food with flecks of red chilli, on a white plate. |
+| Oats | oats.jpg | A clear tub of berry compote swirled with creamy yoghurt. |
+
+### More videos
+
+Heading: More videos
+
+There are more videos on my YouTube channel. Have a question, or want a cake or catering? Go to [Contact](/contact).
+
+Main button: Watch more on YouTube (https://www.youtube.com/@dhemmynfood, from SOCIAL.md, opens in a new tab)
+
+*The page ends on the button. It helps when one video is removed, because the visitor still has somewhere to go. No video count is shown here, so nothing goes out of date.*
+
+*Added later: a card for each of the four Linktree recipes, when the owner sends view-only Canva links.*
+
 ## About me
 
 Hi, I'm Demi Yusuf. Dhemmyn Food is me sharing easy and authentic recipes for baking and cooking.
@@ -133,6 +175,34 @@ Follow me on Instagram, TikTok, YouTube and Threads.
 
 *Approved by the owner on 2 October 2026 (was P1). Notes, not site text: recheck the video counts before launch, and update the autumn cake series line when the series ends. The picture is the chocolate sponge profile picture, no photo of the owner.*
 
+*Page order, from the About me plan in UX-SPEC.md: Introduction (the first two paragraphs), What I make (the third paragraph), Ask me (the fourth), Follow me (the fifth). All five paragraphs above were approved earlier and are not changed here. The page title, description, heading and links below were approved by the owner on 2 October 2026.*
+
+Page title: About me: Dhemmyn Food
+
+Page description: Demi Yusuf shares easy and authentic baking and cooking recipes as Dhemmyn Food. Find me on Instagram, TikTok, YouTube and Threads.
+
+Heading: About me
+
+Picture: photos/profile-chocolate-sponge.jpg
+Alt text: A slice of chocolate sponge with white cream and Oreo crumbs on a white plate. (the owner's own words, also used on Home)
+
+### Ask me
+
+The line is the fourth paragraph above. Two links: Custom cakes (goes to /custom-cakes) and Catering (goes to /catering).
+
+### Follow me
+
+The line is the fifth paragraph above. Four large links, each showing the handle @dhemmynfood. Each opens in a new tab. Addresses are in SOCIAL.md.
+
+- Instagram: @dhemmynfood
+- TikTok: @dhemmynfood
+- YouTube: @dhemmynfood
+- Threads: @dhemmynfood
+
+*The page ends on these four links. The next step is to follow Demi on the platform the visitor prefers.*
+
+*Still open and not on the page: [NEEDS: your background and qualifications]. QUESTIONNAIRE.md has no background, training, years of experience or qualifications in any answer, so nothing is written. Nothing is guessed. Also still open: [NEEDS: how you started, why you share recipes, where you learned to cook and bake]. See "Held back" at the top of this file.*
+
 ## Custom cakes
 
 Want a cake for a birthday or a party? Ask me for a custom cake.
@@ -142,6 +212,24 @@ Tell me the date you need it, the occasion, how many servings and your flavour a
 Prices on request.
 
 *Approved by the owner on 2 October 2026 (was P2). Flavours, sizes, designs, notice and area stay open in BUSINESS-RULES.md.*
+
+*Page order, from the Custom cakes plan in UX-SPEC.md: the opening above, the enquiry form, "Message me instead", How ordering works, Common questions, then the closing step at the end. The opening, the form words, How ordering works and Common questions were approved earlier and are not changed here. The page title, description, heading, "Message me instead" and the closing step were approved by the owner on 2 October 2026.*
+
+Page title: Custom cakes: Dhemmyn Food
+
+Page description: Ask for a custom cake from Demi Yusuf at Dhemmyn Food. Send the form or message me. Prices on request.
+
+Heading: Custom cakes
+
+### Enquiry form
+
+Every word is in "Form labels and messages", "Custom cakes form", further down this file. Heading: Ask for a custom cake. Button: Send enquiry. Link: Read the privacy notice.
+
+### Message me instead
+
+Heading: Message me instead
+
+Prefer not to use a form? Message me by [email, phone and WhatsApp from BUSINESS-RULES.md].
 
 ### How ordering works
 
@@ -171,6 +259,15 @@ Prices on request.
 **Do I pay on this website?**
 No. This website does not take payments.
 
+### Closing step
+
+Approved by the owner on 2 October 2026. Added to the plan so the page ends on one clear step.
+
+Ready to ask?
+Button: Ask for a custom cake (jumps back up to the enquiry form)
+
+*Still open and not on the page: [NEEDS: flavours, sizes and designs], [NEEDS: how much notice a cake needs], [NEEDS: area, delivery or collection], [NEEDS: how payment works, and any deposit], [NEEDS: how soon you reply]. Optional: [NEEDS: photos of finished cakes you are happy to show]. See "Held back" at the top of this file.*
+
 ## Catering
 
 Need food for an event? Ask me about catering.
@@ -181,6 +278,24 @@ Prices on request.
 
 *Approved by the owner on 2 October 2026 (was P3). Food, event size, notice and area stay open in BUSINESS-RULES.md.*
 
+*Page order, from the Catering plan in UX-SPEC.md: the opening above, the enquiry form, "Message me instead", How ordering works, Common questions, then the closing step at the end. The opening, the form words, How ordering works and Common questions were approved earlier and are not changed here. The page title, description, heading, "Message me instead" and the closing step were approved by the owner on 2 October 2026.*
+
+Page title: Catering: Dhemmyn Food
+
+Page description: Ask about catering from Demi Yusuf at Dhemmyn Food. Send the form or message me. Prices on request.
+
+Heading: Catering
+
+### Enquiry form
+
+Every word is in "Form labels and messages", "Catering form", further down this file. Heading: Ask about catering. Button: Send enquiry. Link: Read the privacy notice.
+
+### Message me instead
+
+Heading: Message me instead
+
+Prefer not to use a form? Message me by [email, phone and WhatsApp from BUSINESS-RULES.md].
+
 ### How ordering works
 
 1. Tell me what you need. Use the form on the Custom cakes or Catering page, or message me by [email, phone and WhatsApp from BUSINESS-RULES.md].
@@ -189,6 +304,19 @@ Prices on request.
 This website does not take payments.
 
 *Approved by the owner on 2 October 2026 (was P4). Same words as on the Custom cakes page.*
+
+### Common questions
+
+The same five approved questions and answers as under Custom cakes, "Common questions". They are not typed twice. Where the cake page says "custom cake" in an answer, the words are already neutral, so no change is needed.
+
+### Closing step
+
+Approved by the owner on 2 October 2026. Added to the plan so the page ends on one clear step.
+
+Ready to ask?
+Button: Ask about catering (jumps back up to the enquiry form)
+
+*Still open and not on the page: [NEEDS: what food and event sizes you cater for], [NEEDS: how much notice catering needs], [NEEDS: area, delivery or collection], [NEEDS: how payment works, and any deposit], [NEEDS: how soon you reply]. Optional: [NEEDS: photos of food you have made for events]. See "Held back" at the top of this file.*
 
 ## Contact
 
@@ -196,6 +324,30 @@ Got a question, or want a cake or catering? Message me by [email, phone and What
 
 *Approved by the owner on 2 October 2026 (was P7). The contact details come from BUSINESS-RULES.md when the page is built.*
 
+*Page order, from the Contact plan in UX-SPEC.md: the opening above, Contact details, Forms, then How ordering works. The opening and How ordering works were approved earlier and are not changed here. The page title, description, heading, contact rows, form links and the closing step were approved by the owner on 2 October 2026.*
+
+Page title: Contact: Dhemmyn Food
+
+Page description: Message Demi Yusuf at Dhemmyn Food by email, phone or WhatsApp, or send an enquiry for a custom cake or catering.
+
+Heading: Contact
+
+### Contact details
+
+Three large rows that can be tapped. Each also shows the number or address as plain text, so a visitor on a laptop can copy it. The details come from BUSINESS-RULES.md, "Business details": [WhatsApp link and number], [phone number], [email address]. They are shown together, in this order. Each row opens in the visitor's own app.
+
+- Message me on WhatsApp: [WhatsApp number from BUSINESS-RULES.md]
+- Call me: [phone number from BUSINESS-RULES.md]
+- Email me: [email address from BUSINESS-RULES.md]
+
+### Forms
+
+Two links:
+
+- Ask for a custom cake (goes to /custom-cakes)
+- Ask about catering (goes to /catering)
+
+
 ### How ordering works
 
 1. Tell me what you need. Use the form on the Custom cakes or Catering page, or message me by [email, phone and WhatsApp from BUSINESS-RULES.md].
@@ -204,6 +356,15 @@ Got a question, or want a cake or catering? Message me by [email, phone and What
 This website does not take payments.
 
 *Approved by the owner on 2 October 2026 (was P4). Same words as on the Custom cakes page.*
+
+### Closing step
+
+Approved by the owner on 2 October 2026. Added to the plan so the page ends on one clear step.
+
+Ready to message me?
+Button: Message me (jumps back up to the three contact details)
+
+*Still open and not on the page: [NEEDS: how soon you reply], [NEEDS: opening hours or the days you take orders]. The page promises no reply time and shows no hours. See "Held back" at the top of this file.*
 
 ## Form labels and messages
 
@@ -286,6 +447,47 @@ Button: Go to the homepage
 ## Footer
 
 *Business details from BUSINESS-RULES.md, copyright line, link to the privacy notice.*
+
+*Written on 2 October 2026 from the Footer plan in the Navigation section of 03-DESIGN/UX-SPEC.md. Approved by the owner on 2 October 2026. The footer is the same on every page. It is not a page, so it has no title, no description and no single next step: it is a set of ways on. Contact details are never typed here.*
+
+### Business
+
+Dhemmyn Food
+Demi Yusuf
+
+### Contact
+
+Email, phone and WhatsApp, shown together: [email, phone and WhatsApp from BUSINESS-RULES.md]. Each is tappable and also shows as plain text.
+
+### Pages
+
+Six links, in this order:
+
+- Recipes (goes to /recipes)
+- Custom cakes (goes to /custom-cakes)
+- Catering (goes to /catering)
+- About me (goes to /about-me)
+- Contact (goes to /contact)
+- Privacy notice (goes to /privacy)
+
+### Follow me
+
+Four links, named by platform. Addresses are in SOCIAL.md. Each opens in a new tab, and its link name adds "opens in a new tab" for screen readers.
+
+- Instagram
+- TikTok
+- YouTube
+- Threads
+
+### Copyright
+
+© [current year] Dhemmyn Food
+
+*The year is the year the site is published, set when the site is built, so it is not typed here and does not go out of date. The owner chose the business name only on 2 October 2026. The line does not name Demi Yusuf, because trading status is not decided.*
+
+### Left out on purpose
+
+*Not on the footer, because the facts are not decided or the owner chose to leave them out: Linktree, follower or subscriber counts, trading status, a postal address, company or VAT numbers, opening hours, any area served, any "registered" or "rated" claim, and photo credits. All the photos are the owner's own, so none needs a credit. Add a credit line only when a stock photo is used.*
 
 ## Privacy notice
 

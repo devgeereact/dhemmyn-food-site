@@ -17,6 +17,55 @@
 - Tested: the commands and checks run, and the result
 ```
 
+## [2026-10-02] Page words approved
+
+- Change: the owner approved all the new lines on Recipes, Custom cakes, Catering, About me, Contact and the Footer, including the closing steps. The "not yet approved" notes and "written 2 October 2026" tags in CONTENT.md now say approved or are removed. The Footer copyright line stays as the business name only, and its open question is closed. Status line in CONTENT.md now lists Footer. Four checklist items ticked in UX-SPEC.md (profile picture, footer words, recipe thumbnails, Recipes closing line).
+- Reason: the owner answered the approval list from the previous steps
+- Files: 01-PRODUCT/CONTENT.md, 03-DESIGN/UX-SPEC.md, 08-CHANGE-MANAGEMENT/CHANGELOG.md
+- Tested: wording compared with the owner's message of 2 October 2026. No site code changed, so build and lint are not applicable.
+
+## [2026-10-02] Footer words written
+
+- Change: CONTENT.md now has the Footer words from the Navigation plan: business name and owner's name, the contact block (filled from BUSINESS-RULES.md at build time), the six page links in plan order, the four social links with a new-tab note, the copyright line "© [current year] Dhemmyn Food", and a list of what stays off the footer. No new facts were given, so BUSINESS-RULES.md is unchanged. The About page instruction does not apply to the footer.
+- Reason: WEB-13, the Footer plan in UX-SPEC.md
+- Files: 01-PRODUCT/CONTENT.md, 08-CHANGE-MANAGEMENT/CHANGELOG.md
+- Tested: link list and order compared with the Navigation section of UX-SPEC.md. No contact detail is typed in CONTENT.md. Nothing claims a status, address, count or hours. Marked as not yet approved by the owner. No site code changed, so build and lint are not applicable.
+
+## [2026-10-02] Contact page assembled
+
+- Change: the approved Contact words were not rewritten. CONTENT.md now sets out the page order and adds the page title, description, heading, the three contact rows (WhatsApp, phone, email, filled in from BUSINESS-RULES.md at build time), the two form links, a pointer to the shared How ordering works, and a closing step ("Ready to message me?" with the button "Message me"). Reply time and opening hours are [NEEDS]. No new facts were given, so BUSINESS-RULES.md is unchanged. The About page was not asked for this time.
+- Reason: WEB-12, the Contact plan in UX-SPEC.md
+- Files: 01-PRODUCT/CONTENT.md, 08-CHANGE-MANAGEMENT/CHANGELOG.md
+- Tested: approved words compared with the earlier text and left unchanged. No contact detail is typed in CONTENT.md. The new lines claim no price, area, hours or reply time. They are marked as not yet approved by the owner. No site code changed, so build and lint are not applicable.
+
+## [2026-10-02] About me page assembled, two cover facts recorded
+
+- Change: BUSINESS-RULES.md now says the banana bread video is a chocolate banana bread and the autumn cake series cover shows the apple crumble from the series, and that both covers are right. The two Recipes alt texts in CONTENT.md now say so. CONTENT.md now sets out the About me page order and adds the page title, description, heading, picture alt text, the two links under "Ask me" and the four links under "Follow me". The five approved paragraphs are unchanged. Background and qualifications are [NEEDS]: QUESTIONNAIRE.md holds none.
+- Reason: WEB-12, the About me plan in UX-SPEC.md, and two facts from the owner
+- Files: 01-PRODUCT/BUSINESS-RULES.md, 01-PRODUCT/CONTENT.md, 08-CHANGE-MANAGEMENT/CHANGELOG.md
+- Tested: QUESTIONNAIRE.md read in full for background and qualifications. Approved paragraphs compared with the earlier text. The new lines claim no price, area, years, qualification or count. They are marked as not yet approved by the owner. No site code changed, so build and lint are not applicable.
+
+## [2026-10-02] Catering page assembled
+
+- Change: as for Custom cakes, the approved Catering words were not rewritten. CONTENT.md now sets out the page order and adds the page title, description, heading, a pointer to the form words, the "Message me instead" heading and line, a pointer to the shared Common questions, and a closing step ("Ready to ask?" with the button "Ask about catering"). Open facts are listed as [NEEDS]. No new facts were given, so BUSINESS-RULES.md is unchanged. The About page was not asked for.
+- Reason: WEB-12, the Catering plan in UX-SPEC.md
+- Files: 01-PRODUCT/CONTENT.md, 08-CHANGE-MANAGEMENT/CHANGELOG.md
+- Tested: approved words compared with the earlier text and left unchanged. The new lines claim no price, area, notice period, allergen or qualification. They are marked as not yet approved by the owner. No site code changed, so build and lint are not applicable.
+
+## [2026-10-02] Custom cakes page assembled
+
+- Change: the Custom cakes plan was already covered by approved words, so none were rewritten. CONTENT.md now sets out the page order and adds only what was missing: page title, description, heading, a pointer to the form words, the "Message me instead" heading and line, and a closing step ("Ready to ask?" with the button "Ask for a custom cake") so the page ends on one next step. Open facts are listed as [NEEDS]. No new facts were given, so BUSINESS-RULES.md is unchanged. The About page was not asked for.
+- Reason: WEB-12, the Custom cakes plan in UX-SPEC.md
+- Files: 01-PRODUCT/CONTENT.md, 08-CHANGE-MANAGEMENT/CHANGELOG.md
+- Tested: approved words compared with the earlier text and left unchanged. The new lines claim no price, area, notice period, allergen or qualification. They are marked as not yet approved by the owner. No site code changed, so build and lint are not applicable.
+
+## [2026-10-02] Recipes page words written
+
+- Change: CONTENT.md now has the Recipes words after the approved introduction: page title and description, heading, the lead card (Autumn cake series), the list of seven recipes with link names, and the "More videos" band with the main button "Watch more on YouTube" and a line pointing to Contact. Alt text written for all eight thumbnails. No new facts were given, so BUSINESS-RULES.md is unchanged. The About page was not asked for.
+- Reason: WEB-12, the Recipes plan in UX-SPEC.md
+- Files: 01-PRODUCT/CONTENT.md, 08-CHANGE-MANAGEMENT/CHANGELOG.md
+- Tested: the eight video links were checked through YouTube's public title lookup and each returned the matching Short title. The videos were not played. Each thumbnail was viewed before its alt text was written. The new words are not yet approved by the owner. No site code changed, so build and lint are not applicable.
+
 ## [2026-10-02] Home strip link names and plans updated
 
 - Change: each "From my kitchen" picture link now has the link name "Watch the video on YouTube: " plus its alt text (CONTENT.md). UX-SPEC.md: Home plan sections 2 and 5 renamed and rewritten for the six images, and three Home checklist items ticked. SOCIAL.md: the Instagram table now lists the six files with their Short links, the method lines say the pictures link to YouTube Shorts, and the "send Instagram images" owner action is removed.
