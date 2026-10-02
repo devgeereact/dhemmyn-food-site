@@ -39,6 +39,15 @@
 
 *Three or four sentences you wrote yourself, such as a message to a customer. WEB-13 matches the site to them.*
 
+The owner's own sample, given on 2 October 2026, word for word:
+
+"Wlcm here! sharing my love for food, baking & life."
+"Am here to show you good food! follow on all other platform pls."
+"5 mins whip up bread roll."
+"Pack cake with me."
+
+What to match: short sentences and fragments, usually under ten words. Everyday words. First person ("me", "my"). Plain and friendly, with no sales words. The owner uses an exclamation mark now and then, so the site may use one only where the owner has approved it. The site does not copy the casual spellings ("Wlcm", "Am here", "pls", "&"), because the site is written in plain British English.
+
 Avoid list: "look no further", "elevate", "unlock", "seamless", "passionate about", "in today's fast-paced world", and any word you would never say.
 
 ## Home
@@ -47,15 +56,17 @@ Avoid list: "look no further", "elevate", "unlock", "seamless", "passionate abou
 
 *Approved by the owner on 2 October 2026. Headline option B chosen. Sections follow the Home plan in 03-DESIGN/UX-SPEC.md. Contact details are never typed here.*
 
+*Reworded on 2 October 2026 to match the owner's voice (see Voice). Three lines changed: the intro, the Meet Demi lines and the page description. Approved by the owner on 2 October 2026, including "Here to show you good food". Every other Home line is unchanged.*
+
 ### Opening
 
 Page title: Dhemmyn Food: easy baking and cooking recipes
 
-Page description: Easy and authentic recipes for baking and cooking by Demi Yusuf. Watch each recipe on YouTube, or ask about a custom cake or catering.
+Page description: Easy and authentic recipes for baking and cooking from Demi Yusuf. Watch each recipe on YouTube. Ask me about a custom cake or catering.
 
 Headline: Easy baking and cooking recipes, online
 
-Intro: Cakes, bread rolls, scones, cookies, doughnuts and more. Each recipe is a video.
+Intro: Here to show you good food. Cakes, bread rolls, scones, cookies, doughnuts and more. Every recipe is a video.
 
 Button: See the recipes (goes to /recipes)
 
@@ -88,7 +99,7 @@ Link: Ask about catering (goes to /catering)
 
 ### Meet Demi
 
-Hi, I'm Demi Yusuf. Dhemmyn Food is me sharing easy and authentic recipes for baking and cooking.
+Hi, I'm Demi Yusuf. I share my love for food, baking and cooking with easy, authentic recipes.
 
 Link: More about me (goes to /about-me)
 
@@ -121,9 +132,11 @@ Easy recipes that actually work, without a long story. Pick a recipe and watch t
 
 *The words below were written on 2 October 2026 from the Recipes plan in 03-DESIGN/UX-SPEC.md. Approved by the owner on 2 October 2026, with the introduction above.*
 
+*Reworded on 2 October 2026 to match the owner's voice (see Voice). Two lines changed: the page description and the line under "More videos". Approved by the owner on 2 October 2026. Every other Recipes line is unchanged, including the approved introduction, which was already short and plain.*
+
 Page title: Recipes: Dhemmyn Food
 
-Page description: Easy baking and cooking recipes from Demi Yusuf at Dhemmyn Food. Pick a recipe and watch the video on YouTube.
+Page description: Easy baking and cooking recipes from Demi Yusuf at Dhemmyn Food. Pick one and watch the video on YouTube.
 
 Heading: Recipes
 
@@ -153,7 +166,7 @@ Alt text: Apple crumble from the autumn cake series, close up on a fork, with go
 
 Heading: More videos
 
-There are more videos on my YouTube channel. Have a question, or want a cake or catering? Go to [Contact](/contact).
+More videos on my YouTube channel. Got a question, or want a cake or catering? Go to [Contact](/contact).
 
 Main button: Watch more on YouTube (https://www.youtube.com/@dhemmynfood, from SOCIAL.md, opens in a new tab)
 
@@ -163,7 +176,7 @@ Main button: Watch more on YouTube (https://www.youtube.com/@dhemmynfood, from S
 
 ## About me
 
-Hi, I'm Demi Yusuf. Dhemmyn Food is me sharing easy and authentic recipes for baking and cooking.
+Hi, I'm Demi Yusuf. I share my love for food, baking and cooking with easy, authentic recipes.
 
 I post my recipes as videos. I have posted 347 videos on YouTube and 841 on TikTok.
 
@@ -177,9 +190,11 @@ Follow me on Instagram, TikTok, YouTube and Threads.
 
 *Page order, from the About me plan in UX-SPEC.md: Introduction (the first two paragraphs), What I make (the third paragraph), Ask me (the fourth), Follow me (the fifth). All five paragraphs above were approved earlier and are not changed here. The page title, description, heading and links below were approved by the owner on 2 October 2026.*
 
+*Reworded on 2 October 2026 to match the owner's voice (see Voice). Two lines changed: the first paragraph and the page description. Approved by the owner on 2 October 2026. The first paragraph now matches the Meet Demi lines on Home word for word, as the Home plan asks. Paragraphs two to five were already short and plain, so they are unchanged, including the two video counts.*
+
 Page title: About me: Dhemmyn Food
 
-Page description: Demi Yusuf shares easy and authentic baking and cooking recipes as Dhemmyn Food. Find me on Instagram, TikTok, YouTube and Threads.
+Page description: I'm Demi Yusuf. I share easy and authentic recipes for baking and cooking as Dhemmyn Food. Find me on Instagram, TikTok, YouTube and Threads.
 
 Heading: About me
 
@@ -207,13 +222,15 @@ The line is the fifth paragraph above. Four large links, each showing the handle
 
 Want a cake for a birthday or a party? Ask me for a custom cake.
 
-Tell me the date you need it, the occasion, how many servings and your flavour and design ideas. Use the form below, or message me.
+Tell me the date you need it, the occasion and how many servings. Add your flavour and design ideas. Use the form below, or message me.
 
 Prices on request.
 
 *Approved by the owner on 2 October 2026 (was P2). Flavours, sizes, designs, notice and area stay open in BUSINESS-RULES.md.*
 
 *Page order, from the Custom cakes plan in UX-SPEC.md: the opening above, the enquiry form, "Message me instead", How ordering works, Common questions, then the closing step at the end. The opening, the form words, How ordering works and Common questions were approved earlier and are not changed here. The page title, description, heading, "Message me instead" and the closing step were approved by the owner on 2 October 2026.*
+
+*Reworded on 2 October 2026 to match the owner's voice (see Voice). Two lines changed: the second sentence of the opening, and the line under "Message me instead". Approved by the owner on 2 October 2026. How ordering works and Common questions are not changed, because the Catering and Contact pages use the same words. Every other Custom cakes line is unchanged.*
 
 Page title: Custom cakes: Dhemmyn Food
 
@@ -229,7 +246,7 @@ Every word is in "Form labels and messages", "Custom cakes form", further down t
 
 Heading: Message me instead
 
-Prefer not to use a form? Message me by [email, phone and WhatsApp from BUSINESS-RULES.md].
+Don't want to use a form? Message me by [email, phone and WhatsApp from BUSINESS-RULES.md].
 
 ### How ordering works
 
@@ -280,6 +297,8 @@ Prices on request.
 
 *Page order, from the Catering plan in UX-SPEC.md: the opening above, the enquiry form, "Message me instead", How ordering works, Common questions, then the closing step at the end. The opening, the form words, How ordering works and Common questions were approved earlier and are not changed here. The page title, description, heading, "Message me instead" and the closing step were approved by the owner on 2 October 2026.*
 
+*Reworded on 2 October 2026 to match the owner's voice (see Voice). One line changed: the line under "Message me instead", now the same as on Custom cakes. Approved by the owner on 2 October 2026. The opening was already short and plain, so it is unchanged. How ordering works and Common questions are not changed, because the Custom cakes and Contact pages use the same words. Every other Catering line is unchanged.*
+
 Page title: Catering: Dhemmyn Food
 
 Page description: Ask about catering from Demi Yusuf at Dhemmyn Food. Send the form or message me. Prices on request.
@@ -294,7 +313,7 @@ Every word is in "Form labels and messages", "Catering form", further down this 
 
 Heading: Message me instead
 
-Prefer not to use a form? Message me by [email, phone and WhatsApp from BUSINESS-RULES.md].
+Don't want to use a form? Message me by [email, phone and WhatsApp from BUSINESS-RULES.md].
 
 ### How ordering works
 
@@ -326,9 +345,11 @@ Got a question, or want a cake or catering? Message me by [email, phone and What
 
 *Page order, from the Contact plan in UX-SPEC.md: the opening above, Contact details, Forms, then How ordering works. The opening and How ordering works were approved earlier and are not changed here. The page title, description, heading, contact rows, form links and the closing step were approved by the owner on 2 October 2026.*
 
+*Reworded on 2 October 2026 to match the owner's voice (see Voice). One line changed: the page description, which now speaks as "me" and splits into two short sentences. Approved by the owner on 2 October 2026. The approved opening, the three row labels, the two form links, How ordering works and the closing step were already short and plain, so they are unchanged.*
+
 Page title: Contact: Dhemmyn Food
 
-Page description: Message Demi Yusuf at Dhemmyn Food by email, phone or WhatsApp, or send an enquiry for a custom cake or catering.
+Page description: Message me at Dhemmyn Food by email, phone or WhatsApp. Or send an enquiry for a custom cake or catering.
 
 Heading: Contact
 

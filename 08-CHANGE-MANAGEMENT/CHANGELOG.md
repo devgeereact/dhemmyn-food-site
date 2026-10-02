@@ -17,6 +17,55 @@
 - Tested: the commands and checks run, and the result
 ```
 
+## [2026-10-02] Reworded lines approved
+
+- Change: the owner approved all the reworded lines on Home, Recipes, Custom cakes, Catering, About me and Contact, including "Here to show you good food". The "not approved yet" notes in CONTENT.md now say approved. The Footer was not reworded and is unchanged.
+- Reason: the owner answered the approval list from the voice rewrites
+- Files: 01-PRODUCT/CONTENT.md, 08-CHANGE-MANAGEMENT/CHANGELOG.md
+- Tested: wording compared with the owner's message of 2 October 2026. No site code changed, so build and lint are not applicable.
+
+## [2026-10-02] Contact reworded in the owner's voice
+
+- Change: one Contact line in CONTENT.md reworded to match the owner's sample: the page description. The approved opening, the row labels, the form links, How ordering works, the closing step and the page title are unchanged. The owner's sample was already saved under Voice. The reworded line is not yet approved.
+- Reason: the owner asked for Contact to sound like their own writing
+- Files: 01-PRODUCT/CONTENT.md, 08-CHANGE-MANAGEMENT/CHANGELOG.md
+- Tested: every Contact fact compared with BUSINESS-RULES.md. No contact detail is typed in CONTENT.md. The banned stock phrases and exclamation marks were checked and none was used. No site code changed, so build and lint are not applicable.
+
+## [2026-10-02] About me reworded in the owner's voice
+
+- Change: two About me lines in CONTENT.md reworded to match the owner's sample: the first paragraph and the page description. Paragraphs two to five, the headings, the links and the alt text are unchanged. The Meet Demi lines on Home were changed to the same words as the new first paragraph, so the two pages agree again (this closes the mismatch raised after the Home rewording). The owner's sample was already saved under Voice. The reworded lines are not yet approved.
+- Reason: the owner asked for About me to sound like their own writing
+- Files: 01-PRODUCT/CONTENT.md, 08-CHANGE-MANAGEMENT/CHANGELOG.md
+- Tested: every About me fact compared with BUSINESS-RULES.md. The banned stock phrases and exclamation marks were checked and none was used. No background, years or qualification was added. No site code changed, so build and lint are not applicable.
+
+## [2026-10-02] Catering reworded in the owner's voice
+
+- Change: one Catering line in CONTENT.md reworded to match the owner's sample: the line under "Message me instead", now the same as on Custom cakes. The opening, page title and description, How ordering works, Common questions, the form words and the closing step are unchanged. The owner's sample was already saved under Voice. The reworded line is not yet approved.
+- Reason: the owner asked for Catering to sound like their own writing
+- Files: 01-PRODUCT/CONTENT.md, 08-CHANGE-MANAGEMENT/CHANGELOG.md
+- Tested: every Catering fact compared with BUSINESS-RULES.md. The banned stock phrases and exclamation marks were checked and none was used. No site code changed, so build and lint are not applicable.
+
+## [2026-10-02] Custom cakes reworded in the owner's voice
+
+- Change: two Custom cakes lines in CONTENT.md reworded to match the owner's sample: the second sentence of the opening (split into two shorter sentences) and the line under "Message me instead". The first line of the opening, the page title and description, How ordering works, Common questions, the form words and the closing step are unchanged. The owner's sample was already saved under Voice. The reworded lines are not yet approved.
+- Reason: the owner asked for Custom cakes to sound like their own writing
+- Files: 01-PRODUCT/CONTENT.md, 08-CHANGE-MANAGEMENT/CHANGELOG.md
+- Tested: every Custom cakes fact compared with BUSINESS-RULES.md. The banned stock phrases and exclamation marks were checked and none was used. No site code changed, so build and lint are not applicable.
+
+## [2026-10-02] Recipes reworded in the owner's voice
+
+- Change: two Recipes lines in CONTENT.md reworded to match the owner's sample: the page description ("Pick one" for "Pick a recipe") and the line under "More videos". The approved introduction, the titles, the link words and the alt text are unchanged. The owner's sample was already saved under Voice, so it was not saved again. The reworded lines are not yet approved.
+- Reason: the owner asked for Recipes to sound like their own writing
+- Files: 01-PRODUCT/CONTENT.md, 08-CHANGE-MANAGEMENT/CHANGELOG.md
+- Tested: every Recipes fact compared with BUSINESS-RULES.md and SOCIAL.md. The banned stock phrases and exclamation marks were checked and none was used. No site code changed, so build and lint are not applicable.
+
+## [2026-10-02] Home reworded in the owner's voice, voice sample saved
+
+- Change: three Home lines in CONTENT.md reworded to match the owner's sample: the intro, the Meet Demi lines and the page description. The owner's four sample sentences are saved word for word under Voice, with notes on what to match. Every other Home line is unchanged, because it was already short and plain. The reworded lines are not yet approved. About me and the other pages were not changed.
+- Reason: the owner asked for Home to sound like their own writing
+- Files: 01-PRODUCT/CONTENT.md, 08-CHANGE-MANAGEMENT/CHANGELOG.md
+- Tested: every fact on Home compared with BUSINESS-RULES.md. The banned stock phrases and exclamation marks were checked and none was used. No site code changed, so build and lint are not applicable.
+
 ## [2026-10-02] Page words approved
 
 - Change: the owner approved all the new lines on Recipes, Custom cakes, Catering, About me, Contact and the Footer, including the closing steps. The "not yet approved" notes and "written 2 October 2026" tags in CONTENT.md now say approved or are removed. The Footer copyright line stays as the business name only, and its open question is closed. Status line in CONTENT.md now lists Footer. Four checklist items ticked in UX-SPEC.md (profile picture, footer words, recipe thumbnails, Recipes closing line).
