@@ -1,12 +1,13 @@
 import type { ReactNode } from 'react'
 import { Link } from 'react-router'
+import ExternalLink from './ExternalLink'
 
+// A page on this site (`to`) or another site (`href`, which opens in a new tab).
 type Props = {
-  to: string
   children: ReactNode
   variant?: 'primary' | 'secondary'
   onDark?: boolean
-}
+} & ({ to: string; href?: never } | { href: string; to?: never })
 
 const base =
   'inline-flex h-13 items-center justify-center rounded-xs px-7 font-semibold ' +
@@ -22,7 +23,12 @@ const looks = {
   secondaryOnDark: 'border border-paper text-paper hover:bg-paper/10',
 }
 
-export default function ButtonLink({ to, children, variant = 'primary', onDark = false }: Props) {
+export default function ButtonLink({
+  children,
+  variant = 'primary',
+  onDark = false,
+  ...target
+}: Props) {
   const look =
     variant === 'primary'
       ? onDark
@@ -31,8 +37,16 @@ export default function ButtonLink({ to, children, variant = 'primary', onDark =
       : onDark
         ? looks.secondaryOnDark
         : looks.secondary
+  const className = `${base} ${look}`
+  if (target.href !== undefined) {
+    return (
+      <ExternalLink href={target.href} className={className}>
+        {children}
+      </ExternalLink>
+    )
+  }
   return (
-    <Link to={to} className={`${base} ${look}`}>
+    <Link to={target.to} className={className}>
       {children}
     </Link>
   )

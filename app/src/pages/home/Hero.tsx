@@ -4,13 +4,11 @@ import berryPhoto from '../../assets/photos/berry-sponge-slice.jpg'
 import rollsPhoto from '../../assets/photos/chocolate-chip-rolls.jpg'
 import profilePhoto from '../../assets/photos/profile-chocolate-sponge.jpg'
 import ButtonLink from '../../components/ButtonLink'
+import { fadeProps, riseProps } from '../../lib/lift'
 
 // "The lift" (DESIGN-SYSTEM.md, Signature moment). It plays once per page load,
 // so going back to Home during a visit does not replay it.
 let liftPlayed = false
-
-const easeLift: [number, number, number, number] = [0.16, 0.84, 0.3, 1]
-const easeOut: [number, number, number, number] = [0.23, 1, 0.32, 1]
 
 export default function Hero() {
   const reducedMotion = useReducedMotion()
@@ -21,19 +19,8 @@ export default function Hero() {
     liftPlayed = true
   }, [])
 
-  // Text: opacity only. Photos: rise 60 px, settle in size, ease out.
-  // The rise uses a full `transform` string, not the `y` and `scale` shorthands,
-  // because only the string runs off the main thread while the page is still loading.
-  const fade = (delay: number) => ({
-    initial: still ? (false as const) : { opacity: 0 },
-    animate: { opacity: 1 },
-    transition: { duration: 0.25, delay, ease: easeOut },
-  })
-  const rise = (delay: number) => ({
-    initial: still ? (false as const) : { opacity: 0, transform: 'translateY(60px) scale(0.97)' },
-    animate: { opacity: 1, transform: 'translateY(0px) scale(1)' },
-    transition: { duration: 0.6, delay, ease: easeLift },
-  })
+  const fade = (delay: number) => fadeProps(still, delay)
+  const rise = (delay: number) => riseProps(still, delay)
 
   return (
     <section aria-labelledby="hero-heading" className="relative overflow-hidden lg:grid lg:grid-cols-[46fr_54fr]">

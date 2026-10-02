@@ -120,7 +120,7 @@ React Router changes the page without a full reload, so the site does the work t
 
 ## Structure
 
-- One `h1` per page, and headings in order: `h1`, then `h2` for sections, then `h3` for recipe titles. On Home the `h1` is the hero headline.
+- One `h1` per page, and headings in order: `h1`, then `h2` for sections, then `h3` for recipe titles. On Home the `h1` is the hero headline. On Recipes there is no section heading above the recipes, so the recipe titles are `h2`, and "More videos" is `h2` too (changed on 2 October 2026, so no level is skipped).
 - Landmarks: `<header>`, `<nav aria-label="Main">`, `<main id="main">` and `<footer>`. The footer's page links and social links are each in a `<nav>` with its own label. Sections use `aria-labelledby` with their heading.
 - `<html lang="en-GB">`.
 - Lists are real lists (the recipes, the navigation, the "How ordering works" steps).
