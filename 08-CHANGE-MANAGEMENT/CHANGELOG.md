@@ -17,6 +17,20 @@
 - Tested: the commands and checks run, and the result
 ```
 
+## [2026-10-02] Privacy page marked noindex
+
+- Change: `/privacy` now renders `<meta name="robots" content="noindex">`, on the owner's instruction, until the real notice is written. Search engines leave it out, so a result never shows "Privacy notice coming soon". The `noindex` tag must be removed in WEB-32 when the real notice goes in (a note is in `Privacy.tsx` and ARCHITECTURE.md). This closes the "indexable placeholder" point raised in the Privacy page entry. The other open point stays: both forms link to a notice that does not exist yet, and that must be fixed before launch.
+- Reason: owner decision
+- Files: app/src/pages/Privacy.tsx, 02-ARCHITECTURE/ARCHITECTURE.md, 08-CHANGE-MANAGEMENT/CHANGELOG.md
+- Tested: PASS: `npm run build` and `npm run lint`, no errors and no warnings. PASS (Playwright on the owner's preview http://localhost:5175): `/privacy` has exactly one `robots` tag, "noindex", and one title; `/contact` has no `robots` tag; `/nope` has one `noindex`. NOT TESTED: how a search engine treats the tag, which only shows after the site is live.
+
+## [2026-10-02] Not found page built
+
+- Change: the `*` route now shows the Not found page, so the empty catch-all from the first Home step is gone. It has the approved words from CONTENT.md: title and heading "Page not found", the line "Sorry, I cannot find that page. The link may be wrong.", and the button "Go to the homepage" (to /). The header and footer stay. It renders `<meta name="robots" content="noindex">` and its own `<title>`. CONTENT.md has no description for it, so the description is the approved line itself. The page is not in the menu or the sitemap. As ARCHITECTURE.md says, a wrong address still returns status 200 with this page, so search engines rely on the `noindex` tag. One fix on the way: a header link was marked as the current page on a wrong address that merely started like it (`/recipes/xyz` marked Recipes), because the router matched the start of the address. The header and phone menu links now use `end`, so a link is current only on its exact address.
+- Reason: step 9, owner request ("Add the Not found page")
+- Files: app/src/pages/NotFound.tsx, app/src/App.tsx, app/src/components/Header.tsx, app/src/components/MobileMenu.tsx, 08-CHANGE-MANAGEMENT/CHANGELOG.md
+- Tested: PASS: `npm run build` and `npm run lint`, no errors and no warnings. PASS (Playwright on the owner's preview http://localhost:5175): `/nope` and `/recipes/xyz` show the page with one title "Page not found", `noindex`, the approved line, a 52 px button to "/" and the header and footer; the button goes home, focus moves to the Home h1, and the `noindex` tag is gone on Home; all seven real addresses still show their own page; after the `end` fix `/recipes/xyz` marks no link as current, `/recipes` marks only Recipes in the header and in the phone menu. Looked at the 390 px screenshot. NOT TESTED: the page at 1280 px by eye, a real 404 on Netlify (the `_redirects` file does not exist yet, so the live behaviour is untested), VoiceOver, zoom, and layout shift. Nothing is committed.
+
 ## [2026-10-02] Privacy page built as a placeholder (page 6 of 6)
 
 - Change: `/privacy` built. CONTENT.md has no privacy text yet ("Written by WEB-32 in step 11. Until then the privacy page says 'Privacy notice coming soon'"), so the page shows only the heading "Privacy notice coming soon" in a plain one-column page, and nothing else (no back link, no other words). It still has its own `<title>` and description, but their words are not in CONTENT.md, so they are placeholders: title "Privacy notice: Dhemmyn Food" (the pattern of the other pages) and description "Privacy notice coming soon." Both are marked [NEEDS: the approved title and description, written in WEB-32] in `Privacy.tsx` and in ARCHITECTURE.md. The footer's "Privacy notice" link and both forms' "Read the privacy notice" link now go to this page.

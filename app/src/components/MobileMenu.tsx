@@ -70,7 +70,7 @@ export default function MobileMenu() {
                   <NavLink
                     ref={index === 0 ? firstLinkRef : undefined}
                     to={item.to}
-                    end={item.to === '/'}
+                    end
                     onClick={() => close(false)}
                     className="flex h-12 items-center px-4 font-semibold focus-visible:-outline-offset-3 aria-[current=page]:underline aria-[current=page]:decoration-2 aria-[current=page]:underline-offset-[0.22em]"
                   >

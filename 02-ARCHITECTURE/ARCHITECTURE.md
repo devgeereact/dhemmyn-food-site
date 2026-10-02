@@ -41,7 +41,7 @@ Fast pages, nothing to run on a server, no database to look after, cheap to host
 | /catering | Catering.tsx | CONTENT.md, Catering |
 | /about-me | AboutMe.tsx | CONTENT.md, About me |
 | /contact | Contact.tsx | CONTENT.md, Contact |
-| /privacy | Privacy.tsx | [NEEDS: title and description, written in WEB-32.] Until then the page shows only "Privacy notice coming soon". Placeholders set on 2 October 2026 so the page has its own: title "Privacy notice: Dhemmyn Food" (the pattern of the other pages) and description "Privacy notice coming soon." |
+| /privacy | Privacy.tsx | [NEEDS: title and description, written in WEB-32.] Until then the page shows only "Privacy notice coming soon". Placeholders set on 2 October 2026 so the page has its own: title "Privacy notice: Dhemmyn Food" (the pattern of the other pages) and description "Privacy notice coming soon." The page is also `noindex` until the real notice is there (owner decision, 2 October 2026); remove that tag in WEB-32. |
 | * | NotFound.tsx | "Page not found". Marked `noindex`. |
 
 Titles and descriptions are not copied here, so CONTENT.md stays the one source. Every route sits inside one `Layout` route. The menu order and the footer are in 03-DESIGN/UX-SPEC.md.
