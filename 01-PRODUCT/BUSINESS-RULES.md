@@ -151,4 +151,4 @@ Prices, opening hours, areas served, notice periods, delivery or collection, pay
 
 ### Still open
 
-- [NEEDS: card title for the autumn cake series]. One video stands for the series. What should the card be called?
+- Nothing open on the launch recipes. The autumn cake series card is titled "Autumn cake series" (owner, 2 October 2026). One video stands for the series.

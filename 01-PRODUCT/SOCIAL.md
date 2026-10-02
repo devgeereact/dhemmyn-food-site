@@ -58,7 +58,7 @@ None. The owner chose links only: no video players on the site (interview, batch
 | Doughnuts | "just under 30mins" | https://www.youtube.com/shorts/wgY4iev6mK0 | Added by the owner, 2 October 2026 |
 | Dodo | "Consistency" | https://www.youtube.com/shorts/W5VeoFsTXww | Added by the owner, 2 October 2026 |
 | Oats | "breaky so easy yet so good" | https://www.youtube.com/shorts/UB7AOiD9g9A | Added by the owner, 2 October 2026 |
-| Autumn cake series | "full video just uploaded." | https://www.youtube.com/shorts/dTzLBdwRsAE | Added by the owner, 2 October 2026. [NEEDS: card title. This one video stands for the series] |
+| Autumn cake series | "full video just uploaded." | https://www.youtube.com/shorts/dTzLBdwRsAE | Added by the owner, 2 October 2026. Card title "Autumn cake series", approved 2 October 2026. This one video stands for the series |
 
 The cheese scones video and the other two cookie videos are not used.
 
@@ -70,5 +70,4 @@ The four Linktree recipes (Blueberries filling Vanilla Bundt Cake, No knead Whol
 
 - Send 6 to 9 Instagram post images with their post links.
 - Send view-only Canva links for the four Linktree recipe cards when ready. They are added after launch.
-- Say what title the autumn cake series card should carry.
 - The personal email address on your TikTok bio stays off the site. Removing it from the bio is your choice.

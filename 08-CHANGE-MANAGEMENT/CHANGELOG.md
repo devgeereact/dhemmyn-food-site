@@ -17,6 +17,27 @@
 - Tested: the commands and checks run, and the result
 ```
 
+## [2026-10-02] Form words, Not found words and card title approved
+
+- Change: the owner approved the form labels, hints and messages and the Not found words in CONTENT.md, and the card title "Autumn cake series". Notes and status lines in CONTENT.md and UX-SPEC.md now say approved. Four checklist items ticked in UX-SPEC.md. The open card-title lines in SOCIAL.md and BUSINESS-RULES.md are closed. The owner will gather the thumbnails and the profile picture.
+- Reason: the owner answered the approval list from the previous step
+- Files: 01-PRODUCT/CONTENT.md, 03-DESIGN/UX-SPEC.md, 01-PRODUCT/SOCIAL.md, 01-PRODUCT/BUSINESS-RULES.md, 08-CHANGE-MANAGEMENT/CHANGELOG.md
+- Tested: wording compared with the owner's message of 2 October 2026. No site code changed, so build and lint are not applicable.
+
+## [2026-10-02] Page plans, form states and content checklist written
+
+- Change: UX-SPEC.md now has Page plans for all seven pages (sections top to bottom, one line each, with what the owner supplies), the four form states, the Not found page and the Content checklist grouped by page. CONTENT.md now has the form labels, hints and messages for the Custom cakes and Catering forms, and the Not found page words. Status lines updated.
+- Reason: WEB-10, plan every page, form state and the content the owner must gather
+- Files: 03-DESIGN/UX-SPEC.md, 01-PRODUCT/CONTENT.md, 08-CHANGE-MANAGEMENT/CHANGELOG.md
+- Tested: facts and approved words checked against CONTENT.md, BUSINESS-RULES.md, SOCIAL.md and USER-JOURNEYS.md. Reading times estimated from word counts. The new form and Not found words are not yet approved by the owner. No site code changed, so build and lint are not applicable.
+
+## [2026-10-02] Pages, navigation and user journeys written
+
+- Change: UX-SPEC.md now has the Pages table (seven pages: Home, Recipes, Custom cakes, Catering, About me, Contact, Privacy notice), the pages left out on purpose, and the Navigation section (header menu, footer, phone menu). Status set to In progress. USER-JOURNEYS.md now has three journeys: watch a recipe video, send a cake or catering enquiry, message the owner directly. Status set to Done. Required form fields set to name, email or phone, and the date.
+- Reason: WEB-09, the smallest set of pages that does the job, from 00-FOUNDATION and 01-PRODUCT
+- Files: 03-DESIGN/UX-SPEC.md, 01-PRODUCT/USER-JOURNEYS.md, 08-CHANGE-MANAGEMENT/CHANGELOG.md
+- Tested: drafts shown to the owner before saving. The owner kept Privacy notice and Contact, confirmed the required fields and the video-down fallback. Facts checked against QUESTIONNAIRE.md, BUSINESS-RULES.md, CONTENT.md and PRODUCT-SPEC.md. No site code changed, so build and lint are not applicable.
+
 ## [2026-10-02] P4 approved and moved under its pages
 
 - Change: P4 (How ordering works) approved by the owner in its changed form and moved under Custom cakes, Catering and Contact in CONTENT.md, label removed. No proposed draft is left.

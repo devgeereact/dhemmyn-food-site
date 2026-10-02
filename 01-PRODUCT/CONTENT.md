@@ -4,7 +4,7 @@
 > **Filled by:** WEB-11, WEB-12 and WEB-13 (step 6), and WEB-32 (step 11) for the privacy notice
 > **Applies to:** every site
 
-**Status:** Draft. Words approved by the owner on 2 October 2026 sit under Recipes, About me, Custom cakes, Catering and Contact. No proposed draft is left.
+**Status:** Draft. Words approved by the owner on 2 October 2026 sit under Recipes, About me, Custom cakes, Catering and Contact. No proposed draft is left. Form labels and messages and the Not found page were written on 2 October 2026 and approved by the owner the same day.
 
 *One heading per page, in the order of the sitemap in 03-DESIGN/UX-SPEC.md. Facts come from BUSINESS-RULES.md. When words change, change them here first, then on the site.*
 
@@ -141,11 +141,81 @@ This website does not take payments.
 
 ## Form labels and messages
 
-*Every field label, hint, error message, the sending message, the success message and the failed-to-send message.*
+*Written on 2 October 2026 for WEB-10. Approved by the owner on 2 October 2026. Used exactly as written. Contact details are never typed here: [email, phone and WhatsApp from BUSINESS-RULES.md] is filled in from that file when the page is built. UX-SPEC.md, "Form states", says what the visitor can do in each state.*
+
+*Both forms: a required field says (required) after its label. A field with no mark can be left empty. Phone and email are two fields, and at least one must be filled in.*
+
+### Custom cakes form
+
+Form heading: Ask for a custom cake
+
+| Field | Label | Hint |
+|---|---|---|
+| Name | Your name (required) | |
+| Email | Email | Give an email or a phone number so I can reply. (required) |
+| Phone | Phone number | |
+| Date | Date needed (required) | The day you need the cake. |
+| Occasion | Occasion | For example, a birthday. |
+| Servings | Number of servings | How many people the cake should feed. |
+| Ideas | Flavour and design ideas | |
+| Allergies | Allergies | Write any allergy here. Leave it empty if there is none. |
+
+Send button: Send enquiry
+
+### Catering form
+
+Form heading: Ask about catering
+
+| Field | Label | Hint |
+|---|---|---|
+| Name | Your name (required) | |
+| Email | Email | Give an email or a phone number so I can reply. (required) |
+| Phone | Phone number | |
+| Date | Event date (required) | The day of your event. |
+| Guests | Number of guests | |
+| Town | Town | Where the event is. |
+| Food | Food wanted | What you would like me to cook. |
+| Allergies | Allergies | Write any allergy here. Leave it empty if there is none. |
+
+Send button: Send enquiry
+
+### Messages, both forms
+
+**Mistake in a field.** Shown above the form:
+Something needs fixing before I can send this.
+
+Shown next to the field with the mistake:
+
+- Name empty: Add your name.
+- Email and phone both empty: Add an email or a phone number so I can reply.
+- Email not valid: Check the email address. It should look like name@example.com.
+- Phone not valid: Check the phone number.
+- Date empty (cake): Add the date you need the cake.
+- Date empty (catering): Add the date of your event.
+- Date in the past: Choose a date that has not passed.
+- Servings or guests not a whole number: Use a whole number, for example 12.
+
+**Sending.** The button reads: Sending
+Shown below the button: Sending your enquiry.
+
+**Sent.** Replaces the form:
+Thank you. Your enquiry is sent.
+I will get back to you with the details and a price.
+
+**Failed to send.** Shown above the form, which keeps everything typed. The button reads: Try again
+Sorry, your enquiry did not send. Nothing you typed is lost. Try again, or message me by [email, phone and WhatsApp from BUSINESS-RULES.md].
+
+**Privacy link**, below the send button: Read the privacy notice
 
 ## Not found page
 
-*A short, friendly message and a link back to the homepage.*
+*Written on 2 October 2026 for WEB-10. Approved by the owner on 2 October 2026.*
+
+Page title: Page not found
+
+Sorry, I cannot find that page. The link may be wrong.
+
+Button: Go to the homepage
 
 ## Footer
 
