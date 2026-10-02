@@ -17,10 +17,12 @@
 | Netlify email notification | Emails each enquiry to info@mimmycare.com | A copy of each enquiry | [NEEDS: who hosts the info@mimmycare.com mailbox] |
 | Domain registrar | The domain and its DNS | None | None yet. The site uses the free `.netlify.app` address for now (D-04) |
 | Google Search Console | Shows how Google sees the site | None | Only after a domain exists |
-| Social links: Instagram, TikTok, YouTube, Threads and WhatsApp (`wa.me`) | Plain links out | None until a visitor taps one | The owner's own accounts |
+| Social links: Instagram, TikTok, YouTube, Threads and WhatsApp (`wa.me`) | Plain links out, with four small self-hosted icons (inline SVG from Simple Icons, CC0) | None until a visitor taps one | The owner's own accounts |
 | npm registry (build time only) | Packages installed when the site is built | None. Visitors never touch it | None |
 
-**Not used:** Behold, 21st.dev, shadcn/ui, analytics, Google Fonts or any other font service, CAPTCHA, YouTube or Instagram embeds, Linktree.
+**How social media appears (method, 2 October 2026; the details are in 01-PRODUCT/SOCIAL.md).** Links out and the owner's own pictures that link out, never an embed. No script, iframe or widget from Instagram, TikTok, YouTube or Threads loads on any page. The footer links carry a decorative icon drawn inline and the accessible name "Dhemmyn Food on Instagram (opens in a new tab)" (and the same for the other three). WhatsApp is a click-to-chat `https://wa.me/447787561363` link that opens the visitor's own app. The six Home pictures link to the YouTube Shorts they are the covers of, because the owner cannot get Instagram post links (owner decision, 2 October 2026; SOCIAL.md). If an embed is ever wanted, it sits behind a click-to-load placeholder that names the company, and DECISIONS.md records why first.
+
+**Not used:** Behold, 21st.dev, analytics, Google Fonts or any other font service, CAPTCHA, YouTube or Instagram embeds, Linktree.
 
 *Netlify Forms, Akismet and the email copy all receive personal information. They must appear in 05-SECURITY/DATA-PRIVACY.md and in the privacy notice. Still to check there: whether Netlify stores submissions outside the UK, and how long they are kept. [NEEDS: the owner's decision on how long.] The Allergies field may hold health information, which UK GDPR treats with extra care. Flagged for 05-SECURITY/DATA-PRIVACY.md (step 8) and the privacy notice (step 11).*
 

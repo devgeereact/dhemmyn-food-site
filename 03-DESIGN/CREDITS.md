@@ -41,6 +41,7 @@
 
 | Component | Author and link | Licence | Used in |
 |---|---|---|---|
+| Social icons (Instagram, TikTok, YouTube, Threads) | Simple Icons: https://simpleicons.org (source https://github.com/simple-icons/simple-icons). The four path shapes were read from the repository on 2 October 2026 and drawn inline, so nothing loads from another site. | CC0 1.0 Universal for the icons. The names and logos are trademarks of their owners, which CC0 does not cover, and they are used only to link to the owner's own accounts. | `app/src/components/SocialIcon.tsx`, in the footer |
 | Accordion | shadcn, shadcn/ui: https://ui.shadcn.com/docs/components/accordion (source https://github.com/shadcn-ui/ui). Built on Radix UI, `radix-ui` 1.6.7: https://github.com/radix-ui/primitives. Class-name helper `cn` 0.4.0 by shadcn: https://github.com/shadcn-ui/cn | MIT. shadcn/ui: LICENSE.md, copyright 2023 shadcn, read on 2 October 2026. Radix UI and `cn`: MIT in the npm registry. No licence file is kept in the repository. | `app/src/components/ui/accordion.tsx`, used by CommonQuestions on Custom cakes and Catering. Restyled fully to DESIGN-SYSTEM.md (see D-12 in DECISIONS.md) |
 
 ## Design base

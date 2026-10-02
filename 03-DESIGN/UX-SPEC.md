@@ -49,7 +49,7 @@ Seven pages. The owner chose to keep Privacy notice and Contact (2 October 2026)
 - Business name Dhemmyn Food and the owner's full name, Demi Yusuf.
 - Email, phone and WhatsApp together, taken from 01-PRODUCT/BUSINESS-RULES.md.
 - Page links: Recipes, Custom cakes, Catering, About me, Contact, Privacy notice.
-- Social links named by platform: Instagram, TikTok, YouTube, Threads. They open in a new tab.
+- Social links named by platform: Instagram, TikTok, YouTube, Threads, each with a small icon before the name (added on 2 October 2026). They open in a new tab. Not in the header (no room).
 - Copyright line.
 - No Linktree, follower counts, trading status or postal address, because none is decided.
 

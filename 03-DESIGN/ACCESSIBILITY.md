@@ -36,7 +36,7 @@ WCAG 2.2 adds a few rules that matter here:
 - **Recipe rows:** the "Watch on YouTube" link stretches over the whole row, so focus shows as a ring around the row.
 - **Photo links** in "From my kitchen" show the ring with a 3 px offset.
 - **Common questions** use the shadcn/ui Accordion on Radix UI: each question is a real `button` inside an `h3`, with `aria-expanded`, and a closed answer is hidden from the Tab order and from screen readers. Enter or Space opens and closes each one, and the arrow keys, Home and End move between questions. Several can be open at once. (Changed on 2 October 2026 from native `details` and `summary`, see D-12.)
-- **Links that open a new tab** (YouTube, Instagram, TikTok, Threads) carry "(opens in a new tab)" in their accessible name.
+- **Links that open a new tab** (YouTube, Instagram, TikTok, Threads) carry "(opens in a new tab)" in their accessible name. The four footer social links are named "Dhemmyn Food on Instagram (opens in a new tab)" and so on (changed on 2 October 2026), and the visible platform name is inside that name, so a voice-control user can say "Instagram". Their icons are decorative (`aria-hidden`).
 - Escape closes the phone menu. There are no keyboard traps, no time limits, no tooltips, and no hover-only content.
 - No pop-ups on arrival and no autoplay.
 
@@ -158,4 +158,4 @@ I looked at every file in 03-DESIGN/photos. Alt text is 8 to 15 words, says what
 
 **Differences from CONTENT.md.** Nine of these alt texts are shorter than the ones already approved in CONTENT.md, because those were over 15 words: chocolate-chip-rolls, berry-sponge-slice, autumn-cake-series, scones, cookies, birthday-cake-candles, blue-cake-cutting, braided-chocolate-bread and chocolate-chunk-loaf. The other eight match CONTENT.md or the owner's own words. The owner approved the nine shorter texts on 2 October 2026 and they are now copied into CONTENT.md, so the two files agree.
 
-**Drawings made in code.** The only drawing is the piped icing on the Custom cakes page (see DESIGN-SYSTEM.md, Illustration style). It is decorative: empty alt text (`alt=""` on an image, or `aria-hidden="true"` on inline SVG), and it is never the only way something is said. There are no icons, and nothing else is drawn.
+**Drawings made in code.** The only drawing is the piped icing on the Custom cakes page (see DESIGN-SYSTEM.md, Illustration style). It is decorative: empty alt text (`alt=""` on an image, or `aria-hidden="true"` on inline SVG), and it is never the only way something is said. There are no icons and nothing else is drawn, except the four social icons in the footer (Instagram, TikTok, YouTube and Threads, added on 2 October 2026 on the owner's instruction), which are decorative and always sit beside the platform name.

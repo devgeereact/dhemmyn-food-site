@@ -53,6 +53,13 @@
 
 None. The owner chose links only: no video players on the site (interview, batch 2).
 
+### Method (recorded 2 October 2026)
+
+- **Plain links and the owner's own pictures that link out.** No script, iframe, widget or embed from Instagram, TikTok, YouTube or Threads is ever loaded. Checked in the browser on 2 October 2026: the seven pages request nothing from any host except the site itself, and there are no iframes. If an embed is ever wanted, it goes behind a click-to-load placeholder that names the company it loads from, and is recorded in DECISIONS.md first.
+- **Footer social links:** four links, each a small icon before the platform name (Instagram, TikTok, YouTube, Threads). The icons are drawn inline in `app/src/components/SocialIcon.tsx` from Simple Icons (CC0, credited in 03-DESIGN/CREDITS.md), so nothing loads from another company. Each icon is decorative. The accessible name is "Dhemmyn Food on Instagram (opens in a new tab)", and the same pattern for the other three. Each link opens in a new tab. The header does not carry social links: its navigation already fills the width at 744 px, and UX-SPEC.md keeps social links in the footer.
+- **WhatsApp:** a click-to-chat `wa.me` link with the number above, https://wa.me/447787561363, in the footer and in the three contact rows on the Contact page, in `app/src/data/site.ts`. It is not a new tab: it opens in the visitor's own app.
+- **Instagram pictures:** the six pictures in the "From my kitchen" strip on Home (copies of 03-DESIGN/photos/instagram in `app/src/assets/photos/instagram`, each with alt text from CONTENT.md) still link to the YouTube Short each one is the cover of. The owner cannot get the Instagram post links (owner decision, 2 October 2026), so the six pictures keep linking to the YouTube Shorts they are the covers of, and the strip's "Follow on Instagram" link goes to the profile. This is not an open item. If the owner finds the post links later, they can replace the six addresses in `app/src/pages/home/FromMyKitchen.tsx` and update this note.
+
 ### Video links for the eight launch recipes
 
 *Matched by title from the YouTube Shorts list the owner pasted on 2 October 2026. The owner confirmed the four matches below on 2 October 2026. Page titles on the site never reuse the hashtags in the video titles.*

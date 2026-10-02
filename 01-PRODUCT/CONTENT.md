@@ -504,7 +504,7 @@ Six links, in this order:
 
 ### Follow me
 
-Four links, named by platform. Addresses are in SOCIAL.md. Each opens in a new tab, and its link name adds "opens in a new tab" for screen readers.
+Four links, named by platform. Addresses are in SOCIAL.md. Each opens in a new tab and shows a small decorative icon before the platform name. The accessible name is "Dhemmyn Food on Instagram (opens in a new tab)", and the same for TikTok, YouTube and Threads. (Changed on 2 October 2026 on the owner's instruction; before, the name was the platform name plus "opens in a new tab".)
 
 - Instagram
 - TikTok

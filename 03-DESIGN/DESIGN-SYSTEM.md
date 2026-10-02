@@ -184,7 +184,7 @@ Labels sit above fields. Cards are not used: the recipe row and the lead recipe 
 
 **Skip link:** hidden above the page, appears on focus (instant), paper on ink, 4 px radius.
 
-**Footer:** crumb band. Links paper, underlined; hover underline 3 px. The copyright line at 13 px. Contact details are tappable and also shown as text.
+**Footer:** crumb band. Links paper, underlined; hover underline 3 px. The copyright line at 13 px. Contact details are tappable and also shown as text. The four social links have a 20 px icon before the platform name (inline SVG from Simple Icons, CC0, in `currentColor` so it is paper), with the underline on the name only, the 3 px hover underline, and the paper focus ring. This is the one exception to "no icons", and it stays in the footer: the header has no room for it (its navigation nearly fills the width at 744 px). Added on 2 October 2026 on the owner's instruction.
 
 ## Motion system
 

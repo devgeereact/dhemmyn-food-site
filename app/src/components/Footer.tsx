@@ -2,6 +2,7 @@ import { Link } from 'react-router'
 import { businessName, footerNav, ownerName, socialLinks } from '../data/site'
 import ContactDetails from './ContactDetails'
 import ExternalLink from './ExternalLink'
+import SocialIcon from './SocialIcon'
 
 export default function Footer() {
   return (
@@ -30,8 +31,13 @@ export default function Footer() {
             <ul>
               {socialLinks.map((item) => (
                 <li key={item.href}>
-                  <ExternalLink href={item.href} className="link-line inline-block py-3">
-                    {item.label}
+                  <ExternalLink
+                    href={item.href}
+                    label={`${businessName} on ${item.label}`}
+                    className="group inline-flex items-center gap-3 py-3"
+                  >
+                    <SocialIcon platform={item.label} className="size-5 shrink-0" />
+                    <span className="link-line group-hover:decoration-3">{item.label}</span>
                   </ExternalLink>
                 </li>
               ))}

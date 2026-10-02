@@ -1,7 +1,8 @@
 // Facts used on several pages. Source: 01-PRODUCT/BUSINESS-RULES.md and SOCIAL.md.
 
 export type NavItem = { label: string; to: string }
-export type SocialLink = { label: string; href: string }
+export type SocialPlatform = 'Instagram' | 'TikTok' | 'YouTube' | 'Threads'
+export type SocialLink = { label: SocialPlatform; href: string }
 
 export const businessName = 'Dhemmyn Food'
 export const ownerName = 'Demi Yusuf'
