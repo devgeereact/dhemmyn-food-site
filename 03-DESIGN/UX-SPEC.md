@@ -98,7 +98,7 @@ Seven pages. The owner chose to keep Privacy notice and Contact (2 October 2026)
 2. **Enquiry form:** the heading, eight fields, the send button and the privacy link. Required: name, email or phone, and the date. (You supply: nothing. Every label and message is in CONTENT.md, Form labels and messages.)
 3. **Message me instead:** a band showing email, phone and WhatsApp together. (You supply: nothing. The details come from BUSINESS-RULES.md.)
 4. **How ordering works:** the approved two numbered steps and "This website does not take payments." (You supply: nothing.)
-5. **Common questions:** the five approved questions and answers as plain text, with no fold-away panels. (You supply: nothing.)
+5. **Common questions:** the five approved questions and answers as a ruled list that opens and closes (native `details`), as DESIGN-SYSTEM.md, ARCHITECTURE.md and ACCESSIBILITY.md say. Changed on 2 October 2026: this line used to say "plain text, with no fold-away panels", which disagreed with those three files. (You supply: nothing.)
 
 *Added later, if the owner supplies them: a strip of finished cake photos after the opening.*
 

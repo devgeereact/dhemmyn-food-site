@@ -1,26 +1,21 @@
-import type { ReactNode } from 'react'
+import type { MouseEvent, ReactNode } from 'react'
 import { Link } from 'react-router'
+import { buttonClass } from './buttonStyles'
 import ExternalLink from './ExternalLink'
 
-// A page on this site (`to`) or another site (`href`, which opens in a new tab).
+// A page on this site (`to`), another site (`href`, which opens in a new tab), or a place
+// further up the same page (`href` starting with "#", which moves focus there).
 type Props = {
   children: ReactNode
   variant?: 'primary' | 'secondary'
   onDark?: boolean
 } & ({ to: string; href?: never } | { href: string; to?: never })
 
-const base =
-  'inline-flex h-13 items-center justify-center rounded-xs px-7 font-semibold ' +
-  'motion-safe:transition-[translate,scale] motion-safe:duration-[120ms] motion-safe:ease-out ' +
-  'motion-safe:hover:-translate-y-0.5 motion-safe:active:translate-y-0 ' +
-  'motion-safe:active:scale-98 motion-safe:active:duration-100'
-
-const looks = {
-  primary: 'bg-cake-red text-paper hover:bg-cake-red-deep',
-  // Cake red cannot sit on a cake red band, so on dark surfaces the primary is paper with an ink label.
-  primaryOnDark: 'bg-paper text-ink hover:bg-paper/90',
-  secondary: 'border border-ink text-ink hover:bg-ink/8',
-  secondaryOnDark: 'border border-paper text-paper hover:bg-paper/10',
+function jumpTo(event: MouseEvent<HTMLAnchorElement>, href: string) {
+  const target = document.getElementById(href.slice(1))
+  if (!target) return
+  event.preventDefault()
+  target.focus()
 }
 
 export default function ButtonLink({
@@ -29,25 +24,25 @@ export default function ButtonLink({
   onDark = false,
   ...target
 }: Props) {
-  const look =
-    variant === 'primary'
-      ? onDark
-        ? looks.primaryOnDark
-        : looks.primary
-      : onDark
-        ? looks.secondaryOnDark
-        : looks.secondary
-  const className = `${base} ${look}`
-  if (target.href !== undefined) {
+  const className = buttonClass(variant, onDark)
+  if (target.href === undefined) {
     return (
-      <ExternalLink href={target.href} className={className}>
+      <Link to={target.to} className={className}>
         {children}
-      </ExternalLink>
+      </Link>
+    )
+  }
+  const href = target.href
+  if (href.startsWith('#')) {
+    return (
+      <a href={href} onClick={(event) => jumpTo(event, href)} className={className}>
+        {children}
+      </a>
     )
   }
   return (
-    <Link to={target.to} className={className}>
+    <ExternalLink href={href} className={className}>
       {children}
-    </Link>
+    </ExternalLink>
   )
 }

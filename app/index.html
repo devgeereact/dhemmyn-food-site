@@ -5,6 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
+    <!-- Plain copies of the two enquiry forms. Netlify reads them when the site is deployed.
+         The field names must match app/src/data/forms.ts exactly, or Netlify drops the field. -->
+    <form name="custom-cakes" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="custom-cakes" />
+      <input name="bot-field" />
+      <input name="name" />
+      <input name="email" />
+      <input name="phone" />
+      <input name="date" />
+      <input name="occasion" />
+      <input name="servings" />
+      <textarea name="ideas"></textarea>
+      <textarea name="allergies"></textarea>
+    </form>
+    <form name="catering" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="catering" />
+      <input name="bot-field" />
+      <input name="name" />
+      <input name="email" />
+      <input name="phone" />
+      <input name="date" />
+      <input name="guests" />
+      <input name="town" />
+      <textarea name="food"></textarea>
+      <textarea name="allergies"></textarea>
+    </form>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

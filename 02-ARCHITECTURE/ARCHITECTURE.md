@@ -80,8 +80,9 @@ One component per file.
 | MobileMenu | The "Menu" and "Close" button and the panel, below 744 px |
 | Footer | Business name, contact details, page links, social links, copyright |
 | ContactDetails | Email, phone and WhatsApp together, tappable and as plain text. Used in the Footer, Contact, the "Message me instead" bands and the failed-send message |
+| ContactInline | Email, phone and WhatsApp inside a sentence ("message me by info@..., 07787 561363 and WhatsApp"). Used in How ordering works and Common questions. Added on 2 October 2026 |
 | ExternalLink | A link that opens in a new tab, with "(opens in a new tab)" in its accessible name |
-| ButtonLink | The primary and secondary button styles as links |
+| ButtonLink | The primary and secondary button styles as links: to a page on this site, to another site (new tab), or to a place further up the same page (`#...`, which moves focus there). The looks live in `buttonStyles.ts`, which the form's send button shares |
 | RecipeRow | The ruled recipe row, used on Home and Recipes |
 | LeadRecipe | The large recipe card, used on Home and Recipes |
 | EnquiryForm | Both forms. Reads its field list from `data/forms.ts` |
