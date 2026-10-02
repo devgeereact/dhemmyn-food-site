@@ -17,6 +17,13 @@
 - Tested: the commands and checks run, and the result
 ```
 
+## [2026-10-02] Accessibility plan and alt text written
+
+- Change: 03-DESIGN/ACCESSIBILITY.md filled under every heading, aiming for WCAG 2.2 AA, with a new "Menu on phones" section and a table of all 17 photos with what each shows, alt text and where it is used. The piped icing drawing is listed as decorative.
+- Reason: step 7, WEB-18
+- Files: 03-DESIGN/ACCESSIBILITY.md, 08-CHANGE-MANAGEMENT/CHANGELOG.md
+- Tested: PARTIAL. Every photo was viewed. Alt text word counts checked with a script: all 17 are between 10 and 15 words, none starts with "image of". Contrast ratios are copied from DESIGN-SYSTEM.md. Everything else is a plan and NOT TESTED: keyboard, screen reader, zoom, reduced motion, Lighthouse, forced colours. Nine alt texts were shorter than the earlier approved ones in CONTENT.md. The owner approved them and they were copied into CONTENT.md (Home Opening, Recipes lead and list, From my kitchen) in the same commit. The owner confirmed banana-bread.jpg is a chocolate banana bread. No site code exists, so build and lint are NOT APPLICABLE.
+
 ## [2026-10-02] Design system written
 
 - Change: 03-DESIGN/DESIGN-SYSTEM.md filled under every heading from direction A with the ruled list from B: six colours with the contrast of every text pair, two Fontsource typefaces, the type scale, spacing and corner steps, the hero composition, section rhythm, the piped-icing drawing, every component state, the motion system, the signature moment (the lift), browser surfaces, photography treatment and the Tailwind theme variables. The owner's reason for the direction was added to D-02 in DECISIONS.md. The owner approved six open points: the 40 px phone headline, the new cake red deep shade, cake red judged by eye, the untested items, the reduced motion approach and 52 px buttons.

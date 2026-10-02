@@ -72,11 +72,11 @@ Button: See the recipes (goes to /recipes)
 
 Pictures, three, layered (see DESIGN-DNA.md, "Signature moment"):
 
-- photos/chocolate-chip-rolls.jpg. Alt text: A hand holding a glazed bread roll with chocolate chips, with more rolls on a baking tray behind it.
-- photos/berry-sponge-slice.jpg. Alt text: A hand holding a slice of pale sponge with pockets of dark berry filling, with more slices behind it on a grey surface.
+- photos/chocolate-chip-rolls.jpg. Alt text: A hand holds a glazed chocolate chip roll above a tray of more rolls.
+- photos/berry-sponge-slice.jpg. Alt text: A hand holds a slice of pale sponge with pockets of dark berry filling.
 - photos/profile-chocolate-sponge.jpg. Alt text: A slice of chocolate sponge with white cream and Oreo crumbs on a white plate.
 
-*Changed on 2 October 2026 on the owner's instruction: the opening had one picture, the profile picture, and now has three. The first alt text is the one already approved for the same picture. The berry sponge alt text was written from the picture on 2 October 2026, and the owner can reword it. These pictures are not links.*
+*Changed on 2 October 2026 on the owner's instruction: the opening had one picture, the profile picture, and now has three. The alt texts for the two hand pictures were shortened to 8 to 15 words and approved by the owner on 2 October 2026 (see 03-DESIGN/ACCESSIBILITY.md). The profile picture keeps the owner's own words. These pictures are not links.*
 
 ### Start with a recipe
 
@@ -122,14 +122,16 @@ Link name for each picture: "Watch the video on YouTube: " followed by the alt t
 
 | Image file (in 03-DESIGN/photos/instagram) | Alt text |
 |---|---|
-| birthday-cake-candles.jpg | A rectangular cake with dark pink icing, dark piped borders and tall wavy candles in gold, yellow, purple and green, on a silver board. |
-| blue-cake-cutting.jpg | A round cake with blue icing, seen from above and cut in half to show the dark sponge layers. Piped hearts and white and dark sweets sit on top. |
+| birthday-cake-candles.jpg | A dark pink birthday cake with piped borders, cream writing and tall wavy candles. |
+| blue-cake-cutting.jpg | A blue iced round cake cut in half, showing dark sponge layers and piped decorations. |
 | mini-cupcakes.jpg | A pile of golden sponge cupcakes in white paper cases. |
-| braided-chocolate-bread.jpg | Glazed braided bread with dark chocolate through it, in a tray lined with baking paper, with one piece pulled up to show the soft inside. |
+| braided-chocolate-bread.jpg | Glazed braided chocolate bread in a tray, one piece pulled away showing soft inside. |
 | summer-wine-cake.jpg | A pink iced cake with dark piped edges, cut into slices on a silver board. |
-| chocolate-chunk-loaf.jpg | A loaf with large pieces of dark chocolate on top, and one slice cut beside it on baking paper. |
+| chocolate-chunk-loaf.jpg | A loaf topped with large dark chocolate pieces, with one slice cut beside it. |
 
-*Changed on 2 October 2026 on the owner's instruction: the owner moved chocolate-chip-rolls.jpg to the first screen (see Opening above), and braided-chocolate-bread.jpg took its place in the fourth spot. Its alt text was written from the picture on 2 October 2026, and the owner can reword it. Its link is in 01-PRODUCT/SOCIAL.md.*
+*Changed on 2 October 2026 on the owner's instruction: the owner moved chocolate-chip-rolls.jpg to the first screen (see Opening above), and braided-chocolate-bread.jpg took its place in the fourth spot. Its link is in 01-PRODUCT/SOCIAL.md.*
+
+*Alt text shortened on 2 October 2026 to 8 to 15 words and approved by the owner the same day, for nine pictures: the two hand pictures under Opening above, the autumn cake series, scones and cookies under Recipes, and birthday-cake-candles, blue-cake-cutting, braided-chocolate-bread and chocolate-chunk-loaf in the table above. The reasons and the full list of every photo's alt text are in 03-DESIGN/ACCESSIBILITY.md. The other alt texts are unchanged.*
 
 ## Recipes
 
@@ -155,7 +157,7 @@ Card title: Autumn cake series
 Link: Watch on YouTube
 Link name: Watch on YouTube: Autumn cake series
 Picture: photos/autumn-cake-series.jpg
-Alt text: Apple crumble from the autumn cake series, close up on a fork, with golden crumb on top and soft apple pieces beneath.
+Alt text: Apple crumble from the autumn cake series, golden crumb on soft apple pieces.
 
 ### Recipe list
 
@@ -163,9 +165,9 @@ Alt text: Apple crumble from the autumn cake series, close up on a fork, with go
 
 | Title | Picture (in 03-DESIGN/photos) | Alt text |
 |---|---|---|
-| Scones | scones.jpg | Triangles of unbaked scone dough on baking paper, with grated cheese piled on two of them. |
+| Scones | scones.jpg | Triangles of unbaked scone dough on baking paper, two topped with grated cheese. |
 | The 5 minute bread roll | bread-roll-5-minute.jpg | Unbaked bread rolls in a metal tray, glazed and covered in sesame seeds. |
-| Cookies | cookies.jpg | A baked cookie with a square of chocolate and flakes of sea salt on top, on baking paper. |
+| Cookies | cookies.jpg | A baked cookie topped with a square of chocolate and flaky sea salt. |
 | Banana bread | banana-bread.jpg | Slices of dark chocolate banana bread with pieces of Oreo biscuit inside, on white paper. |
 | Doughnuts | doughnuts.jpg | Round golden dough frying in hot oil in a black pan. |
 | Dodo | dodo.jpg | Pieces of dark, deep-fried food with flecks of red chilli, on a white plate. |
