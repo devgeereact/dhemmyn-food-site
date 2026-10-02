@@ -10,7 +10,7 @@ type Props = {
 }
 
 const link =
-  'group flex min-h-18 items-center justify-between gap-4 py-4 text-[1.25rem] leading-snug ' +
+  'group flex min-h-18 flex-wrap items-center justify-between gap-x-4 gap-y-1 py-4 text-[1.25rem] leading-snug ' +
   'motion-safe:transition-[scale] motion-safe:duration-[120ms] motion-safe:ease-out motion-safe:active:scale-99'
 
 // A large ruled row for the contact and social links (DESIGN-SYSTEM.md, "Contact row and social link"):

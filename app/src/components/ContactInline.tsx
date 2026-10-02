@@ -9,7 +9,7 @@ export default function ContactInline() {
         {contact.email}
       </a>
       ,{' '}
-      <a href={`tel:${contact.phoneTel}`} className="link-line tabular-nums">
+      <a href={`tel:${contact.phoneTel}`} className="link-line whitespace-nowrap tabular-nums">
         {contact.phoneDisplay}
       </a>{' '}
       and{' '}
