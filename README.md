@@ -1,8 +1,8 @@
-# [BUSINESS NAME] website
+# Dhemmyn Food website
 
-A small website for [BUSINESS NAME], [WHAT YOU DO] in [AREA]. Built with Vite, React, TypeScript, React Router, Tailwind CSS and Motion, and published on Netlify.
+A small website for Dhemmyn Food, where Demi Yusuf shares easy baking and cooking recipes online and takes custom cake and catering enquiries. Built with Vite, React, TypeScript, React Router, Tailwind CSS and Motion, and published on Netlify.
 
-**Status:** First draft. WEB-21 (step 8) fills the placeholders in square brackets.
+**Status:** Planning is finished (step 8). The app is not built yet.
 
 ## Where things are
 
@@ -12,6 +12,8 @@ A small website for [BUSINESS NAME], [WHAT YOU DO] in [AREA]. Built with Vite, R
 - `app/`: the website code, created in step 9. Only `app/dist`, the finished build, is published.
 
 ## Run it on your computer
+
+`app/` does not exist until step 9. Until then these commands do not work.
 
 ```
 cd app
@@ -32,6 +34,6 @@ Both must finish without errors.
 
 ## Current state
 
-- Current step: [step number and name]
-- Live address: [after step 12]
-- Last release decision: [READY, READY WITH CONDITIONS or NOT READY, from 09-RELEASE/RELEASE-REPORT.md]
+- Current step: step 8 done (architecture, security, rules). Next: step 9, build the app.
+- Live address: none yet. The site will use a free `.netlify.app` address until a domain exists (D-04 in 08-CHANGE-MANAGEMENT/DECISIONS.md).
+- Last release decision: none yet. There is no release report.

@@ -17,6 +17,13 @@
 - Tested: the commands and checks run, and the result
 ```
 
+## [2026-10-02] AGENTS.md and README.md finished
+
+- Change: AGENTS.md finished from the plans: what the site is and who it is for, where each kind of fact lives, the stack and commands (run inside app/), the working rules from section 5, the authenticity and design rules from section 6, honesty, the definition of done, and the rule that only app/dist is published. README.md placeholders filled. The "in [AREA]" wording was dropped because the area for cakes and catering is not decided. One line was added saying app/ does not exist until step 9. CLAUDE.md was checked and not changed.
+- Reason: step 8, WEB-21
+- Files: AGENTS.md, README.md, 08-CHANGE-MANAGEMENT/CHANGELOG.md
+- Tested: AGENTS.md line count checked with wc -l. CLAUDE.md starts with the line @AGENTS.md and holds nothing that contradicts AGENTS.md (read and compared). NOT TESTED: that Claude Code and Codex load the finished AGENTS.md as expected. The README commands cannot run until app/ exists. No site code exists, so build and lint are NOT APPLICABLE.
+
 ## [2026-10-02] Enquiry retention decided
 
 - Change: DATA-PRIVACY.md now says enquiries are kept for 6 months after the owner's last message with that person, then deleted from Netlify and the mailbox. The owner checks at each monthly update. The mailbox question (who else can read info@mimmycare.com) stays open in PERMISSIONS.md and DATA-PRIVACY.md.
