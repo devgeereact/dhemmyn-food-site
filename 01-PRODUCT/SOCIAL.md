@@ -4,7 +4,7 @@
 > **Filled by:** WEB-06 (step 4) and WEB-27 (step 9)
 > **Applies to:** every site with social media
 
-**Status:** Draft. Accounts and WhatsApp filled from public pages read on 2 October 2026 (WEB-06). Owner answered the open items on 2 October 2026. Instagram images wait for the owner. The four Linktree recipes are added after launch.
+**Status:** Draft. Accounts and WhatsApp filled from public pages read on 2 October 2026 (WEB-06). Owner answered the open items on 2 October 2026. The six "From my kitchen" images arrived on 2 October 2026. The four Linktree recipes are added after launch.
 
 *Plain links set no cookies. Embed scripts from Instagram, TikTok or YouTube never load without consent: use the business's own images linking out, or a click-to-load placeholder. Never record passwords here.*
 
@@ -32,12 +32,19 @@
 
 *Method: curated grid (default) or a Behold JSON feed fetched when the site is built. For a curated grid, list each post: the image file in 03-DESIGN/photos/instagram, the post link, and alt text.*
 
-- Method: curated grid of the owner's own pictures, each linking out to Instagram, with no Instagram script. The owner chose this on 2 October 2026 and will send the images later.
-- The Instagram page could not be read without logging in, so no post links were collected.
+- Method: curated grid of the owner's own pictures, with no Instagram script. The owner chose this on 2 October 2026.
+- The Instagram page could not be read without logging in, and the owner could not get the Instagram post links. So each of the six pictures links to the YouTube Short it is the cover of (owner decision, 2 October 2026). The section is called "From my kitchen" and keeps a "Follow on Instagram" link to https://www.instagram.com/dhemmynfood/.
+- Each picture's link name is "Watch the video on YouTube: " followed by its alt text, so a screen reader says the link opens the video on YouTube. The links open in a new tab.
+- Alt text lives in 01-PRODUCT/CONTENT.md, Home, "From my kitchen". The image credits are in 03-DESIGN/CREDITS.md.
 
-| Image file | Post link | Alt text |
+| Image file | Link (YouTube Short) | Alt text |
 |---|---|---|
-| [NEEDS: image] | [NEEDS: post link] | [NEEDS: alt text] |
+| birthday-cake-candles.jpg | https://www.youtube.com/shorts/ajUFpqE7ows | See CONTENT.md, Home |
+| blue-cake-cutting.jpg | https://www.youtube.com/shorts/pNw2vVMCILU | See CONTENT.md, Home |
+| mini-cupcakes.jpg | https://www.youtube.com/shorts/JPA1_ct8rYA | See CONTENT.md, Home |
+| chocolate-chip-rolls.jpg | https://www.youtube.com/shorts/mJt9TWOVqpw | See CONTENT.md, Home |
+| summer-wine-cake.jpg | https://www.youtube.com/shorts/OlJUTrU39CQ | See CONTENT.md, Home |
+| chocolate-chunk-loaf.jpg | https://www.youtube.com/shorts/MdYKirQKcqQ | See CONTENT.md, Home |
 
 ## Embeds
 
@@ -68,6 +75,5 @@ The four Linktree recipes (Blueberries filling Vanilla Bundt Cake, No knead Whol
 
 ## Owner actions
 
-- Send 6 to 9 Instagram post images with their post links.
 - Send view-only Canva links for the four Linktree recipe cards when ready. They are added after launch.
 - The personal email address on your TikTok bio stays off the site. Removing it from the bio is your choice.

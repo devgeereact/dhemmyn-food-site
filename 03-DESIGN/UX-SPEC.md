@@ -74,10 +74,10 @@ Seven pages. The owner chose to keep Privacy notice and Contact (2 October 2026)
 *About 100 words. Under one minute.*
 
 1. **Opening:** the headline, one line about Dhemmyn Food, a button to Recipes, and the profile picture beside the text on a laptop. (You supply: headline, intro line and button text for the Home section of CONTENT.md; the chocolate sponge profile picture file.)
-2. **Latest recipes:** one large recipe card, three smaller cards in a row beneath it, and a "See all recipes" link. (You supply: nothing new. It reuses the Recipes thumbnails, titles and links. Say which recipe leads. The default is the autumn cake series.)
+2. **Start with a recipe:** one large recipe card, three smaller cards in a row beneath it, and a "See all recipes" link. (You supply: nothing new. It reuses the Recipes thumbnails, titles and links. Say which recipe leads. The default is the autumn cake series.)
 3. **Cakes and catering:** a band in two halves, one with the first line of Custom cakes and a link, one with the first line of Catering and a link. Text only, no icons. (You supply: nothing. The words are approved.)
 4. **Meet Demi:** two sentences and a link to About me. (You supply: nothing. It uses the first two sentences of About me, approved.)
-5. **Instagram strip:** one row of the owner's own pictures, each linking to its Instagram post, and a "Follow on Instagram" link. (You supply: 6 to 9 images, their post links and alt text. The section stays out until they arrive.)
+5. **From my kitchen:** one row of six of the owner's own pictures, each linking to the YouTube Short it is the cover of, and a "Follow on Instagram" link. Each picture's link name says it opens the video on YouTube. (You supply: nothing. The six images, their Short links in CREDITS.md and their alt text are done. The owner could not get Instagram post links.)
 
 ### Recipes
 
@@ -177,9 +177,9 @@ Both the Custom cakes and Catering forms use these four states. Words: CONTENT.m
 
 ### Home
 
-- [ ] Draft: the headline, one intro line and the button text (CONTENT.md, Home).
-- [ ] You say: which recipe leads the Latest recipes block. The default is the autumn cake series.
-- [ ] You send: 6 to 9 of your own Instagram images, each with its post link. Alt text is drafted from what each picture shows.
+- [x] Draft: the headline, one intro line and the button text (CONTENT.md, Home). Done: approved 2 October 2026.
+- [x] You say: which recipe leads the recipes block. Done: the autumn cake series, with Scones, The 5 minute bread roll and Cookies beneath it.
+- [x] You send: images for the "From my kitchen" strip. Done: six images in 03-DESIGN/photos/instagram, each linking to its YouTube Short (links in CREDITS.md), alt text written, 2 October 2026.
 
 ### Recipes
 

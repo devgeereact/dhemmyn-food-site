@@ -17,6 +17,20 @@
 - Tested: the commands and checks run, and the result
 ```
 
+## [2026-10-02] Home strip link names and plans updated
+
+- Change: each "From my kitchen" picture link now has the link name "Watch the video on YouTube: " plus its alt text (CONTENT.md). UX-SPEC.md: Home plan sections 2 and 5 renamed and rewritten for the six images, and three Home checklist items ticked. SOCIAL.md: the Instagram table now lists the six files with their Short links, the method lines say the pictures link to YouTube Shorts, and the "send Instagram images" owner action is removed.
+- Reason: the owner asked for link names that say the link opens the video on YouTube, and for the plans to match
+- Files: 01-PRODUCT/CONTENT.md, 03-DESIGN/UX-SPEC.md, 01-PRODUCT/SOCIAL.md, 08-CHANGE-MANAGEMENT/CHANGELOG.md
+- Tested: the six Short links in SOCIAL.md compared with the CREDITS.md rows. No site code changed, so build and lint are not applicable.
+
+## [2026-10-02] Home page words written and approved
+
+- Change: CONTENT.md now has the Home words: page title and description, headline "Easy baking and cooking recipes, online", intro, button "See the recipes", the recipe cards block, the cakes and catering band, Meet Demi, and the "From my kitchen" strip with six images, alt text and the profile picture alt text. The strip links to the owner's YouTube Shorts, not Instagram posts, and keeps a "Follow on Instagram" link.
+- Reason: WEB-11, the owner chose headline B and approved the rest
+- Files: 01-PRODUCT/CONTENT.md, 08-CHANGE-MANAGEMENT/CHANGELOG.md
+- Tested: headline length, button and next step checked against UX-SPEC.md and USER-JOURNEYS.md. Cake, catering and Meet Demi words match the approved text. The six image files exist, and their Short links match the CREDITS.md rows. The six alt texts were written after viewing each image. No site code changed, so build and lint are not applicable.
+
 ## [2026-10-02] Form words, Not found words and card title approved
 
 - Change: the owner approved the form labels, hints and messages and the Not found words in CONTENT.md, and the card title "Autumn cake series". Notes and status lines in CONTENT.md and UX-SPEC.md now say approved. Four checklist items ticked in UX-SPEC.md. The open card-title lines in SOCIAL.md and BUSINESS-RULES.md are closed. The owner will gather the thumbnails and the profile picture.

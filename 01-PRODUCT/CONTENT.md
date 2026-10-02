@@ -4,7 +4,7 @@
 > **Filled by:** WEB-11, WEB-12 and WEB-13 (step 6), and WEB-32 (step 11) for the privacy notice
 > **Applies to:** every site
 
-**Status:** Draft. Words approved by the owner on 2 October 2026 sit under Recipes, About me, Custom cakes, Catering and Contact. No proposed draft is left. Form labels and messages and the Not found page were written on 2 October 2026 and approved by the owner the same day.
+**Status:** Draft. Words approved by the owner on 2 October 2026 sit under Home, Recipes, About me, Custom cakes, Catering and Contact. No proposed draft is left. Form labels and messages and the Not found page were written on 2 October 2026 and approved by the owner the same day.
 
 *One heading per page, in the order of the sitemap in 03-DESIGN/UX-SPEC.md. Facts come from BUSINESS-RULES.md. When words change, change them here first, then on the site.*
 
@@ -44,6 +44,72 @@ Avoid list: "look no further", "elevate", "unlock", "seamless", "passionate abou
 ## Home
 
 *Words from WEB-11: headline, short introduction, sections from the page plan, main button text.*
+
+*Approved by the owner on 2 October 2026. Headline option B chosen. Sections follow the Home plan in 03-DESIGN/UX-SPEC.md. Contact details are never typed here.*
+
+### Opening
+
+Page title: Dhemmyn Food: easy baking and cooking recipes
+
+Page description: Easy and authentic recipes for baking and cooking by Demi Yusuf. Watch each recipe on YouTube, or ask about a custom cake or catering.
+
+Headline: Easy baking and cooking recipes, online
+
+Intro: Cakes, bread rolls, scones, cookies, doughnuts and more. Each recipe is a video.
+
+Button: See the recipes (goes to /recipes)
+
+Picture: photos/profile-chocolate-sponge.jpg
+Alt text: A slice of chocolate sponge with white cream and Oreo crumbs on a white plate.
+
+### Start with a recipe
+
+Heading: Start with a recipe
+
+Large card: Autumn cake series. Link: Watch on YouTube
+
+Three smaller cards, each with the link Watch on YouTube:
+
+- Scones
+- The 5 minute bread roll
+- Cookies
+
+Link under the cards: See all recipes (goes to /recipes)
+
+*The thumbnails and video links are the ones for the Recipes page (photos/ and SOCIAL.md). "Latest" is not used in the heading, because only the autumn cake series is known to be new.*
+
+### Cakes and catering
+
+Left half: Want a cake for a birthday or a party? Ask me for a custom cake.
+Link: Ask for a custom cake (goes to /custom-cakes)
+
+Right half: Need food for an event? Ask me about catering.
+Link: Ask about catering (goes to /catering)
+
+### Meet Demi
+
+Hi, I'm Demi Yusuf. Dhemmyn Food is me sharing easy and authentic recipes for baking and cooking.
+
+Link: More about me (goes to /about-me)
+
+### From my kitchen
+
+Heading: From my kitchen
+
+Link: Follow on Instagram (https://www.instagram.com/dhemmynfood/, from SOCIAL.md)
+
+Six of the owner's own pictures, each linking to the YouTube Short it is the cover of. The owner could not get the Instagram post links. The links are in 03-DESIGN/CREDITS.md, in the row for each file. They open in a new tab.
+
+Link name for each picture: "Watch the video on YouTube: " followed by the alt text below. Screen readers read the link name, so it says the link opens the video on YouTube. The alt text alone describes the picture.
+
+| Image file (in 03-DESIGN/photos/instagram) | Alt text |
+|---|---|
+| birthday-cake-candles.jpg | A rectangular cake with dark pink icing, dark piped borders and tall wavy candles in gold, yellow, purple and green, on a silver board. |
+| blue-cake-cutting.jpg | A round cake with blue icing, seen from above and cut in half to show the dark sponge layers. Piped hearts and white and dark sweets sit on top. |
+| mini-cupcakes.jpg | A pile of golden sponge cupcakes in white paper cases. |
+| chocolate-chip-rolls.jpg | A hand holding a glazed bread roll with chocolate chips, with more rolls on a baking tray behind it. |
+| summer-wine-cake.jpg | A pink iced cake with dark piped edges, cut into slices on a silver board. |
+| chocolate-chunk-loaf.jpg | A loaf with large pieces of dark chocolate on top, and one slice cut beside it on baking paper. |
 
 ## Recipes
 
