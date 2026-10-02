@@ -35,3 +35,6 @@ export const socialLinks: SocialLink[] = [
 ]
 
 export const instagramUrl = socialLinks[0].href
+
+// The same handle on all four platforms (SOCIAL.md).
+export const handle = '@dhemmynfood'

@@ -80,6 +80,7 @@ One component per file.
 | MobileMenu | The "Menu" and "Close" button and the panel, below 744 px |
 | Footer | Business name, contact details, page links, social links, copyright |
 | ContactDetails | Email, phone and WhatsApp together, tappable and as plain text. Used in the Footer, Contact, the "Message me instead" bands and the failed-send message |
+| RuledRow | A large ruled link row (72 px high, 20 px text) with a label and the number, address or handle as plain text. The label moves 4 px right on hover. Used for the four social links on About me and the three contact rows on Contact. Added on 2 October 2026 |
 | ContactInline | Email, phone and WhatsApp inside a sentence ("message me by info@..., 07787 561363 and WhatsApp"). Used in How ordering works and Common questions. Added on 2 October 2026 |
 | ExternalLink | A link that opens in a new tab, with "(opens in a new tab)" in its accessible name |
 | ButtonLink | The primary and secondary button styles as links: to a page on this site, to another site (new tab), or to a place further up the same page (`#...`, which moves focus there). The looks live in `buttonStyles.ts`, which the form's send button shares |
