@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --color-*: initial;
+  --color-paper: #F0F3F3;
+  --color-ink: #33190F;
+  --color-sponge: #4B2B20;
+  --color-crumb: #1D120E;
+  --color-cake-red: #B0283F;
+  --color-cake-red-deep: #8E1F33;
+
+  --font-display: "Bricolage Grotesque Variable", system-ui, sans-serif;
+  --font-body: "Figtree Variable", system-ui, sans-serif;
+
+  --breakpoint-*: initial;
+  --breakpoint-md: 46.5rem;   /* 744 px */
+  --breakpoint-lg: 70.5rem;   /* 1128 px */
+  --breakpoint-xl: 90rem;     /* 1440 px */
+
+  --spacing: 0.25rem;         /* 4 px unit */
+
+  --radius-xs: 0.25rem;       /* 4 px */
+  --radius-sm: 0.5rem;        /* 8 px */
+
+  --ease-lift: cubic-bezier(0.16, 0.84, 0.3, 1);
+
+  --text-hero: clamp(1.9rem, 10.2vw, 2.5rem);
+  --text-hero--line-height: 1;
+  --text-hero-lg: clamp(3.25rem, 0.125rem + 6.72vw, 5.5rem);
+  --text-hero-lg--line-height: 0.96;
+  --text-h2: clamp(1.35rem, 7.3vw, 1.75rem);
+  --text-h2--line-height: 1.05;
+  --text-h2-lg: clamp(2.25rem, 0.6rem + 3.2vw, 3.25rem);
+  --text-h2-lg--line-height: 1.05;
+}
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}

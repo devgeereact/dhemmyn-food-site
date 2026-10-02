@@ -34,7 +34,8 @@
 
 | Font | Source | Licence | Licence file kept in |
 |---|---|---|---|
-| | | | |
+| Bricolage Grotesque (variable, width axis) | npm package `@fontsource-variable/bricolage-grotesque` 5.3.0, installed 2 October 2026 | OFL-1.1 (package metadata) | `app/node_modules/@fontsource-variable/bricolage-grotesque/LICENSE`. Vite copies the font files into `app/dist/assets`. |
+| Figtree (variable) | npm package `@fontsource-variable/figtree` 5.3.0, installed 2 October 2026 | OFL-1.1 (package metadata) | `app/node_modules/@fontsource-variable/figtree/LICENSE`. Vite copies the font files into `app/dist/assets`. |
 
 ## Components
 

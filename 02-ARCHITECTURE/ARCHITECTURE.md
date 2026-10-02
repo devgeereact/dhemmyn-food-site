@@ -4,11 +4,28 @@
 > **Filled by:** WEB-19 (step 8), then updated by WEB-22 with the installed versions
 > **Applies to:** every site
 
-**Status:** Draft. Written and approved by the owner on 2 October 2026, before any code exists. Package versions are added after the app is created (step 9).
+**Status:** Draft. Written and approved by the owner on 2 October 2026. The app was created and the installed versions recorded on 2 October 2026 (WEB-22). Everything else here is still the plan until each part is built.
 
 ## Stack
 
-Vite (react-ts template), React, TypeScript in strict mode, React Router (declarative mode, `BrowserRouter`), Tailwind CSS through `@tailwindcss/vite`, Motion (`motion/react`, with the app wrapped in `<MotionConfig reducedMotion="user">`) and Fontsource. Hosting is Netlify, publishing `app/dist` from a private GitHub repository. [NEEDS: the version of each from app/package.json, after step 9.] No vite-plugin-pwa, no shadcn/ui and no 21st.dev components for now.
+Vite (react-ts template), React, TypeScript in strict mode, React Router (declarative mode, `BrowserRouter`), Tailwind CSS through `@tailwindcss/vite`, Motion (`motion/react`, with the app wrapped in `<MotionConfig reducedMotion="user">`) and Fontsource. Hosting is Netlify, publishing `app/dist` from a private GitHub repository. No vite-plugin-pwa, no shadcn/ui and no 21st.dev components for now.
+
+**Installed versions** (from `npm ls --depth=0` in `app/`, 2 October 2026, Node v26.8.1, npm 12.0.2):
+
+| Package | Version |
+|---|---|
+| vite | 8.3.2 |
+| @vitejs/plugin-react | 6.1.1 |
+| react, react-dom | 19.3.0 |
+| typescript | 6.0.3 |
+| react-router | 8.4.0 |
+| tailwindcss, @tailwindcss/vite | 4.3.3 |
+| motion | 14.0.0 |
+| @fontsource-variable/bricolage-grotesque | 5.3.0 |
+| @fontsource-variable/figtree | 5.3.0 |
+| oxlint (`npm run lint`) | 1.86.0 |
+
+`npm run lint` runs oxlint, as set up by the Vite template. `tsconfig.app.json` and `tsconfig.node.json` had `"strict": true` added, because the template leaves it off.
 
 ## Why this stack
 
