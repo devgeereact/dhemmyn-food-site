@@ -17,6 +17,13 @@
 - Tested: the commands and checks run, and the result
 ```
 
+## [2026-10-02] Design direction and design base chosen
+
+- Change: three direction prototypes added in 03-DESIGN/directions/ with screenshots at 390 and 1280 pixels. The owner chose direction A with the ruled list from B. The getdesign "airbnb" file was saved over the placeholder 03-DESIGN/BASE-DESIGN.md as a structure-only reference. D-02 and D-03 added to DECISIONS.md. The design base row added to CREDITS.md. "Chosen direction" filled in DESIGN-DNA.md.
+- Reason: step 7, WEB-15 and WEB-16
+- Files: 03-DESIGN/directions/ (three HTML files and six screenshots), 03-DESIGN/BASE-DESIGN.md, 08-CHANGE-MANAGEMENT/DECISIONS.md, 03-DESIGN/CREDITS.md, 03-DESIGN/DESIGN-DNA.md, 08-CHANGE-MANAGEMENT/CHANGELOG.md
+- Tested: PARTIAL. Prototypes checked in Playwright at 390 and 1280 pixels: headline on two lines at 390, no sideways scroll, button visible without scrolling, reduced motion honoured. Not tested: real devices, Lighthouse, contrast ratios, Safari and Firefox. The getdesign file licence is recorded in CREDITS.md as MIT (VoltAgent/awesome-design-md), from the guide as relayed by the owner. The file itself carries no licence text, and the guide was not read by the assistant. No site code exists, so build and lint are NOT APPLICABLE.
+
 ## [2026-10-02] Design DNA
 
 - Change: DESIGN-DNA.md filled under every heading except Chosen direction, which waits for WEB-15. The owner confirmed one accent red from the birthday cake. Home "Start with a recipe": the three smaller cards in a row became a ruled list, in UX-SPEC.md and CONTENT.md. Home first screen: three layered pictures (chocolate-chip-rolls.jpg, berry-sponge-slice.jpg, profile picture) instead of one. "From my kitchen": braided-chocolate-bread.jpg replaced chocolate-chip-rolls.jpg, in CONTENT.md and SOCIAL.md. The owner moved the picture files and updated CREDITS.md before this change.

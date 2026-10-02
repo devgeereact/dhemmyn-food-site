@@ -97,7 +97,7 @@ Playful Pop and Quiet Luxury are rejected: childish and fancy.
 
 ## Chosen direction
 
-[NEEDS: owner's choice from the three directions in WEB-15.] My recommendation is direction 1 with the ruled list from direction 2. To be recorded in 08-CHANGE-MANAGEMENT/DECISIONS.md.
+Chosen by the owner on 2 October 2026: direction A, Warm Craft with the layered collage hero, with the ruled recipe list from direction B (Editorial Print). Direction C is not used. Recorded as D-02 in 08-CHANGE-MANAGEMENT/DECISIONS.md. Prototypes are in 03-DESIGN/directions/. The base for structure is the airbnb entry, recorded as D-03.
 
 ## Archetype menu
 

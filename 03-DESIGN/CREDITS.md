@@ -46,6 +46,6 @@
 
 | File | Source | Licence | What was taken |
 |---|---|---|---|
-| | | | Structure only |
+| 03-DESIGN/BASE-DESIGN.md | getdesign.md, the "airbnb" entry, saved on 2 October 2026 with `npx getdesign add airbnb --out 03-DESIGN/BASE-DESIGN.md --force` (getdesign 0.6.25). The file describes Airbnb's public design. The name Airbnb and its marks belong to Airbnb. | MIT. The guide says the getdesign.md files come from the VoltAgent/awesome-design-md collection on GitHub, under the MIT licence (owner, 2 October 2026). The npm metadata for the getdesign tool gives the same repository and MIT. The downloaded file carries no licence text of its own. Reference only, not published. | Structure only: spacing scale, small type steps, corner steps, flat shadow rule, component list. No colours, fonts, imagery, name or wording. See D-03 in 08-CHANGE-MANAGEMENT/DECISIONS.md. |
 
 *Owner note: the Linktree recipe card images could not be used. Their preview images are Canva's generic share picture, not my photos.*
