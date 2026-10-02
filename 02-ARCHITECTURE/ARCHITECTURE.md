@@ -8,7 +8,7 @@
 
 ## Stack
 
-Vite (react-ts template), React, TypeScript in strict mode, React Router (declarative mode, `BrowserRouter`), Tailwind CSS through `@tailwindcss/vite`, Motion (`motion/react`, with the app wrapped in `<MotionConfig reducedMotion="user">`) and Fontsource. Hosting is Netlify, publishing `app/dist` from a private GitHub repository. No vite-plugin-pwa, no shadcn/ui and no 21st.dev components for now.
+Vite (react-ts template), React, TypeScript in strict mode, React Router (declarative mode, `BrowserRouter`), Tailwind CSS through `@tailwindcss/vite`, Motion (`motion/react`, with the app wrapped in `<MotionConfig reducedMotion="user">`) and Fontsource. Hosting is Netlify, publishing `app/dist` from a private GitHub repository. One ready-made component: the shadcn/ui Accordion on Radix UI, for Common questions (D-12 in DECISIONS.md, credited in CREDITS.md), with the `@` alias for `src` and shadcn's `components.json`. No vite-plugin-pwa and no 21st.dev components for now.
 
 **Installed versions** (from `npm ls --depth=0` in `app/`, 2 October 2026, Node v26.8.1, npm 12.0.2):
 
@@ -24,6 +24,8 @@ Vite (react-ts template), React, TypeScript in strict mode, React Router (declar
 | @fontsource-variable/bricolage-grotesque | 5.3.0 |
 | @fontsource-variable/figtree | 5.3.0 |
 | oxlint (`npm run lint`) | 1.86.0 |
+| radix-ui (the accordion) | 1.6.7 |
+| cn (shadcn's class-name helper, in `src/lib/utils.ts`) | 0.4.0 |
 
 `npm run lint` runs oxlint, as set up by the Vite template. `tsconfig.app.json` and `tsconfig.node.json` had `"strict": true` added, because the template leaves it off.
 
@@ -59,7 +61,8 @@ app/
     main.tsx        font imports, StrictMode, BrowserRouter, MotionConfig
     App.tsx         the routes
     index.css       Tailwind and the @theme block from DESIGN-SYSTEM.md
-    components/     shared parts (below)
+    components/     shared parts (below); ui/ holds shadcn/ui components (accordion.tsx)
+    lib/            lift.ts (the entrance's motion values), utils.ts (shadcn's cn)
     pages/          the eight page files above
     data/           site.ts, recipes.ts, forms.ts
     assets/photos/  11 photos, and photos/instagram/ with 6
@@ -90,7 +93,7 @@ One component per file.
 | FormField | Label, hint, input and error message |
 | MessageMeInstead | The quiet contact band on Custom cakes and Catering |
 | HowOrderingWorks | The two numbered steps, used on three pages |
-| CommonQuestions | The five questions as `details` and `summary`, used on two pages |
+| CommonQuestions | The five questions in the shadcn/ui Accordion (`components/ui/accordion.tsx`, restyled), several open at once, used on two pages |
 
 Parts used on one page only (the Home first-screen collage, the "From my kitchen" strip, the piped drawing) live in `pages/` beside that page, as small components, one per file.
 

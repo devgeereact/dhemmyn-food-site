@@ -55,9 +55,30 @@
   --text-caption--line-height: 1.23;
 }
 
-/* The focus ring is cake red, and paper on dark surfaces (sponge, crumb, ink, cake red). */
 :root {
+  /* The focus ring is cake red, and paper on dark surfaces (sponge, crumb, ink, cake red). */
   --focus: var(--color-cake-red);
+
+  /* shadcn/ui's colour variables, mapped to DESIGN-SYSTEM.md. Light only, no dark mode. */
+  --background: var(--color-paper);
+  --foreground: var(--color-ink);
+  --card: var(--color-paper);
+  --card-foreground: var(--color-ink);
+  --popover: var(--color-paper);
+  --popover-foreground: var(--color-ink);
+  --primary: var(--color-cake-red);
+  --primary-foreground: var(--color-paper);
+  --secondary: var(--color-sponge);
+  --secondary-foreground: var(--color-paper);
+  --muted: var(--color-paper);
+  --muted-foreground: var(--color-sponge);
+  --accent: var(--color-paper);
+  --accent-foreground: var(--color-ink);
+  --destructive: var(--color-cake-red);
+  --border: color-mix(in oklab, var(--color-ink) 30%, transparent);
+  --input: var(--color-sponge);
+  --ring: var(--color-cake-red);
+  --radius: 0.25rem;
 }
 
 @layer base {
@@ -67,7 +88,7 @@
   }
 
   body {
-    @apply bg-paper font-body text-body text-ink md:text-body-lg;
+    @apply bg-background font-body text-body text-foreground md:text-body-lg;
   }
 
   h1,
@@ -131,4 +152,26 @@
   @media (width >= 70.5rem) {
     padding-inline: 3rem;
   }
+}
+
+/* Lets shadcn/ui's class names (bg-background, border-border, text-muted-foreground, ...) use the variables above. */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
 }

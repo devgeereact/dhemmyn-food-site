@@ -35,7 +35,7 @@ WCAG 2.2 adds a few rules that matter here:
 - **Visible focus:** a 3 px solid cake red ring with a 3 px offset on light surfaces, and a paper ring on sponge, crumb, ink and cake red surfaces. Contrast of the ring is in the table below. `outline: none` is never used without this ring in its place.
 - **Recipe rows:** the "Watch on YouTube" link stretches over the whole row, so focus shows as a ring around the row.
 - **Photo links** in "From my kitchen" show the ring with a 3 px offset.
-- **Common questions** use native `details` and `summary`: Enter or Space opens and closes each one.
+- **Common questions** use the shadcn/ui Accordion on Radix UI: each question is a real `button` inside an `h3`, with `aria-expanded`, and a closed answer is hidden from the Tab order and from screen readers. Enter or Space opens and closes each one, and the arrow keys, Home and End move between questions. Several can be open at once. (Changed on 2 October 2026 from native `details` and `summary`, see D-12.)
 - **Links that open a new tab** (YouTube, Instagram, TikTok, Threads) carry "(opens in a new tab)" in their accessible name.
 - Escape closes the phone menu. There are no keyboard traps, no time limits, no tooltips, and no hover-only content.
 - No pop-ups on arrival and no autoplay.
@@ -120,7 +120,7 @@ React Router changes the page without a full reload, so the site does the work t
 
 ## Structure
 
-- One `h1` per page, and headings in order: `h1`, then `h2` for sections, then `h3` for recipe titles. On Home the `h1` is the hero headline. On Recipes there is no section heading above the recipes, so the recipe titles are `h2`, and "More videos" is `h2` too (changed on 2 October 2026, so no level is skipped).
+- One `h1` per page, and headings in order: `h1`, then `h2` for sections, then `h3` for recipe titles. On Home the `h1` is the hero headline. On Recipes there is no section heading above the recipes, so the recipe titles are `h2`, and "More videos" is `h2` too (changed on 2 October 2026, so no level is skipped). On Custom cakes and Catering the Common questions are `h3` under their `h2`, as the accordion makes each question a heading.
 - Landmarks: `<header>`, `<nav aria-label="Main">`, `<main id="main">` and `<footer>`. The footer's page links and social links are each in a `<nav>` with its own label. Sections use `aria-labelledby` with their heading.
 - `<html lang="en-GB">`.
 - Lists are real lists (the recipes, the navigation, the "How ordering works" steps).

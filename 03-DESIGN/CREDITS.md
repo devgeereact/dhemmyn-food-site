@@ -41,7 +41,7 @@
 
 | Component | Author and link | Licence | Used in |
 |---|---|---|---|
-| | | | |
+| Accordion | shadcn, shadcn/ui: https://ui.shadcn.com/docs/components/accordion (source https://github.com/shadcn-ui/ui). Built on Radix UI, `radix-ui` 1.6.7: https://github.com/radix-ui/primitives. Class-name helper `cn` 0.4.0 by shadcn: https://github.com/shadcn-ui/cn | MIT. shadcn/ui: LICENSE.md, copyright 2023 shadcn, read on 2 October 2026. Radix UI and `cn`: MIT in the npm registry. No licence file is kept in the repository. | `app/src/components/ui/accordion.tsx`, used by CommonQuestions on Custom cakes and Catering. Restyled fully to DESIGN-SYSTEM.md (see D-12 in DECISIONS.md) |
 
 ## Design base
 

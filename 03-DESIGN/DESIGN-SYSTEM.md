@@ -180,7 +180,7 @@ Labels sit above fields. Cards are not used: the recipe row and the lead recipe 
 
 **Contact row and social link:** 72 px minimum height, 20 px text, ruled. Hover: the label moves 4 px right (120 ms). Press: scale 0.99. Focus: ring.
 
-**Common questions (disclosure):** the question is the summary, 48 px high, hairline between items. Hover: underline 3 px. Open and close are instant, with a "+" and "-" in text, no icon set.
+**Common questions (accordion):** the shadcn/ui Accordion on Radix UI (D-12), restyled. Each question is a button inside an `h3`, 48 px high, with a hairline between items and a 2 px ink rule above the list. Several can be open at once. Hover: the question text gets a 3 px underline (the "+" and "-" do not). Open and close are instant, with a "+" and "-" in text, no icon set and no height animation (only transform and opacity animate). Focus: the ring from Browser surfaces. Keys: Enter or Space opens and closes, the arrow keys, Home and End move between questions. Changed on 2 October 2026 from native `details` and `summary`, on the owner's instruction.
 
 **Skip link:** hidden above the page, appears on focus (instant), paper on ink, 4 px radius.
 

@@ -1,4 +1,10 @@
 import type { ReactNode } from 'react'
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion'
 import ContactInline from './ContactInline'
 
 type Question = { question: string; answer: ReactNode }
@@ -28,8 +34,9 @@ const questions: Question[] = [
   },
 ]
 
-// A ruled disclosure list on native `details` and `summary`: Enter or Space opens and closes each one.
-// Open and close are instant, with a "+" and "-" in text and no icon set.
+// The shadcn/ui Accordion on Radix, restyled in components/ui/accordion.tsx: a ruled list where
+// several questions can be open at once. Each question is a button inside an `h3`, and the arrow,
+// Home and End keys move between them. Open and close are instant, with a "+" and "-" in text.
 export default function CommonQuestions() {
   return (
     <section aria-labelledby="questions-heading" className="page-width pb-12 md:pb-16">
@@ -39,24 +46,14 @@ export default function CommonQuestions() {
       >
         Common questions
       </h2>
-      <ul className="mt-6 max-w-[48rem] border-t-2 border-ink">
+      <Accordion type="multiple" className="mt-6 max-w-[48rem] border-t-2 border-ink">
         {questions.map((item) => (
-          <li key={item.question} className="border-b border-ink/30">
-            <details className="group">
-              <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-4 py-3 font-semibold underline-offset-[0.22em] hover:underline hover:decoration-3 [&::-webkit-details-marker]:hidden">
-                <span>{item.question}</span>
-                <span aria-hidden="true" className="group-open:hidden">
-                  +
-                </span>
-                <span aria-hidden="true" className="hidden group-open:inline">
-                  -
-                </span>
-              </summary>
-              <p className="max-w-[68ch] pb-4">{item.answer}</p>
-            </details>
-          </li>
+          <AccordionItem key={item.question} value={item.question}>
+            <AccordionTrigger>{item.question}</AccordionTrigger>
+            <AccordionContent>{item.answer}</AccordionContent>
+          </AccordionItem>
         ))}
-      </ul>
+      </Accordion>
     </section>
   )
 }
