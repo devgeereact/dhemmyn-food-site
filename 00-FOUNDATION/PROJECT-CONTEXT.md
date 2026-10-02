@@ -57,8 +57,8 @@
 
 ## Hosting and outside services
 
-- Hosting, enquiry form handling and email delivery: [NEEDS: decided in WEB-19, recorded in 02-ARCHITECTURE/INTEGRATIONS.md].
-- Domain: none owned yet.
+- Hosting, enquiry form handling and email delivery: Netlify, Netlify Forms and Netlify notification emails to info@mimmycare.com (D-04 to D-06 in 08-CHANGE-MANAGEMENT/DECISIONS.md, listed in 02-ARCHITECTURE/INTEGRATIONS.md).
+- Domain: none owned yet. The site uses the free `.netlify.app` address for now (D-04).
 - Budget: as cheap as possible. [NEEDS: a yearly amount]
 - Links out to Instagram, TikTok, YouTube, Threads and WhatsApp: see 01-PRODUCT/SOCIAL.md. Videos are links only.
 

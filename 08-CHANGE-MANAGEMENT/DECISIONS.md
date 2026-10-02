@@ -21,7 +21,7 @@
 
 ## D-01 Stack
 
-- Date: [date]
+- Date: 2 October 2026
 - Decision: Vite, React, TypeScript, React Router and Tailwind CSS, published as ready-made files on Netlify
 - Why: fast, reliable, cheap to host, no server or database to look after
 - Options considered: a website builder; plain HTML and CSS
@@ -49,3 +49,75 @@
   - The base has no large display type: its biggest headline is 28 px. The headline scale comes from DESIGN-DNA.md, not from this file.
   - Check before launch: search app/dist for "ff385c", "Airbnb" and "Cereal". None may appear.
 - Revisit if: the structure proves too small or too round once DESIGN-SYSTEM.md is built.
+
+## D-04 Hosting, form service and address
+
+- Date: 2 October 2026
+- Decision: Netlify hosts the site, publishing app/dist from a private GitHub repository. Netlify Forms takes the two enquiry forms. The site uses the free `.netlify.app` address for now, because the owner owns no domain.
+- Why: one account hosts the site and takes enquiries. No outside script, no secret in the browser, and the cheapest route, which is what the owner asked for.
+- Options considered: Formspree, Web3Forms, a serverless function, `mailto:` links. Buying a domain now.
+- What it means for the project: INTEGRATIONS.md lists Netlify, Akismet and the email copy, and all three must appear in DATA-PRIVACY.md and the privacy notice. Share tags, robots.txt and sitemap.xml use the `.netlify.app` address until a domain exists. Account owners are still [NEEDS]. The form allowance on the account's plan must be checked.
+- Revisit if: the free allowance is reached, submissions must stay in the UK, or the owner buys a domain.
+
+## D-05 How the form is sent
+
+- Date: 2 October 2026
+- Decision: one `fetch` POST to "/", URL-encoded, with two hidden form copies in app/index.html (`custom-cakes` and `catering`). Netlify's Akismet filter plus a honeypot field (`bot-field`). No CAPTCHA. The site shows its own messages, not the browser's pop-up bubbles.
+- Why: this is the method Netlify documents for a React app. A CAPTCHA would load an outside script and make the form harder to use.
+- Options considered: Google reCAPTCHA, a hidden time check, JSON posting (Netlify needs URL-encoded data).
+- What it means for the project: the forms cannot be sent from `npm run dev` or `npm run preview`, so a real send is tested once on the Netlify test address. The field names in index.html must match data/forms.ts exactly.
+- Revisit if: spam gets through the filter.
+
+## D-06 Where enquiries are delivered
+
+- Date: 2 October 2026
+- Decision: Netlify notification emails go to info@mimmycare.com. Every enquiry also stays in the Netlify dashboard. No separate email provider.
+- Why: the owner chose that inbox (BUSINESS-RULES.md). Fewer services means fewer things that can break.
+- Options considered: a separate email service, Zapier or similar.
+- What it means for the project: who hosts the mailbox is [NEEDS]. The owner checks the dashboard monthly, the spam folder first. EMAIL-SPEC.md (step 12) covers the message settings.
+- Revisit if: the mailbox changes, or enquiry emails land in spam.
+
+## D-07 Files and features not used
+
+- Date: 2 October 2026
+- Decision: no database, back end, log-ins, analytics, cookies or PWA. DATA-MODEL.md, API-SPEC.md, PWA-SPEC.md, OFFLINE-SPEC.md and SYNC-SPEC.md are marked Not applicable. UPDATE-STRATEGY.md keeps a short normal-site text, because it applies to every site.
+- Why: nothing the owner described needs them (PROJECT-CONTEXT.md). Each addition is something else that can break.
+- Options considered: marking UPDATE-STRATEGY.md Not applicable too. Rejected, because PROJECT-OS.md says it applies to every site.
+- What it means for the project: the structure stays the same as on every project. If the site grows, the files are already there.
+- Revisit if: the site needs log-ins, payments taken on the site, offline use or a database.
+
+## D-08 Pages and addresses
+
+- Date: 2 October 2026
+- Decision: seven pages plus a Not found page, at /, /recipes, /custom-cakes, /catering, /about-me, /contact and /privacy. Not found is handled inside the app and marked `noindex`. One `_redirects` rule, `/* /index.html 200`.
+- Why: the pages and addresses are the ones the owner approved in UX-SPEC.md. The redirect rule is the one in PROJECT-OS.md.
+- Options considered: returning a true 404 status for wrong addresses. That needs a pre-rendering step, which is too much for this site.
+- What it means for the project: a wrong address returns status 200 with the Not found page, so search engines rely on `noindex`.
+- Revisit if: search engines list wrong addresses.
+
+## D-09 Folder layout differences
+
+- Date: 2 October 2026
+- Decision: add `src/data/` with `site.ts`, `recipes.ts` and `forms.ts`. Name the form component `EnquiryForm`, not `OrderForm`. Keep photos in `src/assets/photos/` and `src/assets/photos/instagram/`.
+- Why: each fact used on several pages is typed once in code, so Home and Recipes cannot disagree. The site has enquiries, not orders.
+- Options considered: facts typed inside each page.
+- What it means for the project: when BUSINESS-RULES.md or CONTENT.md changes a fact, the matching data file changes with it.
+- Revisit if: the data files drift from BUSINESS-RULES.md or CONTENT.md.
+
+## D-10 Photos and fonts
+
+- Date: 2 October 2026
+- Decision: photos are copied into app/src/assets/photos and imported by the pages. They stay JPEG, as supplied, with no image-processing package. Fonts are Bricolage Grotesque and Figtree from Fontsource, built into app/dist.
+- Why: the photos are already sized (largest 266 KB, about 2.6 MB in all). Importing gives each a new file name when it changes. Fontsource keeps the fonts inside the app, with no outside requests.
+- Options considered: photos in app/public, WebP conversion with an image package.
+- What it means for the project: width and height are set on every photo, the largest first-screen photo loads with high priority, and photos below the first screen load lazily. The OFL-1.1 font licences go into CREDITS.md when the fonts are installed.
+- Revisit if: Lighthouse on the built site flags image weight.
+
+## D-11 Titles, share tags and page changes
+
+- Date: 2 October 2026
+- Decision: each page component renders its own title and description, with no extra package. Share tags live once in app/index.html. The share picture is profile-chocolate-sponge.jpg for now. After each page change the site scrolls to the top and moves focus to the page's `h1`.
+- Why: React 19 moves title and meta tags into the head. Social apps do not run the site's code, so share tags must be in the HTML. No wide photo exists yet. Moving focus tells keyboard and screen reader users where they are.
+- Options considered: react-helmet, a pre-rendering step for a share preview on each page.
+- What it means for the project: every page shares one link preview. [NEEDS: a wide photo for a better one.]
+- Revisit if: the owner wants a different preview for each page, or sends a wide photo.

@@ -45,14 +45,14 @@ From the home page, a visitor on a phone can reach a recipe video and send a cak
   - Used by: cake customers.
   - Visitor gives: name, email or phone, date needed, occasion, number of servings, flavour and design ideas, allergies.
   - Visitor gets: a sending message, then a success or error message. Words: [NEEDS: 01-PRODUCT/CONTENT.md].
-  - Depends on: [NEEDS: form handling service, decided in WEB-19]. The enquiry goes to the owner's inbox (see 01-PRODUCT/BUSINESS-RULES.md).
+  - Depends on: Netlify Forms (D-04 in 08-CHANGE-MANAGEMENT/DECISIONS.md). The enquiry goes to the owner's inbox (see 01-PRODUCT/BUSINESS-RULES.md).
 
 - **Feature:** Catering page with an enquiry form
   - Purpose: lets a visitor ask for food for an event.
   - Used by: event customers.
   - Visitor gives: name, email or phone, event date, number of guests, town, food wanted, allergies.
   - Visitor gets: a sending message, then a success or error message. Words: [NEEDS: 01-PRODUCT/CONTENT.md].
-  - Depends on: [NEEDS: form handling service, decided in WEB-19]. The enquiry goes to the owner's inbox (see 01-PRODUCT/BUSINESS-RULES.md).
+  - Depends on: Netlify Forms (D-04 in 08-CHANGE-MANAGEMENT/DECISIONS.md). The enquiry goes to the owner's inbox (see 01-PRODUCT/BUSINESS-RULES.md).
 
 - **Feature:** Contact page
   - Purpose: shows how to reach the owner.

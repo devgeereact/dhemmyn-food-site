@@ -4,12 +4,12 @@
 > **Filled by:** WEB-19 (step 8)
 > **Applies to:** every site (short for a normal site, longer for a PWA)
 
-**Status:** Empty
+**Status:** Done
 
 ## Normal site
 
-*Each deploy publishes a complete new version. Vite gives the built files new names when they change, so visitors get the new version on their next page load. Nothing else is needed.*
+Each deploy publishes a complete new version. Vite gives changed files new names, so a visitor gets the new version on their next page load. There is no service worker and no cache to clear. A visitor with a tab open during a deploy may see a missing photo until they reload. Nothing else is needed.
 
 ## PWA only
 
-*How a new version is detected, whether visitors see "A new version is available" or it updates by itself, how old caches are removed, and how unsaved form input is never lost during an update.*
+Not applicable: the site is not a PWA.

@@ -17,6 +17,13 @@
 - Tested: the commands and checks run, and the result
 ```
 
+## [2026-10-02] Architecture written
+
+- Change: 02-ARCHITECTURE/ARCHITECTURE.md filled (stack, routes, folder layout, shared components, how the form is sent, titles and share tags, fonts and photos, page changes, build and publish). INTEGRATIONS.md filled with every outside service and a failure plan. DATA-MODEL.md, API-SPEC.md, PWA-SPEC.md, OFFLINE-SPEC.md and SYNC-SPEC.md marked Not applicable. UPDATE-STRATEGY.md filled with the short normal-site text. D-04 to D-11 added to DECISIONS.md, and the date added to D-01. The two [NEEDS] lines about hosting and form handling in PROJECT-CONTEXT.md and PRODUCT-SPEC.md now point to INTEGRATIONS.md.
+- Reason: step 8, WEB-19
+- Files: 02-ARCHITECTURE/ARCHITECTURE.md, 02-ARCHITECTURE/INTEGRATIONS.md, 02-ARCHITECTURE/DATA-MODEL.md, 02-ARCHITECTURE/API-SPEC.md, 04-PWA/PWA-SPEC.md, 04-PWA/OFFLINE-SPEC.md, 04-PWA/SYNC-SPEC.md, 04-PWA/UPDATE-STRATEGY.md, 08-CHANGE-MANAGEMENT/DECISIONS.md, 00-FOUNDATION/PROJECT-CONTEXT.md, 01-PRODUCT/PRODUCT-SPEC.md, 08-CHANGE-MANAGEMENT/CHANGELOG.md
+- Tested: PARTIAL. The Netlify form method (hidden form, URL-encoded fetch, honeypot, Akismet on by default) was read from Netlify's own documentation on 2 October 2026 (Context7 permission was not granted). The free form allowance is NOT TESTED: Netlify's documentation says unlimited on credit-based plans, and one outside source gives a legacy limit of 100 a month, so it must be checked on the real account. The photo sizes come from the file listing. No site code exists, so a send, build and lint are NOT APPLICABLE. The owner approved the drafts and answered the five open questions on 2 October 2026.
+
 ## [2026-10-02] Accessibility plan and alt text written
 
 - Change: 03-DESIGN/ACCESSIBILITY.md filled under every heading, aiming for WCAG 2.2 AA, with a new "Menu on phones" section and a table of all 17 photos with what each shows, alt text and where it is used. The piped icing drawing is listed as decorative.
