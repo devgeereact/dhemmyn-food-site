@@ -23,7 +23,7 @@ export default function AboutMe() {
         <div className="page-width">
           <h1
             tabIndex={-1}
-            className="font-display text-h2 font-extrabold font-stretch-[80%] md:text-h2-lg"
+            className="font-display text-hero font-extrabold tracking-[-0.015em] text-balance font-stretch-[75%] md:text-hero-lg"
           >
             About me
           </h1>

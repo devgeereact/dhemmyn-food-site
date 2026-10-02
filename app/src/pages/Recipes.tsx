@@ -30,7 +30,7 @@ export default function Recipes() {
       <div className="page-width pt-10 pb-8 md:pt-16 md:pb-10 lg:grid lg:grid-cols-2 lg:items-end lg:gap-12">
         <h1
           tabIndex={-1}
-          className="font-display text-h2 font-extrabold font-stretch-[80%] md:text-h2-lg"
+          className="font-display text-hero font-extrabold tracking-[-0.015em] text-balance font-stretch-[75%] md:text-hero-lg"
         >
           Recipes
         </h1>

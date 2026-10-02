@@ -16,7 +16,7 @@ export default function Catering() {
         <div className="page-width py-10 md:py-16 lg:grid lg:grid-cols-2 lg:items-end lg:gap-12">
           <h1
             tabIndex={-1}
-            className="font-display text-h2 font-extrabold font-stretch-[80%] md:text-h2-lg"
+            className="font-display text-hero font-extrabold tracking-[-0.015em] text-balance font-stretch-[75%] md:text-hero-lg"
           >
             Catering
           </h1>

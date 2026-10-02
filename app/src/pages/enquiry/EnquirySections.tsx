@@ -22,7 +22,7 @@ export default function EnquirySections({ form, closingButton }: Props) {
           <h2
             id="ask-heading"
             tabIndex={-1}
-            className="font-display text-h2 font-extrabold font-stretch-[80%] md:text-h2-lg"
+            className="font-display text-h2 font-extrabold font-stretch-[80%] md:text-h2-lg lg:sticky lg:top-8 lg:self-start"
           >
             {form.heading}
           </h2>

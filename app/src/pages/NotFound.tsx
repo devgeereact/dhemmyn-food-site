@@ -12,7 +12,7 @@ export default function NotFound() {
       <div className="page-width py-16 md:py-24">
         <h1
           tabIndex={-1}
-          className="font-display text-h2 font-extrabold font-stretch-[80%] md:text-h2-lg"
+          className="font-display text-hero font-extrabold tracking-[-0.015em] text-balance font-stretch-[75%] md:text-hero-lg"
         >
           Page not found
         </h1>
