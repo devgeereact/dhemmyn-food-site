@@ -130,7 +130,7 @@ React Router changes the page without a full reload, so the site does the work t
 
 ## Photos and alt text
 
-I looked at every file in 03-DESIGN/photos. Alt text is 8 to 15 words, says what matters to a visitor, and never starts with "image of". All 17 photos are meaningful: none is only decoration, so none gets empty alt text.
+I looked at every file in 03-DESIGN/photos. Alt text is 8 to 15 words, says what matters to a visitor, and never starts with "image of". All 17 photos are meaningful: none is only decoration, so none gets empty alt text. One use is the exception: the sponge slice shown as a small stamp on the Not found page (3 October 2026) is decorative, because it adds nothing the heading does not say, so that one `<img>` has empty alt text. The same picture keeps its alt text on Home and About me.
 
 - **Recipe thumbnails** sit beside the recipe title and are not inside the link. They keep their own alt text.
 - **"From my kitchen" photos** are links. Their link name is "Watch the video on YouTube: " followed by the alt text, so each alt text has to read well after those words.

@@ -480,6 +480,8 @@ Sorry, I cannot find that page. The link may be wrong.
 
 Button: Go to the homepage
 
+Picture: the sponge slice, photos/profile-chocolate-sponge.jpg, as a small decorative stamp (112 px on a phone, 160 px from 744 px). It has empty alt text because it adds no information (the same picture is described on Home and About me). Added on 3 October 2026 on the owner's instruction.
+
 ## Footer
 
 *Business details from BUSINESS-RULES.md, copyright line, link to the privacy notice.*

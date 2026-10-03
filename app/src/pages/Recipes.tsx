@@ -44,6 +44,7 @@ export default function Recipes() {
       <div className="page-width pb-12 md:pb-16 lg:grid lg:grid-cols-[7fr_5fr] lg:items-end lg:gap-12">
         <LeadRecipe
           recipe={autumnCakeSeries}
+          aboveFold
           headingLevel={2}
           photoPosition="50% 55%"
           enter={riseProps(Boolean(reducedMotion) || alreadyPlayed, 0)}

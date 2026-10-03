@@ -29,6 +29,7 @@
 | photos/instagram/braided-chocolate-bread.jpg | Cover image of my own YouTube Short https://www.youtube.com/shorts/nZwzO2w93mY, saved from https://i.ytimg.com/vi/nZwzO2w93mY/oar2.jpg on 2 October 2026, resized to 1600 px tall, no location data | Demi Yusuf (owner) | Own work |
 | photos/berry-sponge-slice.jpg | Cover image of my own YouTube Short https://www.youtube.com/shorts/GrcvCaSAfjQ, saved from https://i.ytimg.com/vi/GrcvCaSAfjQ/oar2.jpg on 2 October 2026, resized to 1600 px tall, no location data | Demi Yusuf (owner) | Own work |
 | photos/profile-chocolate-sponge.jpg | My profile picture on Linktree, https://ugc.production.linktr.ee/18171649-5fa0-4be3-8bfd-e01a119377a8_20230318163250--MG-7705.jpeg, saved 2 October 2026, 400 px, no location data | Demi Yusuf (owner) | Own work |
+| photos/small/*-200.jpg and photos/small/*-450.jpg (32 files) | Smaller copies of 16 of the photos above (every one except the profile picture), made by the owner on 3 October 2026, 200 and 450 px wide, JPEG, no location data (checked: no Exif or XMP block) | Demi Yusuf (owner) | Own work |
 
 ## Fonts
 

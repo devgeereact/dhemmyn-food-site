@@ -121,11 +121,11 @@ No two sections on a page share a layout. Every section has one considered detai
 | Page | Sections and detail |
 |---|---|
 | Recipes | Heading on paper. Lead recipe as a wide card (4:3 crop). Ruled list, two columns from 1128 px. Closing sponge band with the YouTube button. |
-| Custom cakes | Cake red band with the piped drawing (see Illustration style). Enquiry form, one column up to 560 px, 2 px ink rule above. "Message me instead", quiet. How ordering works: the only numbered list, the numbers set in Display 800 because it is a real sequence. Common questions as a ruled disclosure list. Closing sponge band. |
+| Custom cakes | Cake red band with the piped drawing (see Illustration style). Enquiry form, one column up to 560 px, 2 px ink rule above. "Message me instead", quiet: the heading and its line, then the three details in one row across the full width from 744 px (changed on 3 October 2026, KI-01, so it does not repeat the form's heading-left split). How ordering works: the only numbered list, the numbers set in Display 800 because it is a real sequence, the two steps side by side across the full width from 744 px (changed on 3 October 2026, KI-01, so it does not repeat the narrow ruled list of Common questions). Common questions as a ruled disclosure list. Closing sponge band. |
 | Catering | Same order as Custom cakes. The opening band is crumb with no drawing, so red stays with cakes. |
 | About me | Introduction with the 200 px profile picture hung from the left edge. Four large social links ending the page. |
 | Contact | Three large ruled rows (WhatsApp, call, email) with one of her photos, `doughnuts.jpg`, cropped to 4:3 and no wider than 26 rem (416 px): above the rows on a phone, to their right from 1128 px (added on 2 October 2026 on the owner's instruction, so the page is not anyone's). Form links, How ordering works, closing step. |
-| Privacy notice, Not found | Plain reading pages, one column, 68 ch. |
+| Privacy notice, Not found | Plain reading pages, one column, 68 ch. Not found also has the sponge slice as a small stamp (112 px on a phone, 160 px from 744 px, no border, radius or shadow), above the heading on a phone and beside the text from 744 px (3 October 2026). |
 
 ## Illustration style
 
@@ -227,7 +227,8 @@ Photos are used as supplied. Sources, photographer and licence are in 03-DESIGN/
 - **Shapes:** tall photos keep their natural 9:16 shape in the hero and the From my kitchen strip. The lead recipe is 4:5 on a phone and the full height of the band from 1128 px, with crop point 50% 58%. Recipes lead card 4:3 at 50% 55%. Row thumbnails are square, centred. Every photo fills its frame edge to edge: no border, radius, shadow or text laid over it.
 - **Size caps:** tall photos never wider than 600 CSS pixels (the lead recipe photo at about 582 px is the widest). The profile picture never wider than 200 CSS pixels.
 - **Colour and warmth, CSS only:** one class on every photo, `filter: sepia(0.06) saturate(1.04)`, to settle the cool baking paper, white fabric and grey stone. NOT TESTED: check it on the built page against the red cake and the berry photo, adjust once, keep one value for all photos. No per-photo grades, no photo held back.
-- **Loading:** each photo has its width and height and a sponge background, so nothing jumps and nothing flashes white.
+- **Sizes (D-13, 3 October 2026):** each photo has a 200 px and a 450 px wide copy (made by the owner, in 03-DESIGN/photos/small) beside the 900 px original. The browser picks the smallest copy that is sharp enough (`srcset` and `sizes`). The 900 px original stays as the fallback and for the lead recipe photo on sharp screens. JPEG only. The look of a photo is not changed by this: same crop point, same filter.
+- **Loading:** each photo has its width and height and a sponge background, so nothing jumps and nothing flashes white. First-screen photos load at once (the largest with high priority); the recipe thumbnails and Home's lead photo wait until they are within 100 px of the screen; the "From my kitchen" strip uses the browser's own lazy loading.
 - **Full bleed:** the hero tray, the lead recipe in the band, the From my kitchen strip, and the closing bands.
 - **Gaps:** no wide photos, no finished custom cakes, no event food (see DESIGN-DNA.md, Photography).
 

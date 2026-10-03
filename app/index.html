@@ -3,6 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- The display font (headlines) starts downloading at once instead of after the page's code has run. Vite swaps this address for the built, hashed file. -->
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      crossorigin
+      href="/node_modules/@fontsource-variable/bricolage-grotesque/files/bricolage-grotesque-latin-wdth-normal.woff2"
+    />
   </head>
   <body>
     <!-- Plain copies of the two enquiry forms. Netlify reads them when the site is deployed.

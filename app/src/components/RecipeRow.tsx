@@ -1,5 +1,6 @@
 import type { Recipe } from '../data/recipes'
 import ExternalLink from './ExternalLink'
+import LazyPhoto from './LazyPhoto'
 
 type Props = {
   recipe: Recipe
@@ -18,12 +19,13 @@ export default function RecipeRow({ recipe, onDark = false, headingLevel = 3 }: 
     <li
       className={`group/row relative flex items-center gap-4 border-b py-4 has-[:focus-visible]:outline-3 has-[:focus-visible]:outline-offset-3 ${tone}`}
     >
-      <img
+      <LazyPhoto
         src={recipe.photo}
+        srcSet={recipe.srcSet}
+        sizes="(min-width: 1128px) 96px, 72px"
         alt={recipe.alt}
         width={900}
         height={1600}
-        loading="lazy"
         decoding="async"
         className="photo size-18 shrink-0 object-cover object-center lg:size-24 motion-safe:transition-[translate,scale] motion-safe:duration-[120ms] motion-safe:ease-out motion-safe:group-hover/row:-translate-y-0.5 motion-safe:group-active/row:scale-98"
       />

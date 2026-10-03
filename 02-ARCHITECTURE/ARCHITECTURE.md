@@ -54,7 +54,7 @@ As section 4 of PROJECT-OS.md, with three differences.
 
 ```
 app/
-  index.html        lang en-GB, share tags, two hidden form copies (no title: see below)
+  index.html        lang en-GB, the display font preload, share tags, two hidden form copies (no title: see below)
   vite.config.ts
   public/           robots.txt, sitemap.xml, favicon, share picture, _redirects, _headers
   src/
@@ -62,10 +62,10 @@ app/
     App.tsx         the routes
     index.css       Tailwind and the @theme block from DESIGN-SYSTEM.md
     components/     shared parts (below); ui/ holds shadcn/ui components (accordion.tsx)
-    lib/            lift.ts (the entrance's motion values), utils.ts (shadcn's cn)
+    lib/            lift.ts (the entrance's motion values), photoSet.ts (a photo's srcset), utils.ts (shadcn's cn)
     pages/          the eight page files above
     data/           site.ts, recipes.ts, forms.ts
-    assets/photos/  11 photos, and photos/instagram/ with 6
+    assets/photos/  11 photos, photos/instagram/ with 6, and photos/small/ with a 200 px and a 450 px copy of 16 of them
 ```
 
 - **`data/` is added.** Three typed files hold facts used on several pages: `site.ts` (email, phone, WhatsApp link, social links, menu), `recipes.ts` (title, photo, alt text, YouTube link) and `forms.ts` (each form's fields, labels, hints and messages). Each fact is typed once in code, so Home and Recipes cannot disagree. The words still come from CONTENT.md and BUSINESS-RULES.md. If those change, these files change with them.
@@ -87,12 +87,13 @@ One component per file.
 | ContactInline | Email, phone and WhatsApp inside a sentence ("message me by info@..., 07787 561363 and WhatsApp"). Used in How ordering works and Common questions. Added on 2 October 2026 |
 | ExternalLink | A link that opens in a new tab, with "(opens in a new tab)" in its accessible name |
 | ButtonLink | The primary and secondary button styles as links: to a page on this site, to another site (new tab), or to a place further up the same page (`#...`, which moves focus there). The looks live in `buttonStyles.ts`, which the form's send button shares |
+| LazyPhoto | A photo that starts downloading only when it is within 100 px of the screen. Used by RecipeRow and by the lead recipe on Home (D-13) |
 | RecipeRow | The ruled recipe row, used on Home and Recipes |
 | LeadRecipe | The large recipe card, used on Home and Recipes |
 | EnquiryForm | Both forms. Reads its field list from `data/forms.ts` |
 | FormField | Label, hint, input and error message |
-| MessageMeInstead | The quiet contact band on Custom cakes and Catering |
-| HowOrderingWorks | The two numbered steps, used on three pages |
+| MessageMeInstead | The quiet contact band on Custom cakes and Catering: the heading, one line, and the three details in one row from 744 px |
+| HowOrderingWorks | The two numbered steps, used on three pages: side by side from 744 px |
 | CommonQuestions | The five questions in the shadcn/ui Accordion (`components/ui/accordion.tsx`, restyled), several open at once, used on two pages |
 
 Parts used on one page only (the Home first-screen collage, the "From my kitchen" strip, the piped drawing) live in `pages/` beside that page, as small components, one per file.
@@ -126,6 +127,7 @@ Share tags (Open Graph and the card tags) live once in `app/index.html`, so ever
 ## Fonts and photos
 
 - **Fonts:** `@fontsource-variable/bricolage-grotesque/wdth.css` and `@fontsource-variable/figtree`, imported in `main.tsx`. Vite copies the font files into `app/dist/assets`. Nothing loads from Google or any other company. The OFL-1.1 licences go into CREDITS.md when the fonts are installed.
+- **Photos, sizes (D-13):** the owner made a 200 px and a 450 px wide copy of 16 photos (the profile picture is already small), in `03-DESIGN/photos/small`, copied into `app/src/assets/photos/small`. Pages give the browser all three through `srcset` and `sizes` (`lib/photoSet.ts`), so a 72 px thumbnail downloads the 200 px file, not the 900 px one. The 900 px original stays as the `src` fallback and for the lead photo on sharp screens. Still JPEG only. A new photo needs both small copies too. The recipe thumbnails and Home's lead photo use `LazyPhoto`, so they wait until they are near the screen; the Recipes lead photo is in the first screen, so it loads at once with `fetchpriority="high"`. `index.html` preloads the Bricolage Grotesque Latin font.
 - **Photos:** 17 JPEGs, about 2.6 MB in all, the largest 266 KB, copied from `03-DESIGN/photos` into `app/src/assets/photos`. Pages import them, so Vite gives each a new file name when it changes. The planning copies stay as the record. Photos are used as supplied. Every photo has its width and height set. The three Home first-screen photos (about 346 KB) load first, the largest with high priority. Everything below the first screen loads lazily. No image-processing package and no WebP conversion for now (D-10).
 - **YouTube thumbnails** are the saved files above. The site never loads an image from YouTube.
 - Each photo's alt text is in CONTENT.md and 03-DESIGN/ACCESSIBILITY.md.

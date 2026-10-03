@@ -69,6 +69,8 @@ Seven pages. The owner chose to keep Privacy notice and Contact (2 October 2026)
 
 *Reading times are estimates from word counts at about 240 words a minute. Every page reads in under two minutes on a phone. No page has a pop-up, autoplay video or slow animation. "Approved" means the words are already in 01-PRODUCT/CONTENT.md. No page shows a price, area, notice period or allergen statement.*
 
+*Changed on 3 October 2026 (KI-01, owner approved): from 744 px the three details in "Message me instead" sit in one row across the full width, and the two steps in "How ordering works" sit side by side, so no two sections on Custom cakes or Catering share a layout. On a phone they stay stacked. The words are unchanged.*
+
 ### Home
 
 *About 100 words. Under one minute.*
@@ -160,6 +162,7 @@ Both the Custom cakes and Catering forms use these four states. Words: CONTENT.m
 - Shows at any address that has no page, such as an old or mistyped link.
 - The normal header and footer stay, so the visitor can use the menu.
 - Below the header: the heading, one short line and a button to the homepage. Words: CONTENT.md, Not found page.
+- A small picture of the sponge slice (the profile picture, DESIGN-DNA.md "The wedge") sits above the heading on a phone and beside the text from 744 px. It is decorative, with empty alt text. Added on 3 October 2026 on the owner's instruction (KI-02).
 - The page has its own `<title>` and is marked noindex, so search engines leave it out.
 - It is not in the Pages table and not in the menu.
 

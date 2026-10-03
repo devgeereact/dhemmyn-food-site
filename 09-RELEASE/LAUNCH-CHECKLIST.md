@@ -18,6 +18,7 @@
 | Accessibility audit complete, including the keyboard and screen reader checks | NOT TESTED | |
 | Performance audit complete | NOT TESTED | |
 | Security audit complete | NOT TESTED | |
+| `app/dist` holds only `index.html` and `assets/`: no `Icon`, `.DS_Store`, `Thumbs.db`, `.md` or `.map` file (check with `find app/dist -type f`), and the site is published through Git, never by dragging the folder (KI-04) | NOT TESTED | |
 | PWA audit complete, or not applicable with the reason | NOT TESTED | |
 | Regression audit passed after the last change | NOT TESTED | |
 | No open P0 or P1 issues | NOT TESTED | |

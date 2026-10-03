@@ -3,8 +3,18 @@ import { useEffect, useState } from 'react'
 import berryPhoto from '../../assets/photos/berry-sponge-slice.jpg'
 import rollsPhoto from '../../assets/photos/chocolate-chip-rolls.jpg'
 import profilePhoto from '../../assets/photos/profile-chocolate-sponge.jpg'
+import berry200 from '../../assets/photos/small/berry-sponge-slice-200.jpg'
+import berry450 from '../../assets/photos/small/berry-sponge-slice-450.jpg'
+import rolls200 from '../../assets/photos/small/chocolate-chip-rolls-200.jpg'
+import rolls450 from '../../assets/photos/small/chocolate-chip-rolls-450.jpg'
 import ButtonLink from '../../components/ButtonLink'
 import { fadeProps, riseProps } from '../../lib/lift'
+import { photoSet } from '../../lib/photoSet'
+
+// The two hand photos are shown at about 200 to 340 px wide, so the 450 px copy is enough
+// for most screens and the 900 px original is only used on very sharp ones.
+const berrySet = photoSet(berry200, berry450, berryPhoto)
+const rollsSet = photoSet(rolls200, rolls450, rollsPhoto)
 
 // "The lift" (DESIGN-SYSTEM.md, Signature moment). It plays once per page load,
 // so going back to Home during a visit does not replay it.
@@ -58,6 +68,8 @@ export default function Hero() {
             <div className="aspect-[873/1600] overflow-hidden">
               <img
                 src={berryPhoto}
+                srcSet={berrySet}
+                sizes="(min-width: 744px) 290px, 50vw"
                 alt="A hand holds a slice of pale sponge with pockets of dark berry filling."
                 width={900}
                 height={1600}
@@ -72,6 +84,8 @@ export default function Hero() {
           >
             <img
               src={rollsPhoto}
+              srcSet={rollsSet}
+              sizes="(min-width: 744px) 340px, 56vw"
               alt="A hand holds a glazed chocolate chip roll above a tray of more rolls."
               width={900}
               height={1600}

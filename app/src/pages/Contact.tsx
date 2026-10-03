@@ -35,6 +35,8 @@ export default function Contact() {
       <div className="page-width pb-12 md:pb-16 lg:grid lg:grid-cols-[minmax(0,1fr)_26rem] lg:items-start lg:gap-12">
         <img
           src={doughnuts.photo}
+          srcSet={doughnuts.srcSet}
+          sizes="(min-width: 448px) 416px, 100vw"
           alt={doughnuts.alt}
           width={900}
           height={1600}
