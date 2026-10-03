@@ -17,6 +17,13 @@
 - Tested: the commands and checks run, and the result
 ```
 
+## [2026-10-03] Regression audit run after the first round of fixes
+
+- Change: 06-QA/REGRESSION-AUDIT.md filled in with a result and evidence for every line, a comparison with the results before the fixes, a "Check by hand" list, the summary and a History row. No app file changed.
+- Reason: owner request, to retest what used to work after the fixes (KI-03, KI-04, KI-01, KI-02 Not found part, KI-05).
+- Files: 06-QA/REGRESSION-AUDIT.md, 08-CHANGE-MANAGEMENT/CHANGELOG.md.
+- Tested: PASS `npm run build` and `npm run lint`, run first. Playwright on the owner's preview http://localhost:4175, each part in a fresh browser: PASS 12, PARTIAL 1, NOT TESTED 1, BLOCKED 1, FAIL 0. Every page at 320, 375, 1280 and 1920 px; the phone and laptop menu by mouse and keyboard; both forms in every state at 375 and 1280 px; refresh, back and forward; the Not found page at six wrong addresses; footer and contact links; the Tab order and focus rings on seven pages (the Custom cakes order is identical to the one recorded before); motion and reduced motion; 17 widths by 8 addresses with no sideways scroll; the words against CONTENT.md. No regression. NOT TESTED: a Lighthouse comparison (no earlier score). BLOCKED (later step): the privacy notice. PARTIAL: the favicon message in the console (later step).
+
 ## [2026-10-03] KI-05: the lead photo uses the 450 px copy on phones, and the owner's Lighthouse scores
 
 - Change: the lead recipe photo (Recipes first screen, and Home's "Start with a recipe") now uses the 450 px copy on a phone (below 744 px) instead of the 900 px original. The 900 px file stays from 744 px and for 3 times screens. This is done with the `sizes` attribute (`leadSizes` in `LeadRecipe.tsx`). The owner's Lighthouse scores are recorded in 06-QA/PERFORMANCE-AUDIT.md: Home performance 84, accessibility 100, best practices 96, SEO 92, largest paint 4.3 s, layout shift 0; Recipes performance 91, largest paint 3.3 s, layout shift 0. SEO and best practices lose their points to the missing robots.txt and favicon (BLOCKED, later step).

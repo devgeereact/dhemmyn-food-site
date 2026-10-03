@@ -4,35 +4,54 @@
 > **Filled by:** WEB-31 (step 10), and WEB-36 every month
 > **Applies to:** every site
 
-**Status:** Empty
+**Status:** Run once, after the first round of fixes (3 October 2026). Nothing that used to work now fails. One line is PARTIAL (the known favicon message), one NOT TESTED (Lighthouse has no earlier score to compare with) and one BLOCKED (the privacy notice, step 11).
 
-**Last run:** [date]
-**After which change:** [CHANGELOG entry]
+**Last run:** 3 October 2026 (today), by the assistant.
+**After which change:** the five fixes of 3 October 2026, newest first in 08-CHANGE-MANAGEMENT/CHANGELOG.md: "KI-05: the lead photo uses the 450 px copy on phones", "KI-01: no two sections share a layout on Custom cakes and Catering", "KI-02 (Not found part): the sponge slice stamp", "KI-04: the stray Icon file removed from the build" and "KI-03: smaller photo copies, held-back loading and a font preload". Committed as `cf808c5` "Fixes from audits" and `e1fb77b` "Lead photo size".
+**Tested on:** the owner's `npm run preview` at http://localhost:4175, serving the `app/dist` that `npm run build` wrote at the start of this run (script `index-DqOl3mMN.js`). Chromium through Playwright, each part in a fresh browser, at 320, 375 and 1280 px (the line widths), with 17 widths from 320 to 1920 px for the sideways-scroll sweep. No server was started or stopped.
 
 Results: PASS, FAIL, FIXED, PARTIAL, NOT TESTED, BLOCKED or NOT APPLICABLE, with evidence. If something that used to work now fails, stop and find the change that caused it before fixing anything.
+
+**What changed since the earlier results, so what could break:** the photos (`srcset`, `LazyPhoto`, the lead photo size, the font preload in `index.html`) on Home, Recipes and Contact; the layout of "Message me instead" and "How ordering works" from 744 px on Custom cakes, Catering and Contact; a stamp picture on Not found; and the removal of `app/public/Icon`. "Before" below means the results recorded in FUNCTIONAL-AUDIT.md, UX-AUDIT.md, ACCESSIBILITY-AUDIT.md and DESIGN-AUDIT.md earlier today, before these fixes.
 
 ## Core checks
 
 | Check | Result | Evidence |
 |---|---|---|
-| npm run build and npm run lint pass | NOT TESTED | |
-| Every page opens, at 375 pixels and on a laptop | NOT TESTED | |
-| The menu works on a phone and a laptop, with mouse and keyboard | NOT TESTED | |
-| Every form state works: errors, sending, sent, failed | NOT TESTED | |
-| Refreshing a deep page loads it | NOT TESTED | |
-| A wrong address shows the Not found page | NOT TESTED | |
-| Every page still has its own title and description | NOT TESTED | |
-| Footer links and contact links work | NOT TESTED | |
-| Focus is visible and Tab order is right on the changed pages | NOT TESTED | |
-| No console errors on any page | NOT TESTED | |
-| The signature moment and motion still work, and reduce motion still stops them | NOT TESTED | |
-| No sideways scrolling at 320 pixels | NOT TESTED | |
-| Lighthouse scores have not dropped by more than 5 points | NOT TESTED | |
-| The privacy page shows the current notice | NOT TESTED | |
-| The pages and parts named in the change still match CONTENT.md | NOT TESTED | |
+| npm run build and npm run lint pass | PASS | `npm --prefix app run build` ran first: `tsc -b` and `vite build`, 695 modules, no error, script 485.43 kB (157.46 kB gzipped). `npm --prefix app run lint` (oxlint) ran next: no finding. Before: both passed at every fix; the script was 482.60 kB, so +2.8 kB for `LazyPhoto`, `photoSet`, the layout changes and the stamp. |
+| Every page opens, at 375 pixels and on a laptop | PASS | All 8 addresses (7 pages and Not found) at 320, 375, 1280 and 1920 px: status 200, the right h1, the right title, no blank or broken picture after scrolling the whole page. Before: PASS at 390 and 1280 px, same pages. |
+| The menu works on a phone and a laptop, with mouse and keyboard | PASS | Phone 375 px: "Menu" to "Close", `aria-expanded` true and false, focus to "Home" on open and back to "Menu" on close, Enter and Space open it, Escape closes it, all 6 items 48 px high, choosing each page opens it with the menu closed, scrolled to the top and focus on the new h1, the current page marked. Laptop 1280 px: five links 48 px high, no Menu button, each opens its page with `aria-current` and focus on the h1, Tab order skip link, logo, five links, Shift+Tab and Enter work, logo goes home. One thing to know, not new: choosing the page you are already on from the phone menu leaves focus on the page body. The menu code was not changed by any fix. Before: PASS. |
+| Every form state works: errors, sending, sent, failed | PASS | Custom cakes and Catering, at 375 and 1280 px (4 runs): empty send shows the summary (focused) and 3 messages with 4 fields marked; bad email, bad phone, past date and non-number show the four CONTENT.md messages; typed answers kept; sending shows "Sending", `aria-disabled`, the status line and read-only fields, and one POST for Enter plus a forced second click; sent replaces the form, focus on the thank-you; a blocked request and the preview's real POST both show "Sorry, your enquiry did not send...", "Try again", the typed answers and the WhatsApp, phone and email links; a retry then sends. The honeypot is in a `hidden` paragraph with `tabindex="-1"` on both forms. The two hidden Netlify forms in `app/index.html` still list the same field names as the React forms. Responses were mocked, so nothing reached the owner's inbox. Before: PASS, same results. |
+| Refreshing a deep page loads it | PASS | Direct open and reload at 375 px on /recipes, /custom-cakes, /catering, /about-me, /contact, /privacy and /recipes/ each load their own page and title. Back, Back, Forward after two menu moves returned /recipes, /, /recipes. Before: PASS. |
+| A wrong address shows the Not found page | PASS | /not-a-page, /recipes/xyz, /01-PRODUCT/CONTENT.md, /.env, /Icon and /recipes/../x at 375 and 1280 px: "Page not found", `noindex`, header and footer kept, the sponge slice stamp loads with empty alt text, "Go to the homepage" goes to /, no sideways scroll, no console message. /Icon now shows Not found (it used to be a real file). Before: PASS, without the stamp. |
+| Every page still has its own title and description | PASS | One `<title>` and one description on each of the 8 addresses, every title as recorded (for example "Recipes: Dhemmyn Food") and every description the recorded length (136, 105, 102, 99, 141, 105, 27 and 54 characters), one h1, `lang="en-GB"`. Before: PASS, identical. |
+| Footer links and contact links work | PASS | The footer's 13 links are the same on all 7 pages: WhatsApp `https://wa.me/447787561363`, `tel:+447787561363`, `mailto:info@mimmycare.com`, six page links (each opens its page at the top when clicked) and four social profiles. The contact links in the page bodies (Custom cakes, Catering, Contact, including the new row in "Message me instead") are the same three. All 15 links to other sites keep `rel="noopener noreferrer"` and "(opens in a new tab)". Not opened: the outside pages (same as before). Before: PASS. |
+| Focus is visible and Tab order is right on the changed pages | PASS | Tab through Home, Recipes, Custom cakes, Catering, About me, Contact and Not found at 375 and 1280 px: the skip link first, every stop has a ring and is on the screen. The Custom cakes order at 1280 px (42 stops, from skip link to the Threads link) is identical, word for word, to the order recorded in the accessibility audit before the layout change. Before: PASS. |
+| No console errors on any page | PARTIAL | No console message and no failed request on any of the 8 addresses at 375, 1280 and 1920 px, or during the menu and form tests, apart from the browser's own `Failed to load resource: 404` for the favicon on the very first load in a fresh browser (BLOCKED, later step; a second run with the network log on showed no failed request at all). The blocked form sends add the browser's own "Failed to load resource" line, which is expected. New since the fixes, harmless: opening a page again in the same tab prints a DevTools warning that the preloaded font was "not used" (a first visit prints nothing). Before: PARTIAL for the same favicon. |
+| The signature moment and motion still work, and reduce motion still stops them | PASS | Home entrance at 375 px: the headline is fully visible by 305 ms, the three first-screen photos settle by 806 ms (was 770 ms, same code, within noise; the limit is 900 ms), 8 animations, longest 600 ms. Hover lifts a button 2 px, press scales to 0.98, the phone menu grows from its button, the Recipes lead photo rises once. With reduced motion on: everything in place on the first frame, no animation, no hover lift, no press scale, the menu appears at once. No looping animation on any page. Before: PASS. |
+| No sideways scrolling at 320 pixels | PASS | 17 widths from 320 to 1920 px (including 743, 744, 1127 and 1128, where the layouts change) by 8 addresses: no sideways scroll and nothing past the screen edge anywhere. Before: PASS at every width from 320 to 1920 px that was tried. |
+| Lighthouse scores have not dropped by more than 5 points | NOT TESTED | There is no earlier Lighthouse score to compare with: the owner's first run (Home performance 84, Recipes 91, layout shift 0) was taken after the photo fix and before the lead photo change. I cannot run Lighthouse here. See "Check by hand". |
+| The privacy page shows the current notice | BLOCKED (later step) | /privacy still shows only "Privacy notice coming soon" (WEB-32, step 11). It is unchanged and `noindex`. |
+| The pages and parts named in the change still match CONTENT.md | PASS | The text of all 8 addresses and the footer (title, description, body text with the questions open, picture alt text) read back and is the same as the text checked against CONTENT.md earlier today. The changed parts are searched in CONTENT.md and all found: "Message me instead", "Don't want to use a form? Message me by", "How ordering works", both steps, "This website does not take payments.", "Ready to ask?", "Ready to message me?", "Sorry, I cannot find that page. The link may be wrong." and "Go to the homepage". The new Not found picture is recorded in CONTENT.md. Before: PASS (77 sentences found). |
+
+## Compared with before the fixes
+
+- **Nothing that passed before fails now.** The lines recorded as passing before (pages, menu, forms, refresh, Not found, titles, links, focus, 320 px) pass now with the same results, and the Tab order and the words are unchanged.
+- **Better than before:** the photos load in 2.0 to 2.5 s in my Slow 4G timing instead of 5.2 to 5.7 s; Home's layout shift is 0 instead of 0.036; `app/dist` no longer holds the `Icon` file; Custom cakes and Catering no longer repeat a layout; Not found has the sponge slice. These are recorded in their own audits.
+- **Still open, not caused by the fixes:** largest paint in Lighthouse is over 2.5 s (KI-05, owner's run), Catering distinctiveness 7 (KI-02), JPEG only (KI-06), and the favicon, robots.txt, privacy notice and other step 11 and 12 items.
+
+## Check by hand
+
+1. **Lighthouse (the only line I could not test).** Run Lighthouse on Mobile for Home and Recipes on the preview build and compare with your earlier run: Home performance 84, Recipes 91. The lead photo change should help Recipes only. A drop of more than 5 points is a regression.
+2. **A real phone.** Open the preview address on your phone and check the menu, one form (send nothing), the Not found page and the Recipes lead photo (it uses the smaller copy on phones).
+3. **Choosing the current page in the phone menu.** Open the menu on /recipes and tap "Recipes": the menu closes but keyboard focus drops to the top of the page. It was like this before the fixes. Say if you want it moved to the page heading.
+
+## Summary
+
+PASS: 12  FIXED: 0  FAIL: 0  PARTIAL: 1  NOT TESTED: 1  BLOCKED: 1  NOT APPLICABLE: 0
 
 ## History
 
 | Date | Change tested | Result | Notes |
 |---|---|---|---|
-| | | | |
+| 3 October 2026 | The five fixes: KI-03 (smaller photo copies, held-back loading, font preload), KI-04 (Icon file removed), KI-01 (layouts on Custom cakes and Catering), KI-02 Not found part (sponge slice stamp) and KI-05 (lead photo 450 px on phones), commits `cf808c5` and `e1fb77b` | 12 PASS, 1 PARTIAL, 1 NOT TESTED, 1 BLOCKED, no regression | PARTIAL: the favicon message, a later step. NOT TESTED: Lighthouse, no earlier score. BLOCKED: the privacy notice. One note: choosing the current page in the phone menu leaves focus on the page body, as before the fixes. |
