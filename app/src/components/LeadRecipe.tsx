@@ -4,6 +4,12 @@ import type { Recipe } from '../data/recipes'
 import ExternalLink from './ExternalLink'
 import LazyPhoto from './LazyPhoto'
 
+// On a phone (below 744 px) the lead photo uses the 450 px copy, not the 900 px one (KI-05, owner
+// choice, 3 October 2026). The 225px on phones is not the real width: it tells the browser that
+// 450 px is enough for 1x and 2x screens, so it saves about 86 KB. Only a 3x screen asks for the
+// 900 px file. From 744 px the photo is wide, so the 900 px file stays.
+const leadSizes = '(min-width: 1128px) 600px, (min-width: 744px) 100vw, 225px'
+
 type Props = {
   recipe: Recipe
   photoClassName?: string
@@ -40,7 +46,7 @@ export default function LeadRecipe({
         <Photo
           src={recipe.photo}
           srcSet={recipe.srcSet}
-          sizes="(min-width: 1128px) 600px, 100vw"
+          sizes={leadSizes}
           alt={recipe.alt}
           width={900}
           height={1600}

@@ -72,7 +72,7 @@ Results: PASS, FAIL, FIXED (failed, then fixed and retested), PARTIAL, NOT TESTE
 |---|---|---|
 | Whole site used with a keyboard only | PASS | Real key presses in Chromium: all 8 addresses at 390 and 1280 px, both forms through to the footer, the Common questions (Enter and Space open and close; arrow keys, Home and End move between questions; closed answers are hidden), the phone menu and the skip link. Done by script, not by a person, and not in Safari or Firefox. |
 | Main pages and the form used with a screen reader | NOT TESTED | I cannot run VoiceOver or Narrator. The accessibility tree (names, roles, states) looks right. See "Check by hand". |
-| Lighthouse accessibility score on each page (supporting evidence only) | NOT TESTED | The DevTools Lighthouse tool is not permitted in this session, and no Lighthouse or axe install exists in `app`. See "Check by hand". |
+| Lighthouse accessibility score on each page (supporting evidence only) | PARTIAL | Run by the owner on the preview build (Chrome, Mobile), 3 October 2026: Home accessibility 100. Recipes and the other pages were not run for accessibility. Supporting evidence only, as the line says. The assistant cannot run Lighthouse here. See "Check by hand". |
 
 ## Things noticed
 
@@ -93,6 +93,6 @@ Not FAIL lines:
 
 ## Summary
 
-PASS: 26  FIXED: 0  FAIL: 0  PARTIAL: 1  NOT TESTED: 2  BLOCKED: 0  NOT APPLICABLE: 0
+PASS: 26  FIXED: 0  FAIL: 0  PARTIAL: 2  NOT TESTED: 1  BLOCKED: 0  NOT APPLICABLE: 0
 
 *Every FAIL goes into 08-CHANGE-MANAGEMENT/KNOWN-ISSUES.md with a priority from P0 to P3.* There is no FAIL, so nothing was added.
