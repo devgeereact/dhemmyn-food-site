@@ -408,6 +408,8 @@ Button: Message me (jumps back up to the three contact details)
 
 *Both forms: a required field says (required) after its label. A field with no mark can be left empty. Phone and email are two fields, and at least one must be filled in.*
 
+*Changed on 3 October 2026 on the owner's instruction: the Allergies hint on both forms now ends with a consent line, so the privacy notice can rely on explicit consent for allergy details.*
+
 ### Custom cakes form
 
 Form heading: Ask for a custom cake
@@ -421,7 +423,7 @@ Form heading: Ask for a custom cake
 | Occasion | Occasion | For example, a birthday. |
 | Servings | Number of servings | How many people the cake should feed. |
 | Ideas | Flavour and design ideas | |
-| Allergies | Allergies | Write any allergy here. Leave it empty if there is none. |
+| Allergies | Allergies | Write any allergy here. Leave it empty if there is none. By telling me about an allergy you agree I may use it to make your food safely. |
 
 Send button: Send enquiry
 
@@ -438,7 +440,7 @@ Form heading: Ask about catering
 | Guests | Number of guests | |
 | Town | Town | Where the event is. |
 | Food | Food wanted | What you would like me to cook. |
-| Allergies | Allergies | Write any allergy here. Leave it empty if there is none. |
+| Allergies | Allergies | Write any allergy here. Leave it empty if there is none. By telling me about an allergy you agree I may use it to make your food safely. |
 
 Send button: Send enquiry
 
@@ -530,3 +532,60 @@ Four links, named by platform. Addresses are in SOCIAL.md. Each opens in a new t
 ## Privacy notice
 
 *Written by WEB-32 in step 11. Until then the privacy page says "Privacy notice coming soon".*
+
+*Draft written on 3 October 2026 from 05-SECURITY/DATA-PRIVACY.md and 01-PRODUCT/BUSINESS-RULES.md only. Not approved by the owner. It goes on the site only when every [NEEDS] and [CHECK] below is resolved and removed. Contact details are never typed here: they come from BUSINESS-RULES.md. This is not legal advice. Updated on 3 October 2026 after the owner settled the contact, lawful basis, allergy consent, who reads enquiries and messages sent outside the site.*
+
+Page title: Privacy notice: Dhemmyn Food
+
+Page description: How Dhemmyn Food uses the details you send in the cake and catering forms, where they go, how long I keep them, and your rights.
+
+Heading: Privacy notice
+
+### Who I am
+
+This site is run by Demi Yusuf, as Dhemmyn Food. [NEEDS: trading status, sole trader or limited company]
+
+To ask about anything here, contact me by [email, phone and WhatsApp from BUSINESS-RULES.md]. Email is best for privacy questions.
+
+### What I collect and why
+
+The two enquiry forms are the only place this site collects personal information.
+
+- Custom cakes form: your name, email, phone number, date needed, occasion, number of servings, flavour and design ideas, and any allergies.
+- Catering form: your name, email, phone number, event date, number of guests, town, food wanted and any allergies.
+
+I use these only to reply with the details and a price. Netlify's server logs also hold visitors' IP addresses, as on any website. [CHECK: how long Netlify keeps them, and what it says about them]
+
+### My lawful basis
+
+- Your enquiry details, including the catering town: steps taken at your request before a contract, so I can reply with the details and a price.
+- Allergies may be health information. I use them only with your consent, which you give by writing an allergy in the form. You can withdraw it at any time by telling me.
+- IP addresses in server logs: legitimate interests, which means keeping the site working and secure.
+
+### Where it goes
+
+Netlify hosts this site and keeps each form message in its dashboard. Akismet, through Netlify, checks each message for spam. Netlify also emails me a copy, which my email provider holds. [NEEDS: the name of the email provider]
+
+Netlify is a US company. Netlify, Akismet or my email provider may store your details outside the UK. [CHECK: where each stores them, and what safeguards cover a transfer from the UK]
+
+Only I read your enquiry.
+
+### How long I keep it
+
+I keep an enquiry for 6 months after my last message with you. Then I delete it from Netlify and from my mailbox. [CHECK: that deleting in the Netlify dashboard removes it fully, and how long Netlify and Akismet keep their own copies, spam included]
+
+### Cookies
+
+None. This site sets no cookies and uses no browser storage. It has no analytics, no advertising or tracking tags, no log-ins, no newsletter and no payments. The fonts and photos come from the site's own files. [CHECK: confirmed on the built site and on the live address]
+
+Links to Instagram, TikTok, YouTube, Threads and WhatsApp send nothing until you tap one. After that, that company's own privacy rules apply.
+
+### Messages sent outside the site
+
+If you email, phone or message me on WhatsApp, I handle it in my own accounts, not on this site.
+
+### Your rights
+
+You can ask me for a copy of your information, to correct it, to delete it, or to stop using it. I reply within one month. I find an enquiry by searching for your name, email or phone number.
+
+You can also complain to the Information Commissioner's Office (ICO), the UK's data protection regulator.

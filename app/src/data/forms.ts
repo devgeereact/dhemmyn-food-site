@@ -35,7 +35,7 @@ const phone: FieldConfig = { name: 'phone', label: 'Phone number', kind: 'tel', 
 const allergies: FieldConfig = {
   name: 'allergies',
   label: 'Allergies',
-  hint: 'Write any allergy here. Leave it empty if there is none.',
+  hint: 'Write any allergy here. Leave it empty if there is none. By telling me about an allergy you agree I may use it to make your food safely.',
   kind: 'textarea',
 }
 

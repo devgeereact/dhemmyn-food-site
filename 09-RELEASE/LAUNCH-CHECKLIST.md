@@ -23,6 +23,7 @@
 | Regression audit passed after the last change | NOT TESTED | |
 | No open P0 or P1 issues | NOT TESTED | |
 | Privacy notice matches DATA-PRIVACY.md and is on the site | NOT TESTED | |
+| Privacy notice outstanding: the draft in CONTENT.md still has open [NEEDS] (trading status, email provider) and [CHECK] (Netlify IP log retention, storage outside the UK, deletion and copies, cookies on the built and live site). `/privacy` keeps saying "Privacy notice coming soon" until all are resolved. | BLOCKED | Draft saved 3 October 2026. Needs the owner's answers |
 | Business details shown as in BUSINESS-RULES.md: business name, your own name if a sole trader using a business name, a real geographic address (not only a PO box), email, and company details if a limited company | NOT TESTED | |
 | ICO fee self-assessment taken | NOT TESTED | |
 | No [NEEDS], [CHECK], "Proposed: owner to confirm", lorem ipsum or "coming soon" text on the site | NOT TESTED | |

@@ -17,6 +17,20 @@
 - Tested: the commands and checks run, and the result
 ```
 
+## [2026-10-03] Privacy notice draft: owner's answers and the allergy consent line
+
+- Change: the Allergies hint on both enquiry forms now ends "By telling me about an allergy you agree I may use it to make your food safely." (CONTENT.md first, then `app/src/data/forms.ts`). In the notice draft, the owner settled the privacy contact, the lawful basis (steps before a contract; explicit consent for allergies; legitimate interests for IP logs), that only the owner reads enquiries, and that the notice mentions messages sent outside the site. Still open: [NEEDS] trading status and email provider; [CHECK] Netlify IP log retention, storage outside the UK, deletion and provider copies, and cookies on the built and live site. DATA-PRIVACY.md updated to match. `/privacy` still says "Privacy notice coming soon" and stays out of the header menu (footer link only, as before). LAUNCH-CHECKLIST.md has a new line, "Privacy notice outstanding", marked BLOCKED.
+- Reason: owner request. The consent line lets the notice rely on explicit consent for allergy details, which may be health information.
+- Files: 01-PRODUCT/CONTENT.md, app/src/data/forms.ts, 05-SECURITY/DATA-PRIVACY.md, 09-RELEASE/LAUNCH-CHECKLIST.md, 08-CHANGE-MANAGEMENT/CHANGELOG.md.
+- Tested: PASS `npm run build` (tsc and vite, no errors). PASS `npm run lint` (oxlint, no findings printed, no error). PASS the new consent line is in the built `app/dist/assets/index-BAY-ooDr.js`. NOT TESTED in a browser: the hint on both forms, wrapping at 375 and 1280 px, the console, and the `/privacy` page (not started, because the owner runs the preview). `Privacy.tsx` and the header menu were not changed.
+
+## [2026-10-03] Privacy notice drafted in CONTENT.md
+
+- Change: a draft privacy notice is saved under "Privacy notice" in 01-PRODUCT/CONTENT.md: who runs the site, what is collected and why, lawful basis, where it goes, how long it is kept, cookies, rights and the ICO. The status lines in 05-SECURITY/DATA-PRIVACY.md now say a draft exists. No app file changed, so the live page still says "Privacy notice coming soon".
+- Reason: owner request, WEB-32. Written only from DATA-PRIVACY.md and BUSINESS-RULES.md. Every open point there is kept as [NEEDS] or [CHECK] in the draft.
+- Files: 01-PRODUCT/CONTENT.md, 05-SECURITY/DATA-PRIVACY.md, 08-CHANGE-MANAGEMENT/CHANGELOG.md.
+- Tested: NOT TESTED against the built site (no app change). Word count NOT TESTED by command; estimated by hand at about 400 words without the [NEEDS] and [CHECK] marks and about 530 with them. The draft goes on the site only when every [NEEDS] and [CHECK] is resolved.
+
 ## [2026-10-03] Regression audit run after the first round of fixes
 
 - Change: 06-QA/REGRESSION-AUDIT.md filled in with a result and evidence for every line, a comparison with the results before the fixes, a "Check by hand" list, the summary and a History row. No app file changed.
