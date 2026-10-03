@@ -17,6 +17,13 @@
 - Tested: the commands and checks run, and the result
 ```
 
+## [2026-10-03] October monthly update: no content changes, checks and package review
+
+- Change: no site file changed. Nothing on the owner's list this month, so BUSINESS-RULES.md, CONTENT.md, ACCESSIBILITY.md, the pages and the photos are untouched. `npm outdated` shows two packages with a new major version and nothing in range; `npm audit` shows none. No package was changed. REGRESSION-AUDIT.md has the new monthly run. KNOWN-ISSUES.md has a new line, KI-07, for the two major versions waiting for the owner's decision.
+- Reason: owner's monthly update (MONITORING.md).
+- Files: 06-QA/REGRESSION-AUDIT.md, 08-CHANGE-MANAGEMENT/KNOWN-ISSUES.md, 08-CHANGE-MANAGEMENT/CHANGELOG.md.
+- Tested: PASS `npm run build` (script 485.51 kB) and `npm run lint` (no finding). PASS `npm audit`: 0 vulnerabilities. `npm outdated`: `@types/node` 24.19.1 (latest 26.6.4) and `typescript` 6.0.3 (latest 7.0.2), both a major version ahead, none in range. REGRESSION-AUDIT.md: 9 PASS, 4 PARTIAL, 1 NOT TESTED (Lighthouse), 1 BLOCKED (privacy notice), 0 FAIL, run on a throwaway local server that sends the `_headers` values (stopped afterwards); the favicon 404 is gone. NOT TESTED: anything on Netlify.
+
 ## [2026-10-03] Netlify publishing files, favicon, share tags and operations docs
 
 - Change: added `netlify.toml` (base `app`, build `npm run build`, publish `dist`, Node 24), `app/public/_redirects` (`/*    /index.html    200`), `app/public/_headers` (the headers in SECURITY.md, no Strict-Transport-Security), `robots.txt`, `sitemap.xml` (six pages), `favicon.svg` (a plain "D" in cake red, because there is no logo picture) and `share.jpg` (a copy of `profile-chocolate-sponge.jpg`). Added the favicon link and Open Graph and card tags to `app/index.html`. The two hidden Netlify form copies with the `bot-field` trap were already in `app/index.html`: checked, and their field names match `app/src/data/forms.ts` exactly, so no change. Filled all five files in 07-OPERATIONS. The sitemap omits `/privacy` while it is `noindex` (ARCHITECTURE.md said seven pages). The launch checklist row about `app/dist` content now allows the `app/public` files, and has two new rows.
