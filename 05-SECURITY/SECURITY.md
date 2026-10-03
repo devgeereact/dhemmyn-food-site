@@ -4,7 +4,7 @@
 > **Filled by:** WEB-20 (step 8)
 > **Applies to:** every site
 
-**Status:** Draft. Written on 2 October 2026. The header values below are a starting point and are NOT TESTED: no app exists yet. They are set and tested on the built site in step 12 (WEB-34), and checked again in 06-QA/SECURITY-AUDIT.md.
+**Status:** Draft. Written on 2 October 2026. The header values below are a starting point and are NOT TESTED: no app exists yet. They are set and tested on the built site in step 12 (WEB-34), and checked again in 06-QA/SECURITY-AUDIT.md. Set in `app/public/_headers` on 3 October 2026, exactly as listed below, with no Strict-Transport-Security. PARTIAL: tested on a throwaway local server that sends these headers (the built site, Home at 390 px with the menu open, and Custom cakes with the form, a failed send and an accordion): no Content-Security-Policy error in the console. NOT TESTED: the other pages, and the headers on Netlify's live address.
 
 ## Secrets
 

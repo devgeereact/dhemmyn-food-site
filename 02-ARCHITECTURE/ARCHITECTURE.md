@@ -122,7 +122,7 @@ Netlify Forms. Checked against Netlify's own documentation on 2 October 2026.
 
 Each page component renders its own `<title>` and `<meta name="description">`. The Not found page also renders `<meta name="robots" content="noindex">`. React 19 moves these into the document head, so no extra package is needed. `app/index.html` holds no `<title>` of its own: React adds its own beside it and does not replace it, so the page would have two titles (seen on Home, 2 October 2026). A wrong address shows no title until the Not found page exists.
 
-Share tags (Open Graph and the card tags) live once in `app/index.html`, so every page shares the same preview. Most social apps do not run the site's code. They need a full address, so the address is the `.netlify.app` test address until a domain exists (D-04). The share picture is `profile-chocolate-sponge.jpg` for now (400 px square), because no wide photo exists. [NEEDS: a wide photo for a better share preview.]
+Share tags (Open Graph and the card tags) live once in `app/index.html`, so every page shares the same preview. Most social apps do not run the site's code. They need a full address, so the address is the `.netlify.app` test address until a domain exists (D-04). The share picture is `profile-chocolate-sponge.jpg` for now (400 px square), because no wide photo exists. A copy of it is `app/public/share.jpg`, because the share tags need a plain address and not a hashed build file name. The tags use the `summary` card, which suits a square picture. The favicon is `app/public/favicon.svg`: a plain "D" in the cake red (#B0283F) on a rounded square. The owner has no logo picture, only the typed wordmark. [NEEDS: a wide photo for a better share preview.]
 
 ## Fonts and photos
 
@@ -140,7 +140,7 @@ The `Layout` watches the address. After a move to another page it scrolls to the
 
 `npm run build` writes `app/dist`. Netlify builds from the `app` folder and publishes `dist`. `app/public/_redirects` holds the rule `/* /index.html 200`, so every address loads the app, and `app/public/_headers` holds the security headers. Vite copies both into `app/dist`. One limit: a wrong address returns status 200 with the Not found page, so search engines rely on the `noindex` tag. This is accepted for a site this size. See 07-OPERATIONS/DEPLOYMENT.md.
 
-`robots.txt` and `sitemap.xml` use the `.netlify.app` address until a domain exists. The sitemap lists the seven pages and not the Not found page.
+`robots.txt` and `sitemap.xml` use the `.netlify.app` address until a domain exists. They hold the word `SITE-NAME` in its place until the owner picks the site name (DEPLOYMENT.md says how to replace it). The sitemap lists six pages: not the Not found page, and not `/privacy` while that page is `noindex`. Add `/privacy` when the `noindex` tag is removed (WEB-32). Changed on 3 October 2026 from "the seven pages", because a page cannot be both in the sitemap and `noindex`.
 
 ## What this site does not have
 

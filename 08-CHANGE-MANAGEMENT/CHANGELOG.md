@@ -17,6 +17,13 @@
 - Tested: the commands and checks run, and the result
 ```
 
+## [2026-10-03] Netlify publishing files, favicon, share tags and operations docs
+
+- Change: added `netlify.toml` (base `app`, build `npm run build`, publish `dist`, Node 24), `app/public/_redirects` (`/*    /index.html    200`), `app/public/_headers` (the headers in SECURITY.md, no Strict-Transport-Security), `robots.txt`, `sitemap.xml` (six pages), `favicon.svg` (a plain "D" in cake red, because there is no logo picture) and `share.jpg` (a copy of `profile-chocolate-sponge.jpg`). Added the favicon link and Open Graph and card tags to `app/index.html`. The two hidden Netlify form copies with the `bot-field` trap were already in `app/index.html`: checked, and their field names match `app/src/data/forms.ts` exactly, so no change. Filled all five files in 07-OPERATIONS. The sitemap omits `/privacy` while it is `noindex` (ARCHITECTURE.md said seven pages). The launch checklist row about `app/dist` content now allows the `app/public` files, and has two new rows.
+- Reason: owner request, to publish on Netlify from a private GitHub project with no domain yet.
+- Files: netlify.toml, app/index.html, app/public/_redirects, app/public/_headers, app/public/robots.txt, app/public/sitemap.xml, app/public/favicon.svg, app/public/share.jpg, 07-OPERATIONS/DEPLOYMENT.md, EMAIL-SPEC.md, MONITORING.md, NOTIFICATIONS-SPEC.md, BACKUP-RECOVERY.md, 02-ARCHITECTURE/ARCHITECTURE.md, 05-SECURITY/SECURITY.md, 09-RELEASE/LAUNCH-CHECKLIST.md, 08-CHANGE-MANAGEMENT/CHANGELOG.md.
+- Tested: PASS `npm run build` and `npm run lint` in `app/`; `app/dist` holds all six public files and both hidden forms. PARTIAL: on a throwaway local server sending the `_headers` values (stopped afterwards), Home at 390 px with the menu open and Custom cakes with a failed send and an accordion showed no Content-Security-Policy error; the only console error was the expected 404 from the server having no Netlify Forms. NOT TESTED: Recipes, Catering, About me, Contact, Privacy and Not found under the headers; the headers, redirect rule, form detection, a real send and the notification on Netlify; the share preview (it needs the real address); the favicon in Safari. The `SITE-NAME` address is still a placeholder in three files.
+
 ## [2026-10-03] Code check for cookies, browser storage and outside servers
 
 - Change: DATA-PRIVACY.md has a new "Code check" section and two lines that record the result. No app file changed.

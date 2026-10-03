@@ -18,7 +18,7 @@
 | Accessibility audit complete, including the keyboard and screen reader checks | NOT TESTED | |
 | Performance audit complete | NOT TESTED | |
 | Security audit complete | NOT TESTED | |
-| `app/dist` holds only `index.html` and `assets/`: no `Icon`, `.DS_Store`, `Thumbs.db`, `.md` or `.map` file (check with `find app/dist -type f`), and the site is published through Git, never by dragging the folder (KI-04) | NOT TESTED | |
+| `app/dist` holds only `index.html`, `assets/` and the files from `app/public` (`_headers`, `_redirects`, `favicon.svg`, `robots.txt`, `share.jpg`, `sitemap.xml`): no `Icon`, `.DS_Store`, `Thumbs.db`, `.md` or `.map` file (check with `find app/dist -type f`), and the site is published through Git, never by dragging the folder (KI-04) | NOT TESTED | |
 | PWA audit complete, or not applicable with the reason | NOT TESTED | |
 | Regression audit passed after the last change | NOT TESTED | |
 | No open P0 or P1 issues | NOT TESTED | |
@@ -27,5 +27,7 @@
 | Business details shown as in BUSINESS-RULES.md: business name, your own name if a sole trader using a business name, a real geographic address (not only a PO box), email, and company details if a limited company | NOT TESTED | |
 | ICO fee self-assessment taken | NOT TESTED | |
 | No [NEEDS], [CHECK], "Proposed: owner to confirm", lorem ipsum or "coming soon" text on the site | NOT TESTED | |
-| DEPLOYMENT.md says how to publish and how to roll back | NOT TESTED | |
+| DEPLOYMENT.md says how to publish and how to roll back | NOT TESTED | Written 3 October 2026. Not tried on Netlify yet |
+| `grep -rn SITE-NAME app/index.html app/public` finds nothing, so the share tags, `robots.txt` and `sitemap.xml` hold the real address | NOT TESTED | Still the placeholder on 3 October 2026 |
+| Both forms appear under Forms in Netlify, a test enquiry from each reaches the dashboard and `info@mimmycare.com`, and the response headers on the live address match `_headers` | NOT TESTED | Owner steps in DEPLOYMENT.md |
 | CHANGELOG.md and KNOWN-ISSUES.md are up to date | NOT TESTED | |

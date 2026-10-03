@@ -4,10 +4,8 @@
 > **Filled by:** WEB-34 (step 12)
 > **Applies to:** only sites that send alerts to visitors
 
-**Status:** Empty
+**Status:** Done. Written on 3 October 2026.
 
-*Most small sites send none. If so, replace everything below this line with: Not applicable: the site sends no notifications to visitors.*
+Not applicable: the site sends no notifications to visitors.
 
-## Each notification
-
-*What it says, when it is sent, who receives it, how they agreed to receive it, and how they stop it. Never ask for notification permission when a visitor first arrives.*
+(The only email the site triggers goes to the owner, when an enquiry arrives. That is in EMAIL-SPEC.md. Visitors get no email, text or push message from the site, and the site never asks for permission to send any.)
