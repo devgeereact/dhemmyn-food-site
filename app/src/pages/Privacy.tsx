@@ -10,13 +10,15 @@ export default function Privacy() {
       <meta name="description" content="Privacy notice coming soon." />
       <meta name="robots" content="noindex" />
 
-      <div className="page-width py-16 md:py-24">
-        <h1
-          tabIndex={-1}
-          className="max-w-[24ch] font-display text-h2 font-extrabold font-stretch-[80%] md:text-h2-lg"
-        >
-          Privacy notice coming soon
-        </h1>
+      <div className="bg-icing">
+        <div className="page-width py-16 md:py-24">
+          <h1
+            tabIndex={-1}
+            className="max-w-[16ch] font-display text-hero font-extrabold tracking-[-0.02em] text-balance font-stretch-[75%] md:text-hero-lg"
+          >
+            Privacy notice coming soon
+          </h1>
+        </div>
       </div>
     </>
   )

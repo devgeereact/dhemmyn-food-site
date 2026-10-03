@@ -1,9 +1,23 @@
 import ButtonLink from '../components/ButtonLink'
-import ContactInline from '../components/ContactInline'
-import HowOrderingWorks from '../components/HowOrderingWorks'
-import RuledRow from '../components/RuledRow'
+import Icon from '../components/Icon'
 import { doughnuts } from '../data/recipes'
-import { contact } from '../data/site'
+import { contact, orderPath } from '../data/site'
+
+const options = [
+  {
+    label: 'Message me on WhatsApp',
+    value: contact.phoneDisplay,
+    href: contact.whatsappHref,
+    icon: <Icon name="whatsapp" className="size-7" />,
+  },
+  { label: 'Call me', value: contact.phoneDisplay, href: `tel:${contact.phoneTel}`, icon: <Icon name="phone" className="size-7" /> },
+  { label: 'Email me', value: contact.email, href: `mailto:${contact.email}`, icon: <Icon name="mail" className="size-7" /> },
+]
+
+const card =
+  'group flex h-full items-center gap-4 rounded-lg bg-paper p-5 text-ink shadow-soft md:flex-col md:items-start md:gap-8 md:p-6 ' +
+  'motion-safe:transition-[translate,scale] motion-safe:duration-200 motion-safe:ease-out ' +
+  'motion-safe:hover:-translate-y-1 motion-safe:active:translate-y-0 motion-safe:active:scale-98'
 
 export default function Contact() {
   return (
@@ -11,75 +25,80 @@ export default function Contact() {
       <title>Contact: Dhemmyn Food</title>
       <meta
         name="description"
-        content="Message me at Dhemmyn Food by email, phone or WhatsApp. Or send an enquiry for a custom cake or catering."
+        content="Message Demi at Dhemmyn Food by WhatsApp, phone or email about a custom cake, party small chops or catering in London."
       />
 
-      {/* Opening: the heading on the left, the approved words hung on the right from 1128 px. */}
-      <div className="page-width pt-10 pb-8 md:pt-16 md:pb-10 lg:grid lg:grid-cols-2 lg:items-end lg:gap-12">
-        <h1
-          tabIndex={-1}
-          className="font-display text-hero font-extrabold tracking-[-0.015em] text-balance font-stretch-[75%] md:text-hero-lg"
-        >
-          Contact
-        </h1>
-        <p className="mt-4 max-w-[40ch] text-lead md:text-lead-lg lg:mt-0">
-          Got a question, or want a cake or catering? Message me by <ContactInline />. Or use the
-          form on the Custom cakes or Catering page.
-        </p>
-      </div>
+      {/* Opening on the ganache band: the heading and words, then three big cards that open in the
+          visitor's own app. The doughnuts photo sits to the right from 1128 px, and after the cards
+          on smaller screens, so the cards stay in the first screen on a phone. */}
+      <div className="surface-dark bg-ganache text-paper">
+        <div className="page-width pt-12 pb-16 md:pt-16 md:pb-20 lg:grid lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-x-12 lg:gap-y-10">
+          <div className="lg:col-start-1 lg:row-start-1">
+            <h1
+              tabIndex={-1}
+              className="font-display text-display font-extrabold tracking-[-0.02em] font-stretch-[75%] md:text-display-lg"
+            >
+              Contact
+            </h1>
+            <p className="mt-6 max-w-[40ch] text-lead md:text-lead-lg">
+              Got a question, or want a cake or small chops? Message me whichever way suits you.
+            </p>
+          </div>
 
-      {/* Contact details: three large ruled rows, each opening in the visitor's own app, with one of
-          the owner's photos: above the rows on a phone, to their right from 1128 px. The photo is
-          cropped to 4:3 in CSS so the rows stay in the first screen on a phone, and it stays outside
-          the section below, because the closing button jumps back up to that section. */}
-      <div className="page-width pb-12 md:pb-16 lg:grid lg:grid-cols-[minmax(0,1fr)_26rem] lg:items-start lg:gap-12">
-        <img
-          src={doughnuts.photo}
-          srcSet={doughnuts.srcSet}
-          sizes="(min-width: 448px) 416px, 100vw"
-          alt={doughnuts.alt}
-          width={900}
-          height={1600}
-          decoding="async"
-          className="photo mb-8 aspect-[4/3] w-full max-w-[26rem] object-cover lg:order-2 lg:mb-0"
-        />
-        <section id="contact-details" tabIndex={-1} aria-label="Contact details" className="lg:order-1">
-          <ul className="max-w-[48rem] border-t-2 border-ink">
-            <RuledRow href={contact.whatsappHref} label="Message me on WhatsApp" value={contact.phoneDisplay} />
-            <RuledRow href={`tel:${contact.phoneTel}`} label="Call me" value={contact.phoneDisplay} />
-            <RuledRow href={`mailto:${contact.email}`} label="Email me" value={contact.email} />
-          </ul>
-        </section>
-      </div>
+          <section
+            id="contact-details"
+            tabIndex={-1}
+            aria-label="Contact details"
+            className="mt-10 lg:col-start-1 lg:row-start-2 lg:mt-0"
+          >
+            <ul className="grid gap-3 md:grid-cols-3 md:gap-4">
+              {options.map((option) => (
+                <li key={option.label}>
+                  <a href={option.href} className={card}>
+                    <span className="inline-flex size-14 shrink-0 items-center justify-center rounded-full bg-cake-red text-paper">
+                      {option.icon}
+                    </span>
+                    <span className="min-w-0 flex-1">
+                      <span className="block font-display text-h3 font-bold font-stretch-[85%] md:text-h3-lg">
+                        {option.label}
+                      </span>
+                      <span className="sr-only">: </span>
+                      <span className="mt-1 block break-words tabular-nums">{option.value}</span>
+                    </span>
+                    <Icon
+                      name="arrow"
+                      className="size-6 shrink-0 text-cake-red motion-safe:transition-[translate] motion-safe:duration-200 motion-safe:ease-out motion-safe:group-hover:translate-x-1 md:hidden"
+                    />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
 
-      {/* Forms: two links to the enquiry pages, as outlined buttons. */}
-      <div className="page-width pb-12 md:pb-16">
-        <div className="flex flex-wrap gap-4">
-          <ButtonLink to="/custom-cakes" variant="secondary">
-            Ask for a custom cake
-          </ButtonLink>
-          <ButtonLink to="/catering" variant="secondary">
-            Ask about catering
-          </ButtonLink>
+          <img
+            src={doughnuts.photo}
+            srcSet={doughnuts.srcSet}
+            sizes="(min-width: 1128px) 320px, (min-width: 744px) 680px, 100vw"
+            alt={doughnuts.alt}
+            width={900}
+            height={1600}
+            decoding="async"
+            className="photo mt-10 aspect-[4/3] w-full rounded-lg object-cover shadow-lift lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mt-0 lg:aspect-auto lg:h-full lg:rotate-2"
+          />
         </div>
       </div>
 
-      <HowOrderingWorks />
-
-      {/* The closing step: a full-bleed sponge band that jumps back up to the contact details. */}
-      <section aria-labelledby="closing-heading" className="surface-dark bg-sponge text-paper">
-        <div className="page-width py-12 md:py-16 lg:flex lg:items-center lg:justify-between lg:gap-12">
+      {/* One quiet way on to ordering. The order page holds the choices and the steps, and the
+          footer holds the social links, so neither is repeated here. */}
+      <section aria-labelledby="contact-order-heading" className="bg-icing">
+        <div className="page-width flex flex-col items-start gap-6 py-12 md:flex-row md:items-center md:justify-between md:gap-10 md:py-14">
           <h2
-            id="closing-heading"
-            className="font-display text-h2 font-extrabold font-stretch-[80%] md:text-h2-lg"
+            id="contact-order-heading"
+            className="max-w-[30ch] font-display text-h3 md:max-w-none font-extrabold tracking-[-0.02em] font-stretch-[85%] md:text-h3-lg"
           >
-            Ready to message me?
+            Know what you want? Choose a cake, small chops or both.
           </h2>
-          <div className="mt-6 lg:mt-0">
-            <ButtonLink href="#contact-details" onDark>
-              Message me
-            </ButtonLink>
-          </div>
+          <ButtonLink to={orderPath}>Order now</ButtonLink>
         </div>
       </section>
     </>

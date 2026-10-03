@@ -1,57 +1,69 @@
-import ButtonLink from '../../components/ButtonLink'
 import CommonQuestions from '../../components/CommonQuestions'
 import EnquiryForm from '../../components/EnquiryForm'
-import HowOrderingWorks from '../../components/HowOrderingWorks'
+import Icon from '../../components/Icon'
+import type { IconName } from '../../components/Icon'
 import MessageMeInstead from '../../components/MessageMeInstead'
 import type { FormConfig } from '../../data/forms'
 
 type Props = {
   form: FormConfig
-  // The closing button's words: "Ask for a custom cake" or "Ask about catering".
-  closingButton: string
+  // The first line typed into WhatsApp from "Message me instead".
+  whatsappText: string
 }
 
-// Everything under the opening band on Custom cakes and Catering, in the order of the page plan:
-// the enquiry form, "Message me instead", How ordering works, Common questions, the closing step.
-export default function EnquirySections({ form, closingButton }: Props) {
+// What to expect, beside the form. Plain words, no promises of times or prices. This list is the
+// only "how it works" on these pages: the full steps live on the Order page (POLISH.md v2.1).
+const expect: { icon: IconName; text: string }[] = [
+  { icon: 'calendar', text: 'Tell me the date' },
+  { icon: 'heart', text: 'Share your ideas' },
+  { icon: 'chat', text: 'I reply with a price' },
+]
+
+// Everything under the opening band on Custom cakes and Small chops, each block once: the order
+// form in a raised paper card on icing, "Message me instead" on paper, then Common questions on
+// icing again, so the bands alternate down to the dark footer. Every band uses the same padding.
+export default function EnquirySections({ form, whatsappText }: Props) {
   return (
     <>
-      {/* The form: one column up to 560 px, with a 2 px ink rule above. */}
-      <section aria-labelledby="ask-heading" className="page-width pt-12 md:pt-16">
-        <div className="border-t-2 border-ink pt-8 pb-12 md:pb-16 lg:grid lg:grid-cols-[1fr_35rem] lg:gap-12">
-          <h2
-            id="ask-heading"
-            tabIndex={-1}
-            className="font-display text-h2 font-extrabold font-stretch-[80%] md:text-h2-lg lg:sticky lg:top-8 lg:self-start"
-          >
-            {form.heading}
-          </h2>
-          <div className="mt-6 max-w-[35rem] lg:mt-0">
-            <EnquiryForm form={form} />
+      <section aria-labelledby="ask-heading" className="bg-icing py-12 md:py-16">
+        <div className="page-width">
+          <div className="rounded-xl bg-paper p-6 shadow-lift md:p-10 lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,36rem)] lg:gap-16 lg:p-14">
+            {/* From 1128 px the heading column stays in view while the form scrolls past, just below
+                the 80 px sticky header. */}
+            <div className="lg:sticky lg:top-28 lg:self-start">
+              <h2
+                id="ask-heading"
+                tabIndex={-1}
+                className="scroll-mt-24 font-display text-h2 font-extrabold tracking-[-0.02em] text-balance font-stretch-[80%] md:scroll-mt-28 md:text-h2-lg"
+              >
+                {form.heading}
+              </h2>
+              <p className="mt-4 max-w-[36ch] text-lead md:text-lead-lg">
+                Takes about two minutes. I reply with the details and a price.
+              </p>
+              <ul className="mt-6 flex flex-col gap-4">
+                {expect.map((item) => (
+                  <li key={item.text} className="flex items-center gap-4 font-semibold">
+                    <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-icing text-cake-red">
+                      <Icon name={item.icon} className="size-5" />
+                    </span>
+                    {item.text}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="mt-8 border-t border-ink/10 pt-8 lg:mt-0 lg:border-t-0 lg:pt-0">
+              <EnquiryForm form={form} />
+            </div>
           </div>
         </div>
       </section>
 
-      <MessageMeInstead />
-      <HowOrderingWorks />
-      <CommonQuestions />
+      <MessageMeInstead whatsappText={whatsappText} />
 
-      {/* The closing step: a full-bleed sponge band that jumps back up to the form. */}
-      <section aria-labelledby="closing-heading" className="surface-dark bg-sponge text-paper">
-        <div className="page-width py-12 md:py-16 lg:flex lg:items-center lg:justify-between lg:gap-12">
-          <h2
-            id="closing-heading"
-            className="font-display text-h2 font-extrabold font-stretch-[80%] md:text-h2-lg"
-          >
-            Ready to ask?
-          </h2>
-          <div className="mt-6 lg:mt-0">
-            <ButtonLink href="#ask-heading" onDark>
-              {closingButton}
-            </ButtonLink>
-          </div>
-        </div>
-      </section>
+      <div className="bg-icing">
+        <CommonQuestions />
+      </div>
     </>
   )
 }

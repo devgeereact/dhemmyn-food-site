@@ -1,20 +1,23 @@
-// The button looks from DESIGN-SYSTEM.md, shared by ButtonLink (a link) and the form's send button.
+// The button looks, shared by ButtonLink (a link) and the form's send button.
+// Redesign v2 (3 October 2026): full pills with a press that settles to 95%, from the getdesign.md
+// base (03-DESIGN/BASE-DESIGN.md). Hover lifts 2 px. Transform only.
 
 type Variant = 'primary' | 'secondary'
 
-const base = 'inline-flex h-13 items-center justify-center rounded-xs px-7 font-semibold'
+const base =
+  'inline-flex h-13 items-center justify-center gap-2.5 rounded-full px-7 font-semibold whitespace-nowrap'
 
 const feedback =
-  'motion-safe:transition-[translate,scale] motion-safe:duration-[120ms] motion-safe:ease-out ' +
+  'motion-safe:transition-[translate,scale,background-color] motion-safe:duration-200 motion-safe:ease-out ' +
   'motion-safe:hover:-translate-y-0.5 motion-safe:active:translate-y-0 ' +
-  'motion-safe:active:scale-98 motion-safe:active:duration-100'
+  'motion-safe:active:scale-95 motion-safe:active:duration-100'
 
 const looks = {
-  primary: 'bg-cake-red text-paper hover:bg-cake-red-deep',
-  // Cake red cannot sit on a cake red band, so on dark surfaces the primary is paper with an ink label.
-  primaryOnDark: 'bg-paper text-ink hover:bg-paper/90',
-  secondary: 'border border-ink text-ink hover:bg-ink/8',
-  secondaryOnDark: 'border border-paper text-paper hover:bg-paper/10',
+  primary: 'bg-cake-red text-paper shadow-soft hover:bg-cake-red-deep',
+  // On dark bands (ganache, sponge, cake red) the primary turns puff-puff gold with a ganache label.
+  primaryOnDark: 'bg-gold text-ganache shadow-soft hover:bg-gold-soft',
+  secondary: 'border-2 border-ink text-ink hover:bg-ink hover:text-paper',
+  secondaryOnDark: 'border-2 border-paper/80 text-paper hover:bg-paper hover:text-ganache',
 }
 
 // While a form is sending: 60% opacity, no hover and no lift, and the cursor shows progress.

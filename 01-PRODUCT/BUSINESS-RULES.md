@@ -28,13 +28,17 @@
 - Banana bread: the launch recipe video is a chocolate banana bread. Its cover picture is right (owner, 2 October 2026).
 - Autumn cake series: the cover of its video shows the apple crumble from the series. The cover is right (owner, 2 October 2026).
 - Cakes and catering are a side offer the owner wants to grow.
+- Party small chops (for example puff puff and dodo): offered, by enquiry, price on request (owner, 3 October 2026). The exact menu is [NEEDS: the small chops menu].
+- Ordering online means sending an order request (the form or a WhatsApp message). The site still takes no payment (owner, 3 October 2026).
+- From 3 October 2026 the site leads with cakes, small chops and ordering. Recipes and social links come second (owner, redesign v2).
 - VAT: [NEEDS: not applicable unless VAT registered]
 
 ## Area served
 
 - Recipes: online, for anyone.
-- Cakes and catering: not decided. No town, area, delivery or collection wording on the site.
-- [NEEDS: area, delivery or collection, and anywhere not served]
+- Based in London (owner, 3 October 2026). The site may say "based in London" and "handmade in London".
+- Delivery or collection, and which parts of London or beyond: not decided. No delivery, collection or area-covered wording on the site.
+- [NEEDS: delivery or collection, and anywhere not served]
 
 ## Notice and lead times
 
@@ -83,14 +87,15 @@
 ## Claims we must never make
 
 - Any price, "from" price or price range.
-- Any area, town, delivery or collection offer, until decided.
+- Any delivery or collection offer, or a list of areas covered, until decided. ("Based in London" is allowed.)
 - Any notice period, until decided.
 - Any food hygiene, council registration, rating or certificate claim.
 - Any allergen statement, until the owner confirms.
 - Any trading status (sole trader or limited company).
 - Any follower or subscriber count.
 - Any faith wording. It stays on Threads only.
-- "Small chops", "micro bakery" or "order online".
+- "Micro bakery". ("Small chops" and "order online" are allowed from 3 October 2026, see below.)
+- A factual "best in London" claim, or any ranking, award or comparison with other bakers. Puffery that no one would read as a measured fact, such as "London's best-kept secret", is allowed (owner, 3 October 2026). See D-14.
 - Any text labelled "Proposed: owner to confirm".
 
 ## Sourced public facts
@@ -154,3 +159,13 @@ Prices, opening hours, areas served, notice periods, delivery or collection, pay
 ### Still open
 
 - Nothing open on the launch recipes. The autumn cake series card is titled "Autumn cake series" (owner, 2 October 2026). One video stands for the series.
+
+### Owner decisions, 3 October 2026 (redesign v2)
+
+*Given by the owner in the chat on 3 October 2026 when asking for the redesign. They replace the earlier "undecided" answers on these points.*
+
+- Small chops: offered. The site names it ("party small chops", puff puff, dodo). [NEEDS: full menu]
+- "Order online": allowed. It means an order request by form or WhatsApp. No payment on the site.
+- Area: based in London. Delivery, collection and areas covered stay undecided.
+- Hype: the owner wants the business presented as the best in London. To stay inside the UK advertising code (the CAP code rules on substantiation and exaggeration), the site uses puffery ("London's best-kept secret", "food that makes people stop and ask who made it") and never a measurable "best in London" claim. Revisit if the owner has evidence such as an award.
+- Business first: cakes, small chops, bakes and catering lead the site; recipes and social posts come second.

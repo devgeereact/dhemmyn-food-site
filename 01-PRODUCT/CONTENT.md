@@ -589,3 +589,132 @@ If you email, phone or message me on WhatsApp, I handle it in my own accounts, n
 You can ask me for a copy of your information, to correct it, to delete it, or to stop using it. I reply within one month. I find an enquiry by searching for your name, email or phone number.
 
 You can also complain to the Information Commissioner's Office (ICO), the UK's data protection regulator.
+
+## Redesign v2 words (3 October 2026)
+
+*Approved by the owner's redesign request of 3 October 2026 (D-14). These words replace the earlier sections of this file wherever they cover the same place on the site. Earlier sections still hold for anything not listed here.*
+Voice: confident, warm, short sentences. Hype sections speak about "Demi" in the third person. Forms and replies speak as "I" (Demi).
+
+### Home
+Hero chip: Handmade in London
+Hero h1: Cakes they remember. Small chops they finish.
+Hero lead: Custom celebration cakes, party small chops and fresh bakes, handmade in London by Demi Yusuf. Tell her the date. She'll make it the best part of the day.
+Buttons: Order a cake (/custom-cakes) · Order small chops (/catering)
+Small link under buttons: Or order on WhatsApp (whatsappOrder("Hi Demi, I'd like to place an order with Dhemmyn Food."))
+Photo captions (chips on hero photos): Birthday cakes · Puff puff · Fresh bakes
+Rotating badge text: Handmade in London ✦ Dhemmyn Food ✦
+Marquee label (sr-only): What you can order from Dhemmyn Food
+Marquee items: Birthday cakes, Celebration cakes, Party small chops, Puff puff, Dodo, Mini cupcakes, Banana bread, Doughnuts, Bread rolls, Cookies
+
+Offers h2: Made for your table
+Offers intro: Everything is made to order for your date. Pick what you need and send your order request in two minutes.
+Card 1 (large) Celebration cakes: Birthdays, milestones and every reason to light a candle. Your flavour, your colours, your message piped by hand. [Order a cake -> /custom-cakes]
+Card 2 Party small chops: Puff puff, dodo and more party bites, fried golden and packed for sharing. The tray that empties first. [Order small chops -> /catering]
+Card 3 Cupcakes and bakes: Mini cupcakes, banana bread, cookies and soft bread rolls for parties, offices and gifts. [Ask for bakes -> /custom-cakes]
+Card 4 Events and catering: Feeding a crowd? Tell Demi the date and the guest count, and plan a spread your guests will talk about. [Plan my event -> /catering]
+
+Why h2: Why people keep coming back
+- Made to order: Nothing sits on a shelf. Your order is made for your day.
+- Your idea, piped by hand: Bring a photo, a colour or a feeling. Demi turns it into a cake that feels like yours.
+- Small chops done properly: Soft puff puff, sweet dodo, golden bites. The taste of a proper party.
+- Easy to order: Send an order request or a WhatsApp message. Demi replies with the details and a price.
+
+Steps h2: Ordering is easy
+1 Tell me what you want: Send your order request with the date, the occasion and how many people.
+2 Get the details and a price: I reply to confirm what is possible and what it costs.
+3 Enjoy the day: Your order is made fresh for your date.
+Note: Prices on request. This website does not take payments.
+
+Maker h2: Meet Demi, London's best-kept secret
+Maker body: Demi Yusuf is the baker and cook behind Dhemmyn Food. She has a sharp eye for detail and a real feel for flavour, and it shows in every bake. Her cakes leave guests asking who made them. Her small chops disappear before the music starts.
+Maker link: Meet Demi (/about-me)
+
+Gallery h2: Fresh from Demi's kitchen
+Gallery intro: Real bakes from her own kitchen. Tap one to watch it come together.
+Gallery link: Follow @dhemmynfood (Instagram)
+
+Recipes h2: Love baking at home?
+Recipes intro: Demi shares easy recipes as short videos. Start with one of these.
+Recipes link: See all recipes
+
+Final CTA h2: Got a celebration coming up?
+Final CTA body: Tell Demi the date. She'll handle the cake, the small chops, or both.
+Buttons: Order now (/order) · Order on WhatsApp
+
+Home <title>: Dhemmyn Food: custom cakes and party small chops in London
+Home description: Custom celebration cakes, party small chops and fresh bakes, handmade in London by Demi Yusuf. Send your order request online or on WhatsApp.
+
+### Order page (/order)
+<title>: Order: Dhemmyn Food
+description: Order a custom cake, party small chops or catering from Dhemmyn Food in London. Send your order request online or on WhatsApp. Prices on request.
+h1: Place your order
+lead: Choose what you need. Send the details in two minutes, and Demi replies with what is possible and a price.
+Choice 1 A custom cake: Birthday, celebration and party cakes, designed with you. [Order a cake -> /custom-cakes#ask-heading]
+Choice 2 Small chops and catering: Puff puff, dodo, party bites and food for your event. [Order small chops -> /catering#ask-heading]
+Choice 3 Prefer to chat?: Send your order on WhatsApp and talk it through with Demi. [Order on WhatsApp -> whatsappOrder("Hi Demi, I'd like to place an order with Dhemmyn Food.")]
+Then the 3 steps ("Ordering is easy") and: Prices on request. This website does not take payments.
+
+### Custom cakes page
+<title>: Custom cakes: Dhemmyn Food
+description: Order a custom celebration cake from Demi Yusuf at Dhemmyn Food in London. Send your order request or message me. Prices on request.
+h1: Custom cakes
+lead: Cakes that steal the photo. Birthdays, milestones and every reason to celebrate, designed with you and piped by hand.
+body: Tell me the date you need it, the occasion and how many servings. Add your flavour and design ideas. Send the order request below, or message me.
+Prices on request.
+Form heading: Order your cake
+Closing band: Ready to order? [Order your cake]
+
+### Small chops and catering page (/catering)
+<title>: Small chops and catering: Dhemmyn Food
+description: Order party small chops and event food from Demi Yusuf at Dhemmyn Food in London. Send your order request or message me. Prices on request.
+h1: Small chops and catering
+lead: Puff puff, dodo and party bites that empty the tray first. Made for birthdays, gatherings and events.
+body: Tell me the date, how many guests, the town and the food you want. Send the order request below, or message me.
+Prices on request.
+Form heading: Order small chops or catering
+Food field hint: For example, puff puff, dodo or a small chops tray.
+Closing band: Ready to order? [Order small chops]
+
+### Form messages (both forms)
+send: Send order request · sendingButton: Sending · sending: Sending your order request. · sentTitle: Thank you. Your order request is sent. · sentBody: I will get back to you with the details and a price. · failed: Sorry, your order request did not send. Nothing you typed is lost. Try again, or message me by
+How ordering works step 1 text: Tell me what you want. Use the form on the Custom cakes or Small chops page, or message me by [contact].
+FAQ "How do I ask for a custom cake or catering?" -> "How do I order?" answer: Use the order form on the Custom cakes or Small chops page, or message me by [contact].
+
+### About page (/about-me)
+<title>: About Demi: Dhemmyn Food
+description: Meet Demi Yusuf, the London baker and cook behind Dhemmyn Food. Custom cakes, party small chops and easy recipe videos.
+h1: Meet Demi
+lead: The hands, the taste and the eye behind Dhemmyn Food.
+h2: London's best-kept secret for cakes and small chops
+p1: Demi Yusuf bakes and cooks from her kitchen in London, and the results speak for themselves. Cakes with clean piping and bold colour. Soft, golden puff puff. Dodo with real flavour. Food that makes people stop and ask who made it.
+p2: Demi cooks and bakes with no shortcuts on flavour and no detail left to chance. Every order is made for one table, one date and one set of guests.
+Values h2: What goes into every order
+- Taste first: Flavour leads every decision, from the sponge to the last piece of dodo.
+- Made for your day: Your order is planned around your date, your guests and your idea.
+- Detail you can see: Clean piping, neat finishes and food that looks as good as it tastes.
+Watch h2: See her work before you order
+Watch body: Demi films her bakes from start to finish. She has posted 347 videos on YouTube and 841 on TikTok, from birthday cakes to puff puff and five-minute bread rolls.
+Follow line: Follow @dhemmynfood on Instagram, TikTok, YouTube and Threads.
+CTA band h2: Ready for Demi to make yours?  [Order now -> /order] [Order on WhatsApp]
+
+### Small words added during the build (3 October 2026)
+
+- Footer: "Custom cakes and party small chops, handmade in London." Column headings "Get in touch", "Pages", "Follow", and the handle "@dhemmynfood". Button "Order now".
+- Header: "Order now" (phones: "Order").
+- Floating button: "Order now".
+- Order form card: "Takes about two minutes. I reply with the details and a price." List: "Tell me the date", "Share your ideas", "I reply with a price".
+- Form page heros: "Order on WhatsApp".
+- Contact: "Got a question, or want a cake or small chops? Message me by [contact]. Or send an order request on the Custom cakes or Small chops page." Buttons "Order now", "Order a cake", "Order small chops".
+- Recipes: "Got a question, or want a cake or small chops?" and a closing band "Want Demi to bake it for you?" with "Order now".
+- Hero photo captions on Small chops and catering: "Dodo", "Puff puff".
+
+### Polish v2.1 words (3 October 2026)
+
+- Home offer actions: "Design your cake", "See small chops", "Ask for bakes", "Plan my event". "Easy to order" removed from "Why people keep coming back". The kitchen gallery section was removed.
+- Party planner: h2 "Plan your celebration in 30 seconds". Lead "Tell Demi what you're celebrating. Your order note writes itself, ready to send." Questions "What's the occasion?" (Birthday, Wedding, Baby shower, Graduation, Office party, Something else), "What would you like?" (A cake, Small chops, Both), "How many guests?" with "A rough number is fine.", "When is it?" with "Not sure yet? Leave it blank." Ticket "Order note", "For Demi at Dhemmyn Food", rows Occasion, Order, Guests ("About N"), Date ("To be confirmed"), "Your message". Message: "Hi Demi, I'm planning a [occasion] for about [N] guests on [date or 'a date to be confirmed']. I'd love [a cake / small chops / a cake and small chops]. Could you tell me what's possible and the price?" Buttons "Send to Demi on WhatsApp", "Use the order form". Note "No payment here. Demi replies with what's possible and a price."
+- Order form note when filled from the planner: "Your party plan is filled in. Check the details and add anything else."
+- Footer: About card "Celebration cakes, party small chops and fresh bakes, made to order by Demi Yusuf in London." Cards "About", "Pages", "Follow"; WhatsApp tile "Message Demi".
+- Contact lead: "Got a question, or want a cake or small chops? Message me whichever way suits you." Band: "Know what you want? Choose a cake, small chops or both." with "Order now".
+- Recipes closing band: "Want Demi to bake it for you?", "More videos are on my YouTube channel.", "Order now".
+- About: "Follow @dhemmynfood on Instagram".
+- Order pages: Common questions keep only "How much does it cost?" and "Do I pay on this website?".

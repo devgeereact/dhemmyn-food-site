@@ -1,6 +1,7 @@
 // shadcn/ui Accordion (MIT, https://ui.shadcn.com/docs/components/accordion), built on Radix UI.
-// Restyled to DESIGN-SYSTEM.md: a ruled list, questions 48 px high with a "+" and "-" in text,
-// no icon set, open and close instant (no height animation), and the site's own focus ring.
+// Restyled for redesign v2 (3 October 2026): each question is a soft paper row with an 8 px gap between
+// rows, and a drawn plus that turns into a minus by rotating its upright stroke away (transform only).
+// Open and close stay instant: animating the height would mean animating a layout property.
 // Radix gives it real buttons inside headings, aria-expanded, and arrow, Home and End keys.
 import * as React from "react"
 import { Accordion as AccordionPrimitive } from "radix-ui"
@@ -13,7 +14,7 @@ function Accordion({
   return (
     <AccordionPrimitive.Root
       data-slot="accordion"
-      className={cn("flex w-full flex-col", className)}
+      className={cn("flex w-full flex-col gap-2", className)}
       {...props}
     />
   )
@@ -26,7 +27,7 @@ function AccordionItem({
   return (
     <AccordionPrimitive.Item
       data-slot="accordion-item"
-      className={cn("border-b border-border", className)}
+      className={cn("rounded-md bg-paper", className)}
       {...props}
     />
   )
@@ -42,7 +43,7 @@ function AccordionTrigger({
       <AccordionPrimitive.Trigger
         data-slot="accordion-trigger"
         className={cn(
-          "group/accordion-trigger flex min-h-12 flex-1 cursor-pointer items-center justify-between gap-4 py-3 text-left font-semibold",
+          "group/accordion-trigger flex min-h-16 flex-1 cursor-pointer items-center justify-between gap-4 rounded-md px-6 py-4 text-left font-semibold",
           className
         )}
         {...props}
@@ -51,11 +52,17 @@ function AccordionTrigger({
         <span className="underline-offset-[0.22em] group-hover/accordion-trigger:underline group-hover/accordion-trigger:decoration-3">
           {children}
         </span>
-        <span aria-hidden="true" className="group-aria-expanded/accordion-trigger:hidden">
-          +
-        </span>
-        <span aria-hidden="true" className="hidden group-aria-expanded/accordion-trigger:inline">
-          -
+        <span
+          aria-hidden="true"
+          className="flex size-9 shrink-0 items-center justify-center rounded-full bg-icing text-cake-red"
+        >
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" className="size-4">
+            <path d="M3 8h10" />
+            <path
+              d="M8 3v10"
+              className="origin-center [transform-box:fill-box] motion-safe:transition-transform motion-safe:duration-200 motion-safe:ease-out group-aria-expanded/accordion-trigger:rotate-90 group-aria-expanded/accordion-trigger:scale-y-0"
+            />
+          </svg>
         </span>
       </AccordionPrimitive.Trigger>
     </AccordionPrimitive.Header>
@@ -69,7 +76,7 @@ function AccordionContent({
 }: React.ComponentProps<typeof AccordionPrimitive.Content>) {
   return (
     <AccordionPrimitive.Content data-slot="accordion-content" {...props}>
-      <div className={cn("max-w-[68ch] pb-4", className)}>{children}</div>
+      <div className={cn("max-w-[68ch] px-6 pb-6", className)}>{children}</div>
     </AccordionPrimitive.Content>
   )
 }

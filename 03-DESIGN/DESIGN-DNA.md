@@ -8,6 +8,20 @@
 
 *Every design decision in DESIGN-SYSTEM.md must trace back to this file. Keep it to one page.*
 
+## Redesign v2 (3 October 2026): this section wins where it disagrees with the rest of the file
+
+The owner found the first build too static and too focused on social posts. The site now sells: cakes, party small chops, bakes and catering, ordered online by form or WhatsApp. See D-14.
+
+- **Design read:** a confident London food brand. Premium, warm and lively, like a celebration table, still made by one person's hands.
+- **Base:** getdesign.md "starbucks" (03-DESIGN/BASE-DESIGN-V2.md), re-skinned: colour-block rhythm, full pills with a 95% press, 24 px cards, warm soft shadows, a floating round "Order now" button.
+- **Colours from her bakes:** paper #FFFAF8, icing pink #F8E4E2 (her pink cakes), ganache #2A1411 (chocolate piping, dark bands), sponge #4B2B20, cake red #B0283F (the one action colour on light), puff-puff gold #E8A93A (action colour and stars on dark).
+- **Type:** Bricolage Grotesque, condensed and extra bold, much larger on Home (up to about 124 px). Figtree for reading.
+- **Dials:** layout 7, motion 6, density 5.
+- **Signature moment:** the Home hero. The headline slides up line by line while three of her photo cards fan out from a pile; a round "Handmade in London" badge turns as the page scrolls. One orchestrated load per page, scroll reveals only on groups (offer cards, steps, gallery).
+- **Replaced bans:** photos may sit in rounded frames with warm shadows; one looping element is allowed (the offer marquee) because it has a pause button and stops under reduced motion; cards are allowed when they differ in size and role (bento), never three identical in a row.
+- **Still banned:** gradient text, glass effects as decoration, purple or blue glows, ALL-CAPS labels over every heading, fake numbered markers, "big number, small label" rows, play icons on thumbnails, stock or AI photos, pop-ups on arrival, autoplay video, any animation of layout properties.
+
+
 ## Design Read
 
 A phone-first homepage for UK followers of Demi Yusuf's short upright baking videos, and for people asking her for a cake or catering; warm, homely and generous, a kitchen you could stand in and a bake you could make today.

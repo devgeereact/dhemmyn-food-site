@@ -33,9 +33,13 @@ export default function FormField({
     .filter(Boolean)
     .join(' ')
 
+  // Redesign v2: a soft 14 px field with a 2 px border. Focus turns the border cake red and adds a
+  // soft ring, which together replace the page outline (a third red line would crowd the field).
+  // A wrong field keeps its cake red border. Colour changes are instant: no transitions.
   const control =
-    'mt-2 block w-full rounded-xs border bg-paper px-4 text-lead text-ink hover:border-ink focus:border-2 focus:border-ink ' +
-    (invalid ? 'border-2 border-cake-red ' : 'border-sponge ') +
+    'mt-2 block w-full min-w-0 scroll-mt-40 rounded-md border-2 bg-paper px-4 text-lead text-ink ' +
+    'focus:border-cake-red focus:ring-4 focus:ring-cake-red/15 focus-visible:outline-none ' +
+    (invalid ? 'border-cake-red ' : 'border-ink/15 hover:border-ink/40 ') +
     (readOnly ? 'opacity-60' : '')
 
   const shared = {
@@ -70,9 +74,24 @@ export default function FormField({
           className={`${control} h-14`}
         />
       )}
+      {/* The message carries a drawn "!" as well as the colour, so it never relies on red alone. */}
       {error && (
-        <p id={messageId} className="mt-2 text-small font-medium text-cake-red">
-          {error}
+        <p id={messageId} className="mt-2 flex items-start gap-2 text-small font-semibold text-cake-red">
+          <svg
+            aria-hidden="true"
+            focusable="false"
+            viewBox="0 0 20 20"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={1.75}
+            strokeLinecap="round"
+            className="mt-0.5 size-4 shrink-0"
+          >
+            <circle cx="10" cy="10" r="8.25" />
+            <path d="M10 5.75v5" />
+            <path d="M10 14.25h.01" strokeWidth={2.5} />
+          </svg>
+          <span>{error}</span>
         </p>
       )}
     </div>

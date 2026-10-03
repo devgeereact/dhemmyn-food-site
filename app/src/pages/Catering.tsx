@@ -1,39 +1,28 @@
 import { cateringForm } from '../data/forms'
+import { cateringPhotos } from './enquiry/cateringPhotos'
 import EnquirySections from './enquiry/EnquirySections'
+import OrderHero from './enquiry/OrderHero'
 
 export default function Catering() {
   return (
     <>
-      <title>Catering: Dhemmyn Food</title>
+      <title>Small chops and catering: Dhemmyn Food</title>
       <meta
         name="description"
-        content="Ask about catering from Demi Yusuf at Dhemmyn Food. Send the form or message me. Prices on request."
+        content="Order party small chops and event food from Demi Yusuf at Dhemmyn Food in London. Send your order request or message me. Prices on request."
       />
 
-      {/* The opening: a full-bleed crumb band with no drawing, so red stays with the cakes.
-          From 1128 px the heading sits on the left and the words on the right. */}
-      <div className="surface-dark bg-crumb text-paper">
-        <div className="page-width py-10 md:py-16 lg:grid lg:grid-cols-2 lg:items-end lg:gap-12">
-          <h1
-            tabIndex={-1}
-            className="font-display text-hero font-extrabold tracking-[-0.015em] text-balance font-stretch-[75%] md:text-hero-lg"
-          >
-            Catering
-          </h1>
-          <div className="mt-4 lg:mt-0">
-            <p className="max-w-[34ch] text-lead text-balance md:text-lead-lg">
-              Need food for an event? Ask me about catering.
-            </p>
-            <p className="mt-4 max-w-[48ch] text-lead md:text-lead-lg">
-              Tell me the date, how many guests, the town and the food you want. Use the form below,
-              or message me.
-            </p>
-            <p className="mt-4 font-semibold">Prices on request.</p>
-          </div>
-        </div>
-      </div>
+      {/* The opening: a full-bleed ganache band with no drawing, so the piped icing stays with the cakes. */}
+      <OrderHero
+        tone="bg-ganache"
+        title="Small chops and catering"
+        lead="Puff puff, dodo and party bites that empty the tray first. Made for birthdays, gatherings and events."
+        body="Tell me the date, how many guests, the town and the food you want. Send the order request below, or message me."
+        orderLabel="Order small chops"
+        photos={cateringPhotos}
+      />
 
-      <EnquirySections form={cateringForm} closingButton="Ask about catering" />
+      <EnquirySections form={cateringForm} whatsappText="Hi Demi, I'd like to order party small chops." />
     </>
   )
 }

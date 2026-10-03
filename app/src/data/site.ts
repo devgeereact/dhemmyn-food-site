@@ -14,19 +14,28 @@ export const contact = {
   whatsappHref: 'https://wa.me/447787561363',
 }
 
-// Header menu. Home is added on phones only, in MobileMenu.
+// Header menu. Home is added on phones only, in MobileMenu. The business comes first (redesign v2,
+// 3 October 2026): cakes and small chops lead, recipes follow. "Order now" sits beside the menu.
 export const mainNav: NavItem[] = [
+  { label: 'Cakes', to: '/custom-cakes' },
+  { label: 'Small chops', to: '/catering' },
+  { label: 'About Demi', to: '/about-me' },
   { label: 'Recipes', to: '/recipes' },
-  { label: 'Custom cakes', to: '/custom-cakes' },
-  { label: 'Catering', to: '/catering' },
-  { label: 'About me', to: '/about-me' },
   { label: 'Contact', to: '/contact' },
 ]
 
+export const orderPath = '/order'
+
 export const footerNav: NavItem[] = [
+  { label: 'Order now', to: orderPath },
   ...mainNav,
   { label: 'Privacy notice', to: '/privacy' },
 ]
+
+// A WhatsApp chat that opens with a first line already typed, so ordering takes one tap.
+export function whatsappOrder(text: string): string {
+  return `${contact.whatsappHref}?text=${encodeURIComponent(text)}`
+}
 
 export const socialLinks: SocialLink[] = [
   { label: 'Instagram', href: 'https://www.instagram.com/dhemmynfood/' },

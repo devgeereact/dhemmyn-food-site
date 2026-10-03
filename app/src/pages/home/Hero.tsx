@@ -1,111 +1,108 @@
-import { motion, useReducedMotion } from 'motion/react'
-import { useEffect, useState } from 'react'
-import berryPhoto from '../../assets/photos/berry-sponge-slice.jpg'
-import rollsPhoto from '../../assets/photos/chocolate-chip-rolls.jpg'
-import profilePhoto from '../../assets/photos/profile-chocolate-sponge.jpg'
-import berry200 from '../../assets/photos/small/berry-sponge-slice-200.jpg'
-import berry450 from '../../assets/photos/small/berry-sponge-slice-450.jpg'
-import rolls200 from '../../assets/photos/small/chocolate-chip-rolls-200.jpg'
-import rolls450 from '../../assets/photos/small/chocolate-chip-rolls-450.jpg'
+import { motion, useReducedMotion, useScroll } from 'motion/react'
+import { useEffect, useRef, useState } from 'react'
 import ButtonLink from '../../components/ButtonLink'
-import { fadeProps, riseProps } from '../../lib/lift'
-import { photoSet } from '../../lib/photoSet'
+import ExternalLink from '../../components/ExternalLink'
+import Icon from '../../components/Icon'
+import { whatsappOrder } from '../../data/site'
+import { easeLift, easeOut } from '../../lib/lift'
+import HeroPhotoFan from './HeroPhotoFan'
 
-// The two hand photos are shown at about 200 to 340 px wide, so the 450 px copy is enough
-// for most screens and the 900 px original is only used on very sharp ones.
-const berrySet = photoSet(berry200, berry450, berryPhoto)
-const rollsSet = photoSet(rolls200, rolls450, rollsPhoto)
+// The page's signature moment plays once per page load, so coming back to Home
+// during a visit shows the hero settled instead of replaying it.
+let heroPlayed = false
 
-// "The lift" (DESIGN-SYSTEM.md, Signature moment). It plays once per page load,
-// so going back to Home during a visit does not replay it.
-let liftPlayed = false
+const lines = ['Cakes they remember.', 'Small chops they finish.']
 
 export default function Hero() {
+  const sectionRef = useRef<HTMLElement>(null)
   const reducedMotion = useReducedMotion()
-  const [alreadyPlayed] = useState(() => liftPlayed)
+  const [alreadyPlayed] = useState(() => heroPlayed)
   const still = Boolean(reducedMotion) || alreadyPlayed
 
   useEffect(() => {
-    liftPlayed = true
+    heroPlayed = true
   }, [])
 
-  const fade = (delay: number) => fadeProps(still, delay)
-  const rise = (delay: number) => riseProps(still, delay)
+  // 0 while the hero fills the screen, 1 once it has scrolled away. Drives the parallax and the badge.
+  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ['start start', 'end start'] })
+
+  // Text after the headline: a short fade, once the two lines are up.
+  const fade = (delay: number) => ({
+    initial: still ? (false as const) : { opacity: 0 },
+    animate: { opacity: 1 },
+    transition: { duration: 0.35, delay, ease: easeOut },
+  })
 
   return (
-    <section aria-labelledby="hero-heading" className="relative overflow-hidden lg:grid lg:grid-cols-[46fr_54fr]">
-      <div className="px-4 pt-8 pb-10 md:px-8 md:pt-12 md:pb-14 lg:self-center lg:py-16 lg:pr-6 lg:pl-12 xl:pl-[max(3rem,calc((100vw-80rem)/2+3rem))]">
-        <motion.h1
-          id="hero-heading"
-          tabIndex={-1}
-          {...fade(0)}
-          className="font-display text-hero font-extrabold tracking-[-0.015em] text-balance font-stretch-[75%] md:text-hero-lg"
-        >
-          Easy baking and cooking recipes, online
-        </motion.h1>
-        <motion.div {...fade(0.1)}>
-          <p className="mt-4 max-w-[34ch] text-lead md:text-lead-lg lg:max-w-[30ch]">
-            Here to show you good food. Cakes, bread rolls, scones, cookies, doughnuts and more.
-            Every recipe is a video.
-          </p>
-          <div className="mt-6">
-            <ButtonLink to="/recipes">See the recipes</ButtonLink>
-          </div>
-        </motion.div>
-      </div>
+    <section
+      ref={sectionRef}
+      aria-labelledby="hero-heading"
+      className="surface-dark relative overflow-hidden bg-ganache text-paper"
+    >
+      <div className="page-width grid items-center gap-6 pt-10 pb-14 md:pt-14 md:pb-20 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:gap-8 lg:pt-12 lg:pb-20">
+        <div>
+          <motion.p
+            {...fade(0)}
+            className="inline-flex items-center gap-2 rounded-full border border-gold/40 px-3.5 py-1.5 text-small font-semibold text-gold-soft"
+          >
+            <span aria-hidden="true" className="text-gold">
+              ✦
+            </span>
+            Handmade in London
+          </motion.p>
 
-      <div className="relative h-[clamp(27rem,120vw,35rem)] md:ml-auto md:h-[40rem] md:w-full md:max-w-[40rem] lg:ml-0 lg:h-auto lg:min-h-[40rem] lg:max-w-none">
-        <div
-          aria-hidden="true"
-          className="absolute inset-x-0 top-[40%] bottom-0 bg-sponge md:-left-[100vw] lg:top-[22%] lg:left-[min(18%,7.9rem)]"
-        />
-        {/* The photos keep the proportions of the 1280 px layout: the scene stops growing at 44rem, while the tray runs on to the screen edge. */}
-        <div className="absolute inset-y-0 left-0 w-full lg:max-w-[44rem]">
-          <motion.div
-            {...rise(0.06)}
-            className="absolute top-[5%] left-[4%] w-[min(50%,290px)] lg:top-16 lg:left-[6%]"
+          {/* Each line rises out of its own mask. The padding keeps descenders inside the mask. */}
+          <h1
+            id="hero-heading"
+            tabIndex={-1}
+            className="mt-5 font-display text-display font-extrabold tracking-[-0.02em] font-stretch-[75%] md:text-display-lg"
           >
-            <div className="aspect-[873/1600] overflow-hidden">
-              <img
-                src={berryPhoto}
-                srcSet={berrySet}
-                sizes="(min-width: 744px) 290px, 50vw"
-                alt="A hand holds a slice of pale sponge with pockets of dark berry filling."
-                width={900}
-                height={1600}
-                fetchPriority="high"
-                className="photo -ml-[1.55%] w-[103.1%] max-w-none"
-              />
+            {lines.map((line, index) => (
+              <span key={line} className="-mb-[0.08em] block overflow-hidden pb-[0.08em]">
+                <motion.span
+                  initial={still ? false : { y: '105%' }}
+                  animate={{ y: '0%' }}
+                  transition={{ duration: 0.8, delay: 0.1 + index * 0.12, ease: easeLift }}
+                  className={`block ${index === 1 ? 'text-icing-deep' : ''}`}
+                >
+                  {line}
+                </motion.span>
+              </span>
+            ))}
+          </h1>
+
+          <motion.div {...fade(0.45)}>
+            <p className="mt-6 max-w-[38ch] text-lead text-paper/85 md:text-lead-lg">
+              Custom celebration cakes, party small chops and fresh bakes, handmade in London by Demi
+              Yusuf. Tell her the date. She'll make it the best part of the day.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <ButtonLink to="/custom-cakes" onDark>
+                <Icon name="cake" className="size-5" />
+                Order a cake
+              </ButtonLink>
+              <ButtonLink to="/catering" variant="secondary" onDark>
+                Order small chops
+              </ButtonLink>
             </div>
-          </motion.div>
-          <motion.div
-            {...rise(0)}
-            className="absolute right-[5%] bottom-[-22%] w-[min(56%,340px)] lg:right-[6%] lg:bottom-[-60px]"
-          >
-            <img
-              src={rollsPhoto}
-              srcSet={rollsSet}
-              sizes="(min-width: 744px) 340px, 56vw"
-              alt="A hand holds a glazed chocolate chip roll above a tray of more rolls."
-              width={900}
-              height={1600}
-              className="photo w-full"
-            />
-          </motion.div>
-          <motion.div
-            {...rise(0.12)}
-            className="absolute bottom-4 left-[4%] size-28 lg:bottom-7 lg:left-[3%] lg:size-50"
-          >
-            <img
-              src={profilePhoto}
-              alt="A slice of chocolate sponge with white cream and Oreo crumbs on a white plate."
-              width={400}
-              height={400}
-              className="photo size-full object-cover"
-            />
+            <ExternalLink
+              href={whatsappOrder("Hi Demi, I'd like to place an order with Dhemmyn Food.")}
+              className="link-line mt-4 inline-flex min-h-12 items-center gap-2 font-semibold text-paper/90 decoration-gold/70"
+            >
+              <Icon name="whatsapp" className="size-5 text-gold" />
+              Or order on WhatsApp
+            </ExternalLink>
           </motion.div>
         </div>
+
+        <HeroPhotoFan still={still} reduced={Boolean(reducedMotion)} scrollYProgress={scrollYProgress} />
       </div>
+
+      {/* Piped edge: a row of icing beads in cake red that runs into the marquee band below. */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-x-0 bottom-0 h-3 bg-[radial-gradient(circle_at_50%_100%,var(--color-cake-red)_11px,transparent_11.5px)] bg-size-[24px_12px] bg-repeat-x"
+      />
     </section>
   )
 }
