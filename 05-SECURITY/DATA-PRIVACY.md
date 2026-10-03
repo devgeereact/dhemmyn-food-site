@@ -35,7 +35,7 @@ The site collects personal information in two places, the two enquiry forms. Not
 
 ### What the site does not collect
 
-- No cookies and no browser storage. The fonts and photos come from the site's own files, so no outside company sees a visitor's address for them. [CHECK on the built site, in the browser's storage tools: nothing is set.]
+- No cookies and no browser storage. The fonts and photos come from the site's own files, so no outside company sees a visitor's address for them. A code check on 3 October 2026 found no cookie or storage code (see "Code check" below). [CHECK: in the browser's storage tools on the built site and the live address: nothing is set.]
 - No analytics, no advertising or tracking tags, no log-ins, no newsletter sign-up, no payments.
 - Visitor IP addresses appear in Netlify's server logs, as with any website. Lawful basis: legitimate interests, keeping the site working and secure (owner's decision, 3 October 2026). [CHECK: how long Netlify keeps them, and what it says about them.]
 - Plain links to Instagram, TikTok, YouTube, Threads and WhatsApp send nothing until a visitor taps one. After that the other company's own privacy rules apply, not this site's. Videos are links, never players, so no video company loads anything on the site.
@@ -46,7 +46,17 @@ A visitor can also email, phone or message the owner on WhatsApp, using the deta
 
 ## Cookies and browser storage
 
-None. The site sets no cookies and uses no local storage, so no cookie banner is needed under the cookie rules (PECR). Fonts are saved inside the site and there is no analytics. [CHECK: confirm on the built site and again on the live address. Result goes in 06-QA/SECURITY-AUDIT.md and 09-RELEASE/PRODUCTION-CHECK.md.] If a cookie or storage item is ever added, record it here first.
+None. The site sets no cookies and uses no local storage, so no cookie banner is needed under the cookie rules (PECR). Fonts are saved inside the site and there is no analytics. A code check on 3 October 2026 found no cookie or storage code in the source or in `app/dist`. [CHECK: confirm in the browser on the built site and again on the live address. Result goes in 06-QA/SECURITY-AUDIT.md and 09-RELEASE/PRODUCTION-CHECK.md.] If a cookie or storage item is ever added, record it here first.
+
+## Code check (3 October 2026)
+
+Searched `app/index.html`, `app/src`, `app/public` (empty), `app/package.json` and, after `npm run build`, `app/dist`.
+
+- **Cookies and browser storage:** none. No `document.cookie`, `localStorage`, `sessionStorage`, `indexedDB`, `sendBeacon` or service worker in the source or the built files.
+- **Outside code, fonts and images:** none. The five font files and every photo are served from the site's own `/assets/`. No analytics, embedded video, map, social widget, Instagram feed, embed script or font service.
+- **Outside addresses in the built files:** plain links to WhatsApp, Instagram, TikTok, YouTube and Threads, which load nothing until a visitor taps one (they open with `rel="noopener noreferrer"`). The rest are text inside React and React Router (react.dev, reactrouter.com, w3.org names), which the browser never fetches.
+- **Only network call in the site's own code:** `fetch('/')` in `app/src/components/EnquiryForm.tsx`, which posts a form to the site's own address, where Netlify Forms handles it.
+- **NOT TESTED:** a browser run (storage tools and network tab) on the built or live site, and Netlify's dashboard settings, for example that Netlify Analytics is off.
 
 ## Outside companies that receive personal information
 

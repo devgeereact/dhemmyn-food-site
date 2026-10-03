@@ -17,6 +17,13 @@
 - Tested: the commands and checks run, and the result
 ```
 
+## [2026-10-03] Code check for cookies, browser storage and outside servers
+
+- Change: DATA-PRIVACY.md has a new "Code check" section and two lines that record the result. No app file changed.
+- Reason: owner request, to check the privacy claim "no cookies, no outside servers" against the code.
+- Files: 05-SECURITY/DATA-PRIVACY.md, 08-CHANGE-MANAGEMENT/CHANGELOG.md.
+- Tested: PASS `npm run build`. Searched `app/index.html`, `app/src`, `app/public` (empty) and `app/package.json`, then `app/dist`: no cookie or storage calls, no outside script, font, image, embed or analytics; the only outside addresses are plain links. NOT TESTED in a browser (storage tools, network tab) and NOT TESTED against Netlify's dashboard settings.
+
 ## [2026-10-03] Privacy notice draft: owner's answers and the allergy consent line
 
 - Change: the Allergies hint on both enquiry forms now ends "By telling me about an allergy you agree I may use it to make your food safely." (CONTENT.md first, then `app/src/data/forms.ts`). In the notice draft, the owner settled the privacy contact, the lawful basis (steps before a contract; explicit consent for allergies; legitimate interests for IP logs), that only the owner reads enquiries, and that the notice mentions messages sent outside the site. Still open: [NEEDS] trading status and email provider; [CHECK] Netlify IP log retention, storage outside the UK, deletion and provider copies, and cookies on the built and live site. DATA-PRIVACY.md updated to match. `/privacy` still says "Privacy notice coming soon" and stays out of the header menu (footer link only, as before). LAUNCH-CHECKLIST.md has a new line, "Privacy notice outstanding", marked BLOCKED.
