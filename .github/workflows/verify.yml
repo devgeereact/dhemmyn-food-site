@@ -1,0 +1,17 @@
+name: Verify
+on: [push, pull_request]
+jobs:
+  verify:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.21.0'
+          cache: npm
+      - run: npm ci --include=optional
+      - run: npx playwright install --with-deps chromium
+      - run: npm run typecheck && npm run lint && npm test && npm run test:browser
