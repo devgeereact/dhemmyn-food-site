@@ -159,3 +159,8 @@
 - Options considered: keeping the floating button (it repeated the sticky header); a price estimator (no prices exist); a quiz pop-up (pop-ups on arrival are banned).
 - What it means for the project: D-14's floating button is withdrawn. Eight unused components were deleted. KI-09 (floating button covering content) is closed.
 - Revisit if: the owner sets prices or portion sizes (the planner could then suggest sizes), or Lighthouse shows the planner script is too heavy.
+
+
+## 7 October 2026: portable TypeScript rebuild
+
+Flattened app into root and grouped documentation/audits without changing React UI or business rules. Added project-local Mise, npm clean setup, private-LAN launcher and explicit unavailable local Netlify delivery. Playwright 1.63 added because both real local failure and synthetic form states require browser verification. Evidence: qa/reports/GEE-REBUILD-2026-10-07.md. Original source and history retained.

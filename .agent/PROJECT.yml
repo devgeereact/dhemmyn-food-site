@@ -1,0 +1,4 @@
+name: dhemmyn-food
+product: Dhemmyn Food
+stack: React, TypeScript, Tailwind, Vite
+mode: existing-app

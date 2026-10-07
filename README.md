@@ -1,39 +1,47 @@
-# Dhemmyn Food website
+# Dhemmyn Food
 
-A small website for Dhemmyn Food, where Demi Yusuf shares easy baking and cooking recipes online and takes custom cake and catering enquiries. Built with Vite, React, TypeScript, React Router, Tailwind CSS and Motion, and published on Netlify.
+React, TypeScript and Tailwind, retaining the approved food business design and content.
 
-**Status:** Planning is finished (step 8). Every page is built. The privacy notice is a placeholder, and nothing is published yet.
+## Run on Linux or macOS
 
-## Where things are
+Install Mise independently on the destination machine. From this project root:
 
-- `PROJECT-OS.md`: the master file. Structure, stack, rules and checks. Start here.
-- `AGENTS.md`: the rules your AI assistant reads every session. `CLAUDE.md` points Claude Code to it.
-- `00-FOUNDATION` to `09-RELEASE`: plans, audits and release records, numbered in the order you use them.
-- `app/`: the website code (created in step 9). Only `app/dist`, the finished build, is published.
-
-## Run it on your computer
-
-Run these in your own terminal. Every page is built. The enquiry forms cannot send from this preview, so they show the "failed" message here. A real send is tested once on the Netlify address.
-
-```
-cd app
-npm install
-npm run dev
+```sh
+mise trust
+mise install
+mise exec -- npm run setup
+mise exec -- npm run dev
 ```
 
-Then open http://localhost:5173 in your browser. Stop it with Control and C.
+Default: http://127.0.0.1:5192. If occupied, choose a free port, for example `DHEMMYN_PORT=5203 mise exec -- npm run dev`. The launcher never stops another server. Ctrl+C stops its own server. It also works when invoked by absolute script path from another directory.
 
-## Checks after every change
+For intentional trusted-LAN access, choose this computer’s assigned private IPv4, for example:
 
+```sh
+DHEMMYN_HOST=192.168.1.110 DHEMMYN_PORT=5203 mise exec -- npm run dev
 ```
-npm run build
-npm run lint
+
+Use the resulting http://IP:PORT on your trusted LAN. Addresses vary by machine. Wildcard and public binding are rejected. No router forwarding or firewall changes are required by this project; access from a second device still depends on your network.
+
+## Transfer cleanly
+
+Clone the repository or transfer a reviewed source export, including the npm lockfile. Exclude node_modules, dist, browser caches, .env files and machine/account state. Run setup on each destination to install native dependencies for that operating system. Do not copy the `.git` pointer from this linked worktree as a standalone repository: the original repository owns its Git metadata. No environment variables or database are needed for the current local UI.
+
+## Verify
+
+```sh
+mise exec -- npm run typecheck
+mise exec -- npm run lint
+mise exec -- npm test
+mise exec -- npm run test:browser
 ```
 
-Both must finish without errors.
+Setup installs Chromium for browser tests. Test preview uses loopback port 5201 and refuses to reuse a running server.
 
-## Current state
+## Layout and release
 
-- Current step: step 9 done as far as building goes: the header, footer, Home, Recipes, Custom cakes and Catering (with the enquiry form), About me, Contact, a placeholder Privacy page and the Not found page are built. Next: the audits in step 10, the privacy notice in step 11 and publishing in step 12.
-- Live address: none yet. The site will use a free `.netlify.app` address until a domain exists (D-04 in 08-CHANGE-MANAGEMENT/DECISIONS.md).
-- Last release decision: none yet. There is no release report.
+src: React components, routes, drawings and business rules. public: deployment assets. docs: retained product/design/planning documents. qa: historic audits and current evidence. tests: unit and browser checks. scripts: portable Node helpers. Generated output is ignored. One root HTML entry remains; historic design explorations are archived under docs.
+
+Local development and preview return HTTP 503 for enquiry POSTs, so the existing failure message retains input. Synthetic test success does not prove delivery. Netlify build base is the root and publishes dist. Preserve the hidden Netlify form blueprint. Configure and test actual deployed delivery before release. Owner contact details and actual Netlify delivery must be reviewed before release. Mac execution and owner/legal acceptance remain open.
+
+Historic instructions and architecture describe the previous app/ layout. They are retained as reference, not current startup commands. See qa/reports/GEE-REBUILD-2026-10-07.md.

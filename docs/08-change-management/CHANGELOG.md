@@ -539,3 +539,32 @@
 - Reason: start of the project
 - Files: all planning files
 - Tested: compared with section 1 of PROJECT-OS.md (WEB-04)
+
+## 7 October 2026: fixed local server port
+
+Pinned development and preview to 127.0.0.1:5192 with strictPort. Updated command documentation. No page content changed. Runtime verification BLOCKED: this agent environment rejects loopback binding with EPERM. Build and lint results are recorded in the workspace LOCAL-SERVERS.md.
+
+## 7 October 2026: Linux development restoration
+
+Codex verified startup before changes, restored Linux dependencies with `npm ci --include=optional` and preserved the lockfile and prior Git work. Shared workspace launcher now offers explicit private-IPv4 LAN mode; normal startup remains loopback only. Build/lint and headless browser checks passed. Hosted Netlify forms still require Netlify. See the workspace LOCAL-SERVERS.md and supplied migration report. No deployment or commit.
+
+
+## 7 October 2026: workstation command setup
+
+Added `scripts/project install|dev|test|verify|stop`, using the existing npm lockfile and scripts. Development retains the existing localhost defaults. Stop targets only a process started by this wrapper. The install command is available but was not run. Volume uses its existing Mise runtime.
+
+PASS: wrapper syntax and isolated dev/duplicate-start/stop checks; unrelated process preserved. Verification results and LAN/GitHub blockers are recorded in the workstation report. No commit, push or existing server shutdown was performed.
+
+Final workstation verification: PASS: configured verify command completed successfully. LAN activation and new GitHub publishing remain pending.
+
+
+## 7 October 2026: approved GitHub connection and LAN preparation
+
+Connected the active repository to its private devgeereact GitHub repository and verified committed main matches the remote. Existing uncommitted work was preserved; no new commit was made. Empty macOS Icon metadata was reversibly quarantined where needed, and Git integrity checks pass.
+
+The project wrapper now accepts `dev --lan` for public websites after the privileged workstation setup passes. Volume explicitly refuses LAN mode. Local development and stop behaviour pass lifecycle checks; disabled/missing firewall setup is rejected. Privileged firewall/hostname changes and physical-device testing remain pending.
+
+
+## 7 October 2026: portable TypeScript rebuild
+
+Flattened app into root and grouped documentation/audits without changing React UI or business rules. Added project-local Mise, npm clean setup, private-LAN launcher and explicit unavailable local Netlify delivery. Playwright 1.63 added because both real local failure and synthetic form states require browser verification. Evidence: qa/reports/GEE-REBUILD-2026-10-07.md. Original source and history retained.
