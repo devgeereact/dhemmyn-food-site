@@ -1,6 +1,6 @@
 // The four social icons, drawn inline so nothing loads from another company (no embed, no icon font,
 // no outside image). The paths are from Simple Icons (CC0 1.0, https://simpleicons.org), read on
-// 2 October 2026. The names and logos belong to their owners. See 03-DESIGN/CREDITS.md.
+// 2 October 2026. The names and logos belong to their owners. See docs/03-design/CREDITS.md.
 // Decorative: the link carries the accessible name, so screen readers skip the icon.
 import type { SocialPlatform } from '../data/site'
 

@@ -1,4 +1,4 @@
-// Facts used on several pages. Source: 01-PRODUCT/BUSINESS-RULES.md and SOCIAL.md.
+// Facts used on several pages. Source: docs/01-product/BUSINESS-RULES.md and SOCIAL.md.
 
 export type NavItem = { label: string; to: string }
 export type SocialPlatform = 'Instagram' | 'TikTok' | 'YouTube' | 'Threads'

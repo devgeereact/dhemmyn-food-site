@@ -21,7 +21,7 @@ function localForms(server: {
     }
     if (
       /^\/(?:docs|qa|tests|scripts|\.agent|\.github)(?:\/|$)/.test(path) ||
-      /^\/(?:AGENTS\.md|PROJECT-OS\.md|README\.md|package(?:-lock)?\.json|mise\.toml|netlify\.toml|vite\.config\.ts|playwright\.config\.ts|tsconfig[^/]*\.json)$/.test(
+      /^\/(?:\.[^/]+|[^/]+\.md|components\.json|package(?:-lock)?\.json|mise\.toml|netlify\.toml|vite\.config\.ts|playwright\.config\.ts|tsconfig[^/]*\.json)$/.test(
         path,
       )
     ) {

@@ -19,6 +19,7 @@ type Errors = Record<string, string>
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 const datePattern = /^\d{4}-\d{2}-\d{2}$/
 const prefillLimit = 500
+const sendLimitMs = 15000
 
 // The Party planner on Home links here with its answers in the address, for example
 // /custom-cakes?date=2026-12-12&servings=60. Only this form's planner fields are read, each trimmed
@@ -75,16 +76,19 @@ export default function EnquiryForm({ form }: { form: FormConfig }) {
   const [attempt, setAttempt] = useState(0)
   const summaryRef = useRef<HTMLDivElement>(null)
   const sentRef = useRef<HTMLDivElement>(null)
+  const failedRef = useRef<HTMLDivElement>(null)
   const reducedMotion = useReducedMotion()
   const sending = status === 'sending'
   const summaryId = `${form.name}-summary`
 
-  // After a mistake, focus moves to the summary. After a send, it moves to the thank-you.
+  // After a mistake, focus moves to the summary. After a send, it moves to the thank-you, and
+  // after a failed send to the failure message, so keyboard and screen reader users land on it.
   useEffect(() => {
     if (attempt > 0) summaryRef.current?.focus()
   }, [attempt])
   useEffect(() => {
     if (status === 'sent') sentRef.current?.focus()
+    if (status === 'failed') failedRef.current?.focus()
   }, [status])
 
   function setValue(name: string, value: string) {
@@ -106,15 +110,22 @@ export default function EnquiryForm({ form }: { form: FormConfig }) {
     new FormData(event.currentTarget).forEach((value, key) => {
       if (typeof value === 'string') body.append(key, value)
     })
+    // A stalled request must not leave the form locked in "sending": give up after 15 seconds and
+    // show the failed state, which keeps everything the visitor typed.
+    const controller = new AbortController()
+    const timer = window.setTimeout(() => controller.abort(), sendLimitMs)
     try {
       const response = await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: body.toString(),
+        signal: controller.signal,
       })
       setStatus(response.ok ? 'sent' : 'failed')
     } catch {
       setStatus('failed')
+    } finally {
+      window.clearTimeout(timer)
     }
   }
 
@@ -163,7 +174,7 @@ export default function EnquiryForm({ form }: { form: FormConfig }) {
         </p>
       )}
       {status === 'failed' && (
-        <div role="alert" className="mb-6 scroll-mt-28 rounded-md border-2 border-cake-red bg-paper p-5">
+        <div ref={failedRef} tabIndex={-1} role="alert" className="mb-6 scroll-mt-28 rounded-md border-2 border-cake-red bg-paper p-5">
           <p>{m.failed}</p>
           <ContactDetails className="mt-2" />
         </div>

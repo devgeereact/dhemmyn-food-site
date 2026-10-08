@@ -173,7 +173,7 @@
   }
 }
 
-/* The offer marquee (adapted from the 21st.dev "Marquee" by tom_ui, see 03-DESIGN/CREDITS.md).
+/* The offer marquee (adapted from the 21st.dev "Marquee" by tom_ui, see docs/03-design/CREDITS.md).
    Transform only. It stops for reduced motion and when the visitor presses Pause. */
 @keyframes marquee {
   from { transform: translateX(0); }

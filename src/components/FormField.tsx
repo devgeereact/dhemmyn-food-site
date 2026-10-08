@@ -35,11 +35,12 @@ export default function FormField({
 
   // Redesign v2: a soft 14 px field with a 2 px border. Focus turns the border cake red and adds a
   // soft ring, which together replace the page outline (a third red line would crowd the field).
-  // A wrong field keeps its cake red border. Colour changes are instant: no transitions.
+  // A wrong field keeps its cake red border, so for it the border cannot show focus: it keeps the
+  // page outline as well (WCAG 2.4.7). Colour changes are instant: no transitions.
   const control =
     'mt-2 block w-full min-w-0 scroll-mt-40 rounded-md border-2 bg-paper px-4 text-lead text-ink ' +
-    'focus:border-cake-red focus:ring-4 focus:ring-cake-red/15 focus-visible:outline-none ' +
-    (invalid ? 'border-cake-red ' : 'border-ink/15 hover:border-ink/40 ') +
+    'focus:border-cake-red focus:ring-4 focus:ring-cake-red/15 ' +
+    (invalid ? 'border-cake-red ' : 'border-ink/15 hover:border-ink/40 focus-visible:outline-none ') +
     (readOnly ? 'opacity-60' : '')
 
   const shared = {

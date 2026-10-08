@@ -9,7 +9,7 @@ type Props = {
   className?: string
 }
 
-// An endless strip of words. Adapted from the 21st.dev "Marquee" by tom_ui (03-DESIGN/CREDITS.md):
+// An endless strip of words. Adapted from the 21st.dev "Marquee" by tom_ui (docs/03-design/CREDITS.md):
 // the list is drawn twice and slides left by half its width, so the loop has no seam.
 // It moves for more than five seconds, so it has a Pause button (WCAG 2.2.2), and it stays still
 // under reduced motion. Screen readers get the label and the list once, as plain text; the moving copies are hidden.

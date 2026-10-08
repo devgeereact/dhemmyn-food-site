@@ -1,5 +1,5 @@
 // The eight launch recipes. Home shows four, the Recipes page shows all of them.
-// Titles, alt text and links: 01-PRODUCT/CONTENT.md and SOCIAL.md.
+// Titles, alt text and links: docs/01-product/CONTENT.md and SOCIAL.md.
 // Each photo has a 900 px original (the fallback `photo`) and 200 and 450 px copies for `srcSet`.
 import autumnCakeSeriesPhoto from '../assets/photos/autumn-cake-series.jpg'
 import bananaBreadPhoto from '../assets/photos/banana-bread.jpg'

@@ -567,4 +567,4 @@ The project wrapper now accepts `dev --lan` for public websites after the privil
 
 ## 7 October 2026: portable TypeScript rebuild
 
-Flattened app into root and grouped documentation/audits without changing React UI or business rules. Added project-local Mise, npm clean setup, private-LAN launcher and explicit unavailable local Netlify delivery. Playwright 1.63 added because both real local failure and synthetic form states require browser verification. Evidence: qa/reports/GEE-REBUILD-2026-10-07.md. Original source and history retained.
+Flattened app into root and grouped documentation/audits without changing React UI or business rules. Added project-local Mise, npm clean setup, private-LAN launcher and explicit unavailable local Netlify delivery. Playwright 1.63 added because both real local failure and synthetic form states require browser verification. Evidence: ../reports/dhemmyn-food/qa/reports/GEE-REBUILD-2026-10-07.md. Original source and history retained.

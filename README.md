@@ -44,4 +44,4 @@ src: React components, routes, drawings and business rules. public: deployment a
 
 Local development and preview return HTTP 503 for enquiry POSTs, so the existing failure message retains input. Synthetic test success does not prove delivery. Netlify build base is the root and publishes dist. Preserve the hidden Netlify form blueprint. Configure and test actual deployed delivery before release. Owner contact details and actual Netlify delivery must be reviewed before release. Mac execution and owner/legal acceptance remain open.
 
-Historic instructions and architecture describe the previous app/ layout. They are retained as reference, not current startup commands. See qa/reports/GEE-REBUILD-2026-10-07.md.
+Historic instructions and architecture describe the previous app/ layout. They are retained as reference, not current startup commands. See ../reports/dhemmyn-food/qa/reports/GEE-REBUILD-2026-10-07.md.

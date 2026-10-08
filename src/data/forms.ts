@@ -1,6 +1,6 @@
 // Both enquiry forms: fields, labels, hints and messages.
-// Labels are from 01-PRODUCT/CONTENT.md; headings and messages from the v2 copy deck (3 October 2026).
-// The field names must match the two hidden forms in app/index.html exactly, or Netlify drops the field.
+// Labels are from docs/01-product/CONTENT.md; headings and messages from the v2 copy deck (3 October 2026).
+// The field names must match the two hidden forms in index.html exactly, or Netlify drops the field.
 
 // The ids that tie a field to its label, hint and message.
 export const fieldId = (formName: string, name: string) => `${formName}-${name}`

@@ -1,6 +1,6 @@
 // The button looks, shared by ButtonLink (a link) and the form's send button.
 // Redesign v2 (3 October 2026): full pills with a press that settles to 95%, from the getdesign.md
-// base (03-DESIGN/BASE-DESIGN.md). Hover lifts 2 px. Transform only.
+// base (docs/03-design/BASE-DESIGN.md). Hover lifts 2 px. Transform only.
 
 type Variant = 'primary' | 'secondary'
 
