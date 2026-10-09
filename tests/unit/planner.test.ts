@@ -1,0 +1,12 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {clampGuests,usableDate,plannerFormLink,plannerMessage,type Plan} from '../../src/pages/home/plannerMessage.ts';
+import {developmentConfig,requireRuntime,checkPort} from '../../scripts/runtime.mjs';
+import {createServer} from 'node:net';
+const plan:Plan={occasion:'Birthday',order:'A cake',guests:30,date:'2026-12-12'};
+test('guest count stays whole and bounded',()=>{assert.equal(clampGuests(0),5);assert.equal(clampGuests(999),300);assert.equal(clampGuests(NaN),30);assert.equal(clampGuests(12.7),13);});
+test('calendar dates reject impossible and past days',()=>{assert.equal(usableDate('2026-02-30','2026-01-01'),'');assert.equal(usableDate('2026-10-06','2026-10-07'),'');assert.equal(usableDate('2026-10-07','2026-10-07'),'2026-10-07');});
+test('planner cake link carries allowed non-contact fields',()=>{const url=new URL(plannerFormLink(plan,'2026-10-07'),'http://localhost');assert.equal(url.pathname,'/custom-cakes');assert.equal(url.searchParams.get('servings'),'30');assert.equal(url.searchParams.get('occasion'),'Birthday');assert.equal(url.hash,'#ask-heading');assert.equal(url.searchParams.has('name'),false);});
+test('both choices use catering and omit unusable date',()=>{const url=new URL(plannerFormLink({...plan,order:'Both',date:'2026-02-30'},'2026-10-07'),'http://localhost');assert.equal(url.pathname,'/catering');assert.equal(url.searchParams.get('food'),'A cake and small chops');assert.equal(url.searchParams.has('date'),false);assert.match(plannerMessage({...plan,date:''},'2026-10-07'),/date to be confirmed/);});
+test('unsafe network inputs and old runtime rejected',()=>{assert.throws(()=>developmentConfig({DHEMMYN_HOST:'0.0.0.0'}));assert.throws(()=>developmentConfig({DHEMMYN_HOST:'8.8.8.8'}));assert.throws(()=>developmentConfig({DHEMMYN_PORT:'65536'}));assert.throws(()=>requireRuntime('20.0.0'));});
+test('occupied port is rejected and owner is preserved',async()=>{const server=createServer();await new Promise<void>(r=>server.listen(0,'127.0.0.1',r));try{const address=server.address();if(!address||typeof address==='string')throw Error('Address absent');await assert.rejects(checkPort(address.port));assert.ok(server.listening);}finally{await new Promise<void>(r=>server.close(()=>r()));}});

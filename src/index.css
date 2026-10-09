@@ -1,0 +1,243 @@
+@import "tailwindcss";
+
+@theme {
+  --color-*: initial;
+  /* Redesign v2 (3 October 2026): colours from her own bakes. Pink icing and chocolate piping
+     from the birthday cake, ganache for the dark bands, gold from fried puff puff. */
+  --color-paper: #FFFAF8;
+  --color-icing: #F8E4E2;
+  --color-icing-deep: #EFC9C6;
+  --color-ink: #2A1411;
+  --color-sponge: #4B2B20;
+  --color-crumb: #1D0E0B;
+  --color-ganache: #2A1411;
+  --color-cake-red: #B0283F;
+  --color-cake-red-deep: #8E1F33;
+  --color-gold: #E8A93A;
+  --color-gold-soft: #F6DDA8;
+
+  --font-display: "Bricolage Grotesque Variable", system-ui, sans-serif;
+  --font-body: "Figtree Variable", system-ui, sans-serif;
+
+  --breakpoint-*: initial;
+  --breakpoint-md: 46.5rem;   /* 744 px */
+  --breakpoint-lg: 70.5rem;   /* 1128 px */
+  --breakpoint-xl: 90rem;     /* 1440 px */
+
+  --spacing: 0.25rem;         /* 4 px unit */
+
+  --radius-xs: 0.25rem;       /* 4 px */
+  --radius-sm: 0.5rem;        /* 8 px */
+  --radius-md: 0.875rem;      /* 14 px: inputs and small cards */
+  --radius-lg: 1.5rem;        /* 24 px: offer cards and photo frames */
+  --radius-xl: 2.25rem;       /* 36 px: large bands */
+
+  /* Warm-tinted shadows, never plain grey. */
+  --shadow-soft: 0 1px 2px rgb(42 20 17 / 0.06), 0 10px 30px -14px rgb(42 20 17 / 0.28);
+  --shadow-lift: 0 2px 4px rgb(42 20 17 / 0.08), 0 28px 60px -24px rgb(42 20 17 / 0.45);
+  --shadow-float: 0 0 6px rgb(0 0 0 / 0.24), 0 8px 12px rgb(0 0 0 / 0.14);
+
+  --ease-lift: cubic-bezier(0.16, 0.84, 0.3, 1);
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+
+  --text-display: clamp(2.6rem, 12.5vw, 4rem);
+  --text-display--line-height: 0.92;
+  --text-display-lg: clamp(4.25rem, 1rem + 6.4vw, 7.75rem);
+  --text-display-lg--line-height: 0.88;
+  --text-hero: clamp(1.9rem, 10.2vw, 2.5rem);
+  --text-hero--line-height: 1;
+  --text-hero-lg: clamp(3.25rem, 0.125rem + 6.72vw, 5.5rem);
+  --text-hero-lg--line-height: 0.96;
+  --text-h2: clamp(1.35rem, 7.3vw, 1.75rem);
+  --text-h2--line-height: 1.05;
+  --text-h2-lg: clamp(2.25rem, 0.6rem + 3.2vw, 3.25rem);
+  --text-h2-lg--line-height: 1.05;
+  --text-h3-lead: 1.5rem;
+  --text-h3-lead--line-height: 1.1;
+  --text-h3-lead-lg: 2rem;
+  --text-h3-lead-lg--line-height: 1.1;
+  --text-h3: 1.25rem;
+  --text-h3--line-height: 1.15;
+  --text-h3-lg: 1.375rem;
+  --text-h3-lg--line-height: 1.15;
+  --text-lead: 1.0625rem;
+  --text-lead--line-height: 1.5;
+  --text-lead-lg: 1.25rem;
+  --text-lead-lg--line-height: 1.5;
+  --text-body: 1.0625rem;
+  --text-body--line-height: 1.5;
+  --text-body-lg: 1.125rem;
+  --text-body-lg--line-height: 1.5;
+  --text-small: 0.875rem;
+  --text-small--line-height: 1.43;
+  --text-caption: 0.8125rem;
+  --text-caption--line-height: 1.23;
+}
+
+:root {
+  /* The focus ring is cake red, and paper on dark surfaces (sponge, crumb, ink, cake red). */
+  --focus: var(--color-cake-red);
+
+  /* shadcn/ui's colour variables, mapped to DESIGN-SYSTEM.md. Light only, no dark mode. */
+  --background: var(--color-paper);
+  --foreground: var(--color-ink);
+  --card: var(--color-paper);
+  --card-foreground: var(--color-ink);
+  --popover: var(--color-paper);
+  --popover-foreground: var(--color-ink);
+  --primary: var(--color-cake-red);
+  --primary-foreground: var(--color-paper);
+  --secondary: var(--color-sponge);
+  --secondary-foreground: var(--color-paper);
+  --muted: var(--color-paper);
+  --muted-foreground: var(--color-sponge);
+  --accent: var(--color-paper);
+  --accent-foreground: var(--color-ink);
+  --destructive: var(--color-cake-red);
+  --border: color-mix(in oklab, var(--color-ink) 30%, transparent);
+  --input: var(--color-sponge);
+  --ring: var(--color-cake-red);
+  --radius: 0.875rem;
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+    scrollbar-color: var(--color-sponge) var(--color-paper);
+  }
+
+  body {
+    @apply bg-background font-body text-body text-foreground md:text-body-lg;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  /* No single word left alone on the last line. */
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background-color: var(--color-cake-red);
+    color: var(--color-paper);
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+  }
+
+  /* Elements that only take focus from code (main and the page heading) need no ring. */
+  [tabindex='-1']:focus {
+    outline: none;
+  }
+}
+
+@utility surface-dark {
+  --focus: var(--color-paper);
+}
+
+/* One class on every photo: settles the cool baking paper and grey stone. */
+@utility photo {
+  background-color: var(--color-sponge);
+  filter: sepia(0.04) saturate(1.08) contrast(1.03);
+}
+
+@utility link-line {
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.22em;
+
+  &:hover {
+    text-decoration-thickness: 3px;
+  }
+}
+
+/* Gutters: 16 px, 32 px from 744 px, 48 px from 1128 px. Content up to 1280 px, centred. */
+@utility page-width {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 80rem;
+  padding-inline: 1rem;
+
+  @media (width >= 46.5rem) {
+    padding-inline: 2rem;
+  }
+
+  @media (width >= 70.5rem) {
+    padding-inline: 3rem;
+  }
+}
+
+/* The offer marquee (adapted from the 21st.dev "Marquee" by tom_ui, see docs/03-design/CREDITS.md).
+   Transform only. It stops for reduced motion and when the visitor presses Pause. */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@utility marquee-track {
+  animation: marquee var(--marquee-duration, 38s) linear infinite;
+
+  [data-paused='true'] & {
+    animation-play-state: paused;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+@utility marquee-fade {
+  mask-image: linear-gradient(to right, transparent 0, black 6%, black 94%, transparent 100%);
+}
+
+/* Under reduced motion the strip stands still, so it shows every item once, wrapped, with no fade. */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-fade {
+    mask-image: none;
+  }
+
+  .marquee-track {
+    display: block;
+    width: auto;
+  }
+
+  .marquee-track > ul {
+    flex-wrap: wrap;
+    flex-shrink: 1;
+    justify-content: center;
+    row-gap: 0.5rem;
+    padding-inline: 1rem;
+  }
+
+  .marquee-track > ul + ul {
+    display: none;
+  }
+}
+
+/* Lets shadcn/ui's class names (bg-background, border-border, text-muted-foreground, ...) use the variables above. */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}

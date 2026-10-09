@@ -1,0 +1,29 @@
+project:
+  name: "dhemmyn-food"
+  product: "Dhemmyn Food"
+  stack: "React, TypeScript, Tailwind, Vite"
+  type: "website"
+  lifecycle: "build"
+  risk: "medium"
+
+defaults:
+  mode: "existing-application"
+  workflows:
+    - "change-safety"
+  specialists: []
+
+exclusions:
+  - "invented business facts: privacy notice content, real site name (SITE-NAME placeholders) and contact details need owner input"
+  - "credentials, secret copying or live Netlify form delivery"
+  - "deployment, production mutation or external messages"
+
+sources_of_truth:
+  - "docs/01-product/PRODUCT-SPEC.md"
+  - "docs/01-product/CONTENT.md"
+  - "docs/01-product/BUSINESS-RULES.md"
+  - "docs/02-architecture/ARCHITECTURE.md"
+  - "docs/03-design/DESIGN-SYSTEM.md"
+  - "docs/03-design/ACCESSIBILITY.md"
+  - "docs/08-change-management/DECISIONS.md"
+
+mcp_profile: "none"
