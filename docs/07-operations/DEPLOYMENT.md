@@ -4,26 +4,26 @@
 > **Filled by:** WEB-34 (step 12)
 > **Applies to:** every site
 
-**Status:** Draft. Written on 3 October 2026 from Netlify's own documentation (checked the same day). Nothing is deployed yet, so every step here is NOT TESTED until the first publish. Open items: the repository name and the site name are [NEEDS].
+**Status:** Draft. Written on 3 October 2026 from Netlify's own documentation (checked the same day). Nothing is deployed yet, so every step here is NOT TESTED until the first publish. Open items: the site name is [NEEDS].
 
 *Never write passwords or tokens here.*
 
 ## Where it is published
 
 - Host: Netlify
-- GitHub repository: [NEEDS: name] (private). It has no remote yet: the project has never been pushed.
-- Base directory: `app`
+- GitHub repository: `devgeereact/dhemmyn-food-site`, remote `origin`, default branch `main`.
+- Base directory: `.` (the repository root)
 - Build command: `npm run build`
-- Publish directory: `dist` (Netlify shows it as `app/dist`, because the publish directory is read from inside the base directory)
+- Publish directory: `dist` (the build writes it to `dist/` at the repository root)
 - Node.js version: 24, set in `netlify.toml` as `NODE_VERSION`. The owner's computer runs a newer Node (v26 on 2 October 2026), so a build that passes locally still needs its first check on Netlify.
 - Settings file: `netlify.toml` in the project's top folder (base, build command, publish directory, Node version). Settings in this file win over the Netlify dashboard, so change them here, not there.
-- Redirect rule: `app/public/_redirects` (`/*    /index.html    200`). It sends every address to the app. A real file, such as `robots.txt`, is still served as itself.
-- Security headers: `app/public/_headers`, from 05-SECURITY/SECURITY.md. They apply to files Netlify serves from its own network, which is every file on this site.
-- Both files are copied into `app/dist` by the build. After `npm run build`, check with `ls app/dist` that `_redirects`, `_headers`, `robots.txt`, `sitemap.xml`, `favicon.svg` and `share.jpg` are there.
+- Redirect rule: `public/_redirects` (`/*    /index.html    200`). It sends every address to the app. A real file, such as `robots.txt`, is still served as itself.
+- Security headers: `public/_headers`, from 05-SECURITY/SECURITY.md. They apply to files Netlify serves from its own network, which is every file on this site.
+- Both files are copied into `dist` by the build. After `npm run build`, check with `ls dist` that `_redirects`, `_headers`, `robots.txt`, `sitemap.xml`, `favicon.svg` and `share.jpg` are there.
 - Test address: `https://SITE-NAME.netlify.app` [NEEDS: the site name the owner chooses]
 - Live address: none yet. The site uses the free `.netlify.app` address (D-04).
 
-**The address appears in three files.** `app/index.html` (share tags), `app/public/robots.txt` and `app/public/sitemap.xml` all hold the word `SITE-NAME` until the real site name is known. Replace it in all three at once, in the same commit, then run `grep -rn SITE-NAME app/index.html app/public`. It must find nothing. Do the same again if a domain is added later.
+**The address appears in three files.** `index.html` (share tags), `public/robots.txt` and `public/sitemap.xml` all hold the word `SITE-NAME` until the real site name is known. Replace it in all three at once, in the same commit, then run `grep -rn SITE-NAME index.html public`. It must find nothing. Do the same again if a domain is added later.
 
 ## How a change goes live
 
@@ -40,7 +40,7 @@ The owner does these in their own browser. The assistant never holds the sign-in
 
 1. Create the private GitHub repository, then push the project to it. Two-factor authentication on, as in 05-SECURITY/SECURITY.md.
 2. In Netlify, add a new project from an existing repository, choose GitHub, and pick that repository. Allow Netlify access to that one repository only.
-3. Check the build settings Netlify shows match this file (base `app`, build command `npm run build`, publish directory `dist`). `netlify.toml` fills them in.
+3. Check the build settings Netlify shows match this file (base `.`, build command `npm run build`, publish directory `dist`). `netlify.toml` fills them in.
 4. Deploy. When it finishes, open the test address.
 5. Change the site name to the one you want (Project configuration, then the project details), then do the address replacement in the paragraph above and push.
 6. In Netlify, open Forms and choose **Enable form detection**. Then deploy again (Deploys, Trigger deploy, Deploy project without cache), because Netlify only scans a deploy made after detection is on. Both `custom-cakes` and `catering` should appear under Forms.
