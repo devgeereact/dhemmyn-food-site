@@ -2,7 +2,7 @@
 
 This file is the operating manual for your website project. Keep it in the top folder of your project. Your AI coding assistant (Claude Code or Codex) reads it, so it knows how the project is organised, which file holds what, the order of work, the stack, the design house rules, and the rules it must follow.
 
-You can also attach this file to any AI chat and say: "Use PROJECT-OS.md to help me with the next section of my website project."
+You can also attach this file to any AI chat and say: "Use docs/PROJECT-OS.md to help me with the next section of my website project."
 
 The steps and prompts that fill each file are in the AI Website Builder Guide. The prompt IDs (WEB-01 to WEB-36) below refer to that guide.
 
@@ -14,7 +14,7 @@ Everything for the website lives in one project folder. Planning documents live 
 
 ```
 your-project/
-  PROJECT-OS.md             this file
+  docs/PROJECT-OS.md             this file
   AGENTS.md                 the rules every assistant reads at the start of a session
   CLAUDE.md                 starts with the line @AGENTS.md, so Claude Code reads the same rules
   README.md                 what this project is and how to run it, in a few lines
@@ -387,12 +387,12 @@ The site must look and read like a real business made it, because one did.
 
 Open the project folder, start Claude Code or Codex, and use one of these:
 
-- **Fill a file:** "Read PROJECT-OS.md and [FILE]. Fill [FILE] using only what is in 00-FOUNDATION and 01-PRODUCT. Mark anything missing as [NEEDS: what]. Show me before saving."
+- **Fill a file:** "Read docs/PROJECT-OS.md and [FILE]. Fill [FILE] using only what is in 00-FOUNDATION and 01-PRODUCT. Mark anything missing as [NEEDS: what]. Show me before saving."
 - **Check a file:** "Check [FILE] against PROJECT-CONTEXT.md and BUSINESS-RULES.md. List anything that contradicts them or is missing. Do not change anything yet."
 - **Run an audit:** "Run the audit in 06-QA/[AUDIT FILE] on this project. Do not change any app files. Record every result in the audit file with PASS, FAIL, PARTIAL, NOT TESTED, BLOCKED or NOT APPLICABLE and the evidence, and list problems by priority P0 to P3."
 - **Make a change safely:** "I want to change [WHAT]. Before changing anything, list every file affected and what could break. Then make the smallest change, run npm run build and npm run lint, and update CHANGELOG.md."
 - **Explain something:** "Explain [WORD OR FILE] in plain British English, in three sentences, for a beginner."
-- **Where am I?** "Read PROJECT-OS.md and every file in the workspace. Tell me which steps are complete, which files are empty or not applicable, and the next three things to do."
+- **Where am I?** "Read docs/PROJECT-OS.md and every file in the workspace. Tell me which steps are complete, which files are empty or not applicable, and the next three things to do."
 
 ---
 

@@ -5,7 +5,7 @@
 ## The project
 
 - A small website for Dhemmyn Food. Demi Yusuf shares easy baking and cooking recipes as videos (links to YouTube) and takes custom cake and catering enquiries.
-- It is for UK followers who want an easy recipe on a phone, and for people who want a cake or event food. PROJECT-OS.md is the master file: read it before any task that changes files.
+- It is for UK followers who want an easy recipe on a phone, and for people who want a cake or event food. docs/PROJECT-OS.md is the master file: read it before any task that changes files.
 
 ## Where each kind of fact lives
 
@@ -21,7 +21,7 @@
 - Why a choice was made: 08-CHANGE-MANAGEMENT/DECISIONS.md
 - Each fact lives in one file. If two files disagree, stop and ask which is right, then fix both.
 
-## Stack and commands (section 4 of PROJECT-OS.md)
+## Stack and commands (section 4 of docs/PROJECT-OS.md)
 
 - Vite, React, TypeScript in strict mode, React Router, Tailwind CSS, Motion and Fontsource. Hosting is Netlify, and the form uses Netlify Forms.
 - The app is wrapped in `MotionConfig reducedMotion="user"`.
@@ -50,7 +50,7 @@
 - Never invent prices, reviews, testimonials, statistics, awards, qualifications, guarantees or "trusted by" claims. No fake urgency, lorem ipsum or "coming soon" on the live site. The name is "Dhemmyn Food" with a space.
 - Plain British English and short sentences. Avoid "look no further", "elevate", "unlock", "seamless", "passionate about" and similar stock phrases.
 - Photos are the owner's own. No AI pictures presented as real, and nothing copied from another site.
-- Follow DESIGN-DNA.md, DESIGN-SYSTEM.md and the house rules in section 6 of PROJECT-OS.md: banned defaults, the quality floor, every state designed.
+- Follow DESIGN-DNA.md, DESIGN-SYSTEM.md and the house rules in section 6 of docs/PROJECT-OS.md: banned defaults, the quality floor, every state designed.
 - Animate only transform and opacity. No pop-ups on arrival, no autoplay video, no slow animations. Respect reduced motion.
 - Videos and social media are plain links. Embeds only behind a click-to-load placeholder. BASE-DESIGN.md gives structure only. 21st.dev components only with an MIT licence.
 - Use the frontend-design skill. One design skill set leads. Check visual changes with Playwright screenshots at 390 and 1280 pixels wide. Fix in three rounds at most.

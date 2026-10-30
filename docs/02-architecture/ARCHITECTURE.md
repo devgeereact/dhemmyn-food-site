@@ -50,7 +50,7 @@ Titles and descriptions are not copied here, so CONTENT.md stays the one source.
 
 ## Folder layout in app/
 
-As section 4 of PROJECT-OS.md, with three differences.
+As section 4 of docs/PROJECT-OS.md, with three differences.
 
 ```
 app/

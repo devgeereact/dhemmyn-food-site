@@ -6,7 +6,7 @@ A small website for Dhemmyn Food, where Demi Yusuf shares easy baking and cookin
 
 ## Where things are
 
-- `PROJECT-OS.md`: the master file. Structure, stack, rules and checks. Start here.
+- `docs/PROJECT-OS.md`: the master file. Structure, stack, rules and checks. Start here.
 - `AGENTS.md`: the rules your AI assistant reads every session. `CLAUDE.md` points Claude Code to it.
 - `00-FOUNDATION` to `09-RELEASE`: plans, audits and release records, numbered in the order you use them.
 - `app/`: the website code (created in step 9). Only `app/dist`, the finished build, is published.

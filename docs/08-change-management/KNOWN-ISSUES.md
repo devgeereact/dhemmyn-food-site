@@ -6,7 +6,7 @@
 
 **Status:** In use
 
-*Priorities from section 7 of PROJECT-OS.md: P0 critical, P1 high, P2 medium, P3 low. No launch with an open P0 or P1 issue.*
+*Priorities from section 7 of docs/PROJECT-OS.md: P0 critical, P1 high, P2 medium, P3 low. No launch with an open P0 or P1 issue.*
 
 ## Open
 

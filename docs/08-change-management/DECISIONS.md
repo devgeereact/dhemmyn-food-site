@@ -35,7 +35,7 @@
 - Why: in the owner's words (2 October 2026): "the overlapping photos of my hands holding the bake feel like my kitchen and my videos, and the ruled list is the easiest to read on a phone." A's overlapping photos carry the hands reaching up with the bake, and use colours from her own bakes. B's ruled list also replaces the three identical cards on Home.
 - Options considered: B, Editorial Print with a split screen. C, Soft Organic with a full-bleed photograph, which needs wide photos to work on a laptop. Prototypes and screenshots are in 03-DESIGN/directions/.
 - What it means for the project: DESIGN-SYSTEM.md is built from A. Home and Recipes use the ruled list. The B and C files stay as reference only and are never published.
-- Revisit if: the owner sends wide photos, or the first screen does not score 8 or more on the wow check in PROJECT-OS.md section 6.
+- Revisit if: the owner sends wide photos, or the first screen does not score 8 or more on the wow check in docs/PROJECT-OS.md section 6.
 
 ## D-03 Design base: airbnb (from getdesign)
 
@@ -82,7 +82,7 @@
 - Date: 2 October 2026
 - Decision: no database, back end, log-ins, analytics, cookies or PWA. DATA-MODEL.md, API-SPEC.md, PWA-SPEC.md, OFFLINE-SPEC.md and SYNC-SPEC.md are marked Not applicable. UPDATE-STRATEGY.md keeps a short normal-site text, because it applies to every site.
 - Why: nothing the owner described needs them (PROJECT-CONTEXT.md). Each addition is something else that can break.
-- Options considered: marking UPDATE-STRATEGY.md Not applicable too. Rejected, because PROJECT-OS.md says it applies to every site.
+- Options considered: marking UPDATE-STRATEGY.md Not applicable too. Rejected, because docs/PROJECT-OS.md says it applies to every site.
 - What it means for the project: the structure stays the same as on every project. If the site grows, the files are already there.
 - Revisit if: the site needs log-ins, payments taken on the site, offline use or a database.
 
@@ -90,7 +90,7 @@
 
 - Date: 2 October 2026
 - Decision: seven pages plus a Not found page, at /, /recipes, /custom-cakes, /catering, /about-me, /contact and /privacy. Not found is handled inside the app and marked `noindex`. One `_redirects` rule, `/* /index.html 200`.
-- Why: the pages and addresses are the ones the owner approved in UX-SPEC.md. The redirect rule is the one in PROJECT-OS.md.
+- Why: the pages and addresses are the ones the owner approved in UX-SPEC.md. The redirect rule is the one in docs/PROJECT-OS.md.
 - Options considered: returning a true 404 status for wrong addresses. That needs a pre-rendering step, which is too much for this site.
 - What it means for the project: a wrong address returns status 200 with the Not found page, so search engines rely on `noindex`.
 - Revisit if: search engines list wrong addresses.

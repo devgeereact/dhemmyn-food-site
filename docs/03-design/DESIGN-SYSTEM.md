@@ -6,7 +6,7 @@
 
 **Status:** Saved on 2 October 2026 after the owner approved the draft and its six open points. Sizes marked "tested" come from 03-DESIGN/directions/direction-a.html, checked at 390 and 1280 pixels wide. NOT TESTED: the layout from 744 to 1127 pixels, the photo warmth values, the phone headline at 40 px, the Tailwind names `--text-*` and `--radius-*` (confirm on the first build), and everything not yet built.
 
-*Built from the direction chosen in WEB-15 and from DESIGN-DNA.md. Follows the house rules in section 6 of PROJECT-OS.md. 03-DESIGN/BASE-DESIGN.md (airbnb) supplies structure only: spacing steps, corner steps, the flat shadow rule, the component list and the breakpoints. Nothing of its look is used (D-03).*
+*Built from the direction chosen in WEB-15 and from DESIGN-DNA.md. Follows the house rules in section 6 of docs/PROJECT-OS.md. 03-DESIGN/BASE-DESIGN.md (airbnb) supplies structure only: spacing steps, corner steps, the flat shadow rule, the component list and the breakpoints. Nothing of its look is used (D-03).*
 
 ## Chosen direction
 

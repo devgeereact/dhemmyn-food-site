@@ -60,7 +60,7 @@ A phone-first homepage for UK followers of Demi Yusuf's short upright baking vid
 
 ## Never use on this site
 
-From section 6 of PROJECT-OS.md: purple-to-blue glow gradients; cream with terracotta and a serif heading as a reflex; near-black with one acid-green accent; three identical rounded cards in a row; Inter on slate grey; gradient text; decorative glass effects; small labels above every heading; fake numbered markers; "big number, small label" statistic rows; stock illustrations of people.
+From section 6 of docs/PROJECT-OS.md: purple-to-blue glow gradients; cream with terracotta and a serif heading as a reflex; near-black with one acid-green accent; three identical rounded cards in a row; Inter on slate grey; gradient text; decorative glass effects; small labels above every heading; fake numbered markers; "big number, small label" statistic rows; stock illustrations of people.
 
 Also, for this business:
 

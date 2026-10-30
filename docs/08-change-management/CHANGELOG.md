@@ -83,7 +83,7 @@
 ## [2026-10-03] KI-01: no two sections share a layout on Custom cakes and Catering
 
 - Change: from 744 px, "Message me instead" now shows its heading, its line and the three details (WhatsApp, phone, email) in one row across the full width, and "How ordering works" shows its two steps side by side across the full width, each with a rule above and its large number. On a phone both stay stacked, as before. Common questions keeps the narrow ruled list and the form keeps the heading-left split, so the four sections now differ. No word changed, no link changed, and the tab order is the same. "How ordering works" is also used on Contact, where the two steps now sit side by side too.
-- Reason: owner request, to fix KI-01 as suggested (found by 06-QA/DESIGN-AUDIT.md: PROJECT-OS.md section 6 says no two sections on a page share a layout, and Custom cakes and Catering repeated one twice each).
+- Reason: owner request, to fix KI-01 as suggested (found by 06-QA/DESIGN-AUDIT.md: docs/PROJECT-OS.md section 6 says no two sections on a page share a layout, and Custom cakes and Catering repeated one twice each).
 - Files: app/src/components/MessageMeInstead.tsx, app/src/components/HowOrderingWorks.tsx, 03-DESIGN/DESIGN-SYSTEM.md (Section rhythm), 03-DESIGN/UX-SPEC.md (Page plans), 02-ARCHITECTURE/ARCHITECTURE.md (components table), 06-QA/DESIGN-AUDIT.md, 08-CHANGE-MANAGEMENT/KNOWN-ISSUES.md, 08-CHANGE-MANAGEMENT/CHANGELOG.md. Checked and not changed: CONTENT.md and ACCESSIBILITY.md (words and landmarks are the same).
 - Tested: PASS `npm run build` (script 485.39 kB) and `npm run lint`, no errors. PASS (Playwright on the owner's preview http://localhost:4175, fresh browser, 320, 744, 1024, 1280 and 1920 px, Custom cakes, Catering and Contact): no sideways scroll, the three contact links and the three links in step 1 are intact, the details sit at 48, 264 and 432 px and the steps at 48 to 616 and 664 to 1232 px at 1280 px, no console message. Looked at screenshots of Custom cakes at 390 and 1280 px. Layout positions measured again at 1280 px: no two sections on either page share one. The two design audit rows are FIXED. NOT TESTED: a stranger's view of whether "Message me instead" and "How ordering works" (both a heading over a row of columns) look different enough.
 
@@ -347,7 +347,7 @@
 ## [2026-10-02] Design DNA
 
 - Change: DESIGN-DNA.md filled under every heading except Chosen direction, which waits for WEB-15. The owner confirmed one accent red from the birthday cake. Home "Start with a recipe": the three smaller cards in a row became a ruled list, in UX-SPEC.md and CONTENT.md. Home first screen: three layered pictures (chocolate-chip-rolls.jpg, berry-sponge-slice.jpg, profile picture) instead of one. "From my kitchen": braided-chocolate-bread.jpg replaced chocolate-chip-rolls.jpg, in CONTENT.md and SOCIAL.md. The owner moved the picture files and updated CREDITS.md before this change.
-- Reason: step 7 design plan. PROJECT-OS.md section 6 bans three identical cards in a row. The owner chose the hand pictures for the first screen.
+- Reason: step 7 design plan. docs/PROJECT-OS.md section 6 bans three identical cards in a row. The owner chose the hand pictures for the first screen.
 - Files: 03-DESIGN/DESIGN-DNA.md, 03-DESIGN/UX-SPEC.md, 01-PRODUCT/CONTENT.md, 01-PRODUCT/SOCIAL.md, 08-CHANGE-MANAGEMENT/CHANGELOG.md. Owner edits in the same commit: 03-DESIGN/CREDITS.md and the three picture files.
 - Tested: PARTIAL. Searched the Markdown files: the only remaining mentions of chocolate-chip-rolls.jpg and "three smaller cards" are the new notes, the first screen entries and CREDITS.md. No site code exists and the app was not run, so build, lint and screenshots are NOT APPLICABLE. Photo pixel sizes NOT TESTED (taken from CREDITS.md). Alt text for berry-sponge-slice.jpg and braided-chocolate-bread.jpg was written by the assistant from the pictures, and the owner can reword it.
 
@@ -535,10 +535,10 @@
 
 ## [date] Workspace created
 
-- Change: project workspace created from PROJECT-OS.md
+- Change: project workspace created from docs/PROJECT-OS.md
 - Reason: start of the project
 - Files: all planning files
-- Tested: compared with section 1 of PROJECT-OS.md (WEB-04)
+- Tested: compared with section 1 of docs/PROJECT-OS.md (WEB-04)
 
 ## 7 October 2026: fixed local server port
 

@@ -45,3 +45,6 @@ Fresh typecheck, unit suite and production build PASS. Browser: PASS, 25 checks.
 
 ### Active promotion, 7 October 2026
 Owner requested promotion and push. Current directory: /home/mr-gee/Work/Projects/active/dhemmyn-food. Original preserved at /home/mr-gee/Work/Projects/archive/pre-rebrand-2026-10-07/dhemmyn-food. Branch: rebrand/gee-os-typescript-20261007. See ../reports/dhemmyn-food/qa/reports/ACTIVE-PROMOTION-2026-10-07.md. Earlier release gates remain open; no production merge/deployment performed.
+
+## 2026-10-30: docs tidy
+Docs tidy (owner rule: one source of truth): Markdown moved into docs/, audits and checklists merged into docs/AUDIT.md, exact duplicates removed, links updated. No code changed. Tasks stay in this file; every audit is added to `docs/AUDIT.md`.

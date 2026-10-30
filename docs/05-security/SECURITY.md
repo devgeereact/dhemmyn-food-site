@@ -16,7 +16,7 @@
 
 ## What is public
 
-- Everything in `app/dist` is public. Only `app/dist` is published. The planning folders (00 to 09), `PROJECT-OS.md`, `AGENTS.md` and every file outside `app/` are never published.
+- Everything in `app/dist` is public. Only `app/dist` is published. The planning folders (00 to 09), `docs/PROJECT-OS.md`, `AGENTS.md` and every file outside `app/` are never published.
 - Anything in a variable whose name starts `VITE_` is built into the public site. So no `VITE_` variable may ever hold a secret. This site plans to use none.
 - Photos are published with no location data. Every photo in 03-DESIGN/photos was saved with none (see 03-DESIGN/CREDITS.md). Any new photo has its location data removed before it goes into `app/`.
 - The contact details on the site (email, phone, WhatsApp) are public on purpose. They come from 01-PRODUCT/BUSINESS-RULES.md. The personal email address on the TikTok bio never appears on the site.
