@@ -6,6 +6,8 @@
 
 **Status:** Draft. Written on 2 October 2026. The header values below are a starting point and are NOT TESTED: no app exists yet. They are set and tested on the built site in step 12 (WEB-34), and checked again in 06-QA/SECURITY-AUDIT.md. Set in `app/public/_headers` on 3 October 2026, exactly as listed below, with no Strict-Transport-Security. PARTIAL: tested on a throwaway local server that sends these headers (the built site, Home at 390 px with the menu open, and Custom cakes with the form, a failed send and an accordion): no Content-Security-Policy error in the console. NOT TESTED: the other pages, and the headers on Netlify's live address.
 
+**Update, 30 October 2026 (D-16):** the site moves to cPanel. The same headers are now set in `public/.htaccess` (copied into `dist` and uploaded with each release), still without Strict-Transport-Security. `_headers` is deleted. The only server code is `backend/` (the order endpoint): origin, type and size checks, validation, honeypot `website`, hashed rate limits, sending off unless the private settings outside the web root (`~/private-config/dhemmyn/config.php`, 0600) switch it on. Those settings hold the only secrets (SMTP login, rate key) and are never in Git or a release. Where this file still says Netlify, Akismet or `bot-field`, read the cPanel endpoint (DEPLOYMENT.md, EMAIL-SPEC.md). NOT TESTED: the headers on the live address.
+
 ## Secrets
 
 - No password, key or token goes in any file in this project. Not in the planning folders, not in `app/`, not in a comment, not in a screenshot.

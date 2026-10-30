@@ -27,7 +27,7 @@
 | Business details shown as in BUSINESS-RULES.md: business name, your own name if a sole trader using a business name, a real geographic address (not only a PO box), email, and company details if a limited company | NOT TESTED | |
 | ICO fee self-assessment taken | NOT TESTED | |
 | No [NEEDS], [CHECK], "Proposed: owner to confirm", lorem ipsum or "coming soon" text on the site | NOT TESTED | |
-| DEPLOYMENT.md says how to publish and how to roll back | NOT TESTED | Written 3 October 2026. Not tried on Netlify yet |
-| `grep -rn SITE-NAME app/index.html app/public` finds nothing, so the share tags, `robots.txt` and `sitemap.xml` hold the real address | NOT TESTED | Still the placeholder on 3 October 2026 |
-| Both forms appear under Forms in Netlify, a test enquiry from each reaches the dashboard and `info@mimmycare.com`, and the response headers on the live address match `_headers` | NOT TESTED | Owner steps in DEPLOYMENT.md |
+| DEPLOYMENT.md says how to publish and how to roll back | NOT TESTED | Rewritten for cPanel on 30 October 2026. Not tried yet |
+| The share tags, `robots.txt` and `sitemap.xml` hold the real address `https://dhemmynfood.mimmycare.com` (no placeholder left) | DONE | Replaced on 30 October 2026; grep for the old placeholder finds nothing |
+| Sending switched on in the private settings, a test request from each form reaches the inbox, and the response headers on the live address match `public/.htaccess` | NOT TESTED | Owner steps in DEPLOYMENT.md (cPanel, D-16) |
 | CHANGELOG.md and KNOWN-ISSUES.md are up to date | NOT TESTED | |

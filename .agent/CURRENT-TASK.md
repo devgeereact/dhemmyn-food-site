@@ -2,7 +2,7 @@
 
 ## Outcome
 
-The fixes from ../reports/dhemmyn-food/AUDIT-AND-POLISH-2026-10-08.md are applied locally and verified: a Playwright regression case for a stalled send, focus moved to the failed-send alert, a visible focus indicator on invalid fields, stale source comments re-pointed to docs/, GEE OS contract in template shape, and the 540 kB entry chunk investigated. Report: ../reports/dhemmyn-food/FIX-PASS-2026-10-08.md.
+The site is ready to move from the never-used Netlify plan to the owner's cPanel at https://dhemmynfood.mimmycare.com with push-to-deploy over SSH, like harni.uk: real address in place, `public/.htaccess` instead of the Netlify files, the forms posting to a PHP endpoint with sending off, `release.json` and `deploy.yml`, docs updated, and `~/Backups/scripts/dhemmyn-server-setup.zsh` written (not run). Evidence: docs/AUDIT.md (2026-10-30). Decision: D-16.
 
 ## Mode
 
@@ -10,29 +10,27 @@ Existing Application (workflow: change-safety).
 
 ## Scope
 
-- In scope: local edits inside this project, the project's own checks, Playwright on 127.0.0.1:5201 only.
-- Out of scope: privacy notice content, `SITE-NAME` placeholders, contact details, copy, moving qa/screenshots/, commits, deployment, dependency changes.
+- In scope: local edits and local commits on `main` (subjects end with `[skip ci]`), the project's own checks, read-only SSH looks at the server, the setup script in ~/Backups/scripts.
+- Out of scope: pushing, any write to the server, Netlify, GitHub settings or Cloudflare; switching sending on; privacy notice content; contact details.
 
 ## Authority
 
-- Research: allowed (read-only).
-- Create planning artefacts: reports in ../reports/dhemmyn-food/ only.
-- Edit local files: allowed for the listed fixes; leave everything uncommitted.
-- Use external services: no.
-- Change production: no.
-- MCP reads: documentation lookups only.
-- MCP mutations: no.
+- Research: allowed (read-only, including `ssh cpanel` reads).
+- Edit local files and commit locally: allowed. The owner reviews and pushes.
+- Change production: no. The owner runs the setup script, the DNS and SSL steps and the first release.
 
 ## Risk and dependencies
 
-- Risk level: medium (the forms collect contact and allergy details; the privacy notice is a placeholder and live Netlify delivery is unverified).
-- Affected areas: src/components/EnquiryForm.tsx, src/components/FormField.tsx, src/ comments, tests/e2e/site.spec.ts, AGENTS.md, CLAUDE.md, .agent/.
-- Required decisions: owner supplies the privacy notice and the real site name, approves committing the relocation and fixes, and approves moving qa/screenshots/.
+- Risk level: medium (the forms collect contact and allergy details; sending stays off until the owner configures mail; the privacy notice still names Netlify).
+- Required decisions: owner approves the new "not switched on yet" form words, sets the sender address and switches sending on, and updates DATA-PRIVACY.md and the privacy notice.
 
-## Evidence
+## Next (owner, in order)
 
-- Required checks: typecheck, lint, unit tests, build and the Playwright browser suite all pass; the stalled send fails within 15 seconds with input kept and focus on the alert; an invalid field's focus change reaches 3:1.
-- Completion conditions: FIX-PASS report written with evidence under ../reports/dhemmyn-food/evidence/fix-2026-10-08/.
+1. Cloudflare A record `dhemmynfood` -> the server, DNS only; AutoSSL; then Full (strict), proxied if wanted.
+2. `~/Backups/scripts/dhemmyn-server-setup.zsh`, then `--apply`.
+3. `~/Backups/scripts/setup-github-deploy.zsh --apply dhemmyn-food-site`.
+4. Review and push `main`; `npm run release`, then `npm run release -- --go`; check the live site.
+5. Later: switch sending on (DEPLOYMENT.md) and test one request per form.
 
 ## History
 
@@ -48,3 +46,6 @@ Owner requested promotion and push. Current directory: /home/mr-gee/Work/Project
 
 ## 2026-10-30: docs tidy
 Docs tidy (owner rule: one source of truth): Markdown moved into docs/, audits and checklists merged into docs/AUDIT.md, exact duplicates removed, links updated. No code changed. Tasks stay in this file; every audit is added to `docs/AUDIT.md`.
+
+## 2026-10-30: Netlify to cPanel
+Prepared the move to cPanel (D-16): address set, `.htaccess`, PHP order endpoint with sending off, release.json, deploy.yml, docs, setup script. All release checks, the build and 29 Playwright tests pass locally. Nothing pushed or deployed. Evidence: docs/AUDIT.md.

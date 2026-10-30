@@ -13,9 +13,9 @@ defaults:
   specialists: []
 
 exclusions:
-  - "invented business facts: privacy notice content, real site name (SITE-NAME placeholders) and contact details need owner input"
-  - "credentials, secret copying or live Netlify form delivery"
-  - "deployment, production mutation or external messages"
+  - "invented business facts: privacy notice content and contact details need owner input (site address set to dhemmynfood.mimmycare.com, 30 Oct 2026)"
+  - "credentials, secret copying, or switching on live form delivery (private config on the server, owner only)"
+  - "deployment, server writes, production mutation or external messages without the owner"
 
 sources_of_truth:
   - "docs/01-product/PRODUCT-SPEC.md"

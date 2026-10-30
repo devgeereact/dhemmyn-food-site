@@ -8,7 +8,7 @@
 
 ## Stack
 
-Vite (react-ts template), React, TypeScript in strict mode, React Router (declarative mode, `BrowserRouter`), Tailwind CSS through `@tailwindcss/vite`, Motion (`motion/react`, with the app wrapped in `<MotionConfig reducedMotion="user">`) and Fontsource. Hosting is Netlify, publishing `app/dist` from a private GitHub repository. One ready-made component: the shadcn/ui Accordion on Radix UI, for Common questions (D-12 in DECISIONS.md, credited in CREDITS.md), with the `@` alias for `src` and shadcn's `components.json`. No vite-plugin-pwa and no 21st.dev components for now.
+Vite (react-ts template), React, TypeScript in strict mode, React Router (declarative mode, `BrowserRouter`), Tailwind CSS through `@tailwindcss/vite`, Motion (`motion/react`, with the app wrapped in `<MotionConfig reducedMotion="user">`) and Fontsource. Hosting is the owner's cPanel account (D-16, 30 October 2026; Netlify was planned but never used), deployed over SSH from a private GitHub repository (07-OPERATIONS/DEPLOYMENT.md). One small PHP endpoint, `backend/`, receives the order forms. One ready-made component: the shadcn/ui Accordion on Radix UI, for Common questions (D-12 in DECISIONS.md, credited in CREDITS.md), with the `@` alias for `src` and shadcn's `components.json`. No vite-plugin-pwa and no 21st.dev components for now.
 
 **Installed versions** (from `npm ls --depth=0` in `app/`, 2 October 2026, Node v26.8.1, npm 12.0.2):
 
@@ -100,12 +100,13 @@ Parts used on one page only (the Home first-screen collage, the "From my kitchen
 
 ## How the form is sent
 
-Netlify Forms. Checked against Netlify's own documentation on 2 October 2026.
+A small PHP endpoint on the same host, `POST /api/enquiry.php` (D-16, 30 October 2026; it replaces Netlify Forms, D-05). Details: `backend/README.md`.
 
-- `app/index.html` holds two hidden plain forms, named `custom-cakes` and `catering`, with `data-netlify="true"`, `netlify-honeypot="bot-field"` and the same field names as the React forms. Netlify reads them when the site is deployed.
-- Field names. Cakes: `name`, `email`, `phone`, `date`, `occasion`, `servings`, `ideas`, `allergies`. Catering: `name`, `email`, `phone`, `date`, `guests`, `town`, `food`, `allergies`. Both also send `form-name` and the empty `bot-field`.
-- The React form sends one `fetch("/", { method: "POST" })` with `Content-Type: application/x-www-form-urlencoded` and a body made with `new URLSearchParams(formData)`. Not JSON.
-- Spam: Netlify's Akismet filter is on by default, plus the honeypot. No CAPTCHA and no outside script. The honeypot field is hidden from the keyboard and from screen readers.
+- Field names. Cakes: `name`, `email`, `phone`, `date`, `occasion`, `servings`, `ideas`, `allergies`. Catering: `name`, `email`, `phone`, `date`, `guests`, `town`, `food`, `allergies`. Both also send `form` (`custom-cakes` or `catering`) and the empty spam trap `website`. The server refuses any other field, so `DHEMMYN_FORMS` in `backend/src/enquiry.php` must match `data/forms.ts`.
+- The React form sends one `fetch("/api/enquiry.php", { method: "POST" })` with `Content-Type: application/json`. The server answers JSON: `{"ok":true,"reference":"DF-..."}`, or `{"ok":false,"error":{"code","message"}}`.
+- The server repeats the browser's checks, checks the origin, size and type, and rate-limits (50 an hour in all, 5 per IP address, 3 per email or phone number; hashes only). It sends one plain-text email to the owner, with the visitor's email as the reply address, and nothing to the visitor.
+- Sending is off unless `~/private-config/dhemmyn/config.php` on the server switches it on. While it is off the server answers 503 `sending_off`.
+- Spam: the honeypot and the rate limits. No CAPTCHA and no outside script. The honeypot field is hidden from the keyboard and from screen readers.
 - Fields are checked when the visitor taps "Send enquiry", not while they type. The form uses `noValidate`, so the browser's pop-up bubbles never show. The messages are the ones in CONTENT.md.
 - States, as in 03-DESIGN/UX-SPEC.md:
   - **Idle:** the empty form.
@@ -113,10 +114,10 @@ Netlify Forms. Checked against Netlify's own documentation on 2 October 2026.
   - **Sending:** the button reads "Sending", has `aria-disabled` and cannot send twice.
   - **Sent:** the form is replaced by the thank-you message and focus moves to it.
   - **Failed:** a box above the form, everything typed kept, the button reads "Try again", and email, phone and WhatsApp are shown.
-- Sent means the response was OK. A network error or any other response means failed.
+  - **Not switched on yet:** as Failed, but the words say online order requests are not switched on yet, so nothing was sent (server answer `sending_off`).
+- Sent means a 2xx answer with `"ok":true`. `sending_off` means not switched on yet. A network error, a 15-second stall or any other answer means failed.
 - Nothing is stored in the browser, so a visitor who leaves loses the draft.
-- **Testing limit:** `npm run dev` and `npm run preview` cannot receive a form. The POST fails there, so only the failed state can be tested locally. A real send is tested once on the Netlify test address. It counts as a real enquiry in the dashboard and the owner's inbox.
-- A check for FUNCTIONAL-AUDIT.md: the field names in `index.html` match `data/forms.ts` exactly. Netlify drops fields it does not know.
+- **Testing limit:** `npm run dev` and `npm run preview` have no PHP; they answer `/api/enquiry.php` like the server with sending off, so the "not switched on yet" state shows locally. `php backend/tests/enquiry.test.php` checks the server code without a server. A real send is tested once on the live address after sending is switched on. It counts as a real enquiry in the owner's inbox.
 
 ## Page titles, descriptions and share tags
 
@@ -138,10 +139,10 @@ The `Layout` watches the address. After a move to another page it scrolls to the
 
 ## Build and publish
 
-`npm run build` writes `app/dist`. Netlify builds from the `app` folder and publishes `dist`. `app/public/_redirects` holds the rule `/* /index.html 200`, so every address loads the app, and `app/public/_headers` holds the security headers. Vite copies both into `app/dist`. One limit: a wrong address returns status 200 with the Not found page, so search engines rely on the `noindex` tag. This is accepted for a site this size. See 07-OPERATIONS/DEPLOYMENT.md.
+`npm run build` writes `dist`, and copies `backend/public` (`api/enquiry.php`, `api/.htaccess`) into it. `public/.htaccess` (copied into `dist`) serves `index.html` for every address that is not a real file, keeps `/api` out of that rule, and sends the security headers. The release uploads `dist` to `~/dhemmynfood.mimmycare.com` and `backend/src` to `~/apps/dhemmyn/current/src`. One limit: a wrong address returns status 200 with the Not found page, so search engines rely on the `noindex` tag. This is accepted for a site this size. See 07-OPERATIONS/DEPLOYMENT.md.
 
-`robots.txt` and `sitemap.xml` use the `.netlify.app` address until a domain exists. They hold the word `SITE-NAME` in its place until the owner picks the site name (DEPLOYMENT.md says how to replace it). The sitemap lists six pages: not the Not found page, and not `/privacy` while that page is `noindex`. Add `/privacy` when the `noindex` tag is removed (WEB-32). Changed on 3 October 2026 from "the seven pages", because a page cannot be both in the sitemap and `noindex`.
+`robots.txt`, `sitemap.xml` and the share tags use the live address `https://dhemmynfood.mimmycare.com` (set on 30 October 2026; before that they held a placeholder). The sitemap lists six pages: not the Not found page, and not `/privacy` while that page is `noindex`. Add `/privacy` when the `noindex` tag is removed (WEB-32). Changed on 3 October 2026 from "the seven pages", because a page cannot be both in the sitemap and `noindex`.
 
 ## What this site does not have
 
-No server code, database, log-ins, payments, analytics, cookies, service worker, outside fonts or scripts, video players or social embeds. If any of these is added later, record why in 08-CHANGE-MANAGEMENT/DECISIONS.md first.
+No database, log-ins, payments, analytics, cookies, service worker, outside fonts or scripts, video players or social embeds. Server code is limited to the order endpoint in `backend/` (D-16). If any of these is added later, record why in 08-CHANGE-MANAGEMENT/DECISIONS.md first.

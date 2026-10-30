@@ -34,14 +34,17 @@ mise exec -- npm run typecheck
 mise exec -- npm run lint
 mise exec -- npm test
 mise exec -- npm run test:browser
+mise exec -- npm run test:php
 ```
 
 Setup installs Chromium for browser tests. Test preview uses loopback port 5201 and refuses to reuse a running server.
 
 ## Layout and release
 
-src: React components, routes, drawings and business rules. public: deployment assets. docs: retained product/design/planning documents. qa: historic audits and current evidence. tests: unit and browser checks. scripts: portable Node helpers. Generated output is ignored. One root HTML entry remains; historic design explorations are archived under docs.
+src: React components, routes, drawings and business rules. public: deployment assets, including `.htaccess`. backend: the PHP order endpoint (`backend/README.md`). docs: product, design and planning documents. qa: historic audits. tests: unit and browser checks. scripts: portable Node helpers and the kit's `release.mjs`. Generated output is ignored.
 
-Local development and preview return HTTP 503 for enquiry POSTs, so the existing failure message retains input. Synthetic test success does not prove delivery. Netlify build base is the root and publishes dist. Preserve the hidden Netlify form blueprint. Configure and test actual deployed delivery before release. Owner contact details and actual Netlify delivery must be reviewed before release. Mac execution and owner/legal acceptance remain open.
+Live address: https://dhemmynfood.mimmycare.com on the owner's cPanel (D-16; Netlify was planned but never used). Every push to `main` deploys over SSH (`.github/workflows/deploy.yml`, settings in `release.json`); docs-only pushes and `[skip ci]` commits do not. From the Mac: `mise exec -- npm run release` (dry run), then `mise exec -- npm run release -- --go`. Owner steps, rollback and switching on mail: docs/07-operations/DEPLOYMENT.md. Checks run by a release: typecheck, lint, unit tests, `php -l`, `npm run test:php`.
+
+The forms post JSON to `/api/enquiry.php`. Sending is off until the private settings on the server switch it on; until then the forms say online order requests are not switched on yet and show WhatsApp, phone and email. Local development and preview answer the same way, so nothing is ever sent locally. Synthetic test success does not prove delivery. Evidence and NOT TESTED items: docs/AUDIT.md.
 
 Historic instructions and architecture describe the previous app/ layout. They are retained as reference, not current startup commands. See ../reports/dhemmyn-food/qa/reports/GEE-REBUILD-2026-10-07.md.

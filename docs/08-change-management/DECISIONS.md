@@ -58,6 +58,7 @@
 - Options considered: Formspree, Web3Forms, a serverless function, `mailto:` links. Buying a domain now.
 - What it means for the project: INTEGRATIONS.md lists Netlify, Akismet and the email copy, and all three must appear in DATA-PRIVACY.md and the privacy notice. Share tags, robots.txt and sitemap.xml use the `.netlify.app` address until a domain exists. Account owners are still [NEEDS]. The form allowance on the account's plan must be checked.
 - Revisit if: the free allowance is reached, submissions must stay in the UK, or the owner buys a domain.
+- **Replaced by D-16 (30 October 2026)** for hosting and the form service. Netlify was never set up.
 
 ## D-05 How the form is sent
 
@@ -67,6 +68,7 @@
 - Options considered: Google reCAPTCHA, a hidden time check, JSON posting (Netlify needs URL-encoded data).
 - What it means for the project: the forms cannot be sent from `npm run dev` or `npm run preview`, so a real send is tested once on the Netlify test address. The field names in index.html must match data/forms.ts exactly.
 - Revisit if: spam gets through the filter.
+- **Replaced by D-16 (30 October 2026)** for hosting and the form service. Netlify was never set up.
 
 ## D-06 Where enquiries are delivered
 
@@ -76,6 +78,7 @@
 - Options considered: a separate email service, Zapier or similar.
 - What it means for the project: who hosts the mailbox is [NEEDS]. The owner checks the dashboard monthly, the spam folder first. EMAIL-SPEC.md (step 12) covers the message settings.
 - Revisit if: the mailbox changes, or enquiry emails land in spam.
+- **Replaced by D-16 (30 October 2026)** for hosting and the form service. Netlify was never set up.
 
 ## D-07 Files and features not used
 
@@ -164,3 +167,12 @@
 ## 7 October 2026: portable TypeScript rebuild
 
 Flattened app into root and grouped documentation/audits without changing React UI or business rules. Added project-local Mise, npm clean setup, private-LAN launcher and explicit unavailable local Netlify delivery. Playwright 1.63 added because both real local failure and synthetic form states require browser verification. Evidence: ../reports/dhemmyn-food/qa/reports/GEE-REBUILD-2026-10-07.md. Original source and history retained.
+
+## D-16 Hosting moves from Netlify to the owner's cPanel, with a PHP order endpoint
+
+- Date: 30 October 2026
+- Decision: the site is published on the owner's cPanel account at https://dhemmynfood.mimmycare.com (document root `~/dhemmynfood.mimmycare.com`), not on Netlify. Every push to `main` deploys over SSH with the kit's `scripts/release.mjs` (`release.json`, `.github/workflows/deploy.yml`), the same setup as harni.uk. `public/.htaccess` replaces `netlify.toml`, `_headers` and `_redirects` with the same security headers and the SPA fallback. The two forms post JSON to `POST /api/enquiry.php`, a small PHP endpoint modelled on harni's (`backend/`): validation, a hidden `website` spam trap, hashed rate limits, one email to the owner by `mail()` or SMTP. Sending is off unless `~/private-config/dhemmyn/config.php` switches it on and holds the recipient and mail settings. While it is off, the form says online order requests are not switched on yet and shows WhatsApp, phone and email. Owner's choice, 30 October 2026.
+- Why: the owner's other sites already run on this cPanel account with push-to-deploy, Netlify was never set up (no account, no site name), and one host is simpler to look after. The subdomain needs no new domain.
+- Options considered: keeping the Netlify plan (D-04, D-05); a form service such as Formspree or Web3Forms (an outside service and another account); `mailto:` links only.
+- What it means for the project: no Netlify, no Akismet. Spam protection is the honeypot and the rate limits only (no CAPTCHA, as D-05). Enquiries are no longer kept in a dashboard: each one exists only as an email in the inbox. DATA-PRIVACY.md, the privacy notice and EMAIL-SPEC.md still describe Netlify and must be updated before sending is switched on (docs/AUDIT.md). New words in `src/data/forms.ts` (`unavailable`) need the owner's approval. Local development and preview answer the form like the server with sending off.
+- Revisit if: spam gets through, the owner wants enquiries kept somewhere other than the inbox, or the site moves to its own domain.
