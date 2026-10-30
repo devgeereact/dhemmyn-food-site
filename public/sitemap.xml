@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://SITE-NAME.netlify.app/</loc></url>
-  <url><loc>https://SITE-NAME.netlify.app/order</loc></url>
-  <url><loc>https://SITE-NAME.netlify.app/recipes</loc></url>
-  <url><loc>https://SITE-NAME.netlify.app/custom-cakes</loc></url>
-  <url><loc>https://SITE-NAME.netlify.app/catering</loc></url>
-  <url><loc>https://SITE-NAME.netlify.app/about-me</loc></url>
-  <url><loc>https://SITE-NAME.netlify.app/contact</loc></url>
+  <url><loc>https://dhemmynfood.mimmycare.com/</loc></url>
+  <url><loc>https://dhemmynfood.mimmycare.com/order</loc></url>
+  <url><loc>https://dhemmynfood.mimmycare.com/recipes</loc></url>
+  <url><loc>https://dhemmynfood.mimmycare.com/custom-cakes</loc></url>
+  <url><loc>https://dhemmynfood.mimmycare.com/catering</loc></url>
+  <url><loc>https://dhemmynfood.mimmycare.com/about-me</loc></url>
+  <url><loc>https://dhemmynfood.mimmycare.com/contact</loc></url>
 </urlset>

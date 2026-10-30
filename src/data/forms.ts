@@ -1,6 +1,6 @@
 // Both enquiry forms: fields, labels, hints and messages.
 // Labels are from docs/01-product/CONTENT.md; headings and messages from the v2 copy deck (3 October 2026).
-// The field names must match the two hidden forms in index.html exactly, or Netlify drops the field.
+// The form and field names must match DHEMMYN_FORMS in backend/src/enquiry.php exactly, or the server refuses the request.
 
 // The ids that tie a field to its label, hint and message.
 export const fieldId = (formName: string, name: string) => `${formName}-${name}`
@@ -96,6 +96,8 @@ export const formMessages = {
   sentTitle: 'Thank you. Your order request is sent.',
   sentBody: 'I will get back to you with the details and a price.',
   failed: 'Sorry, your order request did not send. Nothing you typed is lost. Try again, or message me by',
+  // New words, 30 October 2026 (D-16): shown while online sending is switched off on the server. Owner to approve.
+  unavailable: 'Sorry, online order requests are not switched on yet, so nothing was sent. Nothing you typed is lost. Message me by',
   privacy: 'Read the privacy notice',
   prefilled: 'Your party plan is filled in. Check the details and add anything else.',
 }

@@ -1,0 +1,29 @@
+{
+  "host": "cpanel",
+  "project": "dhemmyn",
+  "url": "https://dhemmynfood.mimmycare.com",
+  "checks": [
+    "npm run typecheck",
+    "npm run lint",
+    "npm test",
+    "for f in $(find backend -name '*.php'); do php -l \"$f\" >/dev/null || exit 1; done",
+    "php backend/tests/enquiry.test.php"
+  ],
+  "build": "npm run build && test -f dist/.htaccess && test -f dist/api/.htaccess && test -f dist/api/enquiry.php && test ! -e dist/_headers && test ! -e dist/_redirects && test ! -e dist/src",
+  "parts": [
+    {
+      "from": "backend/src",
+      "to": "apps/dhemmyn/current/src",
+      "exclude": ["*.md"]
+    },
+    {
+      "from": "dist",
+      "to": "dhemmynfood.mimmycare.com",
+      "allow": [".htaccess"]
+    }
+  ],
+  "smoke": [
+    { "path": "/", "status": 200 },
+    { "path": "/api/enquiry.php", "status": 405 }
+  ]
+}

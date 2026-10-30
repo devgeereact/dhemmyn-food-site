@@ -1,3 +1,4 @@
+import { cpSync } from 'node:fs';
 import path from 'node:path';
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
@@ -20,8 +21,8 @@ function localForms(server: {
       return;
     }
     if (
-      /^\/(?:docs|qa|tests|scripts|\.agent|\.github)(?:\/|$)/.test(path) ||
-      /^\/(?:\.[^/]+|[^/]+\.md|components\.json|package(?:-lock)?\.json|mise\.toml|netlify\.toml|vite\.config\.ts|playwright\.config\.ts|tsconfig[^/]*\.json)$/.test(
+      /^\/(?:docs|qa|tests|scripts|backend|\.agent|\.github)(?:\/|$)/.test(path) ||
+      /^\/(?:\.[^/]+|[^/]+\.md|components\.json|package(?:-lock)?\.json|mise\.toml|release\.json|vite\.config\.ts|playwright\.config\.ts|tsconfig[^/]*\.json)$/.test(
         path,
       )
     ) {
@@ -30,11 +31,21 @@ function localForms(server: {
       response.end("Not found.");
       return;
     }
-    if (request.method === "POST" && request.url?.split("?")[0] === "/") {
-      response.statusCode = 503;
-      response.setHeader("Content-Type", "text/plain; charset=utf-8");
+    // Local development and preview have no PHP. They answer like the live endpoint does while sending
+    // is switched off (backend/src/endpoint.php), so the form shows its "not switched on yet" message.
+    if (path === "/api/enquiry.php") {
+      const post = request.method === "POST";
+      response.statusCode = post ? 503 : 405;
+      response.setHeader("Content-Type", "application/json; charset=utf-8");
+      response.setHeader("Cache-Control", "no-store");
+      if (!post) response.setHeader("Allow", "POST");
       response.end(
-        "Local preview cannot receive enquiries. Nothing was sent. Netlify Forms must be configured on the deployed site.",
+        JSON.stringify({
+          ok: false,
+          error: post
+            ? { code: "sending_off", message: "Local preview cannot send order requests. Nothing was sent." }
+            : { code: "method_not_allowed", message: "Use the order request form to send a request." },
+        }),
       );
     } else next();
   });
@@ -44,10 +55,19 @@ const localFormsPlugin: Plugin = {
   configureServer: localForms,
   configurePreviewServer: localForms,
 };
+// The web root gets only the backend's public files (api/enquiry.php and api/.htaccess). The private
+// code in backend/src is uploaded outside the web root by release.json, never into dist/.
+const backendEntry: Plugin = {
+  name: "dhemmyn-backend-entry",
+  apply: "build",
+  closeBundle() {
+    cpSync(path.resolve(import.meta.dirname, "./backend/public"), path.resolve(import.meta.dirname, "./dist"), { recursive: true });
+  },
+};
 export default defineConfig({
   resolve: { alias: { '@': path.resolve(import.meta.dirname, './src') } },
   define: { __BUILD_YEAR__: JSON.stringify(new Date().getFullYear()) },
-  plugins: [react(), tailwindcss(), localFormsPlugin],
+  plugins: [react(), tailwindcss(), localFormsPlugin, backendEntry],
   server: {
     host: config.host,
     port: config.port,
@@ -62,7 +82,7 @@ export default defineConfig({
         ".npmrc",
         ".yarnrc.yml",
         "**/.git/**",
-        "**/{docs,qa,tests,scripts,.agent,.github}/**",
+        "**/{docs,qa,tests,scripts,backend,.agent,.github}/**",
         "**/{AGENTS,PROJECT-OS,README}.md",
       ],
     },

@@ -17,7 +17,7 @@ if (
   try {
     await doctor({ ports: process.argv.includes("--ports") });
     console.log(
-      "PASS: Node, destination-OS Vite/Tailwind native tooling, React and React Router. Local form delivery is unavailable; Netlify is required.",
+      "PASS: Node, destination-OS Vite/Tailwind native tooling, React and React Router. Local form delivery is unavailable; the PHP endpoint on cPanel sends order requests once switched on.",
     );
   } catch (error) {
     console.error(error.message);

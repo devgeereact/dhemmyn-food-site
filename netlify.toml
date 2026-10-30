@@ -1,9 +1,0 @@
-# Netlify build settings. Details and reasons: docs/07-operations/DEPLOYMENT.md.
-# `publish` is relative to `base`, so Netlify publishes dist.
-[build]
-  base = "."
-  command = "npm run build"
-  publish = "dist"
-
-[build.environment]
-  NODE_VERSION = "24.21.0"

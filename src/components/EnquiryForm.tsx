@@ -10,9 +10,11 @@ import ContactDetails from './ContactDetails'
 import FormField from './FormField'
 import Icon from './Icon'
 
-// How the form is sent: ARCHITECTURE.md, "How the form is sent". Netlify Forms, one urlencoded POST to "/".
+// How the form is sent: one JSON POST to /api/enquiry.php on this site (backend/, D-16 in DECISIONS.md).
+// The server answers {ok:true} when the request was handed to the mail service, or
+// {ok:false,error:{code}}; "sending_off" means online sending is not switched on yet.
 // Fields are checked when the visitor taps "Send order request", not while they type.
-type Status = 'idle' | 'mistake' | 'sending' | 'sent' | 'failed'
+type Status = 'idle' | 'mistake' | 'sending' | 'sent' | 'failed' | 'unavailable'
 type Values = Record<string, string>
 type Errors = Record<string, string>
 
@@ -20,6 +22,23 @@ const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 const datePattern = /^\d{4}-\d{2}-\d{2}$/
 const prefillLimit = 500
 const sendLimitMs = 15000
+const endpoint = '/api/enquiry.php'
+
+type Answer = { ok?: unknown; error?: { code?: unknown } }
+
+// Reads the server's JSON answer. Anything else (an HTML error page, a cut-off body) counts as a failure.
+async function readAnswer(response: Response): Promise<Status> {
+  let answer: Answer = {}
+  try {
+    const parsed: unknown = await response.json()
+    if (parsed && typeof parsed === 'object') answer = parsed as Answer
+  } catch {
+    return 'failed'
+  }
+  if (response.ok && answer.ok === true) return 'sent'
+  if (answer.error?.code === 'sending_off') return 'unavailable'
+  return 'failed'
+}
 
 // The Party planner on Home links here with its answers in the address, for example
 // /custom-cakes?date=2026-12-12&servings=60. Only this form's planner fields are read, each trimmed
@@ -77,6 +96,7 @@ export default function EnquiryForm({ form }: { form: FormConfig }) {
   const summaryRef = useRef<HTMLDivElement>(null)
   const sentRef = useRef<HTMLDivElement>(null)
   const failedRef = useRef<HTMLDivElement>(null)
+  const honeypotRef = useRef<HTMLInputElement>(null)
   const reducedMotion = useReducedMotion()
   const sending = status === 'sending'
   const summaryId = `${form.name}-summary`
@@ -88,7 +108,7 @@ export default function EnquiryForm({ form }: { form: FormConfig }) {
   }, [attempt])
   useEffect(() => {
     if (status === 'sent') sentRef.current?.focus()
-    if (status === 'failed') failedRef.current?.focus()
+    if (status === 'failed' || status === 'unavailable') failedRef.current?.focus()
   }, [status])
 
   function setValue(name: string, value: string) {
@@ -106,22 +126,20 @@ export default function EnquiryForm({ form }: { form: FormConfig }) {
       return
     }
     setStatus('sending')
-    const body = new URLSearchParams()
-    new FormData(event.currentTarget).forEach((value, key) => {
-      if (typeof value === 'string') body.append(key, value)
-    })
+    const body: Values = { form: form.name, website: honeypotRef.current?.value ?? '' }
+    for (const field of form.fields) body[field.name] = values[field.name].trim()
     // A stalled request must not leave the form locked in "sending": give up after 15 seconds and
     // show the failed state, which keeps everything the visitor typed.
     const controller = new AbortController()
     const timer = window.setTimeout(() => controller.abort(), sendLimitMs)
     try {
-      const response = await fetch('/', {
+      const response = await fetch(endpoint, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: body.toString(),
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(body),
         signal: controller.signal,
       })
-      setStatus(response.ok ? 'sent' : 'failed')
+      setStatus(await readAnswer(response))
     } catch {
       setStatus('failed')
     } finally {
@@ -162,7 +180,7 @@ export default function EnquiryForm({ form }: { form: FormConfig }) {
     }))
     .filter((item): item is { id: string; message: string } => Boolean(item.message))
 
-  const label = sending ? m.sendingButton : status === 'failed' ? m.tryAgain : m.send
+  const label = sending ? m.sendingButton : status === 'failed' || status === 'unavailable' ? m.tryAgain : m.send
 
   return (
     <div>
@@ -173,9 +191,9 @@ export default function EnquiryForm({ form }: { form: FormConfig }) {
           {m.prefilled}
         </p>
       )}
-      {status === 'failed' && (
+      {(status === 'failed' || status === 'unavailable') && (
         <div ref={failedRef} tabIndex={-1} role="alert" className="mb-6 scroll-mt-28 rounded-md border-2 border-cake-red bg-paper p-5">
-          <p>{m.failed}</p>
+          <p>{status === 'unavailable' ? m.unavailable : m.failed}</p>
           <ContactDetails className="mt-2" />
         </div>
       )}
@@ -209,12 +227,11 @@ export default function EnquiryForm({ form }: { form: FormConfig }) {
         </div>
       )}
       <form name={form.name} method="POST" noValidate onSubmit={handleSubmit} className="flex flex-col gap-6">
-        <input type="hidden" name="form-name" value={form.name} />
-        {/* The spam trap Netlify reads: hidden from the keyboard and from screen readers. */}
+        {/* The spam trap the server checks ("website"): hidden from the keyboard and from screen readers. */}
         <p hidden>
           <label>
             Do not fill this in
-            <input name="bot-field" tabIndex={-1} autoComplete="off" />
+            <input ref={honeypotRef} name="website" tabIndex={-1} autoComplete="off" />
           </label>
         </p>
         {form.fields.map((field) => {
