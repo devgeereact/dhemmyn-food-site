@@ -41,3 +41,7 @@ Run on the owner's Mac (Node 24.21.0 through mise, PHP 8.5.12 CLI), branch `main
 
 - Owner approval of the new form words (`unavailable` in `src/data/forms.ts`).
 - Still describe Netlify (not changed in this pass, D-16 says read them as cPanel): 05-security/DATA-PRIVACY.md, PERMISSIONS.md, AUTH-MODEL.md; 02-architecture/INTEGRATIONS.md, API-SPEC.md, DATA-MODEL.md; 07-operations/MONITORING.md, BACKUP-RECOVERY.md; 08-change-management/KNOWN-ISSUES.md; 00-foundation/PROJECT-CONTEXT.md; 01-product/PRODUCT-SPEC.md and the privacy notice draft in CONTENT.md; PROJECT-OS.md. DATA-PRIVACY.md and the privacy notice must be updated (data now goes only to the host's mail and the inbox; no Netlify, no Akismet) before sending is switched on. docs/reference/ is historic and stays as it is.
+
+## 31 Oct 2026: deploy on push
+
+- Moved from the Netlify plan to cPanel at https://dhemmynfood.mimmycare.com (subdomain created 30 Oct 2026; Cloudflare A record, proxied; served with the existing Cloudflare origin certificate, AutoSSL is not on this plan). Server setup applied, first release by the owner; live checks: /, /menu 200, CSP and X-Frame-Options present, /api/enquiry.php GET 405 JSON. Sending stays off. Repo made public 31 Oct 2026 after a full-history gitleaks scan (0 findings); Actions on.
