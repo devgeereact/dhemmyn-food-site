@@ -12,6 +12,13 @@ Run every command from this folder through mise.
 - Type check: `mise exec -- npm run typecheck`
 - Build: `mise exec -- npm run build` (output in dist/, ignored by Git)
 
+## Branches and merging
+
+- Work on one short-lived branch per phase, made from `main` (for example `chore/…`, `docs/…`, `feat/…`). Never commit straight to `main`.
+- Commit in small steps with a conventional subject (`docs(scope): …`, `fix(scope): …`). A commit that changes only docs or `.agent/` ends its subject with `[skip ci]`.
+- Run `mise exec -- npm run verify` before asking to merge. Merge to `main` (squash) only when it passes.
+- A push to `main` deploys, unless only docs, Markdown files or `.agent/` changed. Push, merge and release only when the owner has said so.
+
 ## Report location
 
 Keep audit, validation and completion reports in `../reports/dhemmyn-food/`, outside the project. Keep project instructions and setup guides here.
