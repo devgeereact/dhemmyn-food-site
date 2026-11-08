@@ -49,3 +49,6 @@ Docs tidy (owner rule: one source of truth): Markdown moved into docs/, audits a
 
 ## 2026-10-30: Netlify to cPanel
 Prepared the move to cPanel (D-16): address set, `.htaccess`, PHP order endpoint with sending off, release.json, deploy.yml, docs, setup script. All release checks, the build and 29 Playwright tests pass locally. Nothing pushed or deployed. Evidence: docs/AUDIT.md.
+
+## 2026-11-08: GSD baseline recorded
+Existing project brought into GSD as a read-only baseline: `.planning/` (PROJECT, REQUIREMENTS, ROADMAP, STATE, config) and `.planning/baseline/2026-11-08-STEP-1-MAP.md`. No phase is started and nothing is committed. Tasks stay in this file; `.planning/` holds GSD's view only. The map lists 10 inconsistencies, including that "Next (owner)" above is out of date (the site is live).
