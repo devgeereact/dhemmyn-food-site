@@ -2,7 +2,7 @@
 
 ## Outcome
 
-The site is ready to move from the never-used Netlify plan to the owner's cPanel at https://dhemmynfood.mimmycare.com with push-to-deploy over SSH, like harni.uk: real address in place, `public/.htaccess` instead of the Netlify files, the forms posting to a PHP endpoint with sending off, `release.json` and `deploy.yml`, docs updated, and `~/Backups/scripts/dhemmyn-server-setup.zsh` written (not run). Evidence: docs/AUDIT.md (2026-10-30). Decision: D-16.
+The site is ready to move from the never-used Netlify plan to the owner's cPanel at https://dhemmynfood.mimmycare.com with push-to-deploy over SSH, like harni.uk: real address in place, `public/.htaccess` instead of the Netlify files, the forms posting to a PHP endpoint with sending off, `release.json` and `deploy.yml`, docs updated, and `~/Developer/build-kit/scripts/dhemmyn-server-setup.zsh` written (not run). Evidence: docs/AUDIT.md (2026-10-30). Decision: D-16.
 
 ## Mode
 
@@ -10,7 +10,7 @@ Existing Application (workflow: change-safety).
 
 ## Scope
 
-- In scope: local edits and local commits on `main` (subjects end with `[skip ci]`), the project's own checks, read-only SSH looks at the server, the setup script in ~/Backups/scripts.
+- In scope: local edits and local commits on `main` (subjects end with `[skip ci]`), the project's own checks, read-only SSH looks at the server, the setup script in ~/Developer/build-kit/scripts.
 - Out of scope: pushing, any write to the server, Netlify, GitHub settings or Cloudflare; switching sending on; privacy notice content; contact details.
 
 ## Authority
@@ -27,8 +27,8 @@ Existing Application (workflow: change-safety).
 ## Next (owner, in order)
 
 1. Cloudflare A record `dhemmynfood` -> the server, DNS only; AutoSSL; then Full (strict), proxied if wanted.
-2. `~/Backups/scripts/dhemmyn-server-setup.zsh`, then `--apply`.
-3. `~/Backups/scripts/setup-github-deploy.zsh --apply dhemmyn-food-site`.
+2. `~/Developer/build-kit/scripts/dhemmyn-server-setup.zsh`, then `--apply`.
+3. `~/Developer/build-kit/scripts/setup-github-deploy.zsh --apply dhemmyn-food-site`.
 4. Review and push `main`; `npm run release`, then `npm run release -- --go`; check the live site.
 5. Later: switch sending on (DEPLOYMENT.md) and test one request per form.
 

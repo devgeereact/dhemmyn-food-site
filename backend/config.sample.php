@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 // Sample of the private settings file. Key names only: never put real values in this repository.
 // On the server the real file is ~/private-config/dhemmyn/config.php (mode 0600, folder 0700), created
-// by ~/Backups/scripts/dhemmyn-server-setup.zsh --apply with sending off. The owner fills it in by hand,
+// by ~/Developer/build-kit/scripts/dhemmyn-server-setup.zsh --apply with sending off. The owner fills it in by hand,
 // over SSH, when the mailbox is ready (docs/07-operations/DEPLOYMENT.md, "Switching sending on").
 // Sending stays OFF unless 'mail_enabled' is true AND every value it needs is filled in.
 
