@@ -57,7 +57,7 @@ file, so sending is always off there.
 ## Private settings
 
 `~/private-config/dhemmyn/config.php` returns an array with the keys in `config.sample.php`. A missing file,
-a wrong type or a missing value means sending off. `~/Developer/build-kit/scripts/dhemmyn-server-setup.zsh --apply`
+a wrong type or a missing value means sending off. `~/Developer/build-kit/scripts/archive/dhemmyn-server-setup.zsh --apply`
 creates it with sending off, a random `rate_key` and `state_dir`. Switching on: docs/07-operations/DEPLOYMENT.md.
 
 ## Checks

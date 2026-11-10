@@ -2,7 +2,7 @@
 
 ## Outcome
 
-The site is ready to move from the never-used Netlify plan to the owner's cPanel at https://dhemmynfood.mimmycare.com with push-to-deploy over SSH, like harni.uk: real address in place, `public/.htaccess` instead of the Netlify files, the forms posting to a PHP endpoint with sending off, `release.json` and `deploy.yml`, docs updated, and `~/Developer/build-kit/scripts/dhemmyn-server-setup.zsh` written (not run). Evidence: docs/AUDIT.md (2026-10-30). Decision: D-16.
+The site is ready to move from the never-used Netlify plan to the owner's cPanel at https://dhemmynfood.mimmycare.com with push-to-deploy over SSH, like harni.uk: real address in place, `public/.htaccess` instead of the Netlify files, the forms posting to a PHP endpoint with sending off, `release.json` and `deploy.yml`, docs updated, and `~/Developer/build-kit/scripts/archive/dhemmyn-server-setup.zsh` written (not run). Evidence: docs/AUDIT.md (2026-10-30). Decision: D-16.
 
 ## Mode
 
@@ -27,7 +27,7 @@ Existing Application (workflow: change-safety).
 ## Next (owner, in order)
 
 1. Cloudflare A record `dhemmynfood` -> the server, DNS only; AutoSSL; then Full (strict), proxied if wanted.
-2. `~/Developer/build-kit/scripts/dhemmyn-server-setup.zsh`, then `--apply`.
+2. `~/Developer/build-kit/scripts/archive/dhemmyn-server-setup.zsh`, then `--apply`.
 3. `~/Developer/build-kit/scripts/setup-github-deploy.zsh --apply dhemmyn-food-site`.
 4. Review and push `main`; `npm run release`, then `npm run release -- --go`; check the live site.
 5. Later: switch sending on (DEPLOYMENT.md) and test one request per form.
